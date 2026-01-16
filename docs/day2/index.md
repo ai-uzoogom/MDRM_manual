@@ -1,7 +1,7 @@
+<div class="page-title-box" markdown>
 # DAY 2 - Agent 설치 및 컴포넌트
-
-!!! abstract "학습 목표"
-    Agent 설치 방법 및 컴포넌트 관리
+Agent 설치 방법 및 컴포넌트 관리
+</div>
 
 ## 📋 학습 내용
 

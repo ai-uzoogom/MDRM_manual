@@ -1,7 +1,7 @@
+<div class="page-title-box" markdown>
 # DAY 1 - MDRM 설치
-
-!!! abstract "학습 목표"
-    시스템 환경 구성 및 기본 설치
+시스템 환경 구성 및 기본 설치
+</div>
 
 ## 📋 학습 내용
 

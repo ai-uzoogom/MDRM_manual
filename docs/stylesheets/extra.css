@@ -1,0 +1,161 @@
+/* MDRM 커스텀 스타일 */
+
+:root {
+    /* 라이트 모드 색상 */
+    --md-primary-fg-color: #2563eb;
+    --md-primary-fg-color--dark: #1e40af;
+    --md-accent-fg-color: #2563eb;
+    
+    /* 커스텀 변수 */
+    --custom-primary: #2563eb;
+    --custom-primary-dark: #1e40af;
+    --custom-secondary: #64748b;
+    --custom-success: #10b981;
+    --custom-warning: #f59e0b;
+    --custom-danger: #ef4444;
+    --custom-bg-light: #f8fafc;
+    --custom-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 다크모드 색상 */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #3b82f6;
+    --md-primary-fg-color--dark: #2563eb;
+    --md-accent-fg-color: #3b82f6;
+    
+    --custom-primary: #3b82f6;
+    --custom-primary-dark: #2563eb;
+    --custom-bg-light: #1e293b;
+    --custom-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* 헤더 그라디언트 */
+.md-header {
+    background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%) !important;
+    box-shadow: var(--custom-shadow-lg);
+}
+
+/* 카드 스타일 개선 */
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 12px;
+    box-shadow: var(--custom-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--custom-shadow-lg);
+}
+
+/* 코드 블록 스타일 */
+.md-typeset pre > code {
+    border-radius: 8px;
+}
+
+.md-typeset code {
+    background-color: var(--custom-bg-light);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* 테이블 스타일 */
+.md-typeset table:not([class]) {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--custom-shadow);
+}
+
+.md-typeset table:not([class]) th {
+    background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%);
+    color: white;
+    font-weight: 600;
+}
+
+/* 네비게이션 버튼 효과 */
+.md-tabs__link {
+    transition: all 0.3s;
+}
+
+.md-tabs__link:hover {
+    transform: translateY(-2px);
+}
+
+/* 사이드바 스타일 */
+.md-sidebar {
+    border-radius: 0 12px 12px 0;
+}
+
+/* 검색창 스타일 */
+.md-search__input {
+    border-radius: 8px;
+}
+
+/* 푸터 스타일 */
+.md-footer {
+    background: var(--md-footer-bg-color);
+    border-top: 2px solid var(--custom-primary);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.md-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 배지 스타일 */
+.md-typeset .admonition.info {
+    border-color: var(--custom-primary);
+}
+
+.md-typeset .admonition.warning {
+    border-color: var(--custom-warning);
+}
+
+.md-typeset .admonition.danger {
+    border-color: var(--custom-danger);
+}
+
+.md-typeset .admonition.success {
+    border-color: var(--custom-success);
+}
+
+/* 스크롤바 커스터마이징 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--custom-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--custom-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--custom-primary-dark);
+}
+
+/* 반응형 개선 */
+@media (max-width: 768px) {
+    .md-header__title {
+        font-size: 1.2rem;
+    }
+}

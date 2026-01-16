@@ -1,6 +1,7 @@
 site_name: MDRM 교육 커리큘럼
 site_description: 시스템 설치부터 운영까지 완벽 가이드
 site_author: MDRM Team
+site_url: https://ai-uzoogom.github.io/MDRM_manual/
 
 theme:
   name: material
@@ -66,5 +67,8 @@ markdown_extensions:
 
 extra:
   generator: false
+
+extra_css:
+  - stylesheets/extra.css
 
 copyright: "&copy; 2026 MDRM 교육 자료. All rights reserved."

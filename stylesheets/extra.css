@@ -31,8 +31,9 @@
     --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
-/* 헤더 스타일 - 그라디언트 제거 */
+/* 헤더 그라디언트 */
 .md-header {
+    background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%) !important;
     box-shadow: var(--custom-shadow-lg);
 }
 
@@ -63,16 +64,15 @@
     font-size: 0.9em;
 }
 
-/* 테이블 스타일 */
+/* 테이블 스타일 - 그라디언트 제거 */
 .md-typeset table:not([class]) {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--custom-shadow);
 }
 
+/* 테이블 헤더는 기본 스타일 사용 */
 .md-typeset table:not([class]) th {
-    background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%);
-    color: white;
     font-weight: 600;
 }
 

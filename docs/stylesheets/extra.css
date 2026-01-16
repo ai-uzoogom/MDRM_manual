@@ -5,7 +5,7 @@
     --md-primary-fg-color: #2563eb;
     --md-primary-fg-color--dark: #1e40af;
     --md-accent-fg-color: #2563eb;
-    
+
     /* 커스텀 변수 */
     --custom-primary: #2563eb;
     --custom-primary-dark: #1e40af;
@@ -23,7 +23,7 @@
     --md-primary-fg-color: #3b82f6;
     --md-primary-fg-color--dark: #2563eb;
     --md-accent-fg-color: #3b82f6;
-    
+
     --custom-primary: #3b82f6;
     --custom-primary-dark: #2563eb;
     --custom-bg-light: #1e293b;
@@ -31,11 +31,11 @@
     --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
-/* 헤더 그라디언트 */
+/* 헤더 스타일 - 그라디언트 제거 */
 .md-header {
-    background: linear-gradient(135deg, var(--custom-primary) 0%, var(--custom-primary-dark) 100%) !important;
     box-shadow: var(--custom-shadow-lg);
 }
+
 
 /* 카드 스타일 개선 */
 .md-typeset .admonition,
@@ -52,7 +52,7 @@
 }
 
 /* 코드 블록 스타일 */
-.md-typeset pre > code {
+.md-typeset pre>code {
     border-radius: 8px;
 }
 
@@ -107,6 +107,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

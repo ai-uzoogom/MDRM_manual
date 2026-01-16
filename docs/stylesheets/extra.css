@@ -1,4 +1,15 @@
+/* Font Import */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 /* MDRM 커스텀 스타일 */
+body,
+input,
+textarea,
+select,
+button {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif !important;
+}
+
 
 :root {
     /* 라이트 모드 색상 */
@@ -16,6 +27,8 @@
     --custom-bg-light: #f8fafc;
     --custom-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --text-dark: #1e293b;
+    --border: #e2e8f0;
 }
 
 /* 다크모드 색상 */
@@ -37,6 +50,54 @@
     box-shadow: var(--custom-shadow-lg);
 }
 
+.md-header__inner {
+    padding: 0.3rem 0;
+}
+
+/* 배경색 - HTML과 동일 */
+.md-main {
+    background: #f8fafc;
+}
+
+/* 본문 영역은 흰색 */
+.md-content {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+/* 탭 영역 - 아래 공백 제거 */
+.md-tabs {
+    margin-bottom: 0 !important;
+}
+
+/* 진행바와 본문 사이 공백 제거 */
+.md-main__inner {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* 사이드바 너비 줄이기 */
+.md-sidebar {
+    width: 10rem;
+}
+
+.md-sidebar--secondary {
+    width: 10rem;
+}
+
+/* 본문 너비 늘리기 */
+.md-content__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.md-grid {
+    max-width: 1400px;
+}
+
 
 /* 카드 스타일 개선 */
 .md-typeset .admonition,
@@ -52,16 +113,123 @@
     box-shadow: var(--custom-shadow-lg);
 }
 
-/* 코드 블록 스타일 */
-.md-typeset pre>code {
+/* 코드 블록 스타일 - 어두운 배경 */
+.md-typeset pre {
+    background: #1e293b !important;
     border-radius: 8px;
+    padding: 1rem !important;
 }
 
+.md-typeset pre>code {
+    background: transparent !important;
+    border-radius: 8px;
+    color: #f8fafc !important;
+    border: none !important;
+}
+
+/* JSON/코드 syntax highlighting - 어두운 배경용 (전체) */
+
+/* 1. 코드 블록 내 모든 텍스트를 일단 흰색으로 강제 설정 (가장 중요) */
+.md-typeset pre code,
+.md-typeset pre code span,
+.highlight,
+.highlight span {
+    color: #f8fafc !important;
+}
+
+/* 2. 각 문법 요소별 색상 재정의 */
+
+/* 주석, Shebang - 회색 */
+.highlight .c,
+.highlight .c1,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .cs,
+.highlight .c-Shebang {
+    color: #94a3b8 !important;
+}
+
+/* 문자열 - 연두색 */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .se,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss,
+.highlight .nt {
+    color: #86efac !important;
+}
+
+/* 숫자 - 주황색 */
+.highlight .m,
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo,
+.highlight .il {
+    color: #fb923c !important;
+}
+
+/* 키워드, 함수명 - 보라색/연보라색 */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt,
+.highlight .nf {
+    color: #c084fc !important;
+}
+
+/* 쉘 내장 명령어, 속성명 - 파란색/하늘색 */
+.highlight .nb,
+.highlight .na,
+.highlight .nl,
+.highlight .n,
+.highlight .nn,
+.highlight .nv,
+.highlight .vi,
+.highlight .vm {
+    color: #60a5fa !important;
+}
+
+/* 에러 - 빨간색 */
+.highlight .err {
+    color: #f87171 !important;
+}
+
+/* 일반 텍스트, 연산자, 구두점 - 흰색 유지 (명시적) */
+.highlight .w,
+.highlight .p,
+.highlight .o,
+.highlight .punctuation,
+.highlight .operator {
+    color: #f8fafc !important;
+}
+
+/* 인라인 코드 스타일 - HTML과 동일 */
 .md-typeset code {
-    background-color: var(--custom-bg-light);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9em;
+    background: #f8fafc !important;
+    padding: 0.2rem 0.5rem !important;
+    border-radius: 4px !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 0.9em !important;
+    color: #2563eb !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* 코드 블록 내부는 인라인 스타일 제외 (위에서 설정한 색상 따름) */
+.md-typeset pre code {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #f8fafc !important;
+    /* 여기도 흰색 명시 */
 }
 
 /* 테이블 스타일 - 그라디언트 제거 */
@@ -77,15 +245,18 @@
 }
 
 
-/* 네비게이션 버튼 스타일 */
-.md-tabs {
-    background-color: transparent !important;
+/* 네비게이션 버튼 스타일 - HTML과 동일 */
+nav.md-tabs {
+    background: #ffffff !important;
+    padding: 0.5rem 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .md-tabs__list {
     display: flex;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    gap: 1rem;
+    padding: 0 1rem 0.5rem 1rem;
+    overflow-x: auto;
 }
 
 .md-tabs__item {
@@ -93,30 +264,70 @@
 }
 
 .md-tabs__link {
-    background: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 0.5rem 1.5rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
     margin: 0;
     transition: all 0.3s;
     font-weight: 500;
-    color: white !important;
-    opacity: 0.8;
+    font-size: 0.8rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+    color: #1e293b !important;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
 .md-tabs__link:hover {
+    background: #2563eb;
+    color: white !important;
+    border-color: #2563eb;
     transform: translateY(-2px);
-    opacity: 1;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: white;
 }
 
-.md-tabs__link--active {
-    background: white !important;
-    color: var(--custom-primary) !important;
-    opacity: 1;
-    border-color: white;
+.md-tabs__link--active,
+.md-tabs__link.active-tab {
+    background: #2563eb !important;
+    color: white !important;
+    border-color: #2563eb !important;
 }
+
+/* 진행 상태 점 (Progress Dots) */
+.progress-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    transform: none !important;
+    /* 호버 효과 무시 */
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.progress-dot.active {
+    background: var(--custom-primary);
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+}
+
+.progress-dot:hover {
+    background: #cbd5e1;
+    transform: scale(1.1);
+}
+
+/* 제목 박스 호버 시 진행 상태 점은 영향받지 않음 */
+.page-title-box:hover+.progress-indicator {
+    transform: none !important;
+}
+
 
 /* 페이지 제목 박스 스타일 */
 .page-title-box {

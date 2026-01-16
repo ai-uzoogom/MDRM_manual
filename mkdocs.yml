@@ -7,18 +7,9 @@ theme:
   name: material
   language: ko
   palette:
-    - scheme: default
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/brightness-7
-        name: 다크 모드로 전환
-    - scheme: slate
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: 라이트 모드로 전환
+    scheme: default
+    primary: blue
+    accent: blue
   font:
     text: Noto Sans KR
     code: Roboto Mono
@@ -33,17 +24,17 @@ theme:
 
 nav:
   - 홈: index.md
-  - DAY 1 - 설치:
+  - DAY 1:
     - 개요: day1/index.md
-    - 사전작업: day1/preparation.md
-    - 설치: day1/installation.md
-    - 메뉴 설명: day1/menu.md
-    - 정지 및 종료: day1/stop.md
-  - DAY 2 - Agent & 컴포넌트:
+    - 사전작업: day1/사전작업.md
+    - 설치: day1/설치.md
+    - 메뉴 설명: day1/메뉴설명.md
+    - 정지 및 종료: day1/정지_및_종료.md
+  - DAY 2:
     - 개요: day2/index.md
-    - Agent 설치: day2/agent.md
-    - 컴포넌트: day2/component.md
-    - 실행 프로세스: day2/execution.md
+    - Agent 설치: day2/Agent_설치.md
+    - 컴포넌트: day2/컴포넌트.md
+    - 실행 프로세스: day2/실행_프로세스.md
 
 plugins:
   - search:
@@ -64,11 +55,18 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra:
   generator: false
 
+
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
 
 copyright: "&copy; 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved."

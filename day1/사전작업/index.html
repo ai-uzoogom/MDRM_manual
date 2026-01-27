@@ -1,12 +1,7 @@
-
-<!doctype html>
-<html lang="ko" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="ko" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="시스템 설치부터 운영까지 완벽 가이드">
       
       
         <meta name="author" content="MDRM Team">
@@ -50,7 +45,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -63,7 +58,17 @@
 
     
     
-  </head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -97,12 +102,12 @@
     <a href="../.." title="MDRM 교육 커리큘럼" class="md-header__button md-logo" aria-label="MDRM 교육 커리큘럼" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -130,7 +135,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -139,15 +144,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="검색">
         
         <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -253,7 +258,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -267,7 +272,7 @@
     <a href="../.." title="MDRM 교육 커리큘럼" class="md-nav__button md-logo" aria-label="MDRM 교육 커리큘럼" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     MDRM 교육 커리큘럼
@@ -457,7 +462,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        서버 스펙 권장사항 확인
+        하드웨어 요구사양
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATA DISK 영역 구성
       
     </span>
   </a>
@@ -466,6 +482,17 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        웹 브라우저 및 해상도 권장사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         컨테이너 환경 준비
@@ -488,7 +515,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         브릿지 네트워크 설정
@@ -499,7 +526,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         컨테이너 기본 위치 변경
@@ -510,7 +537,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         로그 설정
@@ -664,7 +691,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -823,7 +850,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -845,7 +872,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        서버 스펙 권장사항 확인
+        하드웨어 요구사양
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATA DISK 영역 구성
       
     </span>
   </a>
@@ -854,6 +892,17 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        웹 브라우저 및 해상도 권장사항
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         컨테이너 환경 준비
@@ -876,7 +925,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         브릿지 네트워크 설정
@@ -887,7 +936,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         컨테이너 기본 위치 변경
@@ -898,7 +947,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         로그 설정
@@ -947,67 +996,125 @@
 
 
 
-<h1 id="_1">📋 사전작업<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">서버 스펙 권장사항 확인<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">📋 사전작업<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h2 id="_2"><strong>하드웨어 요구사양</strong><a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>관제서버의 하드웨어 요구사양은 관리 대상 서버(GAM 에이전트 설치 서버) 수에 따라 다릅니다. 서버 규모에 따른 권장 사양은 아래 표를 참고하십시오.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">관리 대상 서버 수</th>
+<th style="text-align: left;">서버 사양</th>
+<th style="text-align: left;">최대 동시 접속자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>서버 50대 이하</strong></td>
+<td style="text-align: left;">• CPU: 2.0GHz 64bit 8Core 이상<br>• RAM: 16GB 이상<br>• Disk: 200GB 이상</td>
+<td style="text-align: left;">20명</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>서버 100대 이하</strong></td>
+<td style="text-align: left;">• CPU: 2.0GHz 64bit 16Core 이상<br>• RAM: 24GB 이상<br>• Disk: 500GB 이상</td>
+<td style="text-align: left;">50명</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>서버 500대 이하</strong></td>
+<td style="text-align: left;">• CPU: 2.0GHz 64bit 24Core 이상<br>• RAM: 32GB 이상<br>• Disk: 800GB 이상</td>
+<td style="text-align: left;">100명</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition info">
-<p class="admonition-title">DATA DISK 영역 구성</p>
-<p>MDRM 운영을 위해 다음과 같은 디렉토리 구조를 권장합니다.</p>
+<p class="admonition-title">디스크 용량에 대한 참고</p>
+<p>디스크 사용량은 관리 대상 서버 수와 모니터링 플러그인 설정에 따라 다르게 요구됩니다.</p>
+<p><strong>디스크 사용량 산정 예시:</strong></p>
+<ul>
+<li>서버: 20대</li>
+<li>모니터링 플러그인: 서버마다 5개씩, 모니터링 간격 10초 설정</li>
+<li><strong>결과</strong>: 1년간 디스크 사용량 약 20GB 소요</li>
+</ul>
 </div>
+<h2 id="data-disk"><strong>DATA DISK 영역 구성</strong><a class="headerlink" href="#data-disk" title="Permanent link">¶</a></h2>
+<p>MDRM 운영을 위해 다음과 같은 디렉토리 구조를 권장합니다.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">경로</th>
 <th style="text-align: left;">설명</th>
-<th style="text-align: center;">비고</th>
+<th style="text-align: left;">비고</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>/mdrm/engine</code></td>
 <td style="text-align: left;">Docker 컨테이너의 엔진영역</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/mdrm/data</code></td>
 <td style="text-align: left;">MDRM에 실질적인 DATA가 볼륨매핑되어 있는 곳</td>
-<td style="text-align: center;">⚠️ <strong>백업영역</strong></td>
+<td style="text-align: left;"><span style="color: #d97706; font-weight: bold;">⚠️ 백업영역</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>/mdrm/package</code></td>
 <td style="text-align: left;">MDRM 설치 및 기타 용으로 사용</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="_3">컨테이너 환경 준비<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_3"><strong>웹 브라우저 및 해상도 권장사항</strong><a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">접속 환경 권장사항</p>
+<p>MDRM 관리 콘솔은 웹 브라우저를 통해 제공되며, <strong>Google Chrome 최신 버전</strong>에 최적화되어 있습니다.<br>
+최신 버전의 브라우저에서 가장 안정적으로 동작합니다.</p>
+<p><strong>지원 브라우저:</strong></p>
+<ul>
+<li>Google Chrome (권장)</li>
+<li>Microsoft Edge</li>
+<li>Firefox</li>
+</ul>
+<p><strong>권장 해상도:</strong></p>
+<ul>
+<li>화면 해상도는 <strong>1920 x 1080</strong>을 권장합니다.</li>
+</ul>
+</div>
+<hr>
+<h2 id="_4"><strong>컨테이너 환경 준비</strong><a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <ul>
 <li>OS 배포판 종류에 따라 <strong>Docker</strong> 또는 <strong>Podman</strong>으로 진행</li>
-<li>docker 및 docker-compose 설치법</li>
+<li>Docker 및 docker-compose 설치법<ul>
 <li>Docker 공식 repository를 통한 설치 (yum/dnf 명령어를 통한 설치)</li>
-<li>docker 공식 배포사이트에서 패키지 다운로드하여 설치</li>
+<li>Docker 공식 배포사이트에서 패키지 다운로드하여 설치</li>
 </ul>
-<hr />
-<h2 id="docker">Docker 환경설정<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<h3 id="_4">브릿지 네트워크 설정<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+</li>
+</ul>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">실습</p>
+<p>실습 환경은 Docker로 진행합니다.</p>
+</div>
+<h2 id="docker"><strong>Docker 환경설정</strong><a class="headerlink" href="#docker" title="Permanent link">¶</a></h2>
+<h3 id="_5">브릿지 네트워크 설정<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>컨테이너는 내부에 가상의 브릿지 네트워크망 사용</p>
 <ul>
-<li>사용하지 않는 IP대역으로 설정 (기본: 172 대역)</li>
-<li>확인 명령어:</li>
+<li>Docker를 기본 설치하면 기본 bridge 네트워크(docker0)의 BIP(Bridge IP) 대역은 172.17.0.0/16</li>
+<li>IP대역 충돌을 피하기 위해, 필히 사용하지 않는 IP대역으로 설정</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>ls
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NETWORK<span class="w"> </span>ID<span class="w">     </span>NAME<span class="w">       </span>DRIVER<span class="w">    </span>SCOPE
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>e01818b09fac<span class="w">   </span>bin_mdrm<span class="w">   </span>bridge<span class="w">    </span><span class="nb">local</span><span class="w"> </span>⭐
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>00348b82bd83<span class="w">   </span>bridge<span class="w">     </span>bridge<span class="w">    </span><span class="nb">local</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>bc2c03ceadde<span class="w">   </span>host<span class="w">       </span>host<span class="w">      </span><span class="nb">local</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>110143ec5d72<span class="w">   </span>none<span class="w">       </span>null<span class="w">      </span><span class="nb">local</span>
 </code></pre></div>
-<h3 id="_5">컨테이너 기본 위치 변경<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6"><strong>컨테이너 기본 위치 변경</strong><a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">저장 공간 확보</p>
 <p><strong>최소 50GB 이상</strong> 확보된 곳으로 설정</p>
 </div>
-<h3 id="_6">로그 설정<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7"><strong>로그 설정</strong><a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>설정파일: <code>/etc/docker/daemon.json</code></p>
 <table>
 <thead>
@@ -1031,20 +1138,20 @@
 </tr>
 </tbody>
 </table>
-<h4 id="daemonjson">daemon.json 예시<a class="headerlink" href="#daemonjson" title="Permanent link">&para;</a></h4>
+<h4 id="daemonjson">daemon.json 예시<a class="headerlink" href="#daemonjson" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;data-root&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/mdrm/engine&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;bip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;182.18.0.1/16&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;default-address-pools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"data-root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/mdrm/engine"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"bip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.18.0.1/16"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"default-address-pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;base&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;182.19.0.1/16&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">"base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.19.0.1/16"</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;log-driver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;json-file&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;log-opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&quot;max-size&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;100m&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;max-file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">"log-driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json-file"</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">"log-opts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">"max-size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100m"</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">"max-file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
 </code></pre></div>
@@ -1082,7 +1189,7 @@
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   맨위로
 </button>
         
@@ -1095,7 +1202,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved.
+      © 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved.
     </div>
   
   
@@ -1122,5 +1229,7 @@
         <script src="../../javascripts/extra.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

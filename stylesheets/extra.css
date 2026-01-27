@@ -10,6 +10,11 @@ button {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif !important;
 }
 
+/* 레이아웃 시프트 방지 (스크롤바 항상 표시) */
+html {
+    overflow-y: scroll;
+}
+
 
 :root {
     /* 라이트 모드 색상 */
@@ -232,11 +237,27 @@ button {
     /* 여기도 흰색 명시 */
 }
 
-/* 테이블 스타일 - 그라디언트 제거 */
+/* 테이블 스타일 - 그라디언트 제거 및 너비 고정 */
 .md-typeset table:not([class]) {
-    border-radius: 8px;
+    display: table !important;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--custom-shadow);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1em 0;
+}
+
+/* 중첩 리스트 스타일 (공백 점) & 들여쓰기 조정 */
+.md-typeset ul li ul {
+    margin-left: 0 !important;
+    padding-left: 0.0em !important;
+    margin-top: 0.25em !important;
+    margin-bottom: 0.25em !important;
+}
+
+.md-typeset ul li ul li {
+    list-style-type: circle !important;
 }
 
 /* 테이블 헤더는 기본 스타일 사용 */
@@ -391,6 +412,14 @@ nav.md-tabs {
     border-color: var(--custom-primary);
 }
 
+.md-typeset .admonition.info>.admonition-title {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+.md-typeset .admonition.info>.admonition-title::before {
+    background-color: var(--custom-primary) !important;
+}
+
 .md-typeset .admonition.warning {
     border-color: var(--custom-warning);
 }
@@ -421,6 +450,8 @@ nav.md-tabs {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--custom-primary-dark);
 }
+
+
 
 /* 반응형 개선 */
 @media (max-width: 768px) {

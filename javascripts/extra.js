@@ -1,9 +1,29 @@
 (function () {
+  const INTRO_KEY = 'mdrm_intro_seen';
+
+  function showManualHome() {
+    const landing = document.querySelector('.landing-page-container');
+    const overview = document.querySelector('.manual-overview-container');
+    if (landing) landing.classList.add('hidden');
+    if (overview) overview.style.display = 'block';
+  }
+
+  window.enterManual = function () {
+    sessionStorage.setItem(INTRO_KEY, 'true');
+    showManualHome();
+    // 스무스한 경험을 위해 필요시 최상단으로 이동
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   document.addEventListener("DOMContentLoaded", function () {
     const landingContainer = document.querySelector('.landing-page-container');
     if (landingContainer) {
-      initStarfield(landingContainer);
-      initTypingEffect();
+      if (sessionStorage.getItem(INTRO_KEY) === 'true') {
+        showManualHome();
+      } else {
+        initStarfield(landingContainer);
+        initTypingEffect();
+      }
     }
   });
 })();

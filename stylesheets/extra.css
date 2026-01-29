@@ -729,17 +729,42 @@ body:has(.landing-page-container) {
 }
 
 /* MkDocs Material 특정 오버라이드 (랜딩 페이지 포함 시) */
-.md-main__inner:has(.landing-page-container) {
+.md-main__inner:has(.landing-page-container:not(.hidden)) {
     margin-top: 0;
+    max-width: 100% !important;
 }
 
-.md-main__inner:has(.landing-page-container) .md-content {
+.md-main__inner:has(.landing-page-container:not(.hidden)) .md-content {
     background: transparent !important;
     box-shadow: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    margin-left: 0;
 }
 
-.md-main__inner:has(.landing-page-container) .md-content__inner {
+.md-main__inner:has(.landing-page-container:not(.hidden)) .md-content__inner {
     max-width: none !important;
+}
+
+/* 추가: 매뉴얼 홈 전환 스타일 */
+.manual-overview-container {
+    display: none;
+    animation: fadeIn 0.8s ease-out;
+    padding-top: 1rem;
+}
+
+.landing-page-container.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

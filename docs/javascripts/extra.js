@@ -1,23 +1,42 @@
 (function () {
-  document.addEventListener("DOMContentLoaded", function () {
+  function showManualHome() {
+    const landing = document.querySelector('.landing-page-container');
+    const overview = document.querySelector('.manual-overview-container');
+    if (landing) landing.classList.add('hidden');
+    if (overview) overview.style.display = 'block';
+
+    // 메인 홈 화면 진입 시 표준 UI 요소들이 숨겨져 있다면 강제로 복구
+    document.body.classList.remove('landing-mode');
+  }
+
+  window.enterManual = function () {
+    document.documentElement.classList.add('manual-home-mode');
+    showManualHome();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  function handleLandingPage() {
     const landingContainer = document.querySelector('.landing-page-container');
+
     if (landingContainer) {
-      initStarfield(landingContainer);
+      // 인트로 강제 실행을 위해 상태 초기화
+      document.documentElement.classList.remove('manual-home-mode');
+      const overview = document.querySelector('.manual-overview-container');
+      if (overview) overview.style.display = 'none';
+      landingContainer.classList.remove('hidden');
+
+      if (!document.getElementById('starfield-canvas')) {
+        initStarfield(landingContainer);
+      }
       initTypingEffect();
     }
-  });
-})();
+  }
 
-// Add shake animation to CSS via JS if not in CSS
-const style = document.createElement('style');
-style.textContent = `
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-}
-`;
-document.head.appendChild(style);
+  document.addEventListener("DOMContentLoaded", handleLandingPage);
+  if (typeof document.addEventListener === "function") {
+    document.addEventListener("DOMContentChanged", handleLandingPage);
+  }
+})();
 
 // Mermaid support for Material for MkDocs (Instant Navigation compatible)
 if (typeof mermaid !== 'undefined') {

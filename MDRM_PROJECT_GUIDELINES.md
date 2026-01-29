@@ -27,13 +27,16 @@
 *   **가독성**: 긴 문장보다는 불렛 포인트와 테이블을 선호합니다.
 
 ### **4. 기술적 규칙 (Technical Rules)**
-*   **인증 코드**: 일반 사용자 초기 접속 코드는 **`TEST`** (대문자)입니다.
-*   **보안 파일**: `docs/javascripts/extra.js`가 전역 인증 및 암호화를 담당하므로 수정 시 주의하십시오.
+*   **공통 로직**: `docs/javascripts/extra.js`가 인트로 및 전역 UI 동작을 담당합니다.
 *   **특수 폴더**: 
     *   `docs/troubleshooting/`: 실무 예외 사례 보관.
     *   `.agent/workflows/`: 작업 절차 표준화 문서 보관.
 
-### **5. 다음 단계 카드 코드 스니펫**
+### **5. 배포 규칙 (Deployment Rules)**
+*   **수동 배포 원칙**: 깃허브(GitHub) 소스 반영(`git push`) 및 깃페이지(GitHub Pages) 배포(`mkdocs gh-deploy`)는 **사용자의 명시적인 요청이 있을 때만** 수행합니다.
+*   **자동 작업 금지**: 코드 수정 후 자동으로 배포 명령을 실행하지 마십시오.
+
+### **6. 다음 단계 카드 코드 스니펫**
 ```markdown
 <div class="next-step-card-container" markdown>
 <a href="../대상_경로/" class="next-step-card">

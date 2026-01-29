@@ -72,8 +72,8 @@ update accounts set conn_port = '20081' where acc_id = 0;
 
 ---
 
-<div class="next-step-card-container" markdown>
-<a href="../../" class="next-step-card">
+<div class="next-step-card-container" markdown="block">
+<a href="../.." class="next-step-card" title="매뉴얼 홈으로 돌아가기">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting End</span>
         <span class="next-step-title">메인 화면으로 돌아가기</span>

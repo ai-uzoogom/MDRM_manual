@@ -1,10 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const landingContainer = document.querySelector('.landing-page-container');
-  if (landingContainer) {
-    initStarfield(landingContainer);
-    initTypingEffect();
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const landingContainer = document.querySelector('.landing-page-container');
+    if (landingContainer) {
+      initStarfield(landingContainer);
+      initTypingEffect();
+    }
+  });
+})();
+
+// Add shake animation to CSS via JS if not in CSS
+const style = document.createElement('style');
+style.textContent = `
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+`;
+document.head.appendChild(style);
+
+// Mermaid support for Material for MkDocs (Instant Navigation compatible)
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'dark',
+    securityLevel: 'loose',
+  });
+}
+
+// Re-run mermaid on page load/change
+const observeMermaid = () => {
+  if (typeof mermaid !== 'undefined') {
+    mermaid.run();
   }
-});
+};
+
+// Initial run
+document.addEventListener("DOMContentLoaded", observeMermaid);
+
+// Instant navigation support for Material theme
+document.addEventListener("DOMContentChanged", observeMermaid);
 
 function initStarfield(container) {
   const canvas = document.createElement('canvas');

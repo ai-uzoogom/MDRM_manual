@@ -540,21 +540,21 @@ nav.md-tabs {
 }
 
 /* 랜딩 페이지 활성화 시 표준 UI 즉시 숨김 (깜빡임 방지) */
-body:has(.landing-page-container) [data-md-component="header"],
-body:has(.landing-page-container) [data-md-component="tabs"],
-body:has(.landing-page-container) .md-sidebar,
-body:has(.landing-page-container) .md-footer {
+body:has(.landing-page-container:not(.hidden)) [data-md-component="header"],
+body:has(.landing-page-container:not(.hidden)) [data-md-component="tabs"],
+body:has(.landing-page-container:not(.hidden)) .md-sidebar,
+body:has(.landing-page-container:not(.hidden)) .md-footer {
     display: none !important;
 }
 
-/* 배경색 및 레이아웃 최적화 */
-body:has(.landing-page-container) {
+/* 배경색 및 레이아웃 최적화 (랜딩 모드일 때만 적용) */
+body:has(.landing-page-container:not(.hidden)) {
     background-color: #020617 !important;
     overflow: hidden !important;
 }
 
 /* 프리미엄 랜딩 페이지 (Apple Wallet 스타일) - 전체 화면 최적화 */
-.landing-page-container {
+.landing-page-container:not(.hidden) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -569,7 +569,6 @@ body:has(.landing-page-container) {
     top: 0;
     left: 0;
     z-index: 99999;
-    /* 강제 최상단 */
 }
 
 .landing-page-container>* {

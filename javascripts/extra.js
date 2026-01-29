@@ -15,17 +15,26 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function handleLandingPage() {
     const landingContainer = document.querySelector('.landing-page-container');
     if (landingContainer) {
       if (sessionStorage.getItem(INTRO_KEY) === 'true') {
         showManualHome();
       } else {
-        initStarfield(landingContainer);
+        // 인트로가 아직 안보였다면 애니메이션 모드
+        if (!document.getElementById('starfield-canvas')) {
+          initStarfield(landingContainer);
+        }
         initTypingEffect();
       }
     }
-  });
+  }
+
+  document.addEventListener("DOMContentLoaded", handleLandingPage);
+  // Material Theme Instant Nav 지원
+  if (typeof document.addEventListener === "function") {
+    document.addEventListener("DOMContentChanged", handleLandingPage);
+  }
 })();
 
 // Add shake animation to CSS via JS if not in CSS

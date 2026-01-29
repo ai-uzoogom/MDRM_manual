@@ -16,16 +16,17 @@
 
 ### DAY 1 - MDRM 설치
 
-- [📋 사전작업](day1/preparation.md) - 서버 스펙 확인 및 Docker 환경 준비
-- [⚙️ 설치](day1/installation.md) - MDRM 설치 절차
-- [📚 메뉴 설명](day1/menu.md) - MDRM 메뉴 구성
-- [🛑 정지 및 종료](day1/stop.md) - 시스템 정지/종료 방법
+- [📘 솔루션 개요](docs/day1/MDRM_솔루션_개요.md) - 환경 사양 및 구성 확인
+- [🏗️ 인프라 설정](docs/day1/인프라_디스크_구성.md) - 디스크 구성 및 방화벽 설정
+- [🐳 Docker 설치](docs/day1/Docker_설치_가이드.md) - Docker 최적화 설치 및 환경 설정
+- [⚙️ MDRM 설치](docs/day1/MDRM_설치_및_확인.md) - 솔루션 설치 및 운영 관리
 
 ### DAY 2 - Agent & 컴포넌트
 
-- [🔧 Agent 설치](day2/agent.md) - Agent 설치 및 등록 방법
-- [📦 컴포넌트](day2/component.md) - 컴포넌트 템플릿 및 생성 규칙
-- [⚡ 실행 프로세스](day2/execution.md) - 컴포넌트 실행 과정 및 유의사항
+- [📊 주요 메뉴](docs/day2/MDRM_메뉴_대시보드.md) - 대시보드, 시스템, 워크플로우, 점검
+- [🔧 Agent 설치](docs/day2/MDRM_Agent_설치_및_등록.md) - Agent 설치 및 등록 방법
+- [📦 컴포넌트 관리](docs/day2/MDRM_컴포넌트_관리.md) - 컴포넌트 템플릿 및 생성 규칙
+- [⚡ 실행 프로세스](docs/day2/MDRM_컴포넌트_실행_프로세스.md) - 컴포넌트 실행 과정 및 유의사항
 
 ---
 

@@ -9,7 +9,7 @@
 
 ---
 
-<a href="../Agent_설치/" class="next-step-card">
+<a href="../MDRM_Agent_설치_및_등록/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🔧 Agent 설치</span>

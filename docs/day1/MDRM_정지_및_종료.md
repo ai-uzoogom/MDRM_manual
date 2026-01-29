@@ -1,4 +1,4 @@
-# 🛑 MDRM 정지 및 종료
+# 🛑 정지 및 종료
 
 ## 명령어 실행 전 확인 사항
 
@@ -74,7 +74,7 @@ docker compose down
 
 ---
 
-<a href="../시스템_관리/" class="next-step-card">
+<a href="../MDRM_시스템_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🛠️ 시스템 상태 확인 및 관리</span>

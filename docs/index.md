@@ -1,45 +1,29 @@
-<div class="page-title-box" markdown>
-# MDRM 교육 커리큘럼
-시스템 설치부터 운영까지 완벽 가이드
+---
+hide:
+  - navigation
+  - toc
+---
+
+<div class="landing-page-container">
+    
+    <h1 class="landing-title">MDRM</h1>
+    
+    <div class="typing-container">
+        <span id="typing-text" class="landing-subtitle"></span>
+        <span class="cursor">|</span>
+    </div>
+    
+    <a href="day1/" class="enter-button">
+        <span>GET STARTED</span>
+        <span class="icon">→</span>
+    </a>
+
 </div>
 
-!!! info "교육 소개"
-    이 문서는 MDRM 시스템의 설치, 구성, 운영에 필요한 모든 내용을 담고 있습니다.
-
-## 📚 교육 과정 개요
-
-| 일차 | 주제 | 내용 |
-|:---:|:---|:---|
-| **DAY 1** | MDRM 설치 | 시스템 환경 구성 및 기본 설치 |
-| **DAY 2** | Agent & 컴포넌트 | Agent 설치 방법 및 컴포넌트 관리 |
-
-
 ---
 
-## 🚀 빠른 시작
-
-### DAY 1 - MDRM 설치
-
-- [📘 솔루션 개요](day1/솔루션_개요.md) - 환경 사양 및 구성 확인
-- [🏗️ 인프라](day1/디스크구성.md) - 디스크 구성 및 방화벽 설정
-- [🐳 Docker](day1/Docker_설치.md) - Docker 최적화 설치 및 환경 설정
-- [⚙️ MDRM](day1/설치.md) - 솔루션 설치, 정지/종료, 시스템 관리
-
-### DAY 2 - Agent & 컴포넌트
-
-- [📊 대시보드](day2/대시보드.md) - 실시간 현황 모니터링
-- [🖥️ 시스템](day2/시스템.md) - 서버 및 그룹 관리
-- [🔄 워크플로우](day2/워크플로우.md) - 자동화 프로세스 관리
-- [📋 점검작업](day2/점검작업.md) - 정기 점검 및 결과 관리
-- [🔧 Agent 설치](day2/Agent_설치.md) - Agent 설치 및 등록 방법
-- [📦 컴포넌트](day2/컴포넌트.md) - 컴포넌트 템플릿 및 생성 규칙
-- [⚡ 실행 프로세스](day2/실행_프로세스.md) - 컴포넌트 실행 과정 및 유의사항
-
-
-
----
-
-!!! tip "문서 활용 팁"
-    - 상단 탭을 사용하여 DAY별 내용으로 빠르게 이동할 수 있습니다
-    - 우측 상단의 🌙 아이콘으로 다크 모드를 전환할 수 있습니다
-    - 검색 기능(`Ctrl+K`)을 활용하여 원하는 내용을 빠르게 찾을 수 있습니다
+<center>
+    <p style="opacity: 0.1; font-size: 0.7rem; position: fixed; bottom: 2rem; width: 100%; left: 0; z-index: 1001;">
+        &copy; 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved.
+    </p>
+</center>

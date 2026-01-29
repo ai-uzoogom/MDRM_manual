@@ -1,4 +1,4 @@
-# 📦 컴포넌트
+# 📦 컴포넌트 관리
 
 ## 컴포넌트 템플릿
 
@@ -79,3 +79,13 @@ exit 0
     - 각 단계별로 명확한 로그를 남기세요
     - 에러 발생 시 적절한 exit code를 반환하세요
     - 타임아웃 처리를 고려하세요
+
+---
+
+<a href="../MDRM_컴포넌트_실행_프로세스/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">⚡ 컴포넌트 실행 프로세스</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>

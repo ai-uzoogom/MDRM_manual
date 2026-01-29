@@ -64,7 +64,7 @@ ip addr show docker0
 
 ---
 
-<a href="../설치/" class="next-step-card">
+<a href="../MDRM_설치_및_확인/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">⚙️ MDRM 설치 및 확인</span>

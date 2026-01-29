@@ -1,4 +1,4 @@
-# 📘 솔루션 개요 및 요구사항
+# 📘 솔루션 개요
 
 ## **MDRM 솔루션 개요**
 
@@ -58,7 +58,7 @@ MDRM 서버의 하드웨어 사양은 관리 대상 서버(Agent 설치 대수) 
 
 ---
 
-<a href="../디스크구성/" class="next-step-card">
+<a href="../인프라_디스크_구성/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🏗️ 디스크 구성</span>

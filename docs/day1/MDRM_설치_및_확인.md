@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD046 -->
-# ⚙️ 설치
+# ⚙️ 설치 및 확인
 
 ## MDRM 설치 절차
 
@@ -41,20 +41,11 @@
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     
-    ![Login Screen](../assets/images/day1_login.png){: width="100%" }
+    ![Login Screen](../assets/images/day1/login.png){: width="100%" }
 
 ---
 
-## 설치 시 주의사항
-
-!!! danger "설치 전 확인 사항"
-    - Docker 또는 Podman이 정상적으로 설치되어 있는지 확인하십시오.
-    - `/mdrm/data` 디렉토리에 충분한 디스크 공간이 확보되어 있는지 확인하십시오.
-    - 방화벽 설정에서 필요한 서비스 포트가 열려 있는지 확인하십시오.
-
----
-
-<a href="../정지_및_종료/" class="next-step-card">
+<a href="../MDRM_정지_및_종료/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🛑 MDRM 정지 및 종료</span>

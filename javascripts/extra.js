@@ -1,52 +1,42 @@
 (function () {
-  const INTRO_KEY = 'mdrm_intro_seen';
-
   function showManualHome() {
     const landing = document.querySelector('.landing-page-container');
     const overview = document.querySelector('.manual-overview-container');
     if (landing) landing.classList.add('hidden');
     if (overview) overview.style.display = 'block';
+
+    // 메인 홈 화면 진입 시 표준 UI 요소들이 숨겨져 있다면 강제로 복구
+    document.body.classList.remove('landing-mode');
   }
 
   window.enterManual = function () {
-    sessionStorage.setItem(INTRO_KEY, 'true');
+    document.documentElement.classList.add('manual-home-mode');
     showManualHome();
-    // 스무스한 경험을 위해 필요시 최상단으로 이동
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   function handleLandingPage() {
     const landingContainer = document.querySelector('.landing-page-container');
+
     if (landingContainer) {
-      if (sessionStorage.getItem(INTRO_KEY) === 'true') {
-        showManualHome();
-      } else {
-        // 인트로가 아직 안보였다면 애니메이션 모드
-        if (!document.getElementById('starfield-canvas')) {
-          initStarfield(landingContainer);
-        }
-        initTypingEffect();
+      // 인트로 강제 실행을 위해 상태 초기화
+      document.documentElement.classList.remove('manual-home-mode');
+      const overview = document.querySelector('.manual-overview-container');
+      if (overview) overview.style.display = 'none';
+      landingContainer.classList.remove('hidden');
+
+      if (!document.getElementById('starfield-canvas')) {
+        initStarfield(landingContainer);
       }
+      initTypingEffect();
     }
   }
 
   document.addEventListener("DOMContentLoaded", handleLandingPage);
-  // Material Theme Instant Nav 지원
   if (typeof document.addEventListener === "function") {
     document.addEventListener("DOMContentChanged", handleLandingPage);
   }
 })();
-
-// Add shake animation to CSS via JS if not in CSS
-const style = document.createElement('style');
-style.textContent = `
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
-  75% { transform: translateX(10px); }
-}
-`;
-document.head.appendChild(style);
 
 // Mermaid support for Material for MkDocs (Instant Navigation compatible)
 if (typeof mermaid !== 'undefined') {

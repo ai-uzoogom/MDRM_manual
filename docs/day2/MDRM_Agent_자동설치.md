@@ -13,11 +13,7 @@ MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서
 
 ### 1. Linux & Unix 계열
 
-*   **원격 접속**: SSH를 통한 원격 접속이 가능해야 합니다. 데몬 상태를 확인하십시오.
-    ```bash
-    # RHEL 7 이전 버전: service sshd status
-    # RHEL 7 이상 버전: systemctl status sshd
-    ```
+*   **원격 접속**: SSH를 통한 원격 접속이 가능해야 합니다.
 *   **Python 설치**: Python 2.7 또는 Python 3.6~3.12 버전이 설치되어 있어야 합니다.
 *   **계정 권한**: 접속 계정은 `sudo` 권한을 보유해야 합니다.
 
@@ -130,58 +126,10 @@ systemctl status gam_agent
 
 ---
 
-## 문제 해결
-
-### SSH 접속 실패
-
-!!! danger "오류: SSH 접속 실패"
-    **원인**: SSH 접속 정보가 잘못되었거나 방화벽으로 차단됨
-    
-    **해결방법**:
-    
-    1. SSH 계정 정보 재확인
-    2. 방화벽 설정 확인 (포트 22 오픈)
-    3. 수동으로 SSH 접속 테스트: `ssh root@192.168.1.100`
-
-### 설치 중 오류
-
-!!! danger "오류: 설치 프로세스 실패"
-    **원인**: 디스크 공간 부족, 권한 문제 등
-    
-    **해결방법**:
-    
-    1. 디스크 공간 확인: `df -h`
-    2. 설치 로그 확인: `/var/log/mdrm_install.log`
-    3. 수동설치로 전환 고려
-
-### Agent 시작 실패
-
-!!! danger "오류: Agent가 시작되지 않음"
-    **원인**: 포트 충돌, 설정 파일 오류
-    
-    **해결방법**:
-    
-    1. 포트 사용 확인: `netstat -nltp | grep 20080`
-    2. 설정 파일 확인: `/opt/gam_agent/config/application.properties`
-    3. 로그 확인: `/opt/gam_agent/logs/agent.log`
-
----
-
-## 사용 시나리오
-
-자동설치는 다음과 같은 경우에 적합합니다:
-
-- ✅ 일반적인 서버 환경
-- ✅ SSH root 접속이 가능한 환경
-- ✅ MDRM 서버와 네트워크 연결이 가능한 환경
-- ✅ 다수의 서버에 빠르게 설치해야 하는 경우
-
----
-
-<a href="../MDRM_Agent_수동설치/" class="next-step-card">
+<a href="MDRM_Agent_수동설치_리눅스.md" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">수동설치 후 가져오기</span>
+        <span class="next-step-title">수동설치 (Linux/Windows)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

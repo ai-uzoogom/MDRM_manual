@@ -1,4 +1,4 @@
-site_name: MDRM 교육 커리큘럼
+site_name: MDRM 엔지니어 실전 교육매뉴얼
 
 site_author: MDRM Team
 site_url: https://ai-uzoogom.github.io/MDRM_manual/
@@ -48,7 +48,10 @@ nav:
     - 에이전트:
         - ▸ 설치 및 등록: day2/MDRM_Agent_설치_및_등록.md
         - ▸ 자동설치: day2/MDRM_Agent_자동설치.md
-        - ▸ 수동설치: day2/MDRM_Agent_수동설치.md
+        - ▸ 수동설치:
+            - › 리눅스(Linux): day2/MDRM_Agent_수동설치_리눅스.md
+            - › 윈도우(Windows): day2/MDRM_Agent_수동설치_윈도우.md
+            - › 가져오기(Import): day2/MDRM_Agent_수동설치_가져오기.md
         - ▸ 시스템 수동등록: day2/MDRM_Agent_시스템수동등록.md
         - ▸ Agentless: day2/MDRM_Agent_Agentless.md
         - ▸ 환경 설정: day2/MDRM_Agent_환경_설정.md
@@ -76,8 +79,19 @@ nav:
         - ▸ 점검 및 작업 관리: day2/MDRM_점검_작업_관리.md
         - ▸ 실행 결과 및 이력 확인: day2/MDRM_점검_실행_결과.md
         - ▸ 스케줄 및 알림: day2/MDRM_점검_스케줄_알림.md
-    - 컴포넌트: day2/MDRM_컴포넌트_관리.md
-    - 컴포넌트 실행 프로세스: day2/MDRM_컴포넌트_실행_프로세스.md
+  - DAY 3:
+    - 개요: day3/index.md
+    - 컴포넌트:
+        - ▸ 관리: day3/MDRM_컴포넌트_관리.md
+        - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
+        - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
+  - 실무 트러블슈팅:
+    - 컴포넌트:
+        - › Grep 자기 자신 탐지: troubleshooting/MDRM_컴포넌트_유의사항_Grep.md
+        - › 인자값(Argument) 충돌: troubleshooting/MDRM_컴포넌트_유의사항_인자값.md
+    - 에이전트:
+        - › 417 오류 및 Token 불일치: troubleshooting/MDRM_통신오류_417_Token.md
+        - › 에이전트 포트 변경: troubleshooting/MDRM_에이전트_포트_변경.md
 
 
 plugins:
@@ -88,7 +102,11 @@ plugins:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -111,6 +129,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
   - javascripts/extra.js
 
 copyright: "&copy; 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved."

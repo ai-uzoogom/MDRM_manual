@@ -58,6 +58,15 @@ MDRM 서버의 하드웨어 사양은 관리 대상 서버(Agent 설치 대수) 
 
 ---
 
+## **인프라 준비 체크리스트**
+
+!!! info "네트워크 및 계정 확인"
+    - [ ] **방화벽 오픈**: 솔루션 포트 가이드에 따른 인바운드/아웃바운드 허용
+    - [ ] **root 권한**: 패키지 설치 및 컨테이너 엔진 제어를 위한 root 계정 확보
+    - [ ] **저장 공간**: `/mdrm` 등 데이터 저장용 전용 파티션 권장 (최소 500GB 이상)
+
+---
+
 <a href="../인프라_디스크_구성/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>

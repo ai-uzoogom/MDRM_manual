@@ -20,12 +20,12 @@
 ### 실제 사례
 
 ```
-백업센터 (MDRM-A)          운영센터 (MDRM-B)
+운영센터 (MDRM-A)         백업센터 (MDRM-B)
     ↓                          ↓
-[서버 + Agent]  ─복제→  [서버 + Agent]
+[서버 + Agent]  ─복제─→   [서버 + Agent]
     ↓                          ↓
-Storage 복제로              동일한 Agent가
-OS 이미지 복사              설치되어 있음
+Storage 복제로            동일한 Agent가
+OS 이미지 복사            설치되어 있음
 ```
 
 ---

@@ -1,7 +1,7 @@
----
 hide:
   - navigation
   - toc
+template: landing.html
 ---
 
 <div class="landing-page-container">

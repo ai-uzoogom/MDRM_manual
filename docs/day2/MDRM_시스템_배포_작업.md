@@ -1,6 +1,6 @@
 # 🚀 프로그램 배포 및 작업
 
-관제 서버에 등록된 여러 시스템에 동시에 에이전트를 업데이트하거나 사용자 정의 제품(파일) 및 스크립트를 일괄 배포합니다.
+관제 서버에 등록된 여러 시스템에 동시에 Agent를 업데이트하거나 사용자 정의 제품(파일) 및 스크립트를 일괄 배포합니다.
 
 ---
 
@@ -8,9 +8,9 @@
 
 MDRM 서버에 등록된 배포 제품을 대상 시스템들에 전송하고 설치하는 과정입니다.
 
-* **에이전트 업데이트**: 시스템에 설치된 GAM 에이전트의 버전을 최신으로 일괄 갱신합니다.
+* **Agent 업데이트**: 시스템에 설치된 Agent의 버전을 최신으로 일괄 갱신합니다.
 * **제품 배포**: `<설정 | 배포 제품 관리>`에서 정의한 파일들을 대상 시스템의 지정 경로에 배포합니다.
-* **배포 경로**: 에이전트 연결 여부에 따라 기본 경로(C:\Program Files\gam_agent... 또는 /opt/gam_agent...)에 저장됩니다. (경로 변경 옵션 지원)
+* **배포 경로**: Agent 연결 여부에 따라 기본 경로(C:\Program Files\gam_agent... 또는 /opt/gam_agent...)에 저장됩니다. (경로 변경 옵션 지원)
 
 ---
 
@@ -41,7 +41,7 @@ Ansible 방식 외에 사용자가 직접 작성한 스크립트(Bash, PowerShel
 
 ---
 
-<a href="MDRM_시스템_계정_관리.md" class="next-step-card">
+<a href="../MDRM_시스템_계정_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🔑 계정 관리</span>

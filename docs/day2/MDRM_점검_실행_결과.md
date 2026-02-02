@@ -35,7 +35,7 @@
 
 ---
 
-<a href="MDRM_점검_스케줄_알림.md" class="next-step-card">
+<a href="../MDRM_점검_스케줄_알림/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">⏰ 스케줄 및 알림 체계</span>

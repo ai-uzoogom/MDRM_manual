@@ -45,7 +45,7 @@
 
 ---
 
-<a href="MDRM_메뉴_시스템.md" class="next-step-card">
+<a href="../MDRM_메뉴_시스템/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🖥️ 시스템 메뉴</span>

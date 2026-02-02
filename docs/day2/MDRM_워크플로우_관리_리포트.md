@@ -50,7 +50,7 @@
 
 ---
 
-<a href="MDRM_메뉴_점검작업.md" class="next-step-card">
+<a href="../MDRM_메뉴_점검작업/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📋 점검작업 메뉴</span>

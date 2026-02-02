@@ -24,7 +24,7 @@ MDRM 콘솔에 로그인하면 가장 먼저 대시보드 화면이 나타납니
 
 ---
 
-<a href="MDRM_대시보드_관리.md" class="next-step-card">
+<a href="../MDRM_대시보드_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📑 대시보드 관리</span>

@@ -55,7 +55,7 @@ MDRM은 범위와 용도에 따라 세 가지 유형의 변수를 제공합니�
 
 ---
 
-<a href="MDRM_워크플로우_실행_모니터링.md" class="next-step-card">
+<a href="../MDRM_워크플로우_실행_모니터링/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🚀 워크플로우 실행 및 모니터링</span>

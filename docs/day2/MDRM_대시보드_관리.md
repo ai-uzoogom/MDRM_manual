@@ -45,7 +45,7 @@
 
 ---
 
-<a href="MDRM_대시보드_위젯.md" class="next-step-card">
+<a href="../MDRM_대시보드_위젯/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🧩 위젯 활용 가이드</span>

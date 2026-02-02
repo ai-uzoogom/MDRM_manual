@@ -1,11 +1,11 @@
-# 🪟 에이전트 수동설치 (Windows)
+# 🪟 Agent 수동설치 (Windows)
 
 !!! tip "설치 방식 요약"
-    보안 정책상 SSH 직접 접속이 불가능하거나 Windows 환경의 서버에 에이전트를 개별적으로 설치해야 할 때 사용합니다. 윈도우 서비스(Service)로 등록되어 시스템 재기동 시에도 자동으로 관리됩니다.
+    보안 정책상 SSH 직접 접속이 불가능하거나 Windows 환경의 서버에 Agent를 개별적으로 설치해야 할 때 사용합니다. 윈도우 서비스(Service)로 등록되어 시스템 재기동 시에도 자동으로 관리됩니다.
 
 ---
 
-## 1. 에이전트 설치 절차
+## 1. Agent 설치 절차
 
 Windows 서버에 관리자 권한으로 접속하여 다음 과정을 진행합니다.
 
@@ -16,7 +16,7 @@ Windows 서버에 관리자 권한으로 접속하여 다음 과정을 진행합
 
 ### 단계 2: 설치 스크립트 실행
 1. **명령 프롬프트(CMD)** 또는 **PowerShell**을 **관리자 권한**으로 실행합니다.
-2. 에이전트 설치 경로로 이동하여 설치 배치 파일을 실행합니다.
+2. Agent 설치 경로로 이동하여 설치 배치 파일을 실행합니다.
 
 ```cmd
 # 2. 설치 경로로 이동 및 압축 해제
@@ -32,16 +32,16 @@ cd "C:\Program Files\gam_agent"
 
 ## 2. 설치 및 가동 확인
 
-설치가 완료되면 에이전트 및 와치독 서비스가 자동으로 등록되고 기동됩니다.
+설치가 완료되면 Agent 및 와치독 서비스가 자동으로 등록되고 기동됩니다.
 
 ### 서비스 상태 확인
 Windows 서비스 명령어를 통해 정상 동작 여부를 확인합니다.
 
 ```cmd
-# 에이전트 본체 서비스 확인
+# Agent 본체 서비스 확인
 sc query gam_agent
 
-# 에이전트 감시용 와치독 서비스 확인
+# Agent 감시용 와치독 서비스 확인
 sc query gam_agent_watchdog
 ```
 
@@ -54,10 +54,10 @@ netstat -an | findstr 20080
 
 ---
 
-<a href="MDRM_Agent_수동설치_가져오기.md" class="next-step-card">
+<a href="../MDRM_Agent_수동설치_가져오기/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📥 에이전트 가져오기</span>
+        <span class="next-step-title">📥 Agent 가져오기</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

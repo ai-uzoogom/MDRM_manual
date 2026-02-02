@@ -48,7 +48,7 @@
 
 ---
 
-<a href="MDRM_워크플로우_변수_분기.md" class="next-step-card">
+<a href="../MDRM_워크플로우_변수_분기/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📋 변수 활용 및 조건 분기</span>

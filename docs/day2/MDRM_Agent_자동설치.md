@@ -126,7 +126,7 @@ systemctl status gam_agent
 
 ---
 
-<a href="MDRM_Agent_수동설치_리눅스.md" class="next-step-card">
+<a href="../MDRM_Agent_수동설치_리눅스/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">수동설치 (Linux/Windows)</span>

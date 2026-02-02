@@ -45,7 +45,7 @@ nav:
       - ▸ 시스템 관리: day1/MDRM_시스템_관리.md
   - DAY 2:
     - 개요: day2/index.md
-    - 에이전트:
+    - Agent:
         - ▸ 설치 및 등록: day2/MDRM_Agent_설치_및_등록.md
         - ▸ 자동설치: day2/MDRM_Agent_자동설치.md
         - ▸ 수동설치:
@@ -81,17 +81,22 @@ nav:
         - ▸ 스케줄 및 알림: day2/MDRM_점검_스케줄_알림.md
   - DAY 3:
     - 개요: day3/index.md
+    - 워크플로우:
+        - ▸ 유형 및 구조: day3/MDRM_워크플로우_유형.md
+        - ▸ 시스템 워크플로우: day3/MDRM_워크플로우_시스템.md
+        - ▸ 그룹 워크플로우: day3/MDRM_워크플로우_그룹.md
+        - ▸ 시나리오 워크플로우: day3/MDRM_워크플로우_시나리오.md
     - 컴포넌트:
-        - ▸ 관리: day3/MDRM_컴포넌트_관리.md
+        - ▸ 설계 및 로직: day3/MDRM_컴포넌트_설계_로직.md
         - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
         - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
   - 실무 트러블슈팅:
     - 컴포넌트:
         - › Grep 자기 자신 탐지: troubleshooting/MDRM_컴포넌트_유의사항_Grep.md
         - › 인자값(Argument) 충돌: troubleshooting/MDRM_컴포넌트_유의사항_인자값.md
-    - 에이전트:
+    - Agent:
         - › 417 오류 및 Token 불일치: troubleshooting/MDRM_통신오류_417_Token.md
-        - › 에이전트 포트 변경: troubleshooting/MDRM_에이전트_포트_변경.md
+        - › Agent 포트 변경: troubleshooting/MDRM_Agent_포트_변경.md
 
 
 plugins:

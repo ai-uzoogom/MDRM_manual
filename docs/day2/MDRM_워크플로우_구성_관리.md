@@ -27,7 +27,7 @@
 
 시스템 그룹은 서버 중심의 워크플로우 관리를 위해 사용됩니다.
 
-* **생성 조건**: 에이전트가 설치된 '서버' 유형 시스템당 1개만 생성 가능합니다.
+* **생성 조건**: Agent가 설치된 '서버' 유형 시스템당 1개만 생성 가능합니다.
 * **고정 속성**: 시스템 그룹 내의 워크플로우는 해당 서버를 **대상 서버(Target)**로 사용하도록 자동 고정됩니다.
 * **이동 제약**: 
     * 단일 서버로 구성된 워크플로우만 시스템 그룹으로 이동 가능합니다.
@@ -44,7 +44,7 @@
 
 ---
 
-<a href="MDRM_워크플로우_설계_컴포넌트.md" class="next-step-card">
+<a href="../MDRM_워크플로우_설계_컴포넌트/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🎨 프로세스 설계 및 컴포넌트</span>

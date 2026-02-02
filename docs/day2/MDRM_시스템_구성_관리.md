@@ -44,7 +44,7 @@
 
 ---
 
-<a href="MDRM_시스템_등록_추가.md" class="next-step-card">
+<a href="../MDRM_시스템_등록_추가/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">➕ 시스템 등록 및 추가</span>

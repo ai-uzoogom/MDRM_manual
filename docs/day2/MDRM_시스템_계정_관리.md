@@ -37,11 +37,11 @@ SSH(Linux/Unix), WinRM(Windows), VMWare(Virtualization), Telnet 등 대상 서�
 
 ### 계정 활용 시나리오
 * **활용 1**: 주기적인 패스워드 변경 시, 각각의 워크플로우를 수정할 필요 없이 [계정] 메뉴에서 해당 계정 정보만 변경하면 모두 적용됩니다.
-* **활용 2**: 신규 시스템 추가 시 에이전트 설치 권한 계정을 사전 등록된 정보에서 선택하여 오타를 방지합니다.
+* **활용 2**: 신규 시스템 추가 시 Agent 설치 권한 계정을 사전 등록된 정보에서 선택하여 오타를 방지합니다.
 
 ---
 
-<a href="MDRM_메뉴_워크플로우.md" class="next-step-card">
+<a href="../MDRM_메뉴_워크플로우/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🔄 워크플로우 메뉴</span>

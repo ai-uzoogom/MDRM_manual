@@ -49,7 +49,7 @@
 
 ---
 
-<a href="MDRM_워크플로우_관리_리포트.md" class="next-step-card">
+<a href="../MDRM_워크플로우_관리_리포트/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📊 관리 및 실행 리포트</span>

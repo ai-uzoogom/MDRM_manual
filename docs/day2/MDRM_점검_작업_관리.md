@@ -46,7 +46,7 @@
 
 ---
 
-<a href="MDRM_점검_실행_결과.md" class="next-step-card">
+<a href="../MDRM_점검_실행_결과/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📊 실행 결과 및 분석 리포트</span>

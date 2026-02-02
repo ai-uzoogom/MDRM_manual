@@ -31,16 +31,15 @@
 
 ---
 
-## **3. 작성 예시 (쇼핑몰 업무 기동)**
+## **3. 작성 예시 (카드서비스 업무 기동)**
 
 하나의 업무 그룹 내에서 WEB/WAS/DB 워크플로우를 연동한 예시입니다.
 
 ```mermaid
 graph LR
-    Start([Start]) --> DB[DB-WF 링크]
-    DB --> WAS[WAS-WF 링크]
-    WAS --> WEB[WEB-WF 링크]
-    WEB --> End([End])
+    Start([Start]) --> DB[[DB#1 기동]]
+    DB --> WAS[[WAS#1 기동]]
+    WAS --> WEB[[WEB#1 기동]]
 ```
 
 ---

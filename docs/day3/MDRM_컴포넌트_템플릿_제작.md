@@ -45,14 +45,8 @@
 | **자동 타임아웃** | 워크플로우의 교착 상태를 방지하여 시스템 자원의 효율적 운영을 돕습니다. |
 | **강제 종료 로직** | 비정상적인 프로세스 고착 시에도 안정적으로 서비스를 종료할 수 있습니다. |
 
----
-
-<div class="next-step-card-container" markdown>
-<a href="../index/" class="next-step-card">
-    <span class="next-content">
-        <span class="next-step-label">Day 3 End</span>
-        <span class="next-step-title">학습 요약 및 마무리</span>
-    </span>
-    <span class="next-step-icon">→</span>
-</a>
-</div>
+<center>
+    <p style="opacity: 0.5; font-size: 0.8rem;">
+        이것으로 <strong>컴포넌트 디자인</strong> 파트의 교육 단계를 마칩니다. 수고하셨습니다!
+    </p>
+</center>

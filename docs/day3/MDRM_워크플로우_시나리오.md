@@ -39,11 +39,20 @@
 graph TD
     A[재해 발생 인지] --> B{재해 판단}
     B -- "심각" --> C[임원진 선포 승인]
-    C --> D[MDRM 자동화 실행]
-    D --> E[주센터 강제 차단]
-    E --> F[DR센터 데이터 정합성 검증]
-    F --> G[DR센터 서비스 전체 기동]
-    G --> H[Global DNS 변경 및 상황 전파]
+    C --> D
+
+    subgraph D [MDRM 자동화 실행]
+        E[주센터 강제 차단] --> F[DR센터 데이터 정합성 검증]
+        F --> G[DR센터 서비스 전체 기동]
+    end
+
+    D --> H[Global DNS 변경 및 상황 전파]
+    H --> I([재해복구 완료])
+
+    style A fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#c62828,font-weight:bold
+    style B fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#fbc02d
+    style D fill:#e1f5fe,stroke:#01579b,stroke-width:4px,color:#01579b,font-weight:bold
+    style I fill:#e8f5e9,stroke:#2e7d32,stroke-width:4px,color:#2e7d32,font-weight:bold
 ```
 
 1.  **재해 판단**: 시스템 장애 수준을 파악하여 재해 여부를 결정합니다.

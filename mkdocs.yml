@@ -90,6 +90,12 @@ nav:
         - ▸ 설계 및 로직: day3/MDRM_컴포넌트_설계_로직.md
         - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
         - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
+  - DAY 4:
+    - 개요: day4/index.md
+    - 실습 & 장애조치:
+        - ▸ 실전 시나리오 실습: day4/MDRM_실전_시나리오_실습.md
+        - ▸ 트러블슈팅 가이드: day4/MDRM_트러블슈팅_가이드.md
+        - ▸ 교육 마무리: day4/MDRM_교육_마무리.md
   - 실무 트러블슈팅:
     - 컴포넌트:
         - › Grep 자기 자신 탐지: troubleshooting/MDRM_컴포넌트_유의사항_Grep.md

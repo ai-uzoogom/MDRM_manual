@@ -1,10 +1,12 @@
 # ⚙️ 점검 및 작업 관리
 
-점검 대상을 정의하는 부모(점검)와 실질적인 실행 단위인 자식(작업)의 관계를 설정합니다.
+!!! info "학습 안내"
+    점검 대상을 정의하는 '점검' 컨테이너와 실질적인 실행 스크립트가 담긴 '작업'의 관계를 설정하고, 시스템 변수를 활용하여 환경별 최적의 점검 시나리오를 구축하는 방법을 학습합니다.
+
 
 ---
 
-## 1. 점검(Inspection) 관리
+## **1. 점검(Inspection) 관리**
 
 '점검'은 실질적인 실행 목록을 담는 컨테이너 역할을 수행합니다.
 
@@ -15,7 +17,7 @@
 
 ---
 
-## 2. 작업(Task) 관리
+## **2. 작업(Task) 관리**
 
 '작업'은 실제 서버에서 명령(스크립트)을 수행하여 결과를 가져오는 최소 단위입니다.
 
@@ -36,7 +38,7 @@
 
 ---
 
-## 3. 결과 상태의 이해
+## **3. 결과 상태의 이해**
 
 작업 실행 시 솔루션은 스크립트의 반환값을 분석하여 다음과 같이 상태를 정의합니다.
 
@@ -46,10 +48,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_점검_실행_결과/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📊 실행 결과 및 분석 리포트</span>
+        <span class="next-step-title">📊 실행 결과 및 분석 리포트 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

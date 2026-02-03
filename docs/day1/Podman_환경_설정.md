@@ -1,5 +1,8 @@
 # ⚙️ Podman 환경 설정
 
+!!! info "학습 안내"
+    Podman 환경에서 스토리지 경로(graphroot), 로그 정책, 그리고 네트워크 대역 설정을 Docker와 호환되도록 구성하는 방법을 학습합니다.
+
 Podman 설치 후, 시스템 최적화 및 사내 폐쇄망 환경에 맞춘 설정을 진행합니다.
 
 ---
@@ -66,7 +69,9 @@ podman network create \
   podman
 ```
 
-### **1.4 주요 설정 항목 요약**
+---
+
+## **2. 주요 설정 항목 요약**
 
 | 항목 | 설정값 | 설명 |
 | :--- | :--- | :--- |
@@ -78,7 +83,7 @@ podman network create \
 
 ---
 
-## **2. Podman Compose 사용 가이드**
+## **3. Podman Compose 사용 가이드**
 
 MDRM의 컨테이너를 실행할 때는 `podman-compose`를 사용합니다. 이는 `docker-compose.yml` 문법을 Podman 환경에 맞게 변환하여 실행해줍니다.
 
@@ -90,14 +95,13 @@ podman-compose up -d
 podman-compose ps
 ```
 
----
-
 !!! tip "Podman 관리 팁"
     - Podman은 별도의 데몬이 없으므로 시스템 리소스를 적게 소모합니다.
     - `rootless` 모드로 실행할 경우 보안상으로 더 안전합니다.
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_설치_및_확인/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
@@ -105,3 +109,4 @@ podman-compose ps
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

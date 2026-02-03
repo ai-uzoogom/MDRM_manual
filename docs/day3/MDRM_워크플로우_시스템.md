@@ -1,6 +1,6 @@
 # 💻 시스템 워크플로우
 
-!!! info "학습 목표"
+!!! info "학습 안내"
     개별 서버(Node) 단위의 가장 기초적인 작업을 정의하는 방법과 표준 생성 패턴을 학습합니다.
 
 ---
@@ -55,7 +55,7 @@ graph LR
 <a href="../MDRM_워크플로우_그룹/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📂 그룹 워크플로우</span>
+        <span class="next-step-title">📂 업무 그룹 워크플로우 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

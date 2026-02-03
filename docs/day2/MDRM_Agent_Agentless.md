@@ -1,11 +1,12 @@
-# Agentless 설정
+# 🔌 Agentless 설정
 
-!!! tip "설치 방식 요약"
-    대상 시스템에 별도의 Agent를 설치하지 않고 표준 프로토콜(SSH, WinRM)을 사용하여 원격으로 관리하는 방식입니다. 주로 Agent 설치가 불가능한 스토리지 매니저나 네트워크 장비 등을 관리하기 위해 사용됩니다.
+!!! info "학습 안내"
+    대상 시스템에 Agent를 설치하지 않고 표준 프로토콜(SSH, WinRM)을 활용하여 원격으로 시스템을 관리하고 모니터링하는 방법을 학습합니다.
+
 
 ---
 
-## 사용 시나리오
+## **1. 사용 시나리오**
 
 다음과 같은 경우에 적합합니다:
 
@@ -17,7 +18,7 @@
 
 ---
 
-## 지원 프로토콜
+## **2. 지원 프로토콜**
 
 ### Linux/Unix 시스템
 
@@ -37,7 +38,7 @@
 
 ---
 
-## 설정 절차
+## **3. 설정 절차**
 
 ### Linux/Unix 시스템 설정
 
@@ -151,7 +152,7 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value "192.168.1.10" -Force
 
 ---
 
-## 연결 테스트
+## **4. 연결 테스트**
 
 ### Linux/Unix SSH 테스트
 
@@ -178,7 +179,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## 제약사항
+## **5. 제약사항**
 
 !!! warning "Agentless 제약사항"
     Agentless 방식은 Agent 방식에 비해 다음과 같은 제약이 있습니다:
@@ -213,7 +214,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## 모니터링 가능 항목
+## **6. 모니터링 가능 항목**
 
 ### Linux/Unix 시스템
 
@@ -243,7 +244,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## 문제 해결
+## **7. 문제 해결 (Troubleshooting)**
 
 ### SSH 연결 실패
 
@@ -311,7 +312,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## 보안 권장사항
+## **8. 보안 권장사항**
 
 !!! tip "보안 강화 방법"
     
@@ -333,7 +334,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## 장점 및 단점
+## **9. 장점 및 단점**
 
 ### 장점
 
@@ -361,10 +362,12 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_환경_설정/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">Agent 환경 설정</span>
+        <span class="next-step-title">⚙️ Agent 환경 설정 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

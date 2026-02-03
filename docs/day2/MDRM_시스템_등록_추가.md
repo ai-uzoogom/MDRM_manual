@@ -1,10 +1,12 @@
 # ➕ 시스템 등록 및 추가
 
-관제 자원으로 활용할 서버, 스토리지, 네트워크 장비를 신규 등록하거나 이미 Agent가 설치된 시스템을 가져와 관리 목록에 포함시킵니다.
+!!! info "학습 안내"
+    MDRM의 관리 대상으로 새로운 자원을 등록하는 다양한 방법들과 설치된 Agent를 연동하여 관리 목록에 포함시키는 절차를 학습합니다.
+
 
 ---
 
-## 1. 시스템 추가
+## **1. 시스템 추가**
 
 새로운 자원을 MDRM 관제 대상으로 등록하는 과정입니다.
 
@@ -22,7 +24,7 @@
 
 ---
 
-## 2. 시스템 가져오기
+## **2. 시스템 가져오기**
 
 이미 Agent가 수동으로 설치된 자원을 MDRM 서버의 관리 목록에 연결합니다.
 
@@ -32,7 +34,7 @@
 
 ---
 
-## 3. 시스템 상세 관리 및 설정
+## **3. 시스템 상세 관리 및 설정**
 
 등록된 서버에 대해 추가적인 속성을 정의하거나 관리 작업을 수행합니다.
 
@@ -46,10 +48,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_시스템_모니터링_알림/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📉 모니터링 및 알림</span>
+        <span class="next-step-title">📉 모니터링 및 알림 설정</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

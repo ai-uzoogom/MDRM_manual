@@ -58,7 +58,7 @@ graph LR
 <a href="../MDRM_워크플로우_시나리오/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🎬 시나리오 워크플로우</span>
+        <span class="next-step-title">🎬 전사 시나리오 워크플로우 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

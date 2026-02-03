@@ -1,11 +1,11 @@
-# 🐧 Agent 수동설치 (Linux)
+# 🐧 Agent 수동 설치 (Linux)
 
-!!! tip "설치 방식 요약"
-    보안 정책상 SSH root 접속이 불가능하거나 네트워크가 분리된 환경(DMZ 등)에서 사용하는 방식입니다. 프라이빗 네트워크 환경의 고객사에서 가장 많이 사용되며, 서비스 통신을 위한 443 및 20080 포트만 허용되면 가능합니다.
+!!! info "학습 안내"
+    보안이 강화된 Linux 환경에서 Agent 패키지를 직접 설치하고 서비스를 안정적으로 기동시키는 절차를 학습합니다.
 
 ---
 
-## 1. Agent 설치 절차
+## **1. Agent 설치 절차**
 
 대상 서버에 접속하여 다음 명령어를 순차적으로 실행합니다.
 
@@ -24,7 +24,7 @@ tar zxvf gam_agent.withJreX64.tar.gz
 
 ---
 
-## 2. 설치 및 가동 확인
+## **2. 설치 및 가동 확인**
 
 설치가 완료되면 Agent는 기본적으로 자동으로 가동됩니다. 다음 명령어로 프로세스 상태를 확인합니다.
 
@@ -38,13 +38,13 @@ root 14995 /opt/gam_agent/jre/bin/java -jar /opt/gam_agent/gam_agent_watchdog.ja
 root 15010 /opt/gam_agent/jre/bin/java -jar /opt/gam_agent/gam_agent.jar start
 ```
 
-### 주요 프로세스 설명
+### **2.1 주요 프로세스 설명**
 - **`gam_agent.jar`**: Agent 서비스의 핵심 주체입니다.
 - **`gam_agent_watchdog.jar`**: Agent 프로세스의 생존 여부를 감시하고 장애 시 자동으로 재기동합니다.
 
 ---
 
-## 3. 안정적인 연동을 위한 재시작
+## **3. 안정적인 연동을 위한 재시작**
 
 !!! warning "주의 사항"
     수동 설치 직후에는 프로세스가 불안정할 수 있어 MDRM 서버에서의 '가져오기' 작업 시 일시적인 장애가 발생할 수 있습니다. 안전한 연동을 위해 다음 명령어로 Agent를 완전히 재시작할 것을 권장합니다.
@@ -63,10 +63,12 @@ ss -antpl | grep 20080
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_수동설치_가져오기/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📥 Agent 가져오기</span>
+        <span class="next-step-title">📥 Agent 가져오기 (Import)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

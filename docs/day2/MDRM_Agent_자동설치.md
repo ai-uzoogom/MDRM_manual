@@ -1,17 +1,17 @@
-# 자동설치
+# 🚀 Agent 자동 설치
 
-!!! tip "설치 방식 요약"
-    MDRM 서버를 통해 자동으로 Agent를 설치하는 가장 간편한 방법입니다. 주로 테스트 및 빠른 구축 환경에서 사용되며, 원활한 자동 설치를 위해 가장 많은 네트워크 포트 개방이 필요합니다.
+!!! info "학습 안내"
+    MDRM 서버에서 원격으로 Agent를 일괄 배포하는 자동 설치 방식의 요구사항과 단계별 설정 절차를 학습합니다.
 
 ---
 
-## 요구사항 {: #requirements }
+## **1. 요구사항** {: #requirements }
 
 MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서버의 운영체제(OS)별 사전 준비가 필요합니다.
 
 ![MDRM 통신 포트 구성도](../assets/images/day1/port.png){: width="100%" }
 
-### 1. Linux & Unix 계열
+### **1.1 Linux & Unix 계열**
 
 *   **원격 접속**: SSH를 통한 원격 접속이 가능해야 합니다.
 *   **Python 설치**: Python 2.7 또는 Python 3.6~3.12 버전이 설치되어 있어야 합니다.
@@ -19,7 +19,7 @@ MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서
 
 ---
 
-### 2. Windows 계열
+### **1.2 Windows 계열**
 
 *   **WinRM 설정**: WinRM을 통한 원격 접속이 가능해야 합니다. 터미널(CMD)에서 아래 명령어를 순차적으로 실행하십시오.
     ```cmd
@@ -41,7 +41,7 @@ MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서
 
 ---
 
-### 3. 관제 서버 FQDN 설정
+### **1.3 관제 서버 FQDN 설정**
 
 Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해 통신합니다.
 
@@ -54,15 +54,15 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
 
 ---
 
-## 설치 절차
+## **2. 설치 절차**
 
-### 1단계: MDRM 웹 UI 접속
+### **2.1 1단계: MDRM 웹 UI 접속**
 
 1. MDRM 웹 콘솔에 로그인
 2. **시스템 관리** 메뉴로 이동
 3. **시스템 추가** 버튼 클릭
 
-### 2단계: 서버 정보 입력
+### **2.2 2단계: 서버 정보 입력**
 
 다음 정보를 입력합니다:
 
@@ -74,13 +74,13 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
 | 사용자명 | SSH 접속 계정 | `root` |
 | 비밀번호 | SSH 접속 비밀번호 | `********` |
 
-### 3단계: 설치 옵션 선택
+### **2.3 3단계: 설치 옵션 선택**
 
 - **설치 경로**: 기본값 `/opt/gam_agent` 또는 `/opt/mdrm_agent`
 - **자동 시작**: Agent 설치 후 자동 시작 여부
 - **방화벽 설정**: 필요한 포트 자동 오픈 여부
 
-### 4단계: 설치 실행
+### **2.4 4단계: 설치 실행**
 
 1. **설치 시작** 버튼 클릭
 2. 설치 진행 상황 모니터링
@@ -88,11 +88,11 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
 
 ---
 
-## 설치 확인
+## **3. 설치 확인**
 
 설치가 완료되면 다음을 확인합니다:
 
-### Agent 프로세스 확인
+### **3.1 Agent 프로세스 확인**
 
 ```bash
 # Agent 프로세스 확인
@@ -102,7 +102,7 @@ ps -ef | grep gam_agent
 systemctl status gam_agent
 ```
 
-### MDRM 웹 UI에서 확인
+### **3.2 MDRM 웹 UI에서 확인**
 
 1. **시스템 목록**에서 새로 추가된 서버 확인
 2. 상태가 **"정상"** 또는 **"연결됨"**으로 표시되는지 확인
@@ -110,7 +110,7 @@ systemctl status gam_agent
 
 ---
 
-## 장점
+## **4. 장점**
 
 ✅ **간편성**
 - 웹 UI에서 클릭 몇 번으로 설치 완료
@@ -126,10 +126,12 @@ systemctl status gam_agent
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_수동설치_리눅스/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">수동설치 (Linux/Windows)</span>
+        <span class="next-step-title">📦 수동설치 (Linux/Windows)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

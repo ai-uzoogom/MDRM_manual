@@ -1,10 +1,12 @@
 # 🔑 계정 관리
 
-시스템 접속에 필요한 ID와 비밀번호를 관리합니다. 계정을 사전 등록해두면 시스템 추가, 워크플로우 실행 시 매번 정보를 입력할 필요 없이 간편하게 선택하여 사용할 수 있습니다.
+!!! info "학습 안내"
+    시스템 접속에 필요한 인증 정보를 체계적으로 관리하고, 기본 접속 계정 설정을 통해 자동화 작업과 모니터링의 효율성을 높이는 방법을 학습합니다.
+
 
 ---
 
-## 1. 계정 생성 및 범위
+## **1. 계정 생성 및 범위**
 
 계정은 생성 위치에 따라 관리 범위와 권한이 구분됩니다.
 
@@ -16,7 +18,7 @@ SSH(Linux/Unix), WinRM(Windows), VMWare(Virtualization), Telnet 등 대상 서�
 
 ---
 
-## 2. 기본 접속 계정 설정
+## **2. 기본 접속 계정 설정**
 
 시스템 관리의 핵심 설정으로, 모니터링 및 자동화 작업의 **기본 인증 정보**로 활용됩니다.
 
@@ -26,7 +28,7 @@ SSH(Linux/Unix), WinRM(Windows), VMWare(Virtualization), Telnet 등 대상 서�
 
 ---
 
-## 3. 계정 일괄 관리 및 보안
+## **3. 계정 일괄 관리 및 보안**
 
 사내 보안 정책 준수를 위해 다수 시스템의 접근 정보를 효율적으로 관리합니다.
 
@@ -41,10 +43,12 @@ SSH(Linux/Unix), WinRM(Windows), VMWare(Virtualization), Telnet 등 대상 서�
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_메뉴_워크플로우/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🔄 워크플로우 메뉴</span>
+        <span class="next-step-title">🔄 MDRM 메뉴: 워크플로우</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

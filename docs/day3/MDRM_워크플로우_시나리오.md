@@ -1,6 +1,6 @@
 # 🎬 시나리오 워크플로우
 
-!!! info "학습 목표"
+!!! info "학습 안내"
     MDRM의 최상위 실행 단위인 시나리오 워크플로우를 실무에 적용합니다. **운영 자동화(일상 작업)**와 **재해복구 자동화(비상 상황)**라는 두 가지 핵심 축을 중심으로 구성 원칙을 학습합니다.
 
 ---
@@ -66,7 +66,7 @@ graph TD
 <a href="../MDRM_컴포넌트_설계_로직/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🧩 컴포넌트 설계 및 로직</span>
+        <span class="next-step-title">🧩 핵심 컴포넌트 설계 로직</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

@@ -1,4 +1,7 @@
-# 🐳 Docker 설치
+# 🐳 Docker 설치 가이드
+
+!!! info "학습 안내"
+    RHEL/Rocky Linux 환경에서 Docker 공식 Repository를 등록하고, 최신 버전의 컨테이너 엔진을 설치 및 활성화하는 절차를 학습합니다.
 
 이 가이드는 RHEL, Rocky Linux 등 RPM 기반 시스템에서 Docker 공식 Repository를 사용하여 최신 버전의 Docker 엔진을 설치하는 방법을 안내합니다.
 
@@ -30,6 +33,8 @@ yum remove -y docker \
               docker-engine
 ```
 
+---
+
 ## **2. Repository 설정**
 
 Docker 공식 Repository를 등록하기 위해 필요한 유틸리티 패키지를 설치하고 저장소를 시스템에 추가해 주십시오.
@@ -46,6 +51,8 @@ yum-config-manager \
 !!! info "기술 사양 안내"
     Docker 공식 저장소는 Rocky Linux용 별도 경로 대신 `centos` 하위 경로를 공용으로 사용합니다. 이는 Docker의 공식 배포 정책에 따른 정상적인 설정입니다.
 
+---
+
 ## **3. Docker Engine 설치**
 
 시스템에 최신 버전의 Docker 엔진 및 Docker Compose 플러그인을 설치해 주십시오.
@@ -58,6 +65,8 @@ yum install -y \
     docker-buildx-plugin \
     docker-compose-plugin
 ```
+
+---
 
 ## **4. 서비스 시작 및 활성화**
 
@@ -75,8 +84,6 @@ docker version
 systemctl status docker
 ```
 
----
-
 !!! tip "Docker Compose 사용 확인"
     최신 방식인 `docker compose` 명령어를 기본으로 사용합니다. (하이픈 없이 사용)
 
@@ -87,6 +94,7 @@ systemctl status docker
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../Docker_환경_설정/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
@@ -94,3 +102,4 @@ systemctl status docker
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

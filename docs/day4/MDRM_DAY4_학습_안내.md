@@ -1,5 +1,5 @@
 <div class="page-title-box" markdown>
-# DAY 4
+# 📘 학습 안내
 실전 실습 및 트러블슈팅
 </div>
 
@@ -27,3 +27,15 @@
 
 !!! info "DAY 4 학습 목표"
     실제적인 문제 해결 능력을 확보하여 현장에 즉시 투입 가능한 엔지니어 역량을 완성합니다.
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../MDRM_실전_시나리오_실습/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">🥋 실전 시나리오 실습</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

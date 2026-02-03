@@ -1,10 +1,12 @@
 # 📊 실행 결과 및 분석 리포트
 
-점검 결과를 정교하게 분석하고 조치 내역을 체계적으로 관리하여 시스템 가용성을 보장합니다.
+!!! info "학습 안내"
+    실행된 점검 결과를 정밀하게 분석하고 조치 내역을 체계적으로 관리하며, 분석된 데이터를 엑셀 리포트로 추출하여 보고 업무를 자동화하는 방법을 학습합니다.
+
 
 ---
 
-## 1. 실행 이력 추적
+## **1. 실행 이력 추적**
 
 모든 작업은 '작업 이력' 화면에 영구적으로 기록되어 기술 부채를 추적할 수 있도록 돕습니다.
 
@@ -14,7 +16,7 @@
 
 ---
 
-## 2. 상세 결과 분석
+## **2. 상세 결과 분석**
 
 수치 이면의 원시 기록(Raw Message)을 확인하여 정확한 원인을 분석합니다.
 
@@ -25,7 +27,7 @@
 
 ---
 
-## 3. 리포트 자동화 (Excel Export)
+## **3. 리포트 자동화 (Excel Export)**
 
 필요한 데이터를 문서화하여 외부 보고서나 정기 문서로 활용합니다.
 
@@ -35,10 +37,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_점검_스케줄_알림/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">⏰ 스케줄 및 알림 체계</span>
+        <span class="next-step-title">⏰ 스케줄 및 알림 체계 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

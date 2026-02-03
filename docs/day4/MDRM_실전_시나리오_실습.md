@@ -1,6 +1,6 @@
 # 🥋 실전 시나리오 실습
 
-!!! info "학습 목표"
+!!! info "학습 안내"
     가상의 재해 상황을 발생시키고, MDRM을 활용하여 전사 서비스를 복구하는 실습을 진행합니다.
 
 ---
@@ -48,7 +48,7 @@
 <a href="../MDRM_트러블슈팅_가이드/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🩺 트러블슈팅 가이드</span>
+        <span class="next-step-title">🩺 기술 트러블슈팅 가이드 (심화)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

@@ -1,5 +1,8 @@
 # 🩺 트러블슈팅 가이드 (심화)
 
+!!! info "학습 안내"
+    운영 단계에서 발생할 수 있는 주요 통신 장애, 워크플로우 실행 오류 및 데이터베이스 연동 문제에 대한 심화 원인 분석과 조치 방법을 학습합니다.
+
 !!! tip "원칙"
     모든 장애의 원인은 **로그(Log)**에 있습니다. MDRM 서버 로그(`mdrm.log`)와 Agent 로그(`agent.log`)를 먼저 확인하십시오.
 
@@ -46,8 +49,8 @@
 <div class="next-step-card-container" markdown>
 <a href="../MDRM_교육_마무리/" class="next-step-card">
     <span class="next-content">
-        <span class="next-step-label">Final Step</span>
-        <span class="next-step-title">🏁 교육 마무리</span>
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">🏁 교육 마무리 및 성과 요약</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

@@ -1,6 +1,6 @@
-# 컴포넌트 템플릿 제작 가이드
+# 📜 컴포넌트 템플릿 제작 가이드
 
-!!! quote "표준화된 스크립트 설계"
+!!! info "표준화된 스크립트 설계"
     UNIX/Linux 시스템에서 애플리케이션 프로세스를 안전하고 일관성 있게 제어하기 위한 스크립트 로직 설계 표준을 안내합니다.
 
 ## **1. 개요**
@@ -45,8 +45,16 @@
 | **자동 타임아웃** | 워크플로우의 교착 상태를 방지하여 시스템 자원의 효율적 운영을 돕습니다. |
 | **강제 종료 로직** | 비정상적인 프로세스 고착 시에도 안정적으로 서비스를 종료할 수 있습니다. |
 
-<center>
-    <p style="opacity: 0.5; font-size: 0.8rem;">
-        이것으로 <strong>컴포넌트 디자인</strong> 파트의 교육 단계를 마칩니다. 수고하셨습니다!
-    </p>
 </center>
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../MDRM_점검_컴포넌트_제작/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">🔍 실무 점검 컴포넌트 제작 가이드</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

@@ -1,6 +1,9 @@
 # 🛑 정지 및 종료
 
-## 명령어 실행 전 확인 사항
+!!! info "학습 안내"
+    MDRM 서비스를 안전하게 중지하거나 완전히 종료하는 방법을 학습하고, `stop`과 `down` 명령어의 기술적 차이점을 이해합니다.
+
+## **1. 명령어 실행 전 확인 사항**
 
 !!! info "중요: 명령어 실행 위치"
     `docker compose` 구문은 `docker-compose.yml` 파일이 존재하는 디렉토리에서 실행해야 합니다.
@@ -14,14 +17,12 @@
 
 ---
 
-## docker compose stop vs down 의 차이점
+## **2. docker compose stop vs down 의 차이점**
 
 !!! danger "명령어 선택 시 주의사항"
     작업 용도에 따라 적절한 명령어를 선택하여 수행해야 합니다.
 
----
-
-## docker compose stop
+### **2.1 docker compose stop**
 
 ```bash
 docker compose stop
@@ -40,7 +41,7 @@ docker compose stop
 
 ---
 
-## docker compose down
+### **2.2 docker compose down**
 
 ```bash
 docker compose down
@@ -63,7 +64,7 @@ docker compose down
 
 ---
 
-## 명령어 비교 요약
+## **3. 명령어 비교 요약**
 
 | 명령어 | 컨테이너 상태 | 네트워크 | 볼륨 데이터 | 재시작 속도 |
 |:---|:---:|:---:|:---:|:---:|
@@ -74,6 +75,7 @@ docker compose down
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_시스템_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
@@ -81,3 +83,4 @@ docker compose down
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

@@ -1,5 +1,8 @@
 # 🛠️ 시스템 관리
 
+!!! info "학습 안내"
+    Docker 환경에서 MDRM 서비스의 이상 유무를 확인하거나 서버 내부에 접속하여 작업을 수행할 때 필요한 기본 명령어들을 학습합니다.
+
 Docker 환경에서 MDRM 서비스의 이상 유무를 확인하거나 서버 내부에 접속하여 작업을 수행할 때 필요한 기본 명령어 안내 가이드입니다.
 
 ---
@@ -55,3 +58,15 @@ docker exec -it gam bash
         이것으로 <strong>MDRM 설치 및 운영</strong> 파트의 교육 단계를 마칩니다. 수고하셨습니다!
     </p>
 </center>
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../../day2/MDRM_DAY2_학습_안내/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">📋 DAY 2: 운영 환경 구성 및 자원 관리</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

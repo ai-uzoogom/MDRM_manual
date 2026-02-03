@@ -27,7 +27,7 @@ theme:
 nav:
   - 🏠: index.md
   - DAY 1:
-    - 학습 안내: day1/index.md
+    - 학습 안내: day1/MDRM_DAY1_학습_안내.md
     - 솔루션 개요: day1/MDRM_솔루션_개요.md
     - 인프라:
       - ▸ 디스크 구성: day1/인프라_디스크_구성.md
@@ -41,10 +41,11 @@ nav:
       - ▸ Podman 환경 설정: day1/Podman_환경_설정.md
     - MDRM:
       - ▸ 설치 및 확인: day1/MDRM_설치_및_확인.md
+      - ▸ 컨테이너 구성 정보: day1/MDRM_컨테이너_구성.md
       - ▸ 정지 및 종료: day1/MDRM_정지_및_종료.md
       - ▸ 시스템 관리: day1/MDRM_시스템_관리.md
   - DAY 2:
-    - 개요: day2/index.md
+    - 학습 안내: day2/MDRM_DAY2_학습_안내.md
     - Agent:
         - ▸ 설치 및 등록: day2/MDRM_Agent_설치_및_등록.md
         - ▸ 자동설치: day2/MDRM_Agent_자동설치.md
@@ -80,7 +81,8 @@ nav:
         - ▸ 실행 결과 및 이력 확인: day2/MDRM_점검_실행_결과.md
         - ▸ 스케줄 및 알림: day2/MDRM_점검_스케줄_알림.md
   - DAY 3:
-    - 개요: day3/index.md
+    - 학습 안내: day3/MDRM_DAY3_학습_안내.md
+    - 자동화 제어 범위: day3/MDRM_자동화_영역.md
     - 워크플로우:
         - ▸ 유형 및 구조: day3/MDRM_워크플로우_유형.md
         - ▸ 시스템 워크플로우: day3/MDRM_워크플로우_시스템.md
@@ -90,8 +92,10 @@ nav:
         - ▸ 설계 및 로직: day3/MDRM_컴포넌트_설계_로직.md
         - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
         - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
+    - 점검 작업:
+        - ▸ 점검 컴포넌트 실무: day3/MDRM_점검_컴포넌트_제작.md
   - DAY 4:
-    - 개요: day4/index.md
+    - 학습 안내: day4/MDRM_DAY4_학습_안내.md
     - 실습 & 장애조치:
         - ▸ 실전 시나리오 실습: day4/MDRM_실전_시나리오_실습.md
         - ▸ 트러블슈팅 가이드: day4/MDRM_트러블슈팅_가이드.md
@@ -103,6 +107,7 @@ nav:
     - Agent:
         - › 417 오류 및 Token 불일치: troubleshooting/MDRM_통신오류_417_Token.md
         - › Agent 포트 변경: troubleshooting/MDRM_Agent_포트_변경.md
+    - Admonition 샘플: troubleshooting/MDRM_Admonition_Samples.md
 
 
 plugins:

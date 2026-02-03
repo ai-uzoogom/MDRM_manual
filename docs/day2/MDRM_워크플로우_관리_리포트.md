@@ -1,10 +1,12 @@
 # 📊 관리 및 실행 리포트
 
-워크플로우의 변경 이력을 관리하고, 실행 결과를 정량적으로 분석하여 리포트로 추출합니다.
+!!! info "학습 안내"
+    워크플로우의 버전 관리(복원)와 잠금 설정 방법, 그리고 실행 결과를 바탕으로 한 RTO 분석 및 엑셀 결과서 추출 등 사후 관리 체계를 학습합니다.
+
 
 ---
 
-## 1. 워크플로우 운영 관리
+## **1. 워크플로우 운영 관리**
 
 ### 변경 이력 및 복원 (Version Control)
 *   추가/수정된 모든 내역을 버전별로 저장합니다. 
@@ -17,7 +19,7 @@
 
 ---
 
-## 2. 실행 이력 및 결과 데이터
+## **2. 실행 이력 및 결과 데이터**
 
 실행이 종료된 워크플로우의 상세 데이터를 추적합니다.
 
@@ -29,7 +31,7 @@
 
 ---
 
-## 3. RTO (목표 복구 시간) 관리
+## **3. RTO (목표 복구 시간) 관리**
 
 시스템 복구 목표와 실제 수행 시간을 시각적으로 비교 및 관리합니다.
 
@@ -41,7 +43,7 @@
 
 ---
 
-## 4. 워크플로우 절차서
+## **4. 워크플로우 절차서**
 
 설계된 프로세스를 문서화된 매뉴얼 형태로 추출합니다.
 
@@ -50,10 +52,12 @@
 
 ---
 
-<a href="../MDRM_메뉴_점검작업/" class="next-step-card">
+<div class="next-step-card-container" markdown>
+<a href="../MDRM_점검작업_개요/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 점검작업 메뉴</span>
+        <span class="next-step-title">📋 MDRM 메뉴: 점검작업</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

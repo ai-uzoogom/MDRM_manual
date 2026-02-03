@@ -1,12 +1,7 @@
 # Agent 설치 및 등록
 
-!!! quote "설치 및 등록 방식 요약"
-    Agent를 설치하고 MDRM 시스템에 등록하는 다양한 방법을 안내합니다. 고객사 인프라 구성 및 보안 정책에 따라 아래의 방식 중 최적의 방법을 선택하여 적용하십시오.
-
-    * **자동설치**: 테스트 및 빠른 구축 시 사용되며, 원활한 구성을 위해 가장 많은 포트 오픈이 필요합니다.
-    * **수동설치**: 보안이 강화된 프라이빗 네트워크 환경에서 주로 사용하며, 서비스 통신을 위한 포트(443, 20080)만 허용되면 가능합니다.
-    * **시스템 수동등록**: 재해복구(DR) 환경에서 OS 영역이 스토리지 복제 방식으로 구성되어 넘어오는 특수 환경용입니다.
-    * **Agentless**: OS 제약으로 Agent 설치가 불가능한 스토리지 매니저나 네트워크 장비 등을 관리하기 위한 접속 방식입니다.
+!!! info "학습 안내"
+    MDRM Agent를 대상 서버에 설치하고 시스템 전반에서 관리할 수 있도록 등록하는 다양한 방법들과 환경별 최적의 선택 가이드를 학습합니다.
 
 ---
 
@@ -87,7 +82,7 @@
 
 ---
 
-## 설치 방법 비교표
+## **3. 설치 방법 비교표**
 
 | 구분 | 자동설치 | 수동설치 | 시스템 수동등록 | Agentless |
 |:---:|:---:|:---:|:---:|:---:|
@@ -103,10 +98,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_자동설치/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Recommended</span>
-        <span class="next-step-title">자동설치 가이드</span>
+        <span class="next-step-title">🚀 Agent 자동 설치 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

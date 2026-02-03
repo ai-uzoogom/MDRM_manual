@@ -1,10 +1,12 @@
 # 📂 데이터센터 및 그룹 관리
 
-점검 대상을 체계적으로 분류하고 관리하기 위해 트리 구조를 활용하여 데이터센터와 그룹을 조직화합니다.
+!!! info "학습 안내"
+    점검 대상을 체계적으로 분류하기 위한 트리 구조 사용법과 데이터센터, 그룹의 계층적인 관리 체계를 학습합니다.
+
 
 ---
 
-## 1. 그룹 관리
+## **1. 그룹 관리**
 
 트리 메뉴를 통해 데이터센터 하위에 계층적인 그룹을 추가하여 점검 항목들을 업무별 또는 관리 단위별로 분류할 수 있습니다.
 
@@ -18,7 +20,7 @@
 
 ---
 
-## 2. 데이터센터(DC) 관리
+## **2. 데이터센터(DC) 관리**
 
 데이터센터는 MDRM 전반에서 자동으로 동기화되는 최상위 관리 단위입니다.
 
@@ -28,10 +30,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_점검_작업_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">⚙️ 점검 및 작업 관리</span>
+        <span class="next-step-title">⚙️ 점검 및 작업 관리 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

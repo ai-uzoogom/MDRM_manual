@@ -1,4 +1,4 @@
-# ⚡ 컴포넌트 실행 프로세스
+# ⚙️ 컴포넌트 실행 프로세스
 
 !!! info "스크립트 실행 메커니즘"
     MDRM 서버에서 정의된 컴포넌트 스크립트가 실제 관리 대상 서버(Agent)로 전송되어 실행되는 전체 과정을 설명합니다.
@@ -38,7 +38,7 @@ flowchart LR
 <a href="../MDRM_컴포넌트_템플릿_제작/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">컴포넌트 템플릿 제작 가이드</span>
+        <span class="next-step-title">📜 컴포넌트 템플릿 제작 표준</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

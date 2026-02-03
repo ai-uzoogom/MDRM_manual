@@ -1,6 +1,6 @@
 # 🧩 컴포넌트 설계 및 로직
 
-!!! info "학습 목표"
+!!! info "학습 안내"
     워크플로우의 최소 구성 단위인 컴포넌트를 설계할 때 고려해야 할 핵심 로직(3-Step Logic)과 작성 표준을 학습합니다.
 
 ---
@@ -45,6 +45,7 @@ MDRM의 컴포넌트는 단순한 명령 실행을 넘어, **'예외 상황을 �
 
 ### **3.2 타임아웃(Timeout) 관리**
 무한 대기를 방지하기 위해 모든 컴포넌트에는 적절한 타임아웃 설정이 필수입니다.
+
 *   **일반 스크립트**: 30~60초
 *   **대용량 DB 기동**: 300~600초 (로그 재생 시간 고려)
 
@@ -54,7 +55,7 @@ MDRM의 컴포넌트는 단순한 명령 실행을 넘어, **'예외 상황을 �
 <a href="../MDRM_컴포넌트_실행_프로세스/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">⚙️ 컴포넌트 실행 프로세스</span>
+        <span class="next-step-title">⚙️ 컴포넌트 실행 메커니즘</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

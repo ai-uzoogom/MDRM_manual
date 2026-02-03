@@ -1,10 +1,12 @@
 # 📥 Agent 가져오기 (Import)
 
-리눅스나 윈도우 서버에 Agent 수동 설치를 마친 후, MDRM 서버에서 해당 자원을 인식하도록 연결하는 마지막 단계입니다.
+!!! info "학습 안내"
+    수동으로 설치된 Agent를 MDRM 서버의 관리 자원으로 명시적으로 등록하는 [시스템 가져오기] 절차를 학습합니다.
+
 
 ---
 
-## 1. 시스템 가져오기 기능 개요
+## **1. 시스템 가져오기 기능 개요**
 
 수동으로 설치된 Agent는 MDRM 서버와 통신은 가능하나, 관리 목록에는 자동으로 나타나지 않습니다. 따라서 **[시스템 가져오기]** 기능을 통해 명시적으로 등록해주어야 합니다.
 
@@ -13,7 +15,7 @@
 
 ---
 
-## 2. 가져오기 절차
+## **2. 가져오기 절차**
 
 1.  **MDRM 웹 콘솔**에 로그인합니다.
 2.  좌측 메뉴에서 **시스템** 메뉴로 이동합니다.
@@ -27,15 +29,17 @@
 
 ---
 
-## 3. 완료 확인
+## **3. 완료 확인**
 
 *   가져오기가 완료되면 트리 메뉴의 지정된 그룹 하위에 해당 시스템이 나타납니다.
 *   **상태** 아이콘이 녹색(정상)으로 표시되는지 확인하십시오.
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_시스템수동등록/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">시스템 수동등록</span>
+        <span class="next-step-title">🛠️ 시스템 수동 등록 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

@@ -1,5 +1,8 @@
 # 🦭 Podman 설치 가이드
 
+!!! info "학습 안내"
+    Rocky Linux/RHEL 환경에서 Docker의 대안인 Podman을 설치하고, Docker 명령어 호환성 및 서비스 자동 재시작 환경을 구축하는 방법을 학습합니다.
+
 이 가이드는 Rocky Linux, RHEL 등 최신 RedHat 계열 OS에서 Docker의 대안으로 **Podman**을 설치하고, MDRM 구동에 필요한 기본 환경을 구성하는 방법을 안내합니다.
 
 !!! tip "환경에 따른 선택"
@@ -47,7 +50,6 @@ yum install -y podman podman-docker podman-plugins podman-compose
 
 MDRM은 Docker API를 기반으로 동작하므로, Podman에서도 Docker API를 사용할 수 있도록 소켓(Socket) 설정이 필요합니다.
 
-### **Docker Socket 에뮬레이션 활성화**
 ```bash
 # Podman 소켓 시작
 systemctl enable --now podman.socket
@@ -59,13 +61,24 @@ ls -al /var/run/docker.sock
 
 ---
 
-## **4. 서비스 시작 및 상태 확인**
+## **4. 컨테이너 자동 재시작 활성화 (필수)**
 
-Podman은 데몬(Daemon) 없이 동작하지만, API 소켓은 서비스로 관리됩니다.
+시스템 재부팅 시 `restart: always` 옵션이 설정된 컨테이너들이 자동으로 기동될 수 있도록 설정을 활성화해야 합니다. 이 작업은 Podman 환경에서 **필수 사항**입니다.
+
+```bash
+# 컨테이너 자동 재시작 서비스 활성화
+sudo systemctl enable --now podman-restart.service
+```
+
+---
+
+## **5. 서비스 시작 및 상태 확인**
+
+Podman은 데몬(Daemon) 없이 동작하지만, API 소켓 및 재시작 서비스는 시스템 서비스로 관리됩니다.
 
 ```bash
 # 서비스 상태 확인
-systemctl status podman.socket
+systemctl status podman.socket podman-restart.service
 
 # Podman 버전 확인
 podman version
@@ -73,7 +86,7 @@ podman version
 
 ---
 
-## **5. Docker 명령어 별칭(Alias) 확인**
+## **6. Docker 명령어 별칭(Alias) 확인**
 
 `podman-docker` 패키지를 설치하면 사용자가 `docker` 명령어를 입력해도 내부적으로 `podman`이 실행됩니다. 이는 기존 Docker 기반 스크립트를 그대로 사용할 수 있게 해줍니다.
 
@@ -85,6 +98,7 @@ docker --version
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../Podman_환경_설정/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
@@ -92,3 +106,4 @@ docker --version
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

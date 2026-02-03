@@ -1,14 +1,12 @@
-# 시스템 수동등록
+# 🛠️ 시스템 수동 등록
 
-!!! tip "설치 방식 요약"
-    재해복구(DR) 환경에서 운영 서버의 OS 영역이 스토리지 복제 방식으로 구성되어 넘어오는 특수한 경우에 사용합니다. OS 이미지가 그대로 복제되어 별도의 Agent 등록 과정을 수행할 수 없는 환경에서 Agent 구성 정보를 수동으로 매핑할 때 적합합니다.
+!!! info "학습 안내"
+    재해복구(DR) 환경과 같이 OS 이미지가 스토리지 복제 방식으로 전송되어 별도의 등록 과정을 수행할 수 없는 특수 환경에서의 Agent 구성 정보 매핑 절차를 학습합니다.
 
-!!! danger "특수상황 전용"
-    이 방법은 매우 특수한 상황에서만 사용합니다. 일반적인 경우에는 자동설치나 수동설치를 사용하세요.
 
 ---
 
-## 사용 시나리오
+## **1. 사용 시나리오**
 
 다음과 같은 **매우 특수한** 경우에만 사용합니다:
 
@@ -30,9 +28,9 @@ OS 이미지 복사            설치되어 있음
 
 ---
 
-## 설치 절차
+## **2. 설치 절차**
 
-### 1단계: 백업센터에서 NodeID 생성
+### **2.1 1단계: 백업센터에서 NodeID 생성**
 
 백업센터의 MDRM에서 가상의 시스템을 등록하여 NodeID를 미리 부여받습니다.
 
@@ -47,7 +45,7 @@ OS 이미지 복사            설치되어 있음
 !!! warning "NodeID 기록 필수"
     생성된 NodeID를 반드시 기록해두세요. 이후 단계에서 필수적으로 사용됩니다.
 
-### 2단계: 운영센터에 Agent 수동설치
+### **2.2 2단계: 운영센터에 Agent 수동설치**
 
 운영센터 서버에 Agent를 수동으로 설치합니다.
 
@@ -67,7 +65,7 @@ cd gam_agent_installer
 ls -l /opt/gam_agent
 ```
 
-### 3단계: NodeID 매핑 (가장 중요)
+### **2.3 3단계: NodeID 매핑 (가장 중요)**
 
 !!! danger "⚠️ 가장 중요한 단계"
     이 단계를 정확하게 수행하지 않으면 시스템이 정상적으로 동작하지 않습니다!
@@ -94,7 +92,7 @@ mdrm.server.https=false
 server.port=20080
 ```
 
-### 4단계: Agent 시작
+### **2.4 4단계: Agent 시작**
 
 ```bash
 # Agent 시작
@@ -108,7 +106,7 @@ ps -ef | grep gam_agent
 tail -f logs/agent.log
 ```
 
-### 5단계: 운영센터 Agent 종료 로직 추가
+### **2.5 5단계: 운영센터 Agent 종료 로직 추가**
 
 운영센터에서는 백업센터로 복제될 때 Agent가 자동으로 종료되도록 설정합니다.
 
@@ -138,11 +136,11 @@ chmod +x /opt/gam_agent/bin/stop_on_backup.sh
 
 ---
 
-## NodeID 매핑 확인
+## **3. NodeID 매핑 확인**
 
 NodeID가 올바르게 설정되었는지 확인합니다.
 
-### 설정 파일 확인
+### **3.1 설정 파일 확인**
 
 ```bash
 # NodeID 확인
@@ -152,7 +150,7 @@ grep "agent.agentId" /opt/gam_agent/config/application.properties
 # agent.agentId=N0001
 ```
 
-### 로그에서 확인
+### **3.2 로그에서 확인**
 
 ```bash
 # Agent 로그에서 NodeID 확인
@@ -162,7 +160,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 # [INFO] Agent started with NodeID: N0001
 ```
 
-### MDRM 웹 UI에서 확인
+### **3.3 MDRM 웹 UI에서 확인**
 
 1. 운영센터 MDRM 웹 콘솔 로그인
 2. **시스템 목록**에서 NodeID `N0001` 검색
@@ -170,7 +168,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## 복제 프로세스
+## **4. 복제 프로세스**
 
 ### 백업센터 → 운영센터 복제 시
 
@@ -195,7 +193,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## 문제 해결
+## **5. 문제 해결 (Troubleshooting)**
 
 ### NodeID 불일치
 
@@ -246,7 +244,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## 주의사항
+## **6. 주의사항**
 
 !!! warning "반드시 확인해야 할 사항"
     
@@ -268,7 +266,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## 장점 및 단점
+## **7. 장점 및 단점**
 
 ### 장점
 
@@ -292,10 +290,12 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_Agentless/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">Agentless 설정</span>
+        <span class="next-step-title">🔌 Agentless 설정 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

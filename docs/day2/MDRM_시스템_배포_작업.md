@@ -1,10 +1,12 @@
 # 🚀 프로그램 배포 및 작업
 
-관제 서버에 등록된 여러 시스템에 동시에 Agent를 업데이트하거나 사용자 정의 제품(파일) 및 스크립트를 일괄 배포합니다.
+!!! info "학습 안내"
+    MDRM 서버에 등록된 여러 시스템에 Agent를 업그레이드하거나, 사용자 정의 파일 및 스크립트를 일괄 배포하고 관리하는 절차를 학습합니다.
+
 
 ---
 
-## 1. 프로그램 배포 및 업데이트
+## **1. 프로그램 배포 및 업데이트**
 
 MDRM 서버에 등록된 배포 제품을 대상 시스템들에 전송하고 설치하는 과정입니다.
 
@@ -14,7 +16,7 @@ MDRM 서버에 등록된 배포 제품을 대상 시스템들에 전송하고 �
 
 ---
 
-## 2. 사용자 배포 스크립트
+## **2. 사용자 배포 스크립트**
 
 Ansible 방식 외에 사용자가 직접 작성한 스크립트(Bash, PowerShell, Python 등)를 통해 복잡한 배포 작업을 수행합니다.
 
@@ -25,7 +27,7 @@ Ansible 방식 외에 사용자가 직접 작성한 스크립트(Bash, PowerShel
 
 ---
 
-## 3. 시스템 작업 현황 모니터링
+## **3. 시스템 작업 현황 모니터링**
 
 추가, 가져오기, 배포, 업데이트 등 시스템 관리와 관련된 모든 작업의 진행 상태를 실시간으로 확인합니다.
 
@@ -41,10 +43,12 @@ Ansible 방식 외에 사용자가 직접 작성한 스크립트(Bash, PowerShel
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_시스템_계정_관리/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🔑 계정 관리</span>
+        <span class="next-step-title">🔑 시스템 계정 관리 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

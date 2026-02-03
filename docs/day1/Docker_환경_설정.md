@@ -1,5 +1,8 @@
 # ⚙️ Docker 환경 설정
 
+!!! info "학습 안내"
+    MDRM의 컨테이너 이미지 저장 경로, 네트워크 대역, 그리고 서비스 안정성을 위한 로그 정책 설정 방법을 학습합니다.
+
 Docker 설치 완료 후, 시스템 최적화 및 사내 망과의 충돌 방지를 위해 `/etc/docker/daemon.json` 파일을 사용하여 설정을 진행합니다.
 
 ---
@@ -44,13 +47,13 @@ Docker의 주요 설정(데이터 저장 위치, 네트워크 대역, 로그 정
 
 파일 작성을 완료한 후에는 서비스를 재시작해야 변경 사항이 시스템에 반영됩니다.
 
-### **서비스 재시작 및 자동 시작 활성화**
+### **3.1 서비스 재시작 및 자동 시작 활성화**
 ```bash
 systemctl restart docker
 systemctl enable docker
 ```
 
-### **적용 상태 확인**
+### **3.2 적용 상태 확인**
 ```bash
 # Docker 설정 정보 및 데이터 저장 위치 확인
 docker info | grep -E "Root Dir|Logging Driver"
@@ -64,6 +67,7 @@ ip addr show docker0
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_설치_및_확인/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
@@ -71,3 +75,4 @@ ip addr show docker0
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

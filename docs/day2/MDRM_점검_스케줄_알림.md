@@ -1,10 +1,12 @@
 # ⏰ 스케줄 및 알림 체계
 
-주기적인 점검 스케줄을 자동화하고, 실시간 알림을 통해 기술적 장애에 즉각적으로 대응합니다.
+!!! info "학습 안내"
+    정기적인 인프라 점검을 자동화하는 스마트 스케줄링 설정 방법과, 장애 발생 시 원스톱으로 대응할 수 있는 통합 알림 관리 체계를 학습합니다.
+
 
 ---
 
-## 1. 스마트 스케줄링
+## **1. 스마트 스케줄링**
 
 특정 주기로 반복되어야 하는 일일/주간 점검을 예약하여 관리 포인트롤 최소화합니다.
 
@@ -14,7 +16,7 @@
 
 ---
 
-## 2. 통합 알림 관리
+## **2. 통합 알림 관리**
 
 장애 발생부터 조치 확인까지의 생애 주기를 원스톱으로 확인합니다.
 
@@ -24,8 +26,16 @@
 
 ---
 
-<center>
-    <p style="opacity: 0.5; font-size: 0.8rem;">
-        이것으로 <strong>점검작업</strong> 파트의 교육 단계를 마칩니다. 수고하셨습니다!
-    </p>
 </center>
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../../day3/MDRM_DAY3_학습_안내/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">📋 DAY 3: 업무 분석 및 컴포넌트 설계</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

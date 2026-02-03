@@ -1,10 +1,12 @@
 # 🧩 위젯 활용 가이드
 
-위젯은 대시보드를 구성하는 개별 모니터링 프로그램입니다. 시스템, 워크플로우 등 관리 자원의 상태 정보를 실시간으로 시각화하여 제공합니다.
+!!! info "학습 안내"
+    대시보드를 구성하는 최소 단위인 위젯의 추가, 관리 방법과 시스템 및 워크플로우 상태 파악을 위한 주요 위젯들의 유형별 특징을 학습합니다.
+
 
 ---
 
-## 1. 위젯 추가 및 관리
+## **1. 위젯 추가 및 관리**
 
 ### 위젯 추가 방법
 * **일반 추가**: '위젯 추가' 탭에서 원하는 위젯을 직접 선택합니다.
@@ -18,7 +20,7 @@
 
 ---
 
-## 2. 주요 위젯 종류 소개
+## **2. 주요 위젯 종류 소개**
 
 ### 🖥️ 시스템 위젯
 | 위젯 이름 | 주요 기능 |
@@ -45,10 +47,12 @@
 
 ---
 
+<div class="next-step-card-container" markdown>
 <a href="../MDRM_메뉴_시스템/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🖥️ 시스템 메뉴</span>
+        <span class="next-step-title">🖥️ MDRM 메뉴: 시스템</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>
+</div>

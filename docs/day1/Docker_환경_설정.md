@@ -7,10 +7,18 @@ Docker 설치 완료 후, 시스템 최적화 및 사내 망과의 충돌 방지
 
 ---
 
-## **1. 설정 파일 작성**
+## **1. 엔진 최적화 설정**
 
-Docker의 주요 설정(데이터 저장 위치, 네트워크 대역, 로그 정책 등)을 하나의 파일로 관리합니다. 아래 내용을 참고하여 `/etc/docker/daemon.json` 파일을 생성하거나 수정해 주십시오.
+Docker는 단일 설정 파일(`/etc/docker/daemon.json`)을 사용하여 이미지 저장 경로, 네트워크 대역, 로그 정책 등을 한꺼번에 관리합니다.
 
+### **1.1 통합 설정 파일 작성**
+
+```bash
+# Docker 설정 파일 편집 (없을 경우 생성)
+vi /etc/docker/daemon.json
+```
+
+**수정 내용:**
 ```json
 {
   "data-root": "/mdrm/engine",
@@ -31,15 +39,15 @@ Docker의 주요 설정(데이터 저장 위치, 네트워크 대역, 로그 정
 
 ---
 
-## **2. 주요 설정 항목 설명**
+## **2. 주요 설정 항목 요약**
 
 | 항목 | 설정값 | 설명 |
 | :--- | :--- | :--- |
-| <span style="white-space: nowrap;">**data-root**</span> | `/mdrm/engine` | Docker 이미지 및 컨테이너 데이터가 저장될 경로입니다. (최소 50GB 이상 권장) |
-| <span style="white-space: nowrap;">**bip**</span> | `182.18.0.1/16` | 기본 브릿지 네트워크(`docker0`)의 IP 대역입니다. 사내 망과 충돌하지 않는 대역을 지정합니다. |
-| <span style="white-space: nowrap;">**default-address-pools**</span> | `182.19.0.1/16` | 컨테이너 생성 시 할당될 네트워크 IP 풀 범위입니다. |
-| <span style="white-space: nowrap;">**log-driver**</span> | `json-file` | 컨테이너 로그 저장 방식을 지정합니다. |
-| <span style="white-space: nowrap;">**log-opts**</span> | `max-size`, `max-file` | 개별 로그 파일의 최대 크기(100MB)와 보관할 파일 개수(5개)를 제한합니다. |
+| <span style="white-space: nowrap;">**data-root**</span> | `/mdrm/engine` | Docker 이미지 및 데이터가 저장될 경로입니다. (최소 50GB 이상 권장) |
+| <span style="white-space: nowrap;">**bip**</span> | `182.18.0.1/16` | 기본 브릿지 네트워크(`docker0`)의 IP 대역입니다. (사내망 충돌 방지) |
+| <span style="white-space: nowrap;">**default-address-pools**</span> | `182.19.0.1/16` | 컨테이너 자동 할당용 IP 풀 대역을 지정합니다. |
+| <span style="white-space: nowrap;">**log-driver**</span> | `json-file` | 컨테이너 로그 저장 방식을 지정합니다. (표준 형식) |
+| <span style="white-space: nowrap;">**log-opts**</span> | `max-size=100m` | 로그 파일 당 최대 용량 및 보관 개수(5개)를 제한합니다. |
 
 ---
 

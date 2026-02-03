@@ -24,7 +24,7 @@ vi /etc/containers/storage.conf
 **수정 내용:**
 ```toml
 [storage]
-# 기존 graphroot 주석 처리 후 변경
+driver = "overlay"
 graphroot = "/mdrm/engine"
 ```
 
@@ -39,34 +39,22 @@ vi /etc/containers/containers.conf
 
 **수정 내용:**
 ```toml
-[containers]
-# 로그 드라이버 (Docker의 json-file과 유사한 k8s-file 사용)
-log_driver = "k8s-file"
-
-# 로그 파일 최대 크기 (100MB = 104857600 bytes)
-log_size_max = 104857600
-
 [network]
-# 컨테이너 생성 시 할당될 IP 풀 범위 (default-address-pools)
+default_subnet = "182.18.0.0/16"
 default_subnet_pools = [
-  {"base" = "182.19.0.1/16", "size" = 24}
+  {"base" = "182.19.0.0/16", "size" = 24}
 ]
-```
 
-### **1.3 기본 네트워크 대역 변경 (bip)**
+[engine]
+[engine.log]
+driver = "json-file"
 
-Podman의 기본 네트워크(`podman`) 대역을 지정된 `182.18.0.1/16`으로 설정하려면, 기존 네트워크를 삭제하고 다시 생성해야 합니다.
+[engine.log.opts]
+max_size = "100m"
+max_file = "5"
 
-```bash
-# 1. 기존 기본 네트워크 삭제 (초기 설치 직후 수행 권장)
-podman network rm podman
-
-# 2. 새로운 대역으로 재생성
-# bip: 182.18.0.1/16 에 해당
-podman network create \
-  --subnet 182.18.0.0/16 \
-  --gateway 182.18.0.1 \
-  podman
+[containers]
+label = false
 ```
 
 ---
@@ -75,11 +63,12 @@ podman network create \
 
 | 항목 | 설정값 | 설명 |
 | :--- | :--- | :--- |
-| <span style="white-space: nowrap;">**graphroot** (`storage.conf`)</span> | `/mdrm/engine` | 컨테이너 이미지 및 데이터가 저장될 경로입니다. (Docker의 `data-root` 대응) |
-| <span style="white-space: nowrap;">**log_driver** (`containers.conf`)</span> | `k8s-file` | 컨테이너 로그 저장 방식을 지정합니다. (Docker의 `json-file` 대응) |
-| <span style="white-space: nowrap;">**log_size_max** (`containers.conf`)</span> | `100MB` | 개별 로그 파일의 최대 크기를 제한합니다. |
-| <span style="white-space: nowrap;">**default_subnet_pools** (`containers.conf`)</span> | `182.19.0.1/16` | 컨테이너 생성 시 할당될 네트워크 IP 풀 범위입니다. |
-| <span style="white-space: nowrap;">**podman network** (CLI 명령어)</span> | `182.18.0.1/16` | 기본 브릿지 네트워크의 IP 대역입니다. (Docker의 `bip` 대응) |
+| <span style="white-space: nowrap;">**driver** (`storage.conf`)</span> | `overlay` | 스토리지 드라이버 방식 (가장 권장되는 overlay 타입) |
+| <span style="white-space: nowrap;">**graphroot** (`storage.conf`)</span> | `/mdrm/engine` | 컨테이너 데이터가 저장될 경로 (Docker의 `data-root` 대응) |
+| <span style="white-space: nowrap;">**default_subnet** (`containers.conf`)</span> | `182.18.0.0/16` | 기본 브릿지 네트워크의 IP 대역 (Docker의 `bip` 대응) |
+| <span style="white-space: nowrap;">**engine.log.driver**</span> | `json-file` | 컨테이너 로그 저장 방식 (Docker 호환성 확보) |
+| <span style="white-space: nowrap;">**engine.log.opts**</span> | `max_size=100m` | 로그 파일 당 최대 용량 및 보관 개수 설정 |
+| <span style="white-space: nowrap;">**label** (`containers.conf`)</span> | `false` | SELinux 라벨링 기능 비활성화 (권한 호환성 확보) |
 
 ---
 

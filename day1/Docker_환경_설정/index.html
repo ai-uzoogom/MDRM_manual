@@ -792,10 +792,27 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 설정 파일 작성
+        1. 엔진 최적화 설정
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1. 엔진 최적화 설정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 통합 설정 파일 작성
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -803,7 +820,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 주요 설정 항목 설명
+        2. 주요 설정 항목 요약
       
     </span>
   </a>
@@ -3589,10 +3606,27 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 설정 파일 작성
+        1. 엔진 최적화 설정
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="1. 엔진 최적화 설정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 통합 설정 파일 작성
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3600,7 +3634,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 주요 설정 항목 설명
+        2. 주요 설정 항목 요약
       
     </span>
   </a>
@@ -3670,26 +3704,31 @@
 </div>
 <p>Docker 설치 완료 후, 시스템 최적화 및 사내 망과의 충돌 방지를 위해 <code>/etc/docker/daemon.json</code> 파일을 사용하여 설정을 진행합니다.</p>
 <hr>
-<h2 id="1"><strong>1. 설정 파일 작성</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<p>Docker의 주요 설정(데이터 저장 위치, 네트워크 대역, 로그 정책 등)을 하나의 파일로 관리합니다. 아래 내용을 참고하여 <code>/etc/docker/daemon.json</code> 파일을 생성하거나 수정해 주십시오.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"data-root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/mdrm/engine"</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"bip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.18.0.1/16"</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"default-address-pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">"base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.19.0.1/16"</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">"log-driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json-file"</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">"log-opts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">"max-size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100m"</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">"max-file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">}</span>
+<h2 id="1"><strong>1. 엔진 최적화 설정</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<p>Docker는 단일 설정 파일(<code>/etc/docker/daemon.json</code>)을 사용하여 이미지 저장 경로, 네트워크 대역, 로그 정책 등을 한꺼번에 관리합니다.</p>
+<h3 id="11"><strong>1.1 통합 설정 파일 작성</strong><a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Docker 설정 파일 편집 (없을 경우 생성)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>vi<span class="w"> </span>/etc/docker/daemon.json
 </code></pre></div>
+<p><strong>수정 내용:</strong>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"data-root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/mdrm/engine"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"bip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.18.0.1/16"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"default-address-pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">"base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"182.19.0.1/16"</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">"log-driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json-file"</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">"log-opts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">"max-size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100m"</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">"max-file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+</code></pre></div><p></p>
 <hr>
-<h2 id="2"><strong>2. 주요 설정 항목 설명</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<h2 id="2"><strong>2. 주요 설정 항목 요약</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -3702,27 +3741,27 @@
 <tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>data-root</strong></span></td>
 <td style="text-align: left;"><code>/mdrm/engine</code></td>
-<td style="text-align: left;">Docker 이미지 및 컨테이너 데이터가 저장될 경로입니다. (최소 50GB 이상 권장)</td>
+<td style="text-align: left;">Docker 이미지 및 데이터가 저장될 경로입니다. (최소 50GB 이상 권장)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>bip</strong></span></td>
 <td style="text-align: left;"><code>182.18.0.1/16</code></td>
-<td style="text-align: left;">기본 브릿지 네트워크(<code>docker0</code>)의 IP 대역입니다. 사내 망과 충돌하지 않는 대역을 지정합니다.</td>
+<td style="text-align: left;">기본 브릿지 네트워크(<code>docker0</code>)의 IP 대역입니다. (사내망 충돌 방지)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>default-address-pools</strong></span></td>
 <td style="text-align: left;"><code>182.19.0.1/16</code></td>
-<td style="text-align: left;">컨테이너 생성 시 할당될 네트워크 IP 풀 범위입니다.</td>
+<td style="text-align: left;">컨테이너 자동 할당용 IP 풀 대역을 지정합니다.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>log-driver</strong></span></td>
 <td style="text-align: left;"><code>json-file</code></td>
-<td style="text-align: left;">컨테이너 로그 저장 방식을 지정합니다.</td>
+<td style="text-align: left;">컨테이너 로그 저장 방식을 지정합니다. (표준 형식)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>log-opts</strong></span></td>
-<td style="text-align: left;"><code>max-size</code>, <code>max-file</code></td>
-<td style="text-align: left;">개별 로그 파일의 최대 크기(100MB)와 보관할 파일 개수(5개)를 제한합니다.</td>
+<td style="text-align: left;"><code>max-size=100m</code></td>
+<td style="text-align: left;">로그 파일 당 최대 용량 및 보관 개수(5개)를 제한합니다.</td>
 </tr>
 </tbody>
 </table>
@@ -3730,15 +3769,15 @@
 <h2 id="3"><strong>3. 설정 적용 및 확인</strong><a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
 <p>파일 작성을 완료한 후에는 서비스를 재시작해야 변경 사항이 시스템에 반영됩니다.</p>
 <h3 id="31"><strong>3.1 서비스 재시작 및 자동 시작 활성화</strong><a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>systemctl<span class="w"> </span>restart<span class="w"> </span>docker
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
 </code></pre></div>
 <h3 id="32"><strong>3.2 적용 상태 확인</strong><a class="headerlink" href="#32" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Docker 설정 정보 및 데이터 저장 위치 확인</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"Root Dir|Logging Driver"</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 브릿지 네트워크 IP 확인</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>docker0
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Docker 설정 정보 및 데이터 저장 위치 확인</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"Root Dir|Logging Driver"</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 브릿지 네트워크 IP 확인</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>docker0
 </code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">주의사항</p>

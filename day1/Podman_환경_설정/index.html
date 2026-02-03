@@ -943,17 +943,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#13-bip" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 기본 네트워크 대역 변경 (bip)
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3630,17 +3619,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#13-bip" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1.3 기본 네트워크 대역 변경 (bip)
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3702,7 +3680,7 @@
 </code></pre></div>
 <p><strong>수정 내용:</strong>
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[storage]</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># 기존 graphroot 주석 처리 후 변경</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"overlay"</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">graphroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"/mdrm/engine"</span>
 </code></pre></div><p></p>
 <h3 id="12"><strong>1.2 컨테이너 및 로그 설정</strong><a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
@@ -3711,31 +3689,23 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>vi<span class="w"> </span>/etc/containers/containers.conf
 </code></pre></div>
 <p><strong>수정 내용:</strong>
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[containers]</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># 로그 드라이버 (Docker의 json-file과 유사한 k8s-file 사용)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">log_driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"k8s-file"</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 로그 파일 최대 크기 (100MB = 104857600 bytes)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">log_size_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">104857600</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">[network]</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># 컨테이너 생성 시 할당될 IP 풀 범위 (default-address-pools)</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">default_subnet_pools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="p">{</span><span class="s2">"base"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"182.19.0.1/16"</span><span class="p">,</span><span class="w"> </span><span class="s2">"size"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">24</span><span class="p">}</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">]</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[network]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">default_subnet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"182.18.0.0/16"</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">default_subnet_pools</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p">{</span><span class="s2">"base"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"182.19.0.0/16"</span><span class="p">,</span><span class="w"> </span><span class="s2">"size"</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">24</span><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">[engine]</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">[engine.log]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json-file"</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">[engine.log.opts]</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">max_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"100m"</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">max_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"5"</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">[containers]</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
 </code></pre></div><p></p>
-<h3 id="13-bip"><strong>1.3 기본 네트워크 대역 변경 (bip)</strong><a class="headerlink" href="#13-bip" title="Permanent link">¶</a></h3>
-<p>Podman의 기본 네트워크(<code>podman</code>) 대역을 지정된 <code>182.18.0.1/16</code>으로 설정하려면, 기존 네트워크를 삭제하고 다시 생성해야 합니다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 1. 기존 기본 네트워크 삭제 (초기 설치 직후 수행 권장)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>podman<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>podman
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 2. 새로운 대역으로 재생성</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># bip: 182.18.0.1/16 에 해당</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>podman<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span>--subnet<span class="w"> </span><span class="m">182</span>.18.0.0/16<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span>--gateway<span class="w"> </span><span class="m">182</span>.18.0.1<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span>podman
-</code></pre></div>
 <hr>
 <h2 id="2"><strong>2. 주요 설정 항목 요약</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
 <table>
@@ -3748,40 +3718,45 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;"><span style="white-space: nowrap;"><strong>driver</strong> (<code>storage.conf</code>)</span></td>
+<td style="text-align: left;"><code>overlay</code></td>
+<td style="text-align: left;">스토리지 드라이버 방식 (가장 권장되는 overlay 타입)</td>
+</tr>
+<tr>
 <td style="text-align: left;"><span style="white-space: nowrap;"><strong>graphroot</strong> (<code>storage.conf</code>)</span></td>
 <td style="text-align: left;"><code>/mdrm/engine</code></td>
-<td style="text-align: left;">컨테이너 이미지 및 데이터가 저장될 경로입니다. (Docker의 <code>data-root</code> 대응)</td>
+<td style="text-align: left;">컨테이너 데이터가 저장될 경로 (Docker의 <code>data-root</code> 대응)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span style="white-space: nowrap;"><strong>log_driver</strong> (<code>containers.conf</code>)</span></td>
-<td style="text-align: left;"><code>k8s-file</code></td>
-<td style="text-align: left;">컨테이너 로그 저장 방식을 지정합니다. (Docker의 <code>json-file</code> 대응)</td>
+<td style="text-align: left;"><span style="white-space: nowrap;"><strong>default_subnet</strong> (<code>containers.conf</code>)</span></td>
+<td style="text-align: left;"><code>182.18.0.0/16</code></td>
+<td style="text-align: left;">기본 브릿지 네트워크의 IP 대역 (Docker의 <code>bip</code> 대응)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span style="white-space: nowrap;"><strong>log_size_max</strong> (<code>containers.conf</code>)</span></td>
-<td style="text-align: left;"><code>100MB</code></td>
-<td style="text-align: left;">개별 로그 파일의 최대 크기를 제한합니다.</td>
+<td style="text-align: left;"><span style="white-space: nowrap;"><strong>engine.log.driver</strong></span></td>
+<td style="text-align: left;"><code>json-file</code></td>
+<td style="text-align: left;">컨테이너 로그 저장 방식 (Docker 호환성 확보)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span style="white-space: nowrap;"><strong>default_subnet_pools</strong> (<code>containers.conf</code>)</span></td>
-<td style="text-align: left;"><code>182.19.0.1/16</code></td>
-<td style="text-align: left;">컨테이너 생성 시 할당될 네트워크 IP 풀 범위입니다.</td>
+<td style="text-align: left;"><span style="white-space: nowrap;"><strong>engine.log.opts</strong></span></td>
+<td style="text-align: left;"><code>max_size=100m</code></td>
+<td style="text-align: left;">로그 파일 당 최대 용량 및 보관 개수 설정</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span style="white-space: nowrap;"><strong>podman network</strong> (CLI 명령어)</span></td>
-<td style="text-align: left;"><code>182.18.0.1/16</code></td>
-<td style="text-align: left;">기본 브릿지 네트워크의 IP 대역입니다. (Docker의 <code>bip</code> 대응)</td>
+<td style="text-align: left;"><span style="white-space: nowrap;"><strong>label</strong> (<code>containers.conf</code>)</span></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">SELinux 라벨링 기능 비활성화 (권한 호환성 확보)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="3-podman-compose"><strong>3. Podman Compose 사용 가이드</strong><a class="headerlink" href="#3-podman-compose" title="Permanent link">¶</a></h2>
 <p>MDRM의 컨테이너를 실행할 때는 <code>podman-compose</code>를 사용합니다. 이는 <code>docker-compose.yml</code> 문법을 Podman 환경에 맞게 변환하여 실행해줍니다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># MDRM 설치 디렉토리에서 실행</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>podman-compose<span class="w"> </span>up<span class="w"> </span>-d
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 실행 상태 확인</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>podman-compose<span class="w"> </span>ps
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># MDRM 설치 디렉토리에서 실행</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>podman-compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 실행 상태 확인</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>podman-compose<span class="w"> </span>ps
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Podman 관리 팁</p>

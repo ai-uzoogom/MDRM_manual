@@ -1,0 +1,4141 @@
+<!DOCTYPE html><html lang="ko" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="MDRM Team">
+      
+      
+        <link rel="canonical" href="https://ai-uzoogom.github.io/MDRM_manual/day1/MDRM_%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88_%EA%B5%AC%EC%84%B1/">
+      
+      
+        <link rel="prev" href="../MDRM_%EC%84%A4%EC%B9%98_%EB%B0%8F_%ED%99%95%EC%9D%B8/">
+      
+      
+        <link rel="next" href="../MDRM_%EC%A0%95%EC%A7%80_%EB%B0%8F_%EC%A2%85%EB%A3%8C/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>▸ 컨테이너 구성 정보 - MDRM 엔지니어 실전 교육매뉴얼</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pretendard:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Pretendard";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="MDRM 엔지니어 실전 교육매뉴얼" class="md-header__button md-logo" aria-label="MDRM 엔지니어 실전 교육매뉴얼" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MDRM 엔지니어 실전 교육매뉴얼
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ▸ 컨테이너 구성 정보
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  🏠
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../MDRM_DAY1_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-tabs__link">
+          
+  
+  
+  DAY 1
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../day2/MDRM_DAY2_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-tabs__link">
+          
+  
+  
+  DAY 2
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../day3/MDRM_DAY3_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-tabs__link">
+          
+  
+  
+  DAY 3
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../day4/MDRM_DAY4_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-tabs__link">
+          
+  
+  
+  DAY 4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../troubleshooting/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD_Grep/" class="md-tabs__link">
+          
+  
+  
+  실무 트러블슈팅
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MDRM 엔지니어 실전 교육매뉴얼" class="md-nav__button md-logo" aria-label="MDRM 엔지니어 실전 교육매뉴얼" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    MDRM 엔지니어 실전 교육매뉴얼
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAY 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAY 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_DAY1_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    학습 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EC%86%94%EB%A3%A8%EC%85%98_%EA%B0%9C%EC%9A%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    솔루션 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인프라
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    인프라
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%9D%B8%ED%94%84%EB%9D%BC_%EB%94%94%EC%8A%A4%ED%81%AC_%EA%B5%AC%EC%84%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 디스크 구성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%9D%B8%ED%94%84%EB%9D%BC_OS_%ED%8A%9C%EB%8B%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ OS 튜닝
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%9D%B8%ED%94%84%EB%9D%BC_%ED%8F%AC%ED%8A%B8_%EC%A0%95%EB%B3%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 포트 정보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker_%EC%84%A4%EC%B9%98_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ Docker 설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker_%ED%99%98%EA%B2%BD_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ Docker 환경 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Podman
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Podman
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Podman_%EC%84%A4%EC%B9%98_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ Podman 설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Podman_%ED%99%98%EA%B2%BD_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ Podman 환경 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDRM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MDRM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EC%84%A4%EC%B9%98_%EB%B0%8F_%ED%99%95%EC%9D%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 설치 및 확인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 컨테이너 구성 정보
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 컨테이너 구성 정보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 서비스 구성 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 서비스 구성 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 컨테이너 역할 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 환경 변수 설정 (.env)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 환경 변수 설정 (.env)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 변수 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. docker-compose.yml 상세 분석
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 네트워크 및 스토리지 구성
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EC%A0%95%EC%A7%80_%EB%B0%8F_%EC%A2%85%EB%A3%8C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 정지 및 종료
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 시스템 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAY 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAY 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_DAY2_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    학습 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%84%A4%EC%B9%98_%EB%B0%8F_%EB%93%B1%EB%A1%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 설치 및 등록
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%9E%90%EB%8F%99%EC%84%A4%EC%B9%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 자동설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 수동설치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ▸ 수동설치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%88%98%EB%8F%99%EC%84%A4%EC%B9%98_%EB%A6%AC%EB%88%85%EC%8A%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › 리눅스(Linux)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%88%98%EB%8F%99%EC%84%A4%EC%B9%98_%EC%9C%88%EB%8F%84%EC%9A%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › 윈도우(Windows)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%88%98%EB%8F%99%EC%84%A4%EC%B9%98_%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › 가져오기(Import)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%88%98%EB%8F%99%EB%93%B1%EB%A1%9D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 시스템 수동등록
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_Agentless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ Agentless
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_Agent_%ED%99%98%EA%B2%BD_%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 환경 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대시보드
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    대시보드
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EB%A9%94%EB%89%B4_%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 대시보드 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C_%EC%9C%84%EC%A0%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 위젯 활용 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시스템
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    시스템
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EB%A9%94%EB%89%B4_%EC%8B%9C%EC%8A%A4%ED%85%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EA%B5%AC%EC%84%B1_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 구성 및 그룹 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EB%93%B1%EB%A1%9D_%EC%B6%94%EA%B0%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 시스템 등록 및 추가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81_%EC%95%8C%EB%A6%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 모니터링 및 알림
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EB%B0%B0%ED%8F%AC_%EC%9E%91%EC%97%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 프로그램 배포 및 작업
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EA%B3%84%EC%A0%95_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 계정 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    워크플로우
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EB%A9%94%EB%89%B4_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EA%B5%AC%EC%84%B1_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 데이터센터 및 그룹 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EC%84%A4%EA%B3%84_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 프로세스 설계 및 컴포넌트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EB%B3%80%EC%88%98_%EB%B6%84%EA%B8%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 변수 활용 및 조건 분기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EC%8B%A4%ED%96%89_%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 워크플로우 실행 및 모니터링
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EA%B4%80%EB%A6%AC_%EB%A6%AC%ED%8F%AC%ED%8A%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 관리 및 실행 리포트
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    점검작업
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    점검작업
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%A0%90%EA%B2%80%EC%9E%91%EC%97%85_%EA%B0%9C%EC%9A%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 개요
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%A0%90%EA%B2%80%EC%9E%91%EC%97%85_%EA%B5%AC%EC%84%B1_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 데이터센터 및 그룹 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%A0%90%EA%B2%80_%EC%9E%91%EC%97%85_%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 점검 및 작업 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%A0%90%EA%B2%80_%EC%8B%A4%ED%96%89_%EA%B2%B0%EA%B3%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 실행 결과 및 이력 확인
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day2/MDRM_%EC%A0%90%EA%B2%80_%EC%8A%A4%EC%BC%80%EC%A4%84_%EC%95%8C%EB%A6%BC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 스케줄 및 알림
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAY 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAY 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_DAY3_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    학습 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%9E%90%EB%8F%99%ED%99%94_%EC%98%81%EC%97%AD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자동화 제어 범위
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    워크플로우
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    워크플로우
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EC%9C%A0%ED%98%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 유형 및 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EC%8B%9C%EC%8A%A4%ED%85%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 시스템 워크플로우
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EA%B7%B8%EB%A3%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 그룹 워크플로우
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0_%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 시나리오 워크플로우
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    컴포넌트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    컴포넌트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%84%A4%EA%B3%84_%EB%A1%9C%EC%A7%81/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 설계 및 로직
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%8B%A4%ED%96%89_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 실행 프로세스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%ED%85%9C%ED%94%8C%EB%A6%BF_%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 템플릿 제작 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    점검 작업
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    점검 작업
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day3/MDRM_%EC%A0%90%EA%B2%80_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 점검 컴포넌트 실무
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAY 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DAY 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day4/MDRM_DAY4_%ED%95%99%EC%8A%B5_%EC%95%88%EB%82%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    학습 안내
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실습 &amp; 장애조치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    실습 &amp; 장애조치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day4/MDRM_%EC%8B%A4%EC%A0%84_%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4_%EC%8B%A4%EC%8A%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 실전 시나리오 실습
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day4/MDRM_%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 트러블슈팅 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../day4/MDRM_%EA%B5%90%EC%9C%A1_%EB%A7%88%EB%AC%B4%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 교육 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실무 트러블슈팅
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    실무 트러블슈팅
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1">
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    컴포넌트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    컴포넌트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD_Grep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › Grep 자기 자신 탐지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/MDRM_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EC%9C%A0%EC%9D%98%EC%82%AC%ED%95%AD_%EC%9D%B8%EC%9E%90%EA%B0%92/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › 인자값(Argument) 충돌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/MDRM_%ED%86%B5%EC%8B%A0%EC%98%A4%EB%A5%98_417_Token/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › 417 오류 및 Token 불일치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/MDRM_Agent_%ED%8F%AC%ED%8A%B8_%EB%B3%80%EA%B2%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    › Agent 포트 변경
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/MDRM_Admonition_Samples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admonition 샘플
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 서비스 구성 개요
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 서비스 구성 개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 컨테이너 역할 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 환경 변수 설정 (.env)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 환경 변수 설정 (.env)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 변수 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-docker-composeyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. docker-compose.yml 상세 분석
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 네트워크 및 스토리지 구성
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">🚀 컨테이너 구성 정보<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div class="admonition info">
+<p class="admonition-title">학습 안내</p>
+<p>MDRM 솔루션을 구성하는 주요 마이크로서비스들의 역할과 Docker Compose 환경 설정을 학습합니다. <code>docker-compose.yml</code> 파일을 통해 각 컨테이너의 역할과 상호작용을 이해할 수 있습니다.</p>
+</div>
+<h2 id="1"><strong>1. 서비스 구성 개요</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<p>MDRM은 가용성과 확장성을 확보하기 위해 마이크로서비스 아키텍처(MSA)를 채택하고 있습니다. 모든 주요 컴포넌트는 Docker 컨테이너로 실행되며, 이를 통합 관리하기 위해 Docker Compose를 사용합니다.</p>
+<h3 id="_2"><strong>주요 컨테이너 역할 정의</strong><a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">컨테이너 명</th>
+<th style="text-align: left;">기능 및 역할</th>
+<th style="text-align: left;">주요 포트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>nginx-gateway</strong></td>
+<td style="text-align: left;">웹 서비스 진입점 (API Gateway 및 정적 파일 서빙)</td>
+<td style="text-align: left;">80, 443</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mdrm-ui</strong> / <strong>dashboard-ui</strong></td>
+<td style="text-align: left;">관리자 콘솔 및 통합 대시보드 화면</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mdrm-iam</strong></td>
+<td style="text-align: left;">계정 인증 및 권한 관리 (Keycloak 기반)</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mdrm-postgres</strong></td>
+<td style="text-align: left;">메인 시스템 데이터베이스</td>
+<td style="text-align: left;">5433</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mdrm-rabbitmq</strong></td>
+<td style="text-align: left;">각 서비스 간 통신을 위한 메시지 브로커</td>
+<td style="text-align: left;">5673</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mdrm-controller</strong></td>
+<td style="text-align: left;">솔루션의 핵심 비즈니스 로직 제어</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>workflow-controller</strong></td>
+<td style="text-align: left;">워크플로우 설계 및 복구 시나리오 엔진</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>task-worker</strong></td>
+<td style="text-align: left;">할당된 작업을 실제 수행하는 워커 유닛</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-env"><strong>2. 환경 변수 설정 (.env)</strong><a class="headerlink" href="#2-env" title="Permanent link">¶</a></h2>
+<p><code>docker-compose.yml</code>에서 사용하는 동적 변수들은 같은 디렉토리에 위치한 <code>.env</code> 파일에 정의되어 있습니다. 설치 환경에 따라 이 파일의 내용을 수정하여 경로 및 포트를 변경할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MDRM_HOME=/mdrm/data
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>HOSTNAME=UZOOGOM-LINUX
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>MDRM_PORT=443
+</code></pre></div>
+<h3 id="_3"><strong>주요 변수 설명</strong><a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">변수명</th>
+<th style="text-align: left;">용도</th>
+<th style="text-align: left;">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MDRM_HOME</strong></td>
+<td style="text-align: left;">데이터 및 설정 저장 경로</td>
+<td style="text-align: left;">솔루션의 바이너리, 로그, DB 데이터가 저장되는 최상위 경로입니다.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HOSTNAME</strong></td>
+<td style="text-align: left;">서비스 접속 주소 (FQDN)</td>
+<td style="text-align: left;">웹 브라우저 접속 및 서비스 내부 인증 시 사용되는 호스트네임입니다.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MDRM_PORT</strong></td>
+<td style="text-align: left;">서비스 리스닝 포트</td>
+<td style="text-align: left;">Nginx가 외부 요청을 받을 포트 번호입니다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-docker-composeyml"><strong>3. docker-compose.yml 상세 분석</strong><a class="headerlink" href="#3-docker-composeyml" title="Permanent link">¶</a></h2>
+<p>MDRM 설치 디렉토리의 <code>docker-compose.yml</code> 설정 내용입니다. 이 설정은 서비스 간의 의존성, 볼륨 마운트, 환경 변수 등을 정의합니다.</p>
+<div class="admonition tip">
+<p class="admonition-title">환경 변수 활용</p>
+<p><code>docker-compose.yml</code> 내의 <code>${MDRM_HOME}</code>, <code>${HOSTNAME}</code> 등은 앞에서 살펴본 <code>.env</code> 파일의 값을 참조하여 동작합니다.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">mdrm-iam</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-iam:latest</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-iam</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-iam</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KC_HOSTNAME_ADMIN_URL=https://${HOSTNAME}/mdrm-iam</span><span class="w"> </span><span class="c1"># keycloak admin console</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/keycloak/import:/opt/keycloak/data/import</span><span class="w"> </span><span class="c1"># realm info</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">  </span><span class="nt">mdrm-postgres</span><span class="p">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-postgres:latest</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/postgresql/pg_hba.conf:/etc/postgresql/pg_hba.conf</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/postgresql/data/16/main:/var/lib/postgresql/data</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5433:5433"</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="nt">shm_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4gb</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="w">  </span><span class="nt">mdrm-rabbitmq</span><span class="p">:</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-rabbitmq:latest</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5673:5673"</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="w">  </span><span class="nt">auth-controller</span><span class="p">:</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auth-controller</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auth-controller</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts/</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/auth-controller:/opt/mdrm</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=auth-controller</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="w">  </span><span class="nt">workflow-controller</span><span class="p">:</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workflow-controller</span>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workflow-controller</span>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=workflow-controller</span>
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts</span>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/workflow-controller:/opt/mdrm</span>
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a><span class="w">  </span><span class="nt">alert-controller</span><span class="p">:</span>
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert-controller</span>
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert-controller</span>
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=alert-controller</span>
+<a id="__codelineno-1-118" name="__codelineno-1-118" href="#__codelineno-1-118"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-119" name="__codelineno-1-119" href="#__codelineno-1-119"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-120" name="__codelineno-1-120" href="#__codelineno-1-120"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts</span>
+<a id="__codelineno-1-121" name="__codelineno-1-121" href="#__codelineno-1-121"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-122" name="__codelineno-1-122" href="#__codelineno-1-122"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/alert-controller:/opt/mdrm</span>
+<a id="__codelineno-1-123" name="__codelineno-1-123" href="#__codelineno-1-123"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-124" name="__codelineno-1-124" href="#__codelineno-1-124"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-125" name="__codelineno-1-125" href="#__codelineno-1-125"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-126" name="__codelineno-1-126" href="#__codelineno-1-126"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-127" name="__codelineno-1-127" href="#__codelineno-1-127"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-128" name="__codelineno-1-128" href="#__codelineno-1-128"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-129" name="__codelineno-1-129" href="#__codelineno-1-129"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-130" name="__codelineno-1-130" href="#__codelineno-1-130"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-131" name="__codelineno-1-131" href="#__codelineno-1-131"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-133" name="__codelineno-1-133" href="#__codelineno-1-133"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-134" name="__codelineno-1-134" href="#__codelineno-1-134"></a>
+<a id="__codelineno-1-135" name="__codelineno-1-135" href="#__codelineno-1-135"></a><span class="w">  </span><span class="nt">schedule-controller</span><span class="p">:</span>
+<a id="__codelineno-1-136" name="__codelineno-1-136" href="#__codelineno-1-136"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-137" name="__codelineno-1-137" href="#__codelineno-1-137"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schedule-controller</span>
+<a id="__codelineno-1-138" name="__codelineno-1-138" href="#__codelineno-1-138"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schedule-controller</span>
+<a id="__codelineno-1-139" name="__codelineno-1-139" href="#__codelineno-1-139"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-140" name="__codelineno-1-140" href="#__codelineno-1-140"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-141" name="__codelineno-1-141" href="#__codelineno-1-141"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-142" name="__codelineno-1-142" href="#__codelineno-1-142"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts/</span>
+<a id="__codelineno-1-143" name="__codelineno-1-143" href="#__codelineno-1-143"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/schedule-controller:/opt/mdrm</span>
+<a id="__codelineno-1-144" name="__codelineno-1-144" href="#__codelineno-1-144"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-145" name="__codelineno-1-145" href="#__codelineno-1-145"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-146" name="__codelineno-1-146" href="#__codelineno-1-146"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=schedule-controller</span>
+<a id="__codelineno-1-147" name="__codelineno-1-147" href="#__codelineno-1-147"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-148" name="__codelineno-1-148" href="#__codelineno-1-148"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-149" name="__codelineno-1-149" href="#__codelineno-1-149"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-150" name="__codelineno-1-150" href="#__codelineno-1-150"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-151" name="__codelineno-1-151" href="#__codelineno-1-151"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-152" name="__codelineno-1-152" href="#__codelineno-1-152"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-153" name="__codelineno-1-153" href="#__codelineno-1-153"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-154" name="__codelineno-1-154" href="#__codelineno-1-154"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-155" name="__codelineno-1-155" href="#__codelineno-1-155"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-156" name="__codelineno-1-156" href="#__codelineno-1-156"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-157" name="__codelineno-1-157" href="#__codelineno-1-157"></a>
+<a id="__codelineno-1-158" name="__codelineno-1-158" href="#__codelineno-1-158"></a><span class="w">  </span><span class="nt">mdrm-controller</span><span class="p">:</span>
+<a id="__codelineno-1-159" name="__codelineno-1-159" href="#__codelineno-1-159"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-160" name="__codelineno-1-160" href="#__codelineno-1-160"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-controller</span>
+<a id="__codelineno-1-161" name="__codelineno-1-161" href="#__codelineno-1-161"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-controller</span>
+<a id="__codelineno-1-162" name="__codelineno-1-162" href="#__codelineno-1-162"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-163" name="__codelineno-1-163" href="#__codelineno-1-163"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-164" name="__codelineno-1-164" href="#__codelineno-1-164"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-165" name="__codelineno-1-165" href="#__codelineno-1-165"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-166" name="__codelineno-1-166" href="#__codelineno-1-166"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-167" name="__codelineno-1-167" href="#__codelineno-1-167"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts/</span>
+<a id="__codelineno-1-168" name="__codelineno-1-168" href="#__codelineno-1-168"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/mdrm-controller:/opt/mdrm</span>
+<a id="__codelineno-1-169" name="__codelineno-1-169" href="#__codelineno-1-169"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-170" name="__codelineno-1-170" href="#__codelineno-1-170"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=mdrm-controller</span>
+<a id="__codelineno-1-171" name="__codelineno-1-171" href="#__codelineno-1-171"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-172" name="__codelineno-1-172" href="#__codelineno-1-172"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-173" name="__codelineno-1-173" href="#__codelineno-1-173"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-174" name="__codelineno-1-174" href="#__codelineno-1-174"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-175" name="__codelineno-1-175" href="#__codelineno-1-175"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-176" name="__codelineno-1-176" href="#__codelineno-1-176"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-177" name="__codelineno-1-177" href="#__codelineno-1-177"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-178" name="__codelineno-1-178" href="#__codelineno-1-178"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-179" name="__codelineno-1-179" href="#__codelineno-1-179"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-180" name="__codelineno-1-180" href="#__codelineno-1-180"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-181" name="__codelineno-1-181" href="#__codelineno-1-181"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-182" name="__codelineno-1-182" href="#__codelineno-1-182"></a>
+<a id="__codelineno-1-183" name="__codelineno-1-183" href="#__codelineno-1-183"></a><span class="w">  </span><span class="nt">task-worker</span><span class="p">:</span>
+<a id="__codelineno-1-184" name="__codelineno-1-184" href="#__codelineno-1-184"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-base:latest</span>
+<a id="__codelineno-1-185" name="__codelineno-1-185" href="#__codelineno-1-185"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task-worker</span>
+<a id="__codelineno-1-186" name="__codelineno-1-186" href="#__codelineno-1-186"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">task-worker</span>
+<a id="__codelineno-1-187" name="__codelineno-1-187" href="#__codelineno-1-187"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-188" name="__codelineno-1-188" href="#__codelineno-1-188"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-189" name="__codelineno-1-189" href="#__codelineno-1-189"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-190" name="__codelineno-1-190" href="#__codelineno-1-190"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONTAINER_NAME=task-worker</span>
+<a id="__codelineno-1-191" name="__codelineno-1-191" href="#__codelineno-1-191"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spring.profiles.active=default,prod</span>
+<a id="__codelineno-1-192" name="__codelineno-1-192" href="#__codelineno-1-192"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-193" name="__codelineno-1-193" href="#__codelineno-1-193"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts</span>
+<a id="__codelineno-1-194" name="__codelineno-1-194" href="#__codelineno-1-194"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/app/task-worker:/opt/mdrm</span>
+<a id="__codelineno-1-195" name="__codelineno-1-195" href="#__codelineno-1-195"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-196" name="__codelineno-1-196" href="#__codelineno-1-196"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-197" name="__codelineno-1-197" href="#__codelineno-1-197"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-198" name="__codelineno-1-198" href="#__codelineno-1-198"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-199" name="__codelineno-1-199" href="#__codelineno-1-199"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-200" name="__codelineno-1-200" href="#__codelineno-1-200"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-201" name="__codelineno-1-201" href="#__codelineno-1-201"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-202" name="__codelineno-1-202" href="#__codelineno-1-202"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-203" name="__codelineno-1-203" href="#__codelineno-1-203"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-204" name="__codelineno-1-204" href="#__codelineno-1-204"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-205" name="__codelineno-1-205" href="#__codelineno-1-205"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-206" name="__codelineno-1-206" href="#__codelineno-1-206"></a>
+<a id="__codelineno-1-207" name="__codelineno-1-207" href="#__codelineno-1-207"></a><span class="w">  </span><span class="nt">mdrm-logstash</span><span class="p">:</span>
+<a id="__codelineno-1-208" name="__codelineno-1-208" href="#__codelineno-1-208"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-logstash</span>
+<a id="__codelineno-1-209" name="__codelineno-1-209" href="#__codelineno-1-209"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-logstash</span>
+<a id="__codelineno-1-210" name="__codelineno-1-210" href="#__codelineno-1-210"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-logstash</span>
+<a id="__codelineno-1-211" name="__codelineno-1-211" href="#__codelineno-1-211"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-212" name="__codelineno-1-212" href="#__codelineno-1-212"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5001:5001"</span>
+<a id="__codelineno-1-213" name="__codelineno-1-213" href="#__codelineno-1-213"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-214" name="__codelineno-1-214" href="#__codelineno-1-214"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-215" name="__codelineno-1-215" href="#__codelineno-1-215"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/logstash/config:/usr/share/logstash/config</span>
+<a id="__codelineno-1-216" name="__codelineno-1-216" href="#__codelineno-1-216"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/logstash/pipeline:/usr/share/logstash/pipeline</span>
+<a id="__codelineno-1-217" name="__codelineno-1-217" href="#__codelineno-1-217"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/logstash/jdbc:/usr/share/logstash/jdbc</span>
+<a id="__codelineno-1-218" name="__codelineno-1-218" href="#__codelineno-1-218"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-219" name="__codelineno-1-219" href="#__codelineno-1-219"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-220" name="__codelineno-1-220" href="#__codelineno-1-220"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-221" name="__codelineno-1-221" href="#__codelineno-1-221"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-222" name="__codelineno-1-222" href="#__codelineno-1-222"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-223" name="__codelineno-1-223" href="#__codelineno-1-223"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-224" name="__codelineno-1-224" href="#__codelineno-1-224"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-225" name="__codelineno-1-225" href="#__codelineno-1-225"></a><span class="w">  </span><span class="nt">mdrm-ui</span><span class="p">:</span>
+<a id="__codelineno-1-226" name="__codelineno-1-226" href="#__codelineno-1-226"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/mdrm-ui:latest</span>
+<a id="__codelineno-1-227" name="__codelineno-1-227" href="#__codelineno-1-227"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-ui</span>
+<a id="__codelineno-1-228" name="__codelineno-1-228" href="#__codelineno-1-228"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-ui</span>
+<a id="__codelineno-1-229" name="__codelineno-1-229" href="#__codelineno-1-229"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-230" name="__codelineno-1-230" href="#__codelineno-1-230"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-231" name="__codelineno-1-231" href="#__codelineno-1-231"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-232" name="__codelineno-1-232" href="#__codelineno-1-232"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-233" name="__codelineno-1-233" href="#__codelineno-1-233"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-234" name="__codelineno-1-234" href="#__codelineno-1-234"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-235" name="__codelineno-1-235" href="#__codelineno-1-235"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-236" name="__codelineno-1-236" href="#__codelineno-1-236"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-237" name="__codelineno-1-237" href="#__codelineno-1-237"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-238" name="__codelineno-1-238" href="#__codelineno-1-238"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-239" name="__codelineno-1-239" href="#__codelineno-1-239"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-240" name="__codelineno-1-240" href="#__codelineno-1-240"></a>
+<a id="__codelineno-1-241" name="__codelineno-1-241" href="#__codelineno-1-241"></a><span class="w">  </span><span class="nt">dashboard-ui</span><span class="p">:</span>
+<a id="__codelineno-1-242" name="__codelineno-1-242" href="#__codelineno-1-242"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/dashboard-ui:latest</span>
+<a id="__codelineno-1-243" name="__codelineno-1-243" href="#__codelineno-1-243"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dashboard-ui</span>
+<a id="__codelineno-1-244" name="__codelineno-1-244" href="#__codelineno-1-244"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dashboard-ui</span>
+<a id="__codelineno-1-245" name="__codelineno-1-245" href="#__codelineno-1-245"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-246" name="__codelineno-1-246" href="#__codelineno-1-246"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-247" name="__codelineno-1-247" href="#__codelineno-1-247"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-248" name="__codelineno-1-248" href="#__codelineno-1-248"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-249" name="__codelineno-1-249" href="#__codelineno-1-249"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-250" name="__codelineno-1-250" href="#__codelineno-1-250"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-251" name="__codelineno-1-251" href="#__codelineno-1-251"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-252" name="__codelineno-1-252" href="#__codelineno-1-252"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-253" name="__codelineno-1-253" href="#__codelineno-1-253"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-254" name="__codelineno-1-254" href="#__codelineno-1-254"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-255" name="__codelineno-1-255" href="#__codelineno-1-255"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-256" name="__codelineno-1-256" href="#__codelineno-1-256"></a><span class="w">  </span><span class="nt">nginx-gateway</span><span class="p">:</span>
+<a id="__codelineno-1-257" name="__codelineno-1-257" href="#__codelineno-1-257"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/nginx-gateway</span>
+<a id="__codelineno-1-258" name="__codelineno-1-258" href="#__codelineno-1-258"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-gateway</span>
+<a id="__codelineno-1-259" name="__codelineno-1-259" href="#__codelineno-1-259"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${HOSTNAME}</span>
+<a id="__codelineno-1-260" name="__codelineno-1-260" href="#__codelineno-1-260"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-261" name="__codelineno-1-261" href="#__codelineno-1-261"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-262" name="__codelineno-1-262" href="#__codelineno-1-262"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/nginx/conf.d:/etc/nginx/conf.d/</span>
+<a id="__codelineno-1-263" name="__codelineno-1-263" href="#__codelineno-1-263"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts</span>
+<a id="__codelineno-1-264" name="__codelineno-1-264" href="#__codelineno-1-264"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/:/gampkgs/data/</span>
+<a id="__codelineno-1-265" name="__codelineno-1-265" href="#__codelineno-1-265"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-266" name="__codelineno-1-266" href="#__codelineno-1-266"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"80:80"</span>
+<a id="__codelineno-1-267" name="__codelineno-1-267" href="#__codelineno-1-267"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"${MDRM_PORT}:${MDRM_PORT}"</span>
+<a id="__codelineno-1-268" name="__codelineno-1-268" href="#__codelineno-1-268"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-269" name="__codelineno-1-269" href="#__codelineno-1-269"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-270" name="__codelineno-1-270" href="#__codelineno-1-270"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-271" name="__codelineno-1-271" href="#__codelineno-1-271"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-ui</span>
+<a id="__codelineno-1-272" name="__codelineno-1-272" href="#__codelineno-1-272"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workflow-controller</span>
+<a id="__codelineno-1-273" name="__codelineno-1-273" href="#__codelineno-1-273"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam</span>
+<a id="__codelineno-1-274" name="__codelineno-1-274" href="#__codelineno-1-274"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-275" name="__codelineno-1-275" href="#__codelineno-1-275"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-276" name="__codelineno-1-276" href="#__codelineno-1-276"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-277" name="__codelineno-1-277" href="#__codelineno-1-277"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-278" name="__codelineno-1-278" href="#__codelineno-1-278"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-279" name="__codelineno-1-279" href="#__codelineno-1-279"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-280" name="__codelineno-1-280" href="#__codelineno-1-280"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-281" name="__codelineno-1-281" href="#__codelineno-1-281"></a>
+<a id="__codelineno-1-282" name="__codelineno-1-282" href="#__codelineno-1-282"></a><span class="w">  </span><span class="nt">gam</span><span class="p">:</span>
+<a id="__codelineno-1-283" name="__codelineno-1-283" href="#__codelineno-1-283"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker-registry.mantech.co.kr/gam:latest</span>
+<a id="__codelineno-1-284" name="__codelineno-1-284" href="#__codelineno-1-284"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam</span>
+<a id="__codelineno-1-285" name="__codelineno-1-285" href="#__codelineno-1-285"></a><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam</span>
+<a id="__codelineno-1-286" name="__codelineno-1-286" href="#__codelineno-1-286"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-287" name="__codelineno-1-287" href="#__codelineno-1-287"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GAMHOSTNAME=${HOSTNAME}</span>
+<a id="__codelineno-1-288" name="__codelineno-1-288" href="#__codelineno-1-288"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-289" name="__codelineno-1-289" href="#__codelineno-1-289"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gam-scripts:/gampkgs/scripts</span>
+<a id="__codelineno-1-290" name="__codelineno-1-290" href="#__codelineno-1-290"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}:/gampkgs/data</span>
+<a id="__codelineno-1-291" name="__codelineno-1-291" href="#__codelineno-1-291"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${MDRM_HOME}/bin/config/ssl:/gampkgs/ssl/</span>
+<a id="__codelineno-1-292" name="__codelineno-1-292" href="#__codelineno-1-292"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-293" name="__codelineno-1-293" href="#__codelineno-1-293"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm</span>
+<a id="__codelineno-1-294" name="__codelineno-1-294" href="#__codelineno-1-294"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-295" name="__codelineno-1-295" href="#__codelineno-1-295"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-rabbitmq</span>
+<a id="__codelineno-1-296" name="__codelineno-1-296" href="#__codelineno-1-296"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mdrm-postgres</span>
+<a id="__codelineno-1-297" name="__codelineno-1-297" href="#__codelineno-1-297"></a><span class="w">    </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-298" name="__codelineno-1-298" href="#__codelineno-1-298"></a><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<a id="__codelineno-1-299" name="__codelineno-1-299" href="#__codelineno-1-299"></a><span class="w">    </span><span class="nt">logging</span><span class="p">:</span>
+<a id="__codelineno-1-300" name="__codelineno-1-300" href="#__codelineno-1-300"></a><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s">"json-file"</span>
+<a id="__codelineno-1-301" name="__codelineno-1-301" href="#__codelineno-1-301"></a><span class="w">      </span><span class="nt">options</span><span class="p">:</span>
+<a id="__codelineno-1-302" name="__codelineno-1-302" href="#__codelineno-1-302"></a><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s">"5"</span>
+<a id="__codelineno-1-303" name="__codelineno-1-303" href="#__codelineno-1-303"></a><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s">"100m"</span>
+<a id="__codelineno-1-304" name="__codelineno-1-304" href="#__codelineno-1-304"></a>
+<a id="__codelineno-1-305" name="__codelineno-1-305" href="#__codelineno-1-305"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-306" name="__codelineno-1-306" href="#__codelineno-1-306"></a><span class="w">  </span><span class="nt">gam-scripts</span><span class="p">:</span>
+<a id="__codelineno-1-307" name="__codelineno-1-307" href="#__codelineno-1-307"></a><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-1-308" name="__codelineno-1-308" href="#__codelineno-1-308"></a><span class="w">  </span><span class="nt">mdrm</span><span class="p">:</span>
+</code></pre></div>
+<h2 id="4"><strong>4. 네트워크 및 스토리지 구성</strong><a class="headerlink" href="#4" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>네트워크 (Bridge)</strong>: <code>mdrm</code>이라는 가상 네트워크를 통해 컨테이너 간 내부 통신이 이루어집니다.</li>
+<li><strong>볼륨 마운트 (Persistence)</strong>:<ul>
+<li><code>/gampkgs/data</code>: 공용 데이터 저장소</li>
+<li><code>/var/lib/postgresql/data</code>: 데이터베이스 영구 저장 영역</li>
+<li><code>/gampkgs/scripts</code>: 엔진 및 에이전트 스크립트 공유 볼륨</li>
+</ul>
+</li>
+</ul>
+<div class="next-step-card-container">
+<p><a href="../MDRM_정지_및_종료/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">🛑 MDRM 정지 및 종료</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 MDRM 교육 자료 by 서비스사업본부 1팀 김재철. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -63,6 +63,13 @@ html {
     align-items: center;
 }
 
+/* 로고 스타일 및 간격 */
+.md-logo img {
+    height: 1.5rem !important;
+    width: auto !important;
+    margin-right: 0.5rem;
+}
+
 .md-header__title {
     flex-grow: 1;
     flex-shrink: 1;

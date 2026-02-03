@@ -10,6 +10,7 @@ theme:
     scheme: default
     primary: blue
     accent: blue
+  logo: assets/images/logo/mdrm_logo.png
   font:
     text: Pretendard
     code: JetBrains Mono

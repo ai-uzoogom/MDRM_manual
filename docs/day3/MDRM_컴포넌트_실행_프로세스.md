@@ -35,10 +35,10 @@ flowchart LR
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_컴포넌트_템플릿_제작/" class="next-step-card">
+<a href="../MDRM_주요_컴포넌트/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📜 컴포넌트 템플릿 제작 표준</span>
+        <span class="next-step-title">🧩 주요 사용 컴포넌트 상세 가이드</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

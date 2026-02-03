@@ -50,10 +50,10 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_점검_컴포넌트_제작/" class="next-step-card">
+<a href="../MDRM_점검작업_스크립트/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🔍 실무 점검 컴포넌트 제작 가이드</span>
+        <span class="next-step-title">🔍 점검작업 스크립트</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

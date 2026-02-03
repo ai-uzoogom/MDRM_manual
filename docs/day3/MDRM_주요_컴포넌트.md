@@ -1,0 +1,59 @@
+# 🧩 주요 사용 컴포넌트
+
+MDRM 워크플로우를 구성할 때 가장 빈번하게 사용되는 핵심 컴포넌트들의 상세 기능과 설정 방법을 학습합니다.
+
+---
+
+## **1. 사용자 정의 실행 컴포넌트**
+
+### **① 사용자 정의 명령어 실행**
+*   **기능**: 관리 대상 서버에 이미 존재하는 스크립트 파일이나 OS 명령어를 직접 실행합니다.
+*   **설명**: 사용자가 정의한 물리적인 경로의 파일 실행에 특화되어 있습니다.
+
+### **② 사용자 정의 스크립트 실행**
+*   **기능**: MDRM 콘솔에서 직접 스크립트 내용을 작성하여 전송 및 실행합니다.
+*   **설명**: 별도의 파일 생성 없이 즉석에서 로직을 구현할 때 유용합니다.
+
+---
+
+## **2. (POSIX) Process Control**
+
+AIX 및 LINUX 환경에서 프로세스를 지능적으로 관리(시작/정지/종료)하는 가장 핵심적인 컴포넌트입니다.
+
+### **📥 입력값 1: user : command : proc_names**
+*   **user**: 명령어를 실행할 리눅스 사용자 계정 이름
+    *   └ 예: `root`, `ubuntu`, `deploy` 등
+*   **command**: 실행할 실제 명령어 또는 스크립트 경로
+    *   └ 예: `systemctl start docker`, `/app/apache/bin/apachectl start`
+*   **proc_names**: 모니터링 대상이 되는 프로세스 이름 (상태 확인용)
+    *   └ 예: `nginx`, `httpd`, `mysqld`
+
+### **📥 입력값 2: action : bg : max_limits**
+*   **action**: 프로세스 제어 동작 모드
+    *   `start`: 프로세스가 실행 중이 아니면 명령어를 실행하여 서비스를 시작합니다.
+    *   `stop`: 실행 중인 프로세스를 정상적으로 중단합니다.
+    *   `shutdown`: `stop`과 유사하지만, 지정된 시간 내에 종료되지 않으면 `kill -9`로 강제 종료합니다.
+*   **bg (Background)**: 백그라운드 실행 여부
+    *   `y`: `nohup`을 사용하여 백그라운드에서 실행합니다.
+    *   `n`: 포그라운드에서 실행합니다.
+*   **max_limits**: 프로세스가 원하는 상태(기동/종료)로 전환되기를 기다리는 최대 대기 시간(**초**)입니다.
+
+---
+
+## **3. 기타 제어 컴포넌트**
+
+*   **VMware 제어**: 가상머신(VM)의 Power On/Off, Snapshot 등을 관리합니다.
+*   **워크플로우 제어**: 동일 시스템 내의 다른 워크플로우를 호출하여 체인(Chain) 구조를 만듭니다.
+*   **원격 워크플로우 제어**: 다른 타겟 시스템에 정의된 워크플로우를 원격으로 호출하여 실행합니다.
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../MDRM_컴포넌트_템플릿_제작/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">📜 컴포넌트 템플릿 제작 가이드</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

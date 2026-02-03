@@ -64,10 +64,16 @@ html {
 }
 
 /* 로고 스타일 및 간격 */
+.md-logo {
+    padding-right: 0 !important;
+    /* 버튼 자체의 오른쪽 여백 제거 */
+}
+
 .md-logo img {
-    height: 1.5rem !important;
+    height: 1.2rem !important;
     width: auto !important;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
+    /* 이미지와 글자 사이 미세 여백 */
 }
 
 .md-header__title {
@@ -75,6 +81,8 @@ html {
     flex-shrink: 1;
     min-width: 100px;
     margin-right: 1rem;
+    margin-left: 0.1rem !important;
+    /* 로고와 밀착시키기 위해 왼쪽 마진 최소화 */
 }
 
 .md-header__ellipsis {
@@ -330,7 +338,7 @@ nav.md-tabs {
 .md-tabs__list {
     display: flex;
     gap: 1rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 0 0.5rem 0;
     /* 상단 패딩 추가하여 clipping 방지 */
     overflow-x: auto;
 }

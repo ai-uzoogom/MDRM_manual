@@ -1,4 +1,4 @@
-site_name: MDRM 엔지니어 교육매뉴얼
+site_name: MDRM 엔지니어 교육매뉴얼 - TRUST ME. I'M ENGINEER.
 
 site_author: MDRM Team
 site_url: https://ai-uzoogom.github.io/MDRM_manual/
@@ -11,6 +11,7 @@ theme:
     primary: blue
     accent: blue
   logo: assets/images/logo/mdrm_logo.png
+  favicon: assets/images/logo/mdrm_favicon.png
   font:
     text: Pretendard
     code: JetBrains Mono
@@ -92,9 +93,10 @@ nav:
     - 컴포넌트:
         - ▸ 설계 및 로직: day3/MDRM_컴포넌트_설계_로직.md
         - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
+        - ▸ 주요 사용 컴포넌트: day3/MDRM_주요_컴포넌트.md
         - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
     - 점검 작업:
-        - ▸ 점검 컴포넌트 실무: day3/MDRM_점검_컴포넌트_제작.md
+        - ▸ 점검작업 스크립트: day3/MDRM_점검작업_스크립트.md
   - DAY 4:
     - 학습 안내: day4/MDRM_DAY4_학습_안내.md
     - 실습 & 장애조치:
@@ -116,15 +118,6 @@ plugins:
   - search:
       lang: ko
   - glightbox
-  - autolinks
-  - redirects:
-      redirect_maps:
-        'troubleshooting/MDRM_컴포넌트_유의사항_Grep.md': 'troubleshooting/MDRM_TS_컴포넌트_Grep.md'
-        'troubleshooting/MDRM_컴포넌트_유의사항_인자값.md': 'troubleshooting/MDRM_TS_컴포넌트_인자값.md'
-        'troubleshooting/MDRM_통신_상태_점검.md': 'troubleshooting/MDRM_TS_Agent_통신점검.md'
-        'troubleshooting/MDRM_통신오류_417_Token.md': 'troubleshooting/MDRM_TS_Agent_417오류.md'
-        'troubleshooting/MDRM_Agent_포트_변경.md': 'troubleshooting/MDRM_TS_Agent_포트변경.md'
-        'troubleshooting/MDRM_Admonition_Samples.md': 'troubleshooting/MDRM_TS_샘플_안내박스.md'
 
 markdown_extensions:
   - admonition

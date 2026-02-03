@@ -179,104 +179,129 @@ html {
     box-shadow: var(--custom-shadow-lg);
 }
 
-/* 코드 블록 스타일 - 어두운 배경 */
+/* 코드 블록 스타일 - 프리미엄 디자인 */
 .md-typeset pre {
-    background: #1e293b !important;
-    border-radius: 8px;
-    padding: 1rem !important;
+    background: #24283b !important;
+    /* 약간 더 밝은 도쿄 나이트 테마 */
+    border-radius: 12px;
+    padding: 2.5rem 1.2rem 1.2rem !important;
+    /* 상단 헤더 공간 확보 */
     font-family: 'JetBrains Mono', 'Roboto Mono', 'Fira Code', 'Source Code Pro', 'D2Coding', 'Consolas', monospace !important;
+    position: relative;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    margin: 1.5rem 0 !important;
+    line-height: 1.6;
+}
+
+/* 코드 블록 상단 장식 - macOS 스타일 버튼 */
+.md-typeset pre::before {
+    content: "";
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    width: 2.4rem;
+    height: 0.5rem;
+    background: radial-gradient(circle at 0.25rem 0.25rem, #ff5f56 0.25rem, transparent 0.25rem),
+        radial-gradient(circle at 0.95rem 0.25rem, #ffbd2e 0.25rem, transparent 0.25rem),
+        radial-gradient(circle at 1.65rem 0.25rem, #27c93f 0.25rem, transparent 0.25rem);
+    z-index: 1;
 }
 
 .md-typeset pre>code {
     background: transparent !important;
-    border-radius: 8px;
-    color: #f8fafc !important;
+    border-radius: 0;
+    color: #c0caf5 !important;
+    /* 기본 텍스트 색상 - 더 밝게 */
     border: none !important;
 }
 
-/* JSON/코드 syntax highlighting - 어두운 배경용 (전체) */
+/* JSON/코드 syntax highlighting - 프리미엄 팔레트 */
 
-/* 1. 코드 블록 내 모든 텍스트를 일단 흰색으로 강제 설정 (가장 중요) */
-.md-typeset pre code,
-.md-typeset pre code span,
-.highlight,
-.highlight span {
-    color: #f8fafc !important;
+/* 1. 기본 텍스트 색상 (더 밝게 조정) */
+.md-typeset pre code {
+    color: #c0caf5;
 }
 
 /* 2. 각 문법 요소별 색상 재정의 */
 
-/* 주석, Shebang - 회색 */
+/* 주석, Shebang - 더 밝고 부드러운 블루그레이 */
 .highlight .c,
 .highlight .c1,
 .highlight .ch,
 .highlight .cm,
 .highlight .cp,
 .highlight .cpf,
-.highlight .cs,
-.highlight .c-Shebang {
-    color: #94a3b8 !important;
+.highlight .cs {
+    color: #7982a9 !important;
+    font-style: italic;
 }
 
-/* 문자열 - 연두색 */
+/* 문자열 - 선명한 연두색 */
 .highlight .s,
 .highlight .s1,
 .highlight .s2,
-.highlight .se,
 .highlight .si,
 .highlight .sx,
 .highlight .sr,
-.highlight .ss,
-.highlight .nt {
-    color: #86efac !important;
+.highlight .ss {
+    color: #b9f27c !important;
 }
 
-/* 숫자 - 주황색 */
+/* 숫자/상수 - 선명한 주황색 */
 .highlight .m,
 .highlight .mi,
 .highlight .mf,
 .highlight .mh,
 .highlight .mo,
-.highlight .il {
-    color: #fb923c !important;
+.highlight .il,
+.highlight .kc {
+    color: #ff9e64 !important;
 }
 
-/* 키워드, 함수명 - 보라색/연보라색 */
+/* 키워드/예약어 - 진한 핑크/마젠타 */
 .highlight .k,
-.highlight .kc,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
 .highlight .kr,
-.highlight .kt,
-.highlight .nf {
-    color: #c084fc !important;
+.highlight .kt {
+    color: #bb9af7 !important;
+    font-weight: 600;
 }
 
-/* 쉘 내장 명령어, 속성명 - 파란색/하늘색 */
-.highlight .nb,
-.highlight .na,
-.highlight .nl,
-.highlight .n,
-.highlight .nn,
+/* 함수명/메서드 - 시원한 블루 */
+.highlight .nf,
+.highlight .fm {
+    color: #7aa2f7 !important;
+}
+
+/* 변수명 - 화이트/블루그레이 */
 .highlight .nv,
 .highlight .vi,
-.highlight .vm {
-    color: #60a5fa !important;
+.highlight .vm,
+.highlight .vc {
+    color: #e0af68 !important;
+    /* 변수는 약간 노란빛으로 강조 */
 }
 
-/* 에러 - 빨간색 */
-.highlight .err {
-    color: #f87171 !important;
+/* 쉘 명령어, 속성명, 일반 이름 - 에메랄드/시안 (더 폭넓게 적용) */
+.highlight .nb,
+.highlight .na,
+.highlight .nc,
+.highlight .no,
+.highlight .n,
+.highlight .nn,
+.highlight .nx,
+.highlight .py,
+.highlight .nt {
+    color: #73daca !important;
 }
 
-/* 일반 텍스트, 연산자, 구두점 - 흰색 유지 (명시적) */
-.highlight .w,
-.highlight .p,
+/* 연산자/괄호/구두점 - 밝은 그레이 */
 .highlight .o,
-.highlight .punctuation,
-.highlight .operator {
-    color: #f8fafc !important;
+.highlight .p,
+.highlight .punctuation {
+    color: #89ddff !important;
 }
 
 /* 인라인 코드 스타일 - HTML과 동일 */
@@ -295,8 +320,6 @@ html {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
-    color: #f8fafc !important;
-    /* 여기도 흰색 명시 */
 }
 
 /* 테이블 스타일 - 그라디언트 제거 및 너비 고정 */

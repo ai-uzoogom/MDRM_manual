@@ -3,8 +3,6 @@
 !!! info "학습 안내"
     Rocky Linux/RHEL 환경에서 Docker의 대안인 Podman을 설치하고, Docker 명령어 호환성 및 서비스 자동 재시작 환경을 구축하는 방법을 학습합니다.
 
-이 가이드는 Rocky Linux, RHEL 등 최신 RedHat 계열 OS에서 Docker의 대안으로 **Podman**을 설치하고, MDRM 구동에 필요한 기본 환경을 구성하는 방법을 안내합니다.
-
 !!! tip "환경에 따른 선택"
     만약 전통적인 **Docker** 엔진을 설치하고자 한다면, [Docker 설치 가이드](Docker_설치_가이드.md)를 참조하십시오.
 

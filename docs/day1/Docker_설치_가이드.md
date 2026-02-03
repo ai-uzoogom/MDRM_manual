@@ -3,8 +3,6 @@
 !!! info "학습 안내"
     RHEL/Rocky Linux 환경에서 Docker 공식 Repository를 등록하고, 최신 버전의 컨테이너 엔진을 설치 및 활성화하는 절차를 학습합니다.
 
-이 가이드는 RHEL, Rocky Linux 등 RPM 기반 시스템에서 Docker 공식 Repository를 사용하여 최신 버전의 Docker 엔진을 설치하는 방법을 안내합니다.
-
 !!! tip "환경에 따른 선택"
     만약 RHEL 8/9 또는 Rocky Linux 환경에서 Docker 대신 RedHat의 기본 컨테이너 엔진인 **Podman**을 사용하고자 한다면, [Podman 설치 가이드](Podman_설치_가이드.md)를 참조하십시오.
 

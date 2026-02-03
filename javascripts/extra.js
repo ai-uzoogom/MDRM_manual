@@ -6,11 +6,11 @@
     if (overview) overview.style.display = 'block';
 
     // 메인 홈 화면 진입 시 표준 UI 요소들이 숨겨져 있다면 강제로 복구
-    document.body.classList.remove('landing-mode');
+    document.body.classList.remove('landing-active');
+    document.documentElement.classList.add('manual-home-mode');
   }
 
   window.enterManual = function () {
-    document.documentElement.classList.add('manual-home-mode');
     showManualHome();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -18,9 +18,9 @@
   function handleLandingPage() {
     const landingContainer = document.querySelector('.landing-page-container');
 
-    if (landingContainer) {
-      // 인트로 강제 실행을 위해 상태 초기화
-      document.documentElement.classList.remove('manual-home-mode');
+    if (landingContainer && !document.documentElement.classList.contains('manual-home-mode')) {
+      // 인트로 모드 활성화
+      document.body.classList.add('landing-active');
       const overview = document.querySelector('.manual-overview-container');
       if (overview) overview.style.display = 'none';
       landingContainer.classList.remove('hidden');
@@ -29,6 +29,9 @@
         initStarfield(landingContainer);
       }
       initTypingEffect();
+    } else {
+      // 인트로가 없거나 이미 홈 모드인 경우
+      document.body.classList.remove('landing-active');
     }
   }
 

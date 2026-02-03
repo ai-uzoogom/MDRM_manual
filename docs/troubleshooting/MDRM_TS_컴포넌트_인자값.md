@@ -47,7 +47,7 @@ fi
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_통신오류_417_Token/" class="next-step-card">
+<a href="../MDRM_TS_Agent_417오류/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting 03</span>
         <span class="next-step-title">417 오류 및 Token 불일치</span>

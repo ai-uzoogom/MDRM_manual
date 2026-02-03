@@ -47,7 +47,7 @@ fi
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_컴포넌트_유의사항_인자값/" class="next-step-card">
+<a href="../MDRM_TS_컴포넌트_인자값/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting 02</span>
         <span class="next-step-title">인자값(Argument) 충돌</span>

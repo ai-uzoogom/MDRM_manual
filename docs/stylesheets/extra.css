@@ -59,6 +59,36 @@ html {
 
 .md-header__inner {
     padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.md-header__title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 100px;
+    margin-right: 1rem;
+}
+
+.md-header__ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 검색 필드 반응형 최적화 */
+.md-search {
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+}
+
+.md-search__inner {
+    width: auto;
+    min-width: 15rem;
+    max-width: 25rem;
 }
 
 /* 배경색 - HTML과 동일 */
@@ -100,7 +130,7 @@ html {
     /* 헤더와의 간격 확보 */
 }
 
-/* 사이드바 너비 줄이기 */
+/* 사이드바 너비조정 */
 .md-sidebar {
     width: 10rem;
 }
@@ -109,7 +139,7 @@ html {
     width: 10rem;
 }
 
-/* 본문 너비 늘리기 */
+/* 본문 너비 최적화 */
 .md-content__inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -293,7 +323,8 @@ nav.md-tabs {
 .md-tabs__list {
     display: flex;
     gap: 1rem;
-    padding: 0 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    /* 상단 패딩 추가하여 clipping 방지 */
     overflow-x: auto;
 }
 
@@ -328,6 +359,8 @@ nav.md-tabs {
     background: #2563eb !important;
     color: white !important;
     border-color: #2563eb !important;
+    transform: translateY(-2px);
+    /* 활성 탭도 동일하게 살짝 위로 띄움 */
 }
 
 /* 진행 상태 점 (Progress Dots) */
@@ -691,13 +724,13 @@ html.manual-home-mode .manual-overview-container {
 
 
 
-/* MkDocs Material 특정 오버라이드 (랜딩 페이지 포함 시) */
-.md-main__inner:has(.landing-page-container:not(.hidden)) {
+/* 랜딩 모드 데스크톱 레이아웃 오버라이드 */
+body.landing-active .md-main__inner {
     margin-top: 0;
     max-width: 100% !important;
 }
 
-.md-main__inner:has(.landing-page-container:not(.hidden)) .md-content {
+body.landing-active .md-content {
     background: transparent !important;
     box-shadow: none !important;
     margin: 0 !important;
@@ -705,8 +738,12 @@ html.manual-home-mode .manual-overview-container {
     margin-left: 0;
 }
 
-.md-main__inner:has(.landing-page-container:not(.hidden)) .md-content__inner {
+body.landing-active .md-content__inner {
     max-width: none !important;
+}
+
+body.landing-active .md-sidebar {
+    display: none;
 }
 
 /* 추가: 매뉴얼 홈 전환 스타일 */

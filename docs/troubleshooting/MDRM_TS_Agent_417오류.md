@@ -1,4 +1,4 @@
-# 🆘 MDRM 417 오류 및 Agent Token 불일치 해결 가이드
+# 📡 MDRM 417 오류 및 Agent Token 불일치 해결 가이드
 
 !!! info "통신 장애 점검 목적"
     MDRM 서버와 관리 대상 서버(Agent) 간에 정상적으로 통신이 이루어지지 않을 때 나타나는 417 오류 및 'token not match' 현상의 원인과 해결 방법을 안내합니다.
@@ -55,7 +55,7 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_Agent_포트_변경/" class="next-step-card">
+<a href="../MDRM_TS_Agent_포트변경/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting 04</span>
         <span class="next-step-title">Agent 포트(20080) 변경</span>

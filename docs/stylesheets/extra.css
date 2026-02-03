@@ -231,7 +231,8 @@ html {
 .highlight .cm,
 .highlight .cp,
 .highlight .cpf,
-.highlight .cs {
+.highlight .cs,
+.highlight .se {
     color: #7982a9 !important;
     font-style: italic;
 }

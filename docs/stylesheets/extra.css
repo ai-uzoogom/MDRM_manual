@@ -171,6 +171,7 @@ html {
     border-radius: 12px;
     box-shadow: var(--custom-shadow);
     transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 0.7rem;
 }
 
 .md-typeset .admonition:hover,
@@ -191,6 +192,12 @@ html {
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     margin: 1.5rem 0 !important;
     line-height: 1.6;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s !important;
+}
+
+.md-typeset pre:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* 코드 블록 상단 장식 - macOS 스타일 버튼 */
@@ -332,6 +339,8 @@ html {
     border-collapse: separate;
     border-spacing: 0;
     margin: 1em 0;
+    font-size: 0.7rem;
+    /* 테이블 내 글자 크기 조정 */
 }
 
 /* 중첩 리스트 스타일 (공백 점) & 들여쓰기 조정 */

@@ -11,6 +11,10 @@
   }
 
   window.enterManual = function () {
+    // 입장 시 세션 시간 갱신 (여기서부터 30분 카운트)
+    const SESSION_KEY = 'mdrm_intro_session';
+    sessionStorage.setItem(SESSION_KEY, new Date().getTime().toString());
+
     showManualHome();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -18,8 +22,21 @@
   function handleLandingPage() {
     const landingContainer = document.querySelector('.landing-page-container');
 
+    // 세션 스토리지 키
+    const SESSION_KEY = 'mdrm_intro_session';
+    const SESSION_DURATION = 12 * 60 * 60 * 1000; // 12시간 (밀리초)
+
     if (landingContainer && !document.documentElement.classList.contains('manual-home-mode')) {
-      // 인트로 모드 활성화
+      const now = new Date().getTime();
+      const lastSession = sessionStorage.getItem(SESSION_KEY);
+
+      // 세션이 유효하면(30분 이내 방문 이력 있음) 인트로 스킵
+      if (lastSession && (now - parseInt(lastSession) < SESSION_DURATION)) {
+        showManualHome();
+        return;
+      }
+
+      // 인트로 모드 활성화 (세션 만료되었거나 첫 방문)
       document.body.classList.add('landing-active');
       const overview = document.querySelector('.manual-overview-container');
       if (overview) overview.style.display = 'none';
@@ -29,11 +46,18 @@
         initStarfield(landingContainer);
       }
       initTypingEffect();
+
+      // 세션 갱신 (인트로를 봤으므로 현재 시간 저장)
+      // 주의: 여기서 저장하면 새로고침할 때마다 갱신되므로, '입장하기' 버튼 누를 때 저장하는 것이 더 정확할 수 있으나,
+      // 편의상 인트로가 로드되는 시점을 기준으로 함.
     } else {
       // 인트로가 없거나 이미 홈 모드인 경우
       document.body.classList.remove('landing-active');
     }
   }
+
+  // 즉시 실행 시도 (FOUC 방지)
+  handleLandingPage();
 
   document.addEventListener("DOMContentLoaded", handleLandingPage);
   if (typeof document.addEventListener === "function") {

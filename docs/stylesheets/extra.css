@@ -163,11 +163,9 @@ html {
 }
 
 /* 진행바와 본문 사이 공백 제거 */
-margin-top: 1rem;
-/* 헤더와의 간격 확보 */
+.md-header+.md-container .md-tabs {
+    margin-top: 0 !important;
 }
-
-
 
 /* 사이드바 너비조정 */
 .md-sidebar {
@@ -798,52 +796,10 @@ html.manual-home-mode .manual-overview-container {
         font-size: 1rem;
         letter-spacing: 0.1em;
     }
-}
 
-
-
-/* 랜딩 모드 데스크톱 레이아웃 오버라이드 */
-body.landing-active .md-main__inner {
-    margin-top: 0;
-    max-width: 100% !important;
-}
-
-body.landing-active .md-content {
-    background: transparent !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    margin-left: 0;
-}
-
-body.landing-active .md-content__inner {
-    max-width: none !important;
-}
-
-body.landing-active .md-sidebar {
-    display: none;
-}
-
-/* 추가: 매뉴얼 홈 전환 스타일 */
-.manual-overview-container {
-    display: none;
-    animation: fadeIn 0.8s ease-out;
-    padding-top: 1rem;
-}
-
-.landing-page-container.hidden {
-    display: none !important;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .typing-container {
+        width: 100%;
+        margin-bottom: 3rem;
     }
 }
 
@@ -864,7 +820,7 @@ body.landing-active .md-sidebar {
 }
 
 /* ==========================================================================
-   네비게이션 & 사이드바 스타일 재정의 (Clean Style)
+   네비게이션 & 사이드바 스타일 재정의 (Clean Style) - 배경 제거 복원
    ========================================================================== */
 
 /* 1. 모든 사이드바 요소 배경 투명화 */

@@ -26,11 +26,21 @@
     const SESSION_KEY = 'mdrm_intro_session';
     const SESSION_DURATION = 12 * 60 * 60 * 1000; // 12시간 (밀리초)
 
+    // URL 파라미터로 인트로 강제 초기화 (?reset_intro=true)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('reset_intro')) {
+      sessionStorage.removeItem(SESSION_KEY);
+      // 파라미터 제거 후 리로드 (깔끔한 URL을 위해)
+      const newUrl = window.location.pathname;
+      window.history.replaceState({}, document.title, newUrl);
+      // 세션이 삭제되었으므로 아래 로직에서 인트로가 실행됨
+    }
+
     if (landingContainer && !document.documentElement.classList.contains('manual-home-mode')) {
       const now = new Date().getTime();
       const lastSession = sessionStorage.getItem(SESSION_KEY);
 
-      // 세션이 유효하면(30분 이내 방문 이력 있음) 인트로 스킵
+      // 세션이 유효하면(12시간 이내 방문 이력 있음) 인트로 스킵
       if (lastSession && (now - parseInt(lastSession) < SESSION_DURATION)) {
         showManualHome();
         return;

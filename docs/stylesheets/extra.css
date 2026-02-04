@@ -101,9 +101,35 @@ html {
 }
 
 .md-search__inner {
-    width: auto;
+    width: 20rem;
+    /* 기본 너비 축소 */
     min-width: 15rem;
-    max-width: 25rem;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* 부드러운 애니메이션 */
+}
+
+/* 검색창 클릭/활성화 시 확장 */
+.md-search__inner:focus-within {
+    width: 40rem;
+    max-width: 80vw;
+}
+
+/* 검색창 스크롤 체이닝 방지 (배경 스크롤 막기) */
+.md-search__scrollwrap {
+    overscroll-behavior: contain;
+}
+
+/* 검색 결과 텍스트 잘림 방지 (전체 표시) */
+.md-search-result__teaser {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    display: block !important;
+    max-height: none !important;
+
+    /* 라인 제한 및 박스 속성 해제 */
+    -webkit-line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
 }
 
 /* 배경색 - HTML과 동일 */
@@ -137,13 +163,11 @@ html {
 }
 
 /* 진행바와 본문 사이 공백 제거 */
-/* 진행바와 본문 사이 공백 제거 */
-.md-main__inner {
-    /* margin-top: 0rem; */
-    /* padding-top: 0; */
-    margin-top: 1rem;
-    /* 헤더와의 간격 확보 */
+margin-top: 1rem;
+/* 헤더와의 간격 확보 */
 }
+
+
 
 /* 사이드바 너비조정 */
 .md-sidebar {
@@ -486,6 +510,12 @@ nav.md-tabs {
 .md-footer {
     background: var(--md-footer-bg-color);
     border-top: 2px solid var(--custom-primary);
+}
+
+/* 푸터 저작권 중앙 정렬 */
+.md-footer-meta__inner {
+    justify-content: center !important;
+    text-align: center;
 }
 
 /* 애니메이션 */

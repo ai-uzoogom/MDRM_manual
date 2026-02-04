@@ -111,6 +111,11 @@ nav:
         - ▸ 통신 상태 점검: troubleshooting/MDRM_TS_Agent_통신점검.md
         - ▸ 417 오류 및 Token 불일치: troubleshooting/MDRM_TS_Agent_417오류.md
         - ▸ Agent 포트 변경: troubleshooting/MDRM_TS_Agent_포트변경.md
+    - MDRM:
+        - ▸ 업그레이드 가이드 (v4.6.8): troubleshooting/MDRM_Upgrade_Guide.md
+        - ▸ 포트 번호 변경 가이드 (v4.6.3+): troubleshooting/MDRM_Port_Change_Guide.md
+        - ▸ 시스템 대량 등록 (Loader): troubleshooting/MDRM_TS_시스템_수동등록_Loader.md
+        - ▸ 공인 인증서 가이드 (v4.6.2.4+): troubleshooting/MDRM_Cert_Guide.md
     - Admonition 샘플: troubleshooting/MDRM_TS_샘플_안내박스.md
 
 

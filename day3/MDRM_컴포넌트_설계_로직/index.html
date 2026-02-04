@@ -2758,10 +2758,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
+  <a href="#31-return-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 성공/실패 조건 설정
+        3.1 성공/실패 조건 설정 (Return Code)
       
     </span>
   </a>
@@ -3651,10 +3651,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
+  <a href="#31-return-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 성공/실패 조건 설정
+        3.1 성공/실패 조건 설정 (Return Code)
       
     </span>
   </a>
@@ -3766,11 +3766,12 @@
 </table>
 <hr>
 <h2 id="3"><strong>3. 실무 작성 가이드</strong><a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
-<h3 id="31"><strong>3.1 성공/실패 조건 설정</strong><a class="headerlink" href="#31" title="Permanent link">¶</a></h3>
-<p>컴포넌트의 결과는 단순히 리턴코드(<code>0</code> 또는 <code>1</code>)로만 판단하지 않고, 결과 텍스트 내의 <strong>특정 키워드</strong>를 통해 판단할 수 있습니다.</p>
+<h3 id="31-return-code"><strong>3.1 성공/실패 조건 설정 (Return Code)</strong><a class="headerlink" href="#31-return-code" title="Permanent link">¶</a></h3>
+<p>컴포넌트는 실행 결과 내의 <strong>성공/실패 키워드</strong>를 확인하여, 필수적으로 <strong>성공 시 <code>0</code></strong>, <strong>실패 시 <code>0</code> 이외의 값(대부분 <code>1</code>)</strong>을 리턴코드로 반환하도록 스크립트를 작성해야 합니다.</p>
 <ul>
-<li><strong>성공 키워드</strong>: <code>Started successfully</code>, <code>Status: RUNNING</code></li>
-<li><strong>실패 키워드</strong>: <code>ERROR</code>, <code>Failed</code>, <code>Address already in use</code></li>
+<li><strong>스크립트 작성 원칙</strong>: 결과 텍스트(로그)를 파싱하여 <code>if</code> 문으로 분기 처리 후 명시적 <code>exit</code> 코드 반환</li>
+<li><strong>성공 리턴코드</strong>: <code>0</code></li>
+<li><strong>실패 리턴코드</strong>: <code>1</code> (또는 0 이외의 값)</li>
 </ul>
 <h3 id="32-timeout"><strong>3.2 타임아웃(Timeout) 관리</strong><a class="headerlink" href="#32-timeout" title="Permanent link">¶</a></h3>
 <p>무한 대기를 방지하기 위해 모든 컴포넌트에는 적절한 타임아웃 설정이 필수입니다.</p>

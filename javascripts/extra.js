@@ -63,6 +63,21 @@ document.addEventListener("DOMContentLoaded", observeMermaid);
 // Instant navigation support for Material theme
 document.addEventListener("DOMContentChanged", observeMermaid);
 
+// 검색창 엔터키 및 결과 페이지 로직
+// 검색창 엔터키 입력 시 자동 이동 방지 (기본 동작 무시)
+document.addEventListener("DOMContentLoaded", function () {
+  function preventSearchEnter(e) {
+    if (e.target.classList.contains("md-search__input") && e.key === "Enter") {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }
+
+  // 캡처링 단계에서 이벤트 가로채기
+  document.body.addEventListener("keydown", preventSearchEnter, true);
+});
+
 function initStarfield(container) {
   const canvas = document.createElement('canvas');
   canvas.id = 'starfield-canvas';

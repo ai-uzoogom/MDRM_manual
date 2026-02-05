@@ -10,10 +10,10 @@
         <link rel="canonical" href="https://ai-uzoogom.github.io/MDRM_manual/advanced/MDRM_%EB%B0%B1%EC%97%85_%EC%A0%88%EC%B0%A8/">
       
       
-        <link rel="prev" href="../MDRM_%EA%B3%B5%EC%9D%B8%EC%9D%B8%EC%A6%9D%EC%84%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/">
+        <link rel="prev" href="../MDRM_NodeID_%EB%B6%88%EC%9D%BC%EC%B9%98_%ED%95%B4%EA%B2%B0/">
       
       
-        <link rel="next" href="../../troubleshooting/MDRM_TS_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_Grep/">
+        <link rel="next" href="../project/MDRM_%EA%B5%AC%EC%B6%95_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/">
       
       
         
@@ -3176,8 +3176,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3193,11 +3191,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1">
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
@@ -3218,7 +3218,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3328,6 +3328,70 @@
     
   
     ▸ 공인 인증서 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_API_%EC%9B%90%EA%B2%A9%EC%A0%9C%EC%96%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ API 계정 및 원격 제어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_NodeID_%EB%B6%88%EC%9D%BC%EC%B9%98_%ED%95%B4%EA%B2%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 운영-DR Node ID 불일치 해결
   
 
     
@@ -3505,6 +3569,91 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4">
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프로젝트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    프로젝트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/MDRM_%EA%B5%AC%EC%B6%95_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 일정 관리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3994,7 +4143,7 @@
 <h2 id="1-step-by-step"><strong>1. 수동 백업 절차 (Step-by-Step)</strong><a class="headerlink" href="#1-step-by-step" title="Permanent link">¶</a></h2>
 <h3 id="11"><strong>1.1 컨테이너 중지</strong><a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
 <p>데이터 정합성을 위해 실행 중인 모든 MDRM 컨테이너를 중지합니다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># docker-compose 파일이 있는 경로로 이동 (예: /opt/gam/bin)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># docker-compose 파일이 있는 경로로 이동 (예: /mdrm/data/bin)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>/mdrm/data/bin/
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker-compose<span class="w"> </span>stop
 </code></pre></div>

@@ -3517,6 +3517,70 @@
   
   
     <li class="md-nav__item">
+      <a href="../MDRM_API_%EC%9B%90%EA%B2%A9%EC%A0%9C%EC%96%B4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ API 계정 및 원격 제어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_NodeID_%EB%B6%88%EC%9D%BC%EC%B9%98_%ED%95%B4%EA%B2%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 운영-DR Node ID 불일치 해결
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../MDRM_%EB%B0%B1%EC%97%85_%EC%A0%88%EC%B0%A8/" class="md-nav__link">
         
   
@@ -3525,6 +3589,91 @@
     
   
     ▸ 백업 및 복구 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_4">
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    프로젝트
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    프로젝트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/MDRM_%EA%B5%AC%EC%B6%95_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 일정 관리
   
 
     
@@ -4086,7 +4235,7 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 2. 플러그인 파일 추출 (실행 중인 컨테이너에서 복사해야 함)</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># 컨테이너가 중지된 상태라면 cp 명령 대신 마운트된 경로에서 직접 복사하세요.</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># (컨테이너 실행 중일 때)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>docker<span class="w"> </span>cp<span class="w"> </span>gam:/usr/local/nagios/libexec/&lt;Library_name&gt;<span class="w"> </span>/opt/gambackup/nagios/
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>docker<span class="w"> </span>cp<span class="w"> </span>gam:/usr/local/nagios/libexec/<span class="o">{</span>LIBRARY_NAME<span class="o">}</span><span class="w"> </span>/opt/gambackup/nagios/
 </code></pre></div>
 <hr>
 <h2 id="3"><strong>3. 업그레이드 절차</strong><a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
@@ -4132,7 +4281,7 @@ Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니�
 (이미 4.6.3 이상 버전을 사용 중이라면 이 단계는 생략합니다.)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>/opt/mdrm468/upgrade
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># upgrade.sh &lt;데이터 경로&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># upgrade.sh {DATA_DIR}</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>./upgrade.sh<span class="w"> </span>/opt/gam
 </code></pre></div>
 <p><strong>마이그레이션 옵션:</strong>
@@ -4151,7 +4300,7 @@ Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니�
 <p>마지막으로 최신 버전의 컨테이너를 배포합니다.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>/opt/mdrm468
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># 사용법: ./install.sh &lt;HOSTNAME&gt; &lt;DATA_DIR&gt; [PORT]</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># 사용법: ./install.sh {HOSTNAME} {DATA_DIR} [PORT]</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>./install.sh<span class="w"> </span>mdrm.mantech.co.kr<span class="w"> </span>/opt/gam
 </code></pre></div>
 <table>
@@ -4180,7 +4329,7 @@ Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니�
 </tr>
 </tbody>
 </table>
-<p>설치가 완료되면 수 분 후 웹 콘솔(<code>https://&lt;Hostname&gt;:Port</code>)에 접속하여 정상 동작을 확인합니다.</p>
+<p>설치가 완료되면 수 분 후 웹 콘솔(<code>https://{HOSTNAME}:{PORT}</code>)에 접속하여 정상 동작을 확인합니다.</p>
 
 
 

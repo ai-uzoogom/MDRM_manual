@@ -3,6 +3,11 @@
 !!! info "학습 안내"
     재해복구(DR) 환경과 같이 OS 이미지가 스토리지 복제 방식으로 전송되어 별도의 등록 과정을 수행할 수 없는 특수 환경에서의 Agent 구성 정보 매핑 절차를 학습합니다.
 
+!!! tip "관련 심화 학습"
+    대량의 시스템을 CSV 파일을 통해 일괄 등록해야 하는 경우, MDRM 서버에서 **System Loader** 도구를 사용할 수 있습니다.
+    
+    *   [🛠️ 시스템 대량 수동 등록 (System Loader) 가이드](../advanced/MDRM_시스템_수동등록_Loader.md)
+
 
 ---
 
@@ -15,16 +20,8 @@
 - 🔌 백업센터의 MDRM과 운영센터 간 통신 불가능
 - 🚫 시스템 가져오기로 등록이 불가능한 경우
 
-### 실제 사례
+<iframe src="../../assets/diagrams/dr_architecture.html" width="100%" height="500px" scrolling="no" style="border:none; overflow:hidden; margin-top: -20px;"></iframe>
 
-```
-운영센터 (MDRM-A)         백업센터 (MDRM-B)
-    ↓                          ↓
-[서버 + Agent]  ─복제─→   [서버 + Agent]
-    ↓                          ↓
-Storage 복제로            동일한 Agent가
-OS 이미지 복사            설치되어 있음
-```
 
 ---
 
@@ -55,14 +52,12 @@ sudo su -
 
 # 설치 파일 전송 및 압축 해제
 cd /tmp
-tar -xzf gam_agent_installer.tar.gz
+tar zxvf gam_agent.withJreX64.tar.gz
 
 # 설치 실행
-cd gam_agent_installer
-./install.sh
+cd /opt/gam_agent
+./install.sh /opt/gam_agent 20080
 
-# 설치 경로 확인
-ls -l /opt/gam_agent
 ```
 
 ### **2.3 3단계: NodeID 매핑 (가장 중요)**
@@ -74,7 +69,7 @@ ls -l /opt/gam_agent
 
 ```bash
 # 설정 파일 편집
-vi /opt/gam_agent/config/application.properties
+vi /opt/gam_agent/application.properties
 ```
 
 다음 항목을 수정합니다:
@@ -82,28 +77,43 @@ vi /opt/gam_agent/config/application.properties
 ```properties
 # NodeID 설정 (백업센터에서 생성한 ID)
 agent.agentId=N0001
+agent.heartbeat=10000
+agent.https.enabled=true
+agent.server.runas_command=su - {user} -c {command}
+agent.service.script=./bin/unix_service.sh
+agent.temp.path=./storage
+logging.config=logback.xml
 
-# 운영센터 MDRM 서버 정보
-mdrm.server.ip=192.168.2.10
-mdrm.server.port=8080
-mdrm.server.https=false
+mdrm.debug.mode=false
+mdrm.logstash.port=5001
+mdrm.server.https=true
+mdrm.server.ip={{MDRM_SERVER_IP}}
+mdrm.server.port=443
 
-# Agent 포트
-server.port=20080
+server.port=30080
+server.ssl.key-store-password=password
+server.ssl.key-store=keystore.pfx
+server.ssl.keyAlias=gam_agent
+server.server-header=MDRM_AGENT
+spring.profiles.active=prod
+
+# DR ZONE CHECK
+# DR센터 내에서만 Agent를 기동하고 아니면 종료시키는 스크립트
+agent.init.command=./storage/scripts/dr_zone_check_ping.sh
 ```
 
 ### **2.4 4단계: Agent 시작**
 
 ```bash
 # Agent 시작
-cd /opt/gam_agent
-./bin/start.sh
+systemctl start gam_agent
 
 # 프로세스 확인
-ps -ef | grep gam_agent
+ps -ef | grep [g]am_agent
 
 # 로그 확인
-tail -f logs/agent.log
+tail -f /opt/gam_agent/logs/gam_agent.log
+
 ```
 
 ### **2.5 5단계: 운영센터 Agent 종료 로직 추가**
@@ -111,27 +121,52 @@ tail -f logs/agent.log
 운영센터에서는 백업센터로 복제될 때 Agent가 자동으로 종료되도록 설정합니다.
 
 ```bash
+# 스크립트 디렉토리 생성
+mkdir -p /opt/gam_agent/storage/scripts
+
 # 종료 스크립트 생성
-vi /opt/gam_agent/bin/stop_on_backup.sh
+vi /opt/gam_agent/storage/scripts/dr_zone_check_ping.sh 
+
 ```
 
 ```bash
 #!/bin/bash
-# 백업 복제 시 Agent 종료 스크립트
+# DR Zone 감지 및 Agent 자동 종료 스크립트
 
-# Agent 프로세스 확인
-if ps -ef | grep gam_agent | grep -v grep > /dev/null; then
-    echo "Stopping Agent for backup replication..."
-    /opt/gam_agent/bin/stop.sh
-    echo "Agent stopped successfully"
-else
-    echo "Agent is not running"
-fi
+# 1. 설정 변수
+PROP_FILE="/opt/gam_agent/application.properties"
+MDRM_IP=$(grep "mdrm.server.ip" $PROP_FILE | cut -d'=' -f2)
+MAX_CHECK=3       # 최대 체크 횟수
+PING_COUNT=5      # 1회 체크 당 Ping 횟수
+
+# 2. 네트워크 연결 확인 루프 (3회 시도)
+for (( i=1; i<=MAX_CHECK; i++ ))
+do
+    echo "[Check $i/$MAX_CHECK] Pinging MDRM ($MDRM_IP)..."
+    
+    # Ping 5회 테스트
+    # -c: 횟수, -W: 타임아웃(초)
+    ping -c $PING_COUNT -W 1 $MDRM_IP > /dev/null 2>&1
+    
+    if [ $? -eq 0 ]; then
+        echo "MDRM Connection OK. Agent is safe."
+        exit 0
+    fi
+    
+    echo "Ping failed. Retrying in 2 seconds..."
+    sleep 2
+done
+
+# 3. 모든 시도 실패 시 Agent 종료
+echo "CRITICAL: MDRM is unreachable after $MAX_CHECK attempts."
+echo "Determined NOT in DR Zone. Stopping Agent..."
+
+systemctl stop gam_agent
 ```
 
 ```bash
 # 실행 권한 부여
-chmod +x /opt/gam_agent/bin/stop_on_backup.sh
+chmod +x /opt/gam_agent/storage/scripts/dr_zone_check_ping.sh 
 ```
 
 ---
@@ -168,32 +203,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## **4. 복제 프로세스**
-
-### 백업센터 → 운영센터 복제 시
-
-1. **복제 전**: 운영센터 Agent 종료
-   ```bash
-   /opt/gam_agent/bin/stop_on_backup.sh
-   ```
-
-2. **Storage 복제 수행**
-   - OS 이미지 전체 복제
-   - Agent 설정 파일 포함
-
-3. **복제 후**: 운영센터 Agent 시작
-   ```bash
-   /opt/gam_agent/bin/start.sh
-   ```
-
-4. **확인**: NodeID가 유지되는지 확인
-   ```bash
-   grep "agent.agentId" /opt/gam_agent/config/application.properties
-   ```
-
----
-
-## **5. 문제 해결 (Troubleshooting)**
+## **4. 문제 해결 (Troubleshooting)**
 
 ### NodeID 불일치
 
@@ -220,31 +230,10 @@ grep "agentId" /opt/gam_agent/logs/agent.log
     1. 백업센터 Agent 종료
     2. 운영센터 Agent만 실행 유지
     3. 복제 프로세스 재검토
-
-### 복제 후 Agent 시작 실패
-
-!!! danger "오류: 복제 후 Agent가 시작되지 않음"
-    **원인**: 네트워크 설정 변경, 설정 파일 손상
     
-    **해결방법**:
-    
-    ```bash
-    # 네트워크 설정 확인
-    ip addr show
-    
-    # MDRM 서버 연결 테스트
-    telnet 192.168.2.10 8080
-    
-    # 설정 파일 확인
-    cat /opt/gam_agent/config/application.properties
-    
-    # Agent 재시작
-    /opt/gam_agent/bin/restart.sh
-    ```
-
 ---
 
-## **6. 주의사항**
+## **5. 주의사항**
 
 !!! warning "반드시 확인해야 할 사항"
     
@@ -266,7 +255,7 @@ grep "agentId" /opt/gam_agent/logs/agent.log
 
 ---
 
-## **7. 장점 및 단점**
+## **6. 장점 및 단점**
 
 ### 장점
 

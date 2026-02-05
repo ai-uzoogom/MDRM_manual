@@ -1,8 +1,9 @@
-# 🆙 MDRM 업그레이드 가이드 (v4.6.8)
+# ⏫ MDRM 업그레이드 가이드
 
-!!! info "가이드 대상"
-    본 문서는 기존 MDRM 운영 환경을 최신 버전(v4.6.8)으로 업그레이드하기 위한 절차를 설명합니다.
-    기존 Docker 환경에서 Podman으로 전환하는 케이스를 포함합니다.
+!!! info "가이드 대상 버전"
+    이 문서는 **MDRM v4.6.8** 업그레이드 기준으로 작성되었습니다.
+
+    *   **원본 문서**: [MDRM Upgrade Guide (v4.6.8)](https://mantech.jira.com/wiki/spaces/MDRM/pages/4798545933/MDRM+Upgrade+Guide+v4.6.8)
 
 ---
 

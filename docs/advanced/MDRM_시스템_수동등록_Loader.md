@@ -22,12 +22,12 @@ System Loader는 MDRM 컨테이너 내부에서 실행되는 도구입니다.
 
 ```bash
 # 1. 파일 복사 (Host -> Container)
-# cp gam_system_loader_<Version>.tar /opt/gam/
+# cp gam_system_loader_{VERSION}.tar /opt/gam/
 # 예시: MDRM_SVR 컨테이너로 복사
 docker cp gam_system_loader_V4.6.3.tar MDRM_SVR:/opt/gam/
 
 # 2. 컨테이너 접속
-docker exec -it <컨테이너 이름> bash
+docker exec -it {CONTAINER_NAME} bash
 
 # 3. 압축 해제 및 이동
 cd /opt/gam
@@ -95,9 +95,9 @@ G0001;WAS_SVR1;192.168.0.10;U0201
 | 기능 | 명령어 형식 | 설명 |
 | :--- | :--- | :--- |
 | **그룹 조회** | `./main.sh groups` | 현재 등록된 시스템 그룹 ID 목록을 조회합니다. |
-| **노드 목록** | `./main.sh nodes <GRP_ID>` | 특정 그룹에 소속된 시스템들의 NODE_ID를 확인합니다. |
-| **일괄 등록** | `./main.sh import <파일경로>` | 작성한 데이터 파일을 읽어 DB에 시스템을 일괄 등록합니다. |
-| **삭제** | `./main.sh delete <NODE_ID>` | 특정 시스템을 삭제합니다. (오등록 시 사용) |
+| **노드 목록** | `./main.sh nodes {GRP_ID}` | 특정 그룹에 소속된 시스템들의 NODE_ID를 확인합니다. |
+| **일괄 등록** | `./main.sh import {FILE_PATH}` | 작성한 데이터 파일을 읽어 DB에 시스템을 일괄 등록합니다. |
+| **삭제** | `./main.sh delete {NODE_ID}` | 특정 시스템을 삭제합니다. (오등록 시 사용) |
 
 ### **3.2 시스템 등록 실행 (Import)**
 

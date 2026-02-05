@@ -11,7 +11,7 @@ MDRM의 데이터를 안전하게 보호하기 위한 백업 절차 및 자동�
 데이터 정합성을 위해 실행 중인 모든 MDRM 컨테이너를 중지합니다.
 
 ```bash
-# docker-compose 파일이 있는 경로로 이동 (예: /opt/gam/bin)
+# docker-compose 파일이 있는 경로로 이동 (예: /mdrm/data/bin)
 cd /mdrm/data/bin/
 docker-compose stop
 ```

@@ -11,7 +11,7 @@
     데이터 영역(`/opt/gam`)을 백업한 뒤, `install.sh` 실행 시 세 번째 인자로 포트 번호를 지정하여 재설치하는 것을 권장합니다.
     ```bash
     # 예시: 3100 포트로 재설치
-    ./install.sh <HOSTNAME> <DATA_DIR> 3100
+    ./install.sh {HOSTNAME} {DATA_DIR} 3100
     ```
     본 가이드는 재설치가 불가능한 상황에서 기존 운영 환경의 설정을 직접 변경하는 방법을 다룹니다.
 
@@ -37,7 +37,7 @@ MDRM은 기본적으로 **TCP 443** 포트를 사용합니다. 보안 정책이�
 
 `nginx-gateway` 서비스의 포트 매핑과 `gam` 서비스의 환경 변수를 수정합니다.
 
-*   **파일 위치**: `<MDRM_HOME>/bin/docker-compose.yml`
+*   **파일 위치**: `{MDRM_HOME}/bin/docker-compose.yml`
 
 ```yaml
 services:
@@ -61,7 +61,7 @@ services:
 
 NGINX Gateway의 설정을 변경합니다. 버전 업그레이드 시 이 파일이 초기화될 수 있으므로 재적용이 필요할 수 있습니다.
 
-*   **파일 위치**: `<MDRM_HOME>/config/nginx/conf.d/nginx.conf`
+*   **파일 위치**: `{MDRM_HOME}/config/nginx/conf.d/nginx.conf`
 
 **수정 내용**:
 `server` 블록 내의 `listen` 포트나 리다이렉트 설정을 확인합니다. (외부 포트 변경 시 `Host` 헤더 관련 설정 확인 필요)
@@ -70,7 +70,7 @@ NGINX Gateway의 설정을 변경합니다. 버전 업그레이드 시 이 파�
 
 GAM 컨테이너가 참조하는 환경 설정을 변경합니다.
 
-*   **파일 위치**: `<MDRM_HOME>/config/wind-config.properties`
+*   **파일 위치**: `{MDRM_HOME}/config/wind-config.properties`
 
 ```properties
 # [변경 전]
@@ -87,7 +87,7 @@ server.port=3100
 수정한 설정 파일을 적용하기 위해 컨테이너를 재시작합니다.
 
 ```bash
-cd <MDRM_HOME>/bin
+cd {MDRM_HOME}/bin
 
 # 컨테이너 종료 및 삭제
 docker-compose down
@@ -148,18 +148,18 @@ docker-compose up -d
 docker ps | grep ui
 
 # 2. 대시보드 UI 커밋
-docker commit <dashboard-ui_CONTAINER_ID> <dashboard-ui_IMAGE_NAME>
+docker commit {dashboard-ui_CONTAINER_ID} {dashboard-ui_IMAGE_NAME}
 # 예: docker commit a1b2c3d4e5 mantech/mdrm-dashboard-ui:4.6.3
 
 # 3. MDRM UI 커밋
-docker commit <mdrm-ui_CONTAINER_ID> <mdrm-ui_IMAGE_NAME>
+docker commit {mdrm-ui_CONTAINER_ID} {mdrm-ui_IMAGE_NAME}
 ```
 
 ---
 
 ## **5. 최종 확인**
 
-브라우저를 열고 변경된 포트(`https://<MDRM_IP>:3100`)로 접속하여 다음 기능이 정상 동작하는지 확인합니다.
+브라우저를 열고 변경된 포트(`https://{MDRM_IP}:3100`)로 접속하여 다음 기능이 정상 동작하는지 확인합니다.
 
 1.  **로그인 화면**: 정상 출력 및 로그인 가능 여부
 2.  **대시보드**: 위젯 데이터 로딩 확인

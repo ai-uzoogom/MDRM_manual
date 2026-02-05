@@ -51,7 +51,7 @@ mkdir -p /opt/gambackup/nagios
 # 2. 플러그인 파일 추출 (실행 중인 컨테이너에서 복사해야 함)
 # 컨테이너가 중지된 상태라면 cp 명령 대신 마운트된 경로에서 직접 복사하세요.
 # (컨테이너 실행 중일 때)
-docker cp gam:/usr/local/nagios/libexec/<Library_name> /opt/gambackup/nagios/
+docker cp gam:/usr/local/nagios/libexec/{LIBRARY_NAME} /opt/gambackup/nagios/
 ```
 
 ---
@@ -117,7 +117,7 @@ PostgreSQL 버전을 13에서 16으로 업그레이드하는 과정입니다.
 ```bash
 cd /opt/mdrm468/upgrade
 
-# upgrade.sh <데이터 경로>
+# upgrade.sh {DATA_DIR}
 ./upgrade.sh /opt/gam
 ```
 
@@ -145,7 +145,7 @@ cat /opt/gam/config/DBVersion
 ```bash
 cd /opt/mdrm468
 
-# 사용법: ./install.sh <HOSTNAME> <DATA_DIR> [PORT]
+# 사용법: ./install.sh {HOSTNAME} {DATA_DIR} [PORT]
 ./install.sh mdrm.mantech.co.kr /opt/gam
 ```
 
@@ -155,4 +155,4 @@ cd /opt/mdrm468
 | **Data Dir** | 데이터가 저장될 절대 경로 (예: `/opt/gam`) | 필수 |
 | **Port** | 웹 콘솔 접속 포트 (입력 생략 시 443) | 443 |
 
-설치가 완료되면 수 분 후 웹 콘솔(`https://<Hostname>:Port`)에 접속하여 정상 동작을 확인합니다.
+설치가 완료되면 수 분 후 웹 콘솔(`https://{HOSTNAME}:{PORT}`)에 접속하여 정상 동작을 확인합니다.

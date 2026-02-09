@@ -15,6 +15,9 @@
 | **WINDOWS** | 윈도우 에이전트 대상 | `10.20.xx.101` | `administrator` | `password` |
 | **LINUX** | 리눅스 에이전트 대상 | `10.20.xx.102` | `root` | `password` |
 
+
+
+
 ---
 
 ## **2. 학습자별 IP 대역 안내**

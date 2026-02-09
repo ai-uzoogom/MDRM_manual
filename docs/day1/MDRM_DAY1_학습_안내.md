@@ -25,7 +25,7 @@
 ---
 
 !!! tip "사전 준비물"
-    - MDRM 설치 패키지 (`mdrm*.tar.gz`)
+    - MDRM 설치 패키지 (`{{ extra.mdrm.package_name }}`)
     - root 권한이 있는 서버 접속 정보
     - Docker 또는 Podman이 설치 가능한 환경
 

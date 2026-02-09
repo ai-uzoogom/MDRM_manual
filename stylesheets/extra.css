@@ -828,49 +828,67 @@ html.manual-home-mode .manual-overview-container {
    네비게이션 & 사이드바 스타일 재정의 (Clean Style) - 배경 제거 복원
    ========================================================================== */
 
-/* 1. 모든 사이드바 요소 배경 투명화 */
-.md-sidebar .md-nav,
-.md-sidebar .md-nav__list,
-.md-sidebar .md-nav__item,
-.md-sidebar .md-nav__link,
-.md-sidebar .md-nav__title,
-.md-sidebar__inner,
-.md-sidebar__scrollwrap {
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
+/* 데스크탑 화면에서만 사이드바 배경 투명화 및 스타일 적용 */
+@media screen and (min-width: 76.25em) {
+
+    /* 1. 모든 사이드바 요소 배경 투명화 */
+    .md-sidebar .md-nav,
+    .md-sidebar .md-nav__list,
+    .md-sidebar .md-nav__item,
+    .md-sidebar .md-nav__link,
+    .md-sidebar .md-nav__title,
+    .md-sidebar__inner,
+    .md-sidebar__scrollwrap {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* 2. 네비게이션 링크 텍스트 스타일 */
+    .md-sidebar .md-nav__link {
+        color: var(--text-dark) !important;
+        transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    /* 호버 효과 */
+    .md-sidebar .md-nav__link:hover {
+        color: var(--custom-primary) !important;
+        transform: translateX(3px);
+    }
+
+    /* 활성화된 항목 (현재 페이지) */
+    .md-sidebar .md-nav__link--active {
+        color: var(--custom-primary) !important;
+        font-weight: 700;
+        /* 배경은 투명하거나 아주 연하게 */
+        background: transparent !important;
+    }
+
+    /* 3. 최상위 섹션 제목 (DAY 1 등) 스타일 */
+    .md-nav--primary .md-nav__title {
+        color: var(--custom-primary) !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        font-weight: 700;
+        pointer-events: none;
+        /* 클릭 방지 */
+        margin-top: 1rem;
+        /* 간격 조정 */
+    }
 }
 
-/* 2. 네비게이션 링크 텍스트 스타일 */
-.md-sidebar .md-nav__link {
-    color: var(--text-dark) !important;
-    transition: color 0.15s ease, transform 0.15s ease;
-}
+/* 모바일 네비게이션 드로어 스타일 복원 (배경 흰색) */
+@media screen and (max-width: 76.1em) {
 
-/* 호버 효과 */
-.md-sidebar .md-nav__link:hover {
-    color: var(--custom-primary) !important;
-    transform: translateX(3px);
-}
+    .md-nav--primary,
+    .md-nav--primary .md-nav__list {
+        background: #ffffff !important;
+    }
 
-/* 활성화된 항목 (현재 페이지) */
-.md-sidebar .md-nav__link--active {
-    color: var(--custom-primary) !important;
-    font-weight: 700;
-    /* 배경은 투명하거나 아주 연하게 */
-    background: transparent !important;
-}
-
-/* 3. 최상위 섹션 제목 (DAY 1 등) 스타일 */
-.md-nav--primary .md-nav__title {
-    color: var(--custom-primary) !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    font-weight: 700;
-    pointer-events: none;
-    /* 클릭 방지 */
-    margin-top: 1rem;
-    /* 간격 조정 */
+    .md-nav__title {
+        background-color: var(--custom-primary) !important;
+        color: white !important;
+    }
 }
 
 /* 모바일 드로어 제목 등 특수한 title 요소 - 배경 투명화 제거 (오버랩 방지) */

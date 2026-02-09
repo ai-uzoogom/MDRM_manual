@@ -11,15 +11,15 @@
 
 ```bash
 # 1. 설치 디렉토리 생성
-mkdir -p /opt/gam_agent
+mkdir -p {{ extra.agent.install_path }}
 
 # 2. 설치 경로로 이동 및 압축 해제
-cd /opt/gam_agent
-tar zxvf gam_agent.withJreX64.tar.gz
+cd {{ extra.agent.install_path }}
+tar zxvf {{ extra.agent.pkg_linux }}
 
 # 3. 설치 스크립트 실행
 # 형식: ./install.sh [설치경로] [포트] [HTTPS사용여부(기본값 true)]
-./install.sh /opt/gam_agent 20080
+./install.sh {{ extra.agent.install_path }} {{ extra.agent.port }}
 ```
 
 ---
@@ -34,8 +34,8 @@ ps -ef | grep [g]am_agent
 
 **정상 가동 시 출력 예시:**
 ```bash
-root 14995 /opt/gam_agent/jre/bin/java -jar /opt/gam_agent/gam_agent_watchdog.jar start
-root 15010 /opt/gam_agent/jre/bin/java -jar /opt/gam_agent/gam_agent.jar start
+root 14995 {{ extra.agent.install_path }}/jre/bin/java -jar {{ extra.agent.install_path }}/gam_agent_watchdog.jar start
+root 15010 {{ extra.agent.install_path }}/jre/bin/java -jar {{ extra.agent.install_path }}/gam_agent.jar start
 ```
 
 ### **2.1 주요 프로세스 설명**
@@ -57,17 +57,17 @@ pkill -ecf gam_agent
 # 2. 서비스 시작
 systemctl start gam_agent
 
-# 3. 리스닝 포트 확인 (20080)
-ss -antpl | grep 20080
+# 3. 리스닝 포트 확인 ({{ extra.agent.port }})
+ss -antpl | grep {{ extra.agent.port }}
 ```
 
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_Agent_수동설치_가져오기/" class="next-step-card">
+<a href="../MDRM_Agent_수동설치_윈도우/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📥 Agent 가져오기 (Import)</span>
+        <span class="next-step-title">🪟 수동설치 (Windows)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

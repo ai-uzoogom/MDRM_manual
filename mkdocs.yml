@@ -28,6 +28,7 @@ theme:
 
 nav:
   - 🏠: index.md
+  - 🧪 LAB 환경: lab/MDRM_LAB_환경_안내.md
   - DAY 1:
     - 학습 안내: day1/MDRM_DAY1_학습_안내.md
     - 솔루션 개요: day1/MDRM_솔루션_개요.md
@@ -52,6 +53,7 @@ nav:
         - ▸ 설치 및 등록: day2/MDRM_Agent_설치_및_등록.md
         - ▸ 자동설치: day2/MDRM_Agent_자동설치.md
         - ▸ 수동설치:
+            - › 유닉스(AIX): day2/MDRM_Agent_수동설치_AIX.md
             - › 리눅스(Linux): day2/MDRM_Agent_수동설치_리눅스.md
             - › 윈도우(Windows): day2/MDRM_Agent_수동설치_윈도우.md
             - › 가져오기(Import): day2/MDRM_Agent_수동설치_가져오기.md
@@ -110,8 +112,10 @@ nav:
         - ▸ 시스템 대량 등록 (Loader): advanced/MDRM_시스템_수동등록_Loader.md
         - ▸ 공인 인증서 가이드: advanced/MDRM_공인인증서_가이드.md
         - ▸ API 계정 및 원격 제어: advanced/MDRM_API_원격제어.md
-      - ▸ 운영-DR Node ID 불일치 해결: advanced/MDRM_NodeID_불일치_해결.md
-      - ▸ 백업 및 복구 가이드: advanced/MDRM_백업_절차.md
+      - Agent:
+        - ▸ 환경 설정: advanced/MDRM_Agent_환경_설정_심화.md
+        - ▸ 운영↔DR Node ID 불일치 해결: advanced/MDRM_NodeID_불일치_해결.md
+        - ▸ 백업 및 복구 가이드: advanced/MDRM_백업_절차.md
       - 프로젝트:
         - ▸ 일정 관리: advanced/project/MDRM_구축_일정관리.md
   - 트러블슈팅:
@@ -123,10 +127,31 @@ nav:
         - ▸ 417 오류 및 Token 불일치: troubleshooting/MDRM_TS_Agent_417오류.md
         - ▸ Agent 포트 변경: troubleshooting/MDRM_TS_Agent_포트변경.md
 
+extra:
+  pkg_path: "/mdrm/packages"
+  mdrm:
+    version: "4.6.8"
+    full_version: "4.6.8.1"
+    package_name: "mdrm468.tar.gz"
+    setup_dir: "/mdrm/packages/mdrm4681"
+    data_path: "/mdrm/data"
+    bin_path: "/mdrm/data/bin"
+    server_ip: "10.20.33.100"
+    server_port: 443
+  agent:
+    version: "1.3.0"
+    install_path: "/opt/gam_agent"
+    port: 20080
+    pkg_linux: "gam_agent.withJreX64.tar.gz"
+    pkg_windows: "gam_agent.zip"
+    pkg_aix: "gam_agent.tar"
+  generator: false
+
 plugins:
   - search:
       lang: ko
   - glightbox
+  - macros
 
 markdown_extensions:
   - admonition
@@ -151,8 +176,6 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-extra:
-  generator: false
 
 extra_css:
   - stylesheets/extra.css

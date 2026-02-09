@@ -50,7 +50,7 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
     *   **파일 위치**:
         *   Windows: `C:\Windows\System32\drivers\etc\hosts`
         *   Linux: `/etc/hosts`
-    *   **입력 예시**: `<IP 주소> <FQDN 명칭>` (예: `10.20.30.40 mdrm.mantech.co.kr`)
+    *   **입력 예시**: `<IP 주소> <FQDN 명칭>` (예: `{{ extra.mdrm.server_ip }} mdrm.mantech.co.kr`)
 
 ---
 
@@ -68,15 +68,15 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
 
 | 항목 | 설명 | 예시 |
 |:---|:---|:---|
-| 호스트명 | 대상 서버의 호스트명 | `app-server-01` |
-| IP 주소 | 대상 서버의 IP | `192.168.1.100` |
+| 호스트명 | 대상 서버의 호스트명 | `web-server#01` |
+| IP 주소 | 대상 서버의 IP | `10.20.33.101` |
 | SSH 포트 | SSH 접속 포트 | `22` (기본값) |
 | 사용자명 | SSH 접속 계정 | `root` |
 | 비밀번호 | SSH 접속 비밀번호 | `********` |
 
 ### **2.3 3단계: 설치 옵션 선택**
 
-- **설치 경로**: 기본값 `/opt/gam_agent` 또는 `/opt/mdrm_agent`
+- **설치 경로**: 기본값 `/opt/gam_agent`
 - **자동 시작**: Agent 설치 후 자동 시작 여부
 - **방화벽 설정**: 필요한 포트 자동 오픈 여부
 
@@ -127,10 +127,10 @@ systemctl status gam_agent
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_Agent_수동설치_리눅스/" class="next-step-card">
+<a href="../MDRM_Agent_수동설치_AIX/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📦 수동설치 (Linux/Windows)</span>
+        <span class="next-step-title">📦 수동설치 (Unix/Linux/Windows)</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

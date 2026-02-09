@@ -10,13 +10,13 @@
 
 ```bash
 # 1. 패키지 압축 해제
-tar zxvf mdrm*.tar.gz
+tar zxvf {{ extra.mdrm.package_name }}
 
 # 2. 설치 디렉토리 이동
-cd {압축해제된_디렉토리}
+cd {{ extra.mdrm.setup_dir }}
 
 # 3. 설치 스크립트 실행 (인자: 호스트명, 데이터경로)
-./install.sh $(hostname) /mdrm/data
+./install.sh $(hostname) {{ extra.mdrm.data_path }}
 ```
 
 ---
@@ -24,7 +24,7 @@ cd {압축해제된_디렉토리}
 ## **2. 설치 완료 확인**
 
 !!! success "설치 완료 후 웹 브라우저로 접속 가능"
-    - MDRM URL : `https://{설치한 서버IP}`
+    - MDRM URL : `https://{{ extra.mdrm.server_ip }}`
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     

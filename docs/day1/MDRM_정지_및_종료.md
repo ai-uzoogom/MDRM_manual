@@ -8,10 +8,10 @@
 !!! info "중요: 명령어 실행 위치"
     `docker compose` 구문은 `docker-compose.yml` 파일이 존재하는 디렉토리에서 실행해야 합니다.
     
-    * **기본 설치 경로**: `{데이터 디렉토리}/bin/`
+    * **기본 설치 경로**: `{{ extra.mdrm.bin_path }}/`
     * **실행 예시**: 
       ```bash
-      cd /mdrm/data/bin
+      cd {{ extra.mdrm.bin_path }}
       docker compose stop
       ```
 

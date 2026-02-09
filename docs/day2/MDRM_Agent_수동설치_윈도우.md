@@ -10,7 +10,7 @@
 Windows 서버에 관리자 권한으로 접속하여 다음 과정을 진행합니다.
 
 ### **1.1 파일 준비 및 압축 해제**
-1. MDRM 서버 또는 자료실에서 `gam_agent.zip` 파일을 다운로드합니다.
+1. MDRM 서버 또는 자료실에서 `{{ extra.agent.pkg_windows }}` 파일을 다운로드합니다.
 2. 대상 서버의 `C:\Program Files\gam_agent` 경로에 압축을 해제합니다.
     - *참고: 경로 내에 공백이 포함되어도 무방합니다.*
 
@@ -24,7 +24,7 @@ cd "C:\Program Files\gam_agent"
 
 # 3. 설치 스크립트 실행
 # 형식: .\install.bat [포트] [HTTPS사용여부(기본값 true)]
-.\install.bat 20080
+.\install.bat {{ extra.agent.port }}
 ```
 *주의: 리눅스 버전과 달리 별도의 경로 지정 파라미터가 필요하지 않습니다.*
 
@@ -46,10 +46,10 @@ sc query gam_agent_watchdog
 ```
 
 ### **2.2 포트 리스닝 확인**
-설정된 20080 포트가 정상적으로 열려있는지 확인합니다.
+설정한 {{ extra.agent.port }} 포트가 정상적으로 열려있는지 확인합니다.
 
 ```cmd
-netstat -an | findstr 20080
+netstat -an | findstr {{ extra.agent.port }}
 ```
 
 ---

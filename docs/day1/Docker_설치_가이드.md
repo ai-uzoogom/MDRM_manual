@@ -16,12 +16,12 @@
 RHEL 8/9 및 Rocky Linux 환경에는 `podman`과 `buildah`가 기본 설치되어 있을 수 있습니다. Docker와 충돌을 막기 위해 이를 제거합니다.
 
 ```bash
-yum remove -y podman buildah
+dnf remove -y podman buildah
 ```
 
 ### **1.2 구버전 Docker 제거**
 ```bash
-yum remove -y docker \
+dnf remove -y docker \
               docker-client \
               docker-client-latest \
               docker-common \
@@ -39,10 +39,10 @@ Docker 공식 Repository를 등록하기 위해 필요한 유틸리티 패키지
 
 ```bash
 # 필수 패키지 설치
-yum install -y yum-utils
+dnf install -y dnf-utils
 
 # Docker 공식 Repository 추가 (Rocky Linux/RHEL 공용)
-yum-config-manager \
+dnf config-manager \
     --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
@@ -56,7 +56,7 @@ yum-config-manager \
 시스템에 최신 버전의 Docker 엔진 및 Docker Compose 플러그인을 설치해 주십시오.
 
 ```bash
-yum install -y \
+dnf install -y \
     docker-ce \
     docker-ce-cli \
     containerd.io \

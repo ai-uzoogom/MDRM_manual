@@ -1,9 +1,9 @@
 # ⏫ MDRM 업그레이드 가이드
 
 !!! info "가이드 대상 버전"
-    이 문서는 **MDRM v4.6.8** 업그레이드 기준으로 작성되었습니다.
+    이 문서는 **MDRM v{{ extra.mdrm.version }}** 업그레이드 기준으로 작성되었습니다.
 
-    *   **원본 문서**: [MDRM Upgrade Guide (v4.6.8)](https://mantech.jira.com/wiki/spaces/MDRM/pages/4798545933/MDRM+Upgrade+Guide+v4.6.8)
+    *   **원본 문서**: [MDRM Upgrade Guide (v{{ extra.mdrm.version }})](https://mantech.jira.com/wiki/spaces/MDRM/pages/4798545933/MDRM+Upgrade+Guide+v{{ extra.mdrm.version }})
 
 ---
 
@@ -12,9 +12,9 @@
 이 문서는 다음 환경을 전제로 작성되었습니다.
 
 *   **기존 환경**: Docker 엔진 및 Docker-compose로 운영 중
-*   **설치 경로**: `/opt` (설치 디렉터리)
-*   **데이터 경로**: `/opt/gam` (볼륨 마운트)
-*   **대상 버전**: MDRM v4.6.8 (Podman 권장)
+*   **설치 경로**: {{ extra.pkg_path }} (설치 디렉터리)
+*   **데이터 경로**: {{ extra.mdrm.data_path }} (볼륨 마운트)
+*   **대상 버전**: MDRM v{{ extra.mdrm.version }} (Podman 권장)
 
 !!! warning "데이터 삭제 및 정리 권고"
     과거 모니터링 데이터가 너무 많을 경우 DB 마이그레이션 시간이 매우 길어질 수 있습니다.
@@ -32,12 +32,12 @@ MDRM의 모든 설정과 DB 데이터가 저장된 볼륨 디렉터리를 백업
 
 ```bash
 # 1. 기존 컨테이너 중지
-cd /opt
-docker-compose stop
+cd {{ extra.mdrm.bin_path }}
+docker compose stop
 
-# 2. 데이터 영역 복사 (예: /opt/gam -> /opt/gambackup)
+# 2. 데이터 영역 복사 (예: {{ extra.mdrm.data_path }} -> {{ extra.mdrm.data_path }}_backup)
 # 디스크 여유 공간을 확인 후 진행하십시오.
-cp -rf /opt/gam /opt/gambackup/
+cp -rf {{ extra.mdrm.data_path }} {{ extra.mdrm.data_path }}_backup/
 ```
 
 ### **2.2 Nagios 플러그인 백업 (선택)**
@@ -71,8 +71,8 @@ docker-compose down
 **MDRM 4.6.3 이후 버전인 경우:**
 ```bash
 # bin 디렉터리에 compose 파일이 존재함
-cd /opt/gam/bin
-docker-compose down
+cd {{ extra.mdrm.bin_path }}
+docker compose down
 ```
 
 **이미지 및 잔여 파일 정리:**
@@ -103,10 +103,10 @@ systemctl disable docker
 
 ```bash
 # 1. 설치 디렉터리로 이동
-cd /opt/
+cd {{ extra.pkg_path }}/
 
 # 2. 설치 파일 압축 해제
-tar -zxvf mdrm468.tar.gz
+tar -zxvf {{ extra.mdrm.package_name }}
 ```
 
 ### **3.4 DB 마이그레이션 (4.6.3 이전 버전만 해당)**
@@ -115,10 +115,10 @@ PostgreSQL 버전을 13에서 16으로 업그레이드하는 과정입니다.
 (이미 4.6.3 이상 버전을 사용 중이라면 이 단계는 생략합니다.)
 
 ```bash
-cd /opt/mdrm468/upgrade
+cd {{ extra.mdrm.setup_dir }}/upgrade
 
 # upgrade.sh {DATA_DIR}
-./upgrade.sh /opt/gam
+./upgrade.sh {{ extra.mdrm.data_path }}
 ```
 
 **마이그레이션 옵션:**
@@ -143,10 +143,10 @@ cat /opt/gam/config/DBVersion
 마지막으로 최신 버전의 컨테이너를 배포합니다.
 
 ```bash
-cd /opt/mdrm468
+cd {{ extra.mdrm.setup_dir }}
 
 # 사용법: ./install.sh {HOSTNAME} {DATA_DIR} [PORT]
-./install.sh mdrm.mantech.co.kr /opt/gam
+./install.sh $(hostname) {{ extra.mdrm.data_path }}
 ```
 
 | 인자 | 설명 | 기본값 |

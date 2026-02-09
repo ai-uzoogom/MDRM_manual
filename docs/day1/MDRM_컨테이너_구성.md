@@ -25,9 +25,9 @@ MDRM은 가용성과 확장성을 확보하기 위해 마이크로서비스 아�
 `docker-compose.yml`에서 사용하는 동적 변수들은 같은 디렉토리에 위치한 `.env` 파일에 정의되어 있습니다. 설치 환경에 따라 이 파일의 내용을 수정하여 경로 및 포트를 변경할 수 있습니다.
 
 ```env
-MDRM_HOME=/mdrm/data
+MDRM_HOME={{ extra.mdrm.data_path }}
 HOSTNAME=UZOOGOM-LINUX
-MDRM_PORT=443
+MDRM_PORT={{ extra.mdrm.server_port }}
 ```
 
 ### **주요 변수 설명**

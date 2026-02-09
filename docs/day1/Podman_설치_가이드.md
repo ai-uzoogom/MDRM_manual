@@ -16,25 +16,18 @@ Podman 설치 시 `podman-docker` 패키지(Docker 명령어 호환)를 함께 �
 # Docker 서비스 중지 및 제거
 systemctl stop docker
 systemctl disable docker
-yum remove -y docker \
-              docker-client \
-              docker-client-latest \
-              docker-common \
-              docker-latest \
-              docker-latest-logrotate \
-              docker-logrotate \
-              docker-engine
+dnf remove -y $(rpm -qa | grep docker)
 ```
 
 ---
 
 ## **2. Podman 및 관련 도구 설치**
 
-Rocky Linux/RHEL 8/9 시스템에서는 `dnf`(또는 `yum`)를 통해 의존성 문제없이 간단하게 설치할 수 있습니다. (Python 등 필요 라이브러리가 자동 설치됩니다)
+Rocky Linux/RHEL 8/9 시스템에서는 `dnf`를 통해 의존성 문제없이 간단하게 설치할 수 있습니다. (Python 등 필요 라이브러리가 자동 설치됩니다)
 
 ```bash
 # Podman 및 주요 도구 설치
-yum install -y podman podman-docker podman-plugins podman-compose
+dnf install -y podman podman-docker podman-plugins podman-compose
 ```
 
 !!! info "주요 패키지 설명"

@@ -11,9 +11,9 @@ MDRM의 데이터를 안전하게 보호하기 위한 백업 절차 및 자동�
 데이터 정합성을 위해 실행 중인 모든 MDRM 컨테이너를 중지합니다.
 
 ```bash
-# docker-compose 파일이 있는 경로로 이동 (예: /mdrm/data/bin)
-cd /mdrm/data/bin/
-docker-compose stop
+# docker-compose 파일이 있는 경로로 이동 (예: {{ extra.mdrm.bin_path }})
+cd {{ extra.mdrm.bin_path }}/
+docker compose stop
 ```
 
 ### **1.2 백업 디렉터리 이동**
@@ -26,12 +26,12 @@ cd /mdrm/backup
 ```
 
 ### **1.3 데이터 디렉터리 백업**
-MDRM의 데이터가 저장된 디렉터리(`/mdrm/data`)를 압축하여 백업합니다.
+MDRM의 데이터가 저장된 디렉터리(`{{ extra.mdrm.data_path }}`)를 압축하여 백업합니다.
 
 ```bash
 # tar czf <백업파일명> <대상디렉터리>
 # 예시: mdrm_backup_YYYYMMDD.tgz 형식으로 생성
-tar czf mdrm_backup_$(date +%Y%m%d).tgz /mdrm/data
+tar czf mdrm_backup_$(date +%Y%m%d).tgz {{ extra.mdrm.data_path }}
 ```
 
 ### **1.4 오래된 백업 삭제**
@@ -46,8 +46,8 @@ find /mdrm/backup -name "mdrm_backup_*.tgz" -mtime +30 -delete
 백업이 완료되면 서비스를 다시 시작합니다.
 
 ```bash
-cd /opt/gam/bin
-docker-compose start
+cd {{ extra.mdrm.bin_path }}
+docker compose start
 ```
 
 ### **1.6 서비스 정상 확인**
@@ -74,8 +74,8 @@ curl -k -I https://127.0.0.1
 
 # 1. 환경 설정
 BACKUP_DIR="/mdrm/backup"          # 백업 저장 경로
-DATA_DIR="/mdrm/data"              # 백업 대상 데이터 경로
-COMPOSE_DIR="/mdrm/data/bin"         # Docker Compose 파일 경로
+DATA_DIR="{{ extra.mdrm.data_path }}"              # 백업 대상 데이터 경로
+COMPOSE_DIR="{{ extra.mdrm.bin_path }}"         # Docker Compose 파일 경로
 DATE_TAG=$(date +%Y%m%d_%H%M%S)    # 날짜 태그
 BACKUP_FILE="$BACKUP_DIR/mdrm_backup_$DATE_TAG.tgz"
 RETENTION_DAYS=30                  # 백업 보관 기간(일)

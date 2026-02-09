@@ -8,11 +8,23 @@
 컴포넌트 실행 명령이 내려지면 다음의 5단계 프로세스를 거쳐 자동화 작업이 수행됩니다.
 
 ```mermaid
-flowchart LR
-    A["1. MDRM 서버<br/>스크립트 조회"] --> B["2. Agent로<br/>데이터 전송"]
-    B --> C["3. 서버 내<br/>스크립트 파일 생성"]
-    C --> D["4. 쉘(Shell)<br/>스크립트 실행"]
-    D --> E["5. 실행 완료 후<br/>임시 파일 삭제"]
+sequenceDiagram
+    participant S as MDRM Server
+    participant A as Agent
+    participant F as Script File
+
+    Note over S: 1. 스크립트 조회
+    S->>A: 2. 스크립트 전송 (암호화)
+    activate A
+    A->>F: 3. temp 디렉토리에 파일 생성
+    activate F
+    A->>F: 4. 명령어 또는 스크립트 실행
+    F-->>A: 실시간 로그 (stdout/stderr)
+    A-->>S: 로그 전송
+    deactivate F
+    A->>F: 5. 실행 완료 후 삭제
+    destroy F
+    deactivate A
 ```
 
 ---

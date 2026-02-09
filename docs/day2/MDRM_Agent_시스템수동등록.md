@@ -52,11 +52,11 @@ sudo su -
 
 # 설치 파일 전송 및 압축 해제
 cd /tmp
-tar zxvf gam_agent.withJreX64.tar.gz
+tar zxvf {{ extra.agent.pkg_linux }}
 
 # 설치 실행
-cd /opt/gam_agent
-./install.sh /opt/gam_agent 20080
+cd {{ extra.agent.install_path }}
+./install.sh {{ extra.agent.install_path }} {{ extra.agent.port }}
 
 ```
 
@@ -69,7 +69,7 @@ cd /opt/gam_agent
 
 ```bash
 # 설정 파일 편집
-vi /opt/gam_agent/application.properties
+vi {{ extra.agent.install_path }}/application.properties
 ```
 
 다음 항목을 수정합니다:
@@ -87,10 +87,10 @@ logging.config=logback.xml
 mdrm.debug.mode=false
 mdrm.logstash.port=5001
 mdrm.server.https=true
-mdrm.server.ip={{MDRM_SERVER_IP}}
-mdrm.server.port=443
+mdrm.server.ip={{ extra.mdrm.server_ip }}
+mdrm.server.port={{ extra.mdrm.server_port }}
 
-server.port=30080
+server.port={{ extra.agent.port }}
 server.ssl.key-store-password=password
 server.ssl.key-store=keystore.pfx
 server.ssl.keyAlias=gam_agent
@@ -112,7 +112,7 @@ systemctl start gam_agent
 ps -ef | grep [g]am_agent
 
 # 로그 확인
-tail -f /opt/gam_agent/logs/gam_agent.log
+tail -f {{ extra.agent.install_path }}/logs/gam_agent.log
 
 ```
 
@@ -122,10 +122,10 @@ tail -f /opt/gam_agent/logs/gam_agent.log
 
 ```bash
 # 스크립트 디렉토리 생성
-mkdir -p /opt/gam_agent/storage/scripts
+mkdir -p {{ extra.agent.install_path }}/storage/scripts
 
 # 종료 스크립트 생성
-vi /opt/gam_agent/storage/scripts/dr_zone_check_ping.sh 
+vi {{ extra.agent.install_path }}/storage/scripts/dr_zone_check_ping.sh 
 
 ```
 
@@ -134,7 +134,7 @@ vi /opt/gam_agent/storage/scripts/dr_zone_check_ping.sh
 # DR Zone 감지 및 Agent 자동 종료 스크립트
 
 # 1. 설정 변수
-PROP_FILE="/opt/gam_agent/application.properties"
+PROP_FILE="{{ extra.agent.install_path }}/application.properties"
 MDRM_IP=$(grep "mdrm.server.ip" $PROP_FILE | cut -d'=' -f2)
 MAX_CHECK=3       # 최대 체크 횟수
 PING_COUNT=5      # 1회 체크 당 Ping 횟수
@@ -166,7 +166,7 @@ systemctl stop gam_agent
 
 ```bash
 # 실행 권한 부여
-chmod +x /opt/gam_agent/storage/scripts/dr_zone_check_ping.sh 
+chmod +x {{ extra.agent.install_path }}/storage/scripts/dr_zone_check_ping.sh 
 ```
 
 ---
@@ -179,7 +179,7 @@ NodeID가 올바르게 설정되었는지 확인합니다.
 
 ```bash
 # NodeID 확인
-grep "agent.agentId" /opt/gam_agent/config/application.properties
+grep "agent.agentId" {{ extra.agent.install_path }}/config/application.properties
 
 # 출력 예시
 # agent.agentId=N0001

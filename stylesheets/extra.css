@@ -168,13 +168,15 @@ html {
     margin-top: 0 !important;
 }
 
-/* 사이드바 너비조정 */
-.md-sidebar {
-    width: 10rem;
-}
+/* 사이드바 너비조정 (데스크탑 전용) */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar {
+        width: 10rem;
+    }
 
-.md-sidebar--secondary {
-    width: 10rem;
+    .md-sidebar--secondary {
+        width: 10rem;
+    }
 }
 
 /* 본문 너비 최적화 */
@@ -426,12 +428,14 @@ nav.md-tabs {
 }
 
 .md-tabs__link--active,
-.md-tabs__link.active-tab {
-    background: #2563eb !important;
-    color: white !important;
-    border-color: #2563eb !important;
+.md-tabs__link.active-tab,
+.md-tabs__item--active .md-tabs__link {
+    background: #ffffff !important;
+    color: var(--custom-primary) !important;
+    border: 2px solid var(--custom-primary) !important;
+    font-weight: 700 !important;
     transform: translateY(-2px);
-    /* 활성 탭도 동일하게 살짝 위로 띄움 */
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2) !important;
 }
 
 /* 진행 상태 점 (Progress Dots) */
@@ -859,7 +863,7 @@ html.manual-home-mode .manual-overview-container {
 
 /* 3. 최상위 섹션 제목 (DAY 1 등) 스타일 */
 .md-nav--primary .md-nav__title {
-    color: var(--text-dark) !important;
+    color: var(--custom-primary) !important;
     background-color: transparent !important;
     box-shadow: none !important;
     font-weight: 700;
@@ -869,8 +873,8 @@ html.manual-home-mode .manual-overview-container {
     /* 간격 조정 */
 }
 
-/* 모바일 드로어 제목 등 특수한 title 요소 */
-label.md-nav__title {
+/* 모바일 드로어 제목 등 특수한 title 요소 - 배경 투명화 제거 (오버랩 방지) */
+/* label.md-nav__title {
     background-color: transparent !important;
     box-shadow: none !important;
-}
+} */

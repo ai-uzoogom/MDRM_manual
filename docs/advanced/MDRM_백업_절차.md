@@ -26,12 +26,12 @@ cd /mdrm/backup
 ```
 
 ### **1.3 데이터 디렉터리 백업**
-MDRM의 데이터가 저장된 디렉터리(`{{ extra.mdrm.data_path }}`)를 압축하여 백업합니다.
+MDRM의 데이터가 저장된 디렉터리(`{{ extra.mdrm.path_data }}`)를 압축하여 백업합니다.
 
 ```bash
 # tar czf <백업파일명> <대상디렉터리>
 # 예시: mdrm_backup_YYYYMMDD.tgz 형식으로 생성
-tar czf mdrm_backup_$(date +%Y%m%d).tgz {{ extra.mdrm.data_path }}
+tar czf mdrm_backup_$(date +%Y%m%d).tgz {{ extra.mdrm.path_data }}
 ```
 
 ### **1.4 오래된 백업 삭제**
@@ -74,7 +74,7 @@ curl -k -I https://127.0.0.1
 
 # 1. 환경 설정
 BACKUP_DIR="/mdrm/backup"          # 백업 저장 경로
-DATA_DIR="{{ extra.mdrm.data_path }}"              # 백업 대상 데이터 경로
+DATA_DIR="{{ extra.mdrm.path_data }}"              # 백업 대상 데이터 경로
 COMPOSE_DIR="{{ extra.mdrm.bin_path }}"         # Docker Compose 파일 경로
 DATE_TAG=$(date +%Y%m%d_%H%M%S)    # 날짜 태그
 BACKUP_FILE="$BACKUP_DIR/mdrm_backup_$DATE_TAG.tgz"

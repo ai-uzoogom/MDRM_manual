@@ -109,17 +109,17 @@ nav:
         - ▸ 교육 마무리: day4/MDRM_교육_마무리.md
   - 심화 학습:
       - MDRM:
+        - ▸ 시스템 포트 변경 가이드: advanced/MDRM_포트_변경_가이드.md
         - ▸ 업그레이드 가이드: advanced/MDRM_업그레이드_가이드.md
-        - ▸ 포트 번호 변경 가이드: advanced/MDRM_포트_변경_가이드.md
         - ▸ 시스템 대량 등록 (Loader): advanced/MDRM_시스템_수동등록_Loader.md
         - ▸ 공인 인증서 가이드: advanced/MDRM_공인인증서_가이드.md
         - ▸ API 계정 및 원격 제어: advanced/MDRM_API_원격제어.md
+        - ▸ 백업 및 복구 가이드: advanced/MDRM_백업_절차.md
       - Agent:
         - ▸ 환경 설정: advanced/MDRM_Agent_환경_설정_심화.md
         - ▸ 운영↔DR Node ID 불일치 해결: advanced/MDRM_NodeID_불일치_해결.md
-        - ▸ 백업 및 복구 가이드: advanced/MDRM_백업_절차.md
       - 프로젝트:
-        - ▸ 일정 관리: advanced/project/MDRM_구축_일정관리.md
+        - ▸ 일정 관리: advanced/MDRM_구축_일정관리.md
   - 트러블슈팅:
     - 컴포넌트:
         - ▸ Grep 자기 자신 탐지: troubleshooting/MDRM_TS_컴포넌트_Grep.md
@@ -127,7 +127,7 @@ nav:
     - Agent:
         - ▸ 통신 상태 점검: troubleshooting/MDRM_TS_Agent_통신점검.md
         - ▸ 417 오류 및 Token 불일치: troubleshooting/MDRM_TS_Agent_417오류.md
-        - ▸ Agent 포트 변경: troubleshooting/MDRM_TS_Agent_포트변경.md
+
 
 extra:
   mdrm:

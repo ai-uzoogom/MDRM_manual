@@ -759,7 +759,7 @@
   <a href="#11-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 사용자 ↔ MDRM 서버
+        1.1 사용자 → MDRM 서버
       
     </span>
   </a>
@@ -771,45 +771,6 @@
     <span class="md-ellipsis">
       
         1.2 MDRM 서버 ↔ Agent
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-rocky-linuxrhel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 방화벽 설정 예시 (Rocky Linux/RHEL 기준)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 방화벽 설정 예시 (Rocky Linux/RHEL 기준)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-mdrm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1 MDRM 서버
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 관리 대상 서버 (Agent)
       
     </span>
   </a>
@@ -4193,7 +4154,7 @@
   <a href="#11-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1 사용자 ↔ MDRM 서버
+        1.1 사용자 → MDRM 서버
       
     </span>
   </a>
@@ -4205,45 +4166,6 @@
     <span class="md-ellipsis">
       
         1.2 MDRM 서버 ↔ Agent
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-rocky-linuxrhel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. 방화벽 설정 예시 (Rocky Linux/RHEL 기준)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. 방화벽 설정 예시 (Rocky Linux/RHEL 기준)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-mdrm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1 MDRM 서버
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 관리 대상 서버 (Agent)
       
     </span>
   </a>
@@ -4282,7 +4204,7 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/day1/port.png" data-desc-position="bottom"><img alt="MDRM 통신 포트 구성도" src="../../assets/images/day1/port.png" width="100%"></a></p>
 <h2 id="1"><strong>1. 주요 통신 포트 안내</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
 <p>MDRM 솔루션 운영을 위한 기본 포트 구성은 다음과 같습니다. 해당 포트들은 고객사 보안 정책에 따라 설치 시 변경이 가능합니다.</p>
-<h3 id="11-mdrm"><strong>1.1 사용자 ↔ MDRM 서버</strong><a class="headerlink" href="#11-mdrm" title="Permanent link">¶</a></h3>
+<h3 id="11-mdrm"><strong>1.1 사용자 → MDRM 서버</strong><a class="headerlink" href="#11-mdrm" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -4353,18 +4275,6 @@
 </tbody>
 </table>
 <hr>
-<h2 id="2-rocky-linuxrhel"><strong>2. 방화벽 설정 예시 (Rocky Linux/RHEL 기준)</strong><a class="headerlink" href="#2-rocky-linuxrhel" title="Permanent link">¶</a></h2>
-<p>서버 유형에 따라 필요한 포트를 오픈해 주십시오.</p>
-<h3 id="21-mdrm"><strong>2.1 MDRM 서버</strong><a class="headerlink" href="#21-mdrm" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># HTTPS (웹 접속 및 Agent 통신 수신)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-port<span class="o">=</span><span class="m">443</span>/tcp
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>firewall-cmd<span class="w"> </span>--reload
-</code></pre></div>
-<h3 id="22-agent"><strong>2.2 관리 대상 서버 (Agent)</strong><a class="headerlink" href="#22-agent" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># MDRM 서버로부터의 명령 수신</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>firewall-cmd<span class="w"> </span>--permanent<span class="w"> </span>--add-port<span class="o">=</span><span class="m">20080</span>/tcp
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>firewall-cmd<span class="w"> </span>--reload
-</code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">포트 변경 안내</p>
 <p>상기 포트들은 기본값이며, 설치 스크립트 실행 시 인자값을 통해 다른 포트로 변경하여 운영할 수 있습니다.</p>

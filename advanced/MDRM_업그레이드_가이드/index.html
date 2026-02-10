@@ -4372,7 +4372,7 @@
 <p>이 문서는 다음 환경을 전제로 작성되었습니다.</p>
 <ul>
 <li><strong>기존 환경</strong>: Docker 엔진 및 Docker-compose로 운영 중</li>
-<li><strong>설치 경로</strong>: /mdrm/packages (설치 디렉터리)</li>
+<li><strong>설치 경로</strong>: /mdrm/package (설치 디렉터리)</li>
 <li><strong>데이터 경로</strong>: /mdrm/data (볼륨 마운트)</li>
 <li><strong>대상 버전</strong>: MDRM v4.6.8 (Podman 권장)</li>
 </ul>
@@ -4426,7 +4426,7 @@
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 주의: /opt/gam 디렉터리는 절대 삭제하면 안 됩니다!</span>
 </code></pre></div><p></p>
 <h3 id="32-docker-podman"><strong>3.2 컨테이너 엔진 전환 (Docker → Podman)</strong><a class="headerlink" href="#32-docker-podman" title="Permanent link">¶</a></h3>
-<p>MDRM 4.6.8 부터는 RHEL/CentOS 8 호환성을 위해 <strong>Podman</strong>을 권장합니다.
+<p>MDRM 4.6.8 부터는 Rocky / RHEL / CentOS 8 호환성을 위해 <strong>Podman</strong>을 권장합니다.
 Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니다.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Docker 중지 및 비활성화</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>docker
@@ -4438,7 +4438,7 @@ Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니�
 </div>
 <h3 id="33"><strong>3.3 신규 버전 설치 준비</strong><a class="headerlink" href="#33" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 1. 설치 디렉터리로 이동</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>/mdrm/packages/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>/mdrm/package/
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 2. 설치 파일 압축 해제</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>mdrm468.tar.gz

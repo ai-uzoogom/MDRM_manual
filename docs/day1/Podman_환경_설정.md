@@ -25,7 +25,7 @@ vi /etc/containers/storage.conf
 ```toml
 [storage]
 driver = "overlay"
-graphroot = "{{ extra.mdrm.graph_root }}"
+graphroot = "{{ extra.mdrm.path_data }}"
 ```
 
 ### **1.2 컨테이너 및 로그 설정**
@@ -64,7 +64,7 @@ label = false
 | 항목 | 설정값 | 설명 |
 | :--- | :--- | :--- |
 | <span style="white-space: nowrap;">**driver** (`storage.conf`)</span> | `overlay` | 스토리지 드라이버 방식 (가장 권장되는 overlay 타입) |
-| <span style="white-space: nowrap;">**graphroot** (`storage.conf`)</span> | `{{ extra.mdrm.graph_root }}` | 컨테이너 데이터가 저장될 경로 (Docker의 `data-root` 대응) |
+| <span style="white-space: nowrap;">**graphroot** (`storage.conf`)</span> | `{{ extra.mdrm.path_data }}` | 컨테이너 데이터가 저장될 경로 (Docker의 `data-root` 대응) |
 | <span style="white-space: nowrap;">**default_subnet** (`containers.conf`)</span> | `182.18.0.0/16` | 기본 브릿지 네트워크의 IP 대역 (Docker의 `bip` 대응) |
 | <span style="white-space: nowrap;">**engine.log.driver**</span> | `json-file` | 컨테이너 로그 저장 방식 (Docker 호환성 확보) |
 | <span style="white-space: nowrap;">**engine.log.opts**</span> | `max_size=100m` | 로그 파일 당 최대 용량 및 보관 개수 설정 |

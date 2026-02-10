@@ -5,6 +5,11 @@
 
 ---
 
+!!! tip "심화 과정"
+    더 자세한 옵션 설명과 고급 설정 방법은 **[심화 학습: Agent 환경 설정](../advanced/MDRM_Agent_환경_설정_심화.md)** 문서를 참조하세요.
+
+---
+
 ## **1. 주요 설정 예시 (application.properties)**
 
 ```properties

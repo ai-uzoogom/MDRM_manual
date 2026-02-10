@@ -16,7 +16,7 @@ tar zxvf {{ extra.mdrm.package_name }}
 cd {{ extra.mdrm.setup_dir }}
 
 # 3. 설치 스크립트 실행 (인자: 호스트명, 데이터경로)
-./install.sh $(hostname) {{ extra.mdrm.data_path }}
+./install.sh $(hostname) {{ extra.mdrm.path_data }}
 ```
 
 ---

@@ -12,8 +12,8 @@
 이 문서는 다음 환경을 전제로 작성되었습니다.
 
 *   **기존 환경**: Docker 엔진 및 Docker-compose로 운영 중
-*   **설치 경로**: {{ extra.pkg_path }} (설치 디렉터리)
-*   **데이터 경로**: {{ extra.mdrm.data_path }} (볼륨 마운트)
+*   **설치 경로**: {{ extra.mdrm.path_pkg }} (설치 디렉터리)
+*   **데이터 경로**: {{ extra.mdrm.path_data }} (볼륨 마운트)
 *   **대상 버전**: MDRM v{{ extra.mdrm.version }} (Podman 권장)
 
 !!! warning "데이터 삭제 및 정리 권고"
@@ -35,9 +35,9 @@ MDRM의 모든 설정과 DB 데이터가 저장된 볼륨 디렉터리를 백업
 cd {{ extra.mdrm.bin_path }}
 docker compose stop
 
-# 2. 데이터 영역 복사 (예: {{ extra.mdrm.data_path }} -> {{ extra.mdrm.data_path }}_backup)
+# 2. 데이터 영역 복사 (예: {{ extra.mdrm.path_data }} -> {{ extra.mdrm.path_data }}_backup)
 # 디스크 여유 공간을 확인 후 진행하십시오.
-cp -rf {{ extra.mdrm.data_path }} {{ extra.mdrm.data_path }}_backup/
+cp -rf {{ extra.mdrm.path_data }} {{ extra.mdrm.path_data }}_backup/
 ```
 
 ### **2.2 Nagios 플러그인 백업 (선택)**
@@ -87,7 +87,7 @@ docker image prune -af
 
 ### **3.2 컨테이너 엔진 전환 (Docker → Podman)**
 
-MDRM 4.6.8 부터는 RHEL/CentOS 8 호환성을 위해 **Podman**을 권장합니다.
+MDRM 4.6.8 부터는 Rocky / RHEL / CentOS 8 호환성을 위해 **Podman**을 권장합니다.
 Docker와 Podman은 동시에 사용할 수 없으므로 Docker를 중지합니다.
 
 ```bash
@@ -103,7 +103,7 @@ systemctl disable docker
 
 ```bash
 # 1. 설치 디렉터리로 이동
-cd {{ extra.pkg_path }}/
+cd {{ extra.mdrm.path_pkg }}/
 
 # 2. 설치 파일 압축 해제
 tar -zxvf {{ extra.mdrm.package_name }}
@@ -118,7 +118,7 @@ PostgreSQL 버전을 13에서 16으로 업그레이드하는 과정입니다.
 cd {{ extra.mdrm.setup_dir }}/upgrade
 
 # upgrade.sh {DATA_DIR}
-./upgrade.sh {{ extra.mdrm.data_path }}
+./upgrade.sh {{ extra.mdrm.path_data }}
 ```
 
 **마이그레이션 옵션:**
@@ -146,7 +146,7 @@ cat /opt/gam/config/DBVersion
 cd {{ extra.mdrm.setup_dir }}
 
 # 사용법: ./install.sh {HOSTNAME} {DATA_DIR} [PORT]
-./install.sh $(hostname) {{ extra.mdrm.data_path }}
+./install.sh $(hostname) {{ extra.mdrm.path_data }}
 ```
 
 | 인자 | 설명 | 기본값 |

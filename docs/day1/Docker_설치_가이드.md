@@ -1,10 +1,10 @@
 # 🐳 Docker 설치 가이드
 
 !!! info "학습 안내"
-    RHEL/Rocky Linux 환경에서 Docker 공식 Repository를 등록하고, 최신 버전의 컨테이너 엔진을 설치 및 활성화하는 절차를 학습합니다.
+    Rocky Linux / RHEL 환경에서 Docker 공식 Repository를 등록하고, 최신 버전의 컨테이너 엔진을 설치 및 활성화하는 절차를 학습합니다.
 
 !!! tip "환경에 따른 선택"
-    만약 RHEL 8/9 또는 Rocky Linux 환경에서 Docker 대신 RedHat의 기본 컨테이너 엔진인 **Podman**을 사용하고자 한다면, [Podman 설치 가이드](Podman_설치_가이드.md)를 참조하십시오.
+    만약 Rocky Linux / RHEL 8/9 환경에서 Docker 대신 RedHat의 기본 컨테이너 엔진인 **Podman**을 사용하고자 한다면, [Podman 설치 가이드](Podman_설치_가이드.md)를 참조하십시오.
 
 ---
 
@@ -12,23 +12,19 @@
 
 설치 시 충돌을 방지하기 위해, 이전에 설치되어 있던 컨테이너 엔진을 제거해 주십시오.
 
-### **1.1 기본 설치된 Podman 제거 (RHEL/Rocky 8 이상)**
-RHEL 8/9 및 Rocky Linux 환경에는 `podman`과 `buildah`가 기본 설치되어 있을 수 있습니다. Docker와 충돌을 막기 위해 이를 제거합니다.
+### **1.1 기본 설치된 Podman 제거 (Rocky Linux / RHEL 8 이상)**
+Rocky Linux / RHEL 8/9 환경에는 `podman`과 `buildah`가 기본 설치되어 있을 수 있습니다. Docker와 충돌을 막기 위해 이를 제거합니다.
 
 ```bash
 dnf remove -y podman buildah
 ```
 
-### **1.2 구버전 Docker 제거**
+### **1.2 기존 Docker 제거**
 ```bash
-dnf remove -y docker \
-              docker-client \
-              docker-client-latest \
-              docker-common \
-              docker-latest \
-              docker-latest-logrotate \
-              docker-logrotate \
-              docker-engine
+# Docker 서비스 중지 및 제거
+systemctl stop docker
+systemctl disable docker
+dnf remove -y $(rpm -qa | grep docker)
 ```
 
 ---
@@ -41,13 +37,13 @@ Docker 공식 Repository를 등록하기 위해 필요한 유틸리티 패키지
 # 필수 패키지 설치
 dnf install -y dnf-utils
 
-# Docker 공식 Repository 추가 (Rocky Linux/RHEL 공용)
+# Docker 공식 Repository 추가 (Rocky Linux / RHEL 공용)
 dnf config-manager \
     --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 !!! info "기술 사양 안내"
-    Docker 공식 저장소는 Rocky Linux용 별도 경로 대신 `centos` 하위 경로를 공용으로 사용합니다. 이는 Docker의 공식 배포 정책에 따른 정상적인 설정입니다.
+    Docker 공식 저장소는 Rocky Linux / RHEL용 별도 경로 대신 `centos` 하위 경로를 공용으로 사용합니다. 이는 Docker의 공식 배포 정책에 따른 정상적인 설정입니다.
 
 ---
 

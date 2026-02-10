@@ -22,11 +22,11 @@ AIX 및 LINUX 환경에서 프로세스를 지능적으로 관리(시작/정지/
 
 ### **📥 입력값 1: user : command : proc_names**
 *   **user**: 명령어를 실행할 리눅스 사용자 계정 이름
-    *   └ 예: `root`, `ubuntu`, `deploy` 등
+    * 예시: `root`, `ubuntu`, `deploy` 등
 *   **command**: 실행할 실제 명령어 또는 스크립트 경로
-    *   └ 예: `systemctl start docker`, `/app/apache/bin/apachectl start`
+    * 예시: `systemctl start docker`, `/app/apache/bin/apachectl start`
 *   **proc_names**: 모니터링 대상이 되는 프로세스 이름 (상태 확인용)
-    *   └ 예: `nginx`, `httpd`, `mysqld`
+    * 예시: `nginx`, `httpd`, `mysqld`
 
 ### **📥 입력값 2: action : bg : max_limits**
 *   **action**: 프로세스 제어 동작 모드

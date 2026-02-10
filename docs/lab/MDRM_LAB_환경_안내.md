@@ -31,21 +31,6 @@
 | **학습자 3** | <span class="custom-badge-blue">**113**</span> | `10.20.113.100` | `10.20.113.101` | `10.20.113.102` |
 | **학습자 4** | <span class="custom-badge-blue">**114**</span> | `10.20.114.100` | `10.20.114.101` | `10.20.114.102` |
 
----
-
-## **3. 주요 접속 방법**
-
-### **3.1 Linux / MDRM 서버 (SSH)**
-*   **권장 도구**: MobaXterm, PuTTY, Xshell 등
-*   **접속 포트**: `22` (SSH Default)
-
-### **3.2 Windows 서버 (RDP)**
-*   **접속 방법**: 윈도우 실행(`Win + R`) -> `mstsc` 입력 -> 대상 IP 입력
-*   **접속 계정**: `.\administrator` 또는 `호스트명\administrator`
-
-### **3.3 MDRM 웹 콘솔**
-*   **URL**: `https://10.20.xx.100` (크롬 브라우저 권장)
-*   **기본 계정**: `mcuser` / `mdrm` (또는 교육 시 별도 안내)
 
 ---
 

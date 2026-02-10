@@ -214,105 +214,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## **6. 모니터링 가능 항목**
-
-### Linux/Unix 시스템
-
-✅ **시스템 정보**
-- CPU, 메모리, 디스크 사용량
-- 네트워크 인터페이스 상태
-- 프로세스 목록
-
-✅ **로그 수집**
-- 시스템 로그 조회
-- 애플리케이션 로그 수집
-
-✅ **명령 실행**
-- 스크립트 실행
-- 시스템 명령 수행
-
-### Windows 시스템
-
-✅ **시스템 정보**
-- CPU, 메모리, 디스크 사용량
-- 서비스 상태
-- 이벤트 로그
-
-✅ **PowerShell 실행**
-- PowerShell 스크립트 실행
-- WMI 쿼리 수행
-
----
-
-## **7. 문제 해결 (Troubleshooting)**
-
-### SSH 연결 실패
-
-!!! danger "오류: SSH 연결 실패"
-    **원인**: 방화벽 차단, 계정 정보 오류, SSH 서비스 미실행
-    
-    **해결방법**:
-    
-    ```bash
-    # SSH 서비스 확인
-    systemctl status sshd
-    
-    # 방화벽 확인
-    firewall-cmd --list-ports
-    firewall-cmd --add-port=22/tcp --permanent
-    firewall-cmd --reload
-    
-    # 수동 접속 테스트
-    ssh mdrm_admin@192.168.1.100
-    ```
-
-### WinRM 연결 실패
-
-!!! danger "오류: WinRM 연결 실패"
-    **원인**: WinRM 미활성화, 방화벽 차단, 인증 실패
-    
-    **해결방법**:
-    
-    ```powershell
-    # WinRM 서비스 확인
-    Get-Service WinRM
-    
-    # WinRM 리스너 확인
-    winrm enumerate winrm/config/listener
-    
-    # 방화벽 규칙 확인
-    Get-NetFirewallRule -Name "WinRM*"
-    
-    # 연결 테스트
-    Test-WSMan -ComputerName 192.168.1.101
-    ```
-
-### 권한 부족 오류
-
-!!! danger "오류: 명령 실행 권한 없음"
-    **원인**: 계정 권한 부족
-    
-    **해결방법**:
-    
-    ```bash
-    # Linux: sudo 권한 확인
-    sudo -l
-    
-    # sudo 권한 부여
-    echo "mdrm_admin ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/mdrm_admin
-    ```
-    
-    ```powershell
-    # Windows: 관리자 권한 확인
-    whoami /groups
-    
-    # 관리자 그룹에 추가
-    net localgroup Administrators mdrm_admin /add
-    ```
-
----
-
-## **8. 보안 권장사항**
+## **6. 보안 권장사항**
 
 !!! tip "보안 강화 방법"
     
@@ -334,7 +236,7 @@ Invoke-Command -ComputerName 192.168.1.101 `
 
 ---
 
-## **9. 장점 및 단점**
+## **7. 장점 및 단점**
 
 ### 장점
 

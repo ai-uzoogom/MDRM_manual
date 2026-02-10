@@ -3,6 +3,8 @@ site_name: MDRM 엔지니어 교육매뉴얼 - TRUST ME. I'M ENGINEER.
 site_author: MDRM Team
 site_url: https://ai-uzoogom.github.io/MDRM_manual/
 
+
+
 theme:
   name: material
   language: ko
@@ -128,16 +130,17 @@ nav:
         - ▸ Agent 포트 변경: troubleshooting/MDRM_TS_Agent_포트변경.md
 
 extra:
-  pkg_path: "/mdrm/packages"
   mdrm:
     version: "4.6.8"
     full_version: "4.6.8.1"
     package_name: "mdrm468.tar.gz"
     setup_dir: "/mdrm/packages/mdrm4681"
-    data_path: "/mdrm/data"
     bin_path: "/mdrm/data/bin"
     server_ip: "10.20.33.100"
     server_port: 443
+    path_pkg: "/mdrm/package"
+    path_data: "/mdrm/data"
+    path_engine: "/mdrm/engine"
   agent:
     version: "1.3.0"
     install_path: "/opt/gam_agent"

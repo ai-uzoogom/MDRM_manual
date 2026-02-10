@@ -10,10 +10,10 @@
         <link rel="canonical" href="https://ai-uzoogom.github.io/MDRM_manual/advanced/MDRM_%ED%8F%AC%ED%8A%B8_%EB%B3%80%EA%B2%BD_%EA%B0%80%EC%9D%B4%EB%93%9C/">
       
       
-        <link rel="prev" href="../MDRM_%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/">
+        <link rel="prev" href="../../day4/MDRM_%EA%B5%90%EC%9C%A1_%EB%A7%88%EB%AC%B4%EB%A6%AC/">
       
       
-        <link rel="next" href="../MDRM_%EC%8B%9C%EC%8A%A4%ED%85%9C_%EC%88%98%EB%8F%99%EB%93%B1%EB%A1%9D_Loader/">
+        <link rel="next" href="../MDRM_%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>▸ 포트 번호 변경 가이드 - MDRM 엔지니어 교육매뉴얼 - TRUST ME. I'M ENGINEER.</title>
+        <title>▸ 시스템 포트 변경 가이드 - MDRM 엔지니어 교육매뉴얼 - TRUST ME. I'M ENGINEER.</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ▸ 포트 번호 변경 가이드
+              ▸ 시스템 포트 변경 가이드
             
           </span>
         </div>
@@ -322,7 +322,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../MDRM_%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -3307,34 +3307,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../MDRM_%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ▸ 업그레이드 가이드
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -3354,7 +3326,7 @@
   <span class="md-ellipsis">
     
   
-    ▸ 포트 번호 변경 가이드
+    ▸ 시스템 포트 변경 가이드
   
 
     
@@ -3372,7 +3344,7 @@
   <span class="md-ellipsis">
     
   
-    ▸ 포트 번호 변경 가이드
+    ▸ 시스템 포트 변경 가이드
   
 
     
@@ -3398,22 +3370,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-mdrm-web-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 개요 및 사전 준비
+        1. MDRM 서버 포트 변경 (Web Console)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 개요 및 사전 준비">
+    <nav class="md-nav" aria-label="1. MDRM 서버 포트 변경 (Web Console)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        변경 대상 파일
+        1.1 설정 파일 수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 UI 컨테이너 내부 패치 (필수)
       
     </span>
   </a>
@@ -3426,22 +3409,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 설정 파일 수정
+        2. 에이전트 통신 포트 변경 (MDRM 서버 작업)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 설정 파일 수정">
+    <nav class="md-nav" aria-label="2. 에이전트 통신 포트 변경 (MDRM 서버 작업)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-docker-composeyml" class="md-nav__link">
+  <a href="#21-v461" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 docker-compose.yml 수정
+        2.1 [v4.6.1 이전] 환경설정 파일 변경
       
     </span>
   </a>
@@ -3449,21 +3432,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-nginxconf" class="md-nav__link">
+  <a href="#22-v462-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 nginx.conf 수정
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-wind-configproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.3 wind-config.properties 수정
+        2.2 [v4.6.2 이상] DB 변경
       
     </span>
   </a>
@@ -3472,78 +3444,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 적용 및 재가동
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. UI 컨테이너 내부 패치 (필수)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. UI 컨테이너 내부 패치 (필수)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 대시보드 UI 패치
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-mdrm-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 MDRM UI 패치
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 Docker 커밋 (변경사항 영구 저장)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 최종 확인
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3551,6 +3451,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C_%EA%B0%80%EC%9D%B4%EB%93%9C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 업그레이드 가이드
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3627,6 +3555,34 @@
     
   
     ▸ API 계정 및 원격 제어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDRM_%EB%B0%B1%EC%97%85_%EC%A0%88%EC%B0%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ▸ 백업 및 복구 가이드
   
 
     
@@ -3761,34 +3717,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../MDRM_%EB%B0%B1%EC%97%85_%EC%A0%88%EC%B0%A8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ▸ 백업 및 복구 가이드
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3861,7 +3789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project/MDRM_%EA%B5%AC%EC%B6%95_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/" class="md-nav__link">
+      <a href="../MDRM_%EA%B5%AC%EC%B6%95_%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC/" class="md-nav__link">
         
   
   
@@ -4179,34 +4107,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/MDRM_TS_Agent_%ED%8F%AC%ED%8A%B8%EB%B3%80%EA%B2%BD/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ▸ Agent 포트 변경
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4249,22 +4149,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-mdrm-web-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 개요 및 사전 준비
+        1. MDRM 서버 포트 변경 (Web Console)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. 개요 및 사전 준비">
+    <nav class="md-nav" aria-label="1. MDRM 서버 포트 변경 (Web Console)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        변경 대상 파일
+        1.1 설정 파일 수정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 UI 컨테이너 내부 패치 (필수)
       
     </span>
   </a>
@@ -4277,22 +4188,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 설정 파일 수정
+        2. 에이전트 통신 포트 변경 (MDRM 서버 작업)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 설정 파일 수정">
+    <nav class="md-nav" aria-label="2. 에이전트 통신 포트 변경 (MDRM 서버 작업)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-docker-composeyml" class="md-nav__link">
+  <a href="#21-v461" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1 docker-compose.yml 수정
+        2.1 [v4.6.1 이전] 환경설정 파일 변경
       
     </span>
   </a>
@@ -4300,21 +4211,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-nginxconf" class="md-nav__link">
+  <a href="#22-v462-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2 nginx.conf 수정
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-wind-configproperties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.3 wind-config.properties 수정
+        2.2 [v4.6.2 이상] DB 변경
       
     </span>
   </a>
@@ -4323,78 +4223,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. 적용 및 재가동
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. UI 컨테이너 내부 패치 (필수)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. UI 컨테이너 내부 패치 (필수)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.1 대시보드 UI 패치
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-mdrm-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.2 MDRM UI 패치
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4.3 Docker 커밋 (변경사항 영구 저장)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. 최종 확인
-      
-    </span>
-  </a>
   
 </li>
       
@@ -4415,150 +4243,117 @@
 
 
 
-<h1 id="_1">🔌 포트번호 변경 가이드<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h1 id="_1">🔌 시스템 포트 변경 가이드<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <div class="admonition info">
-<p class="admonition-title">가이드 대상 버전</p>
-<p>이 문서는 <strong>MDRM v4.6.3 이상</strong> 버전을 기준으로 작성되었습니다.</p>
+<p class="admonition-title">학습 안내</p>
+<p>MDRM 솔루션 운영 중 보안 정책이나 포트 충돌로 인해 포트 번호를 변경해야 하는 경우의 조치 방법입니다. <strong>MDRM 서버 자체의 접속 포트</strong>를 변경하는 방법과, <strong>에이전트 통신 포트 변경 시 MDRM 서버에서 수행해야 할 작업</strong>을 상세히 안내합니다.</p>
 <ul>
-<li><strong>원본 문서</strong>: <a href="https://mantech.jira.com/wiki/spaces/MDRM/pages/4672454671/v4.6.3~">포트번호 변경 가이드 (v4.6.3~)</a></li>
+<li><strong>원본 문서 (MDRM WEB)</strong>: <a href="https://mantech.jira.com/wiki/x/DwCAFgE">포트번호 변경 가이드 (v4.6.3~)</a></li>
+<li><strong>원본 문서 (Agent)</strong>: <a href="https://mantech.jira.com/wiki/x/aQKs4g">gam agent - 20080 포트 변경</a></li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">외부 링크 안내</p>
+<p>매뉴얼 내의 모든 외부 링크(Jira, Wiki 등)는 사용 편의를 위해 클릭 시 <strong>새 창(새 탭)</strong>에서 자동으로 열리도록 설정되어 있습니다.</p>
+</div>
+<hr>
+<h2 id="1-mdrm-web-console"><strong>1. MDRM 서버 포트 변경 (Web Console)</strong><a class="headerlink" href="#1-mdrm-web-console" title="Permanent link">¶</a></h2>
+<p>MDRM 웹 콘솔 접속에 사용하는 기본 포트(TCP 443)를 특정 포트(예: 3100)로 변경하는 절차입니다. 이 작업은 <strong>MDRM v4.6.3 이상</strong> 버전을 기준으로 합니다.</p>
 <div class="admonition warning">
 <p class="admonition-title">권장 사항: 재설치</p>
-<p>MDRM의 포트 번호를 변경하는 <strong>가장 확실하고 안정적인 방법은 재설치</strong>입니다.</p>
-<p>데이터 영역(<code>/opt/gam</code>)을 백업한 뒤, <code>install.sh</code> 실행 시 세 번째 인자로 포트 번호를 지정하여 재설치하는 것을 권장합니다.
+<p>MDRM의 포트 번호를 변경하는 <strong>가장 확실하고 안정적인 방법은 재설치</strong>입니다. 데이터 영역(<code>/mdrm/data</code>)을 백업한 뒤, <code>install.sh</code> 실행 시 세 번째 인자로 포트 번호를 지정하여 재설치하는 것을 권장합니다.
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 예시: 3100 포트로 재설치</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./install.sh<span class="w"> </span><span class="o">{</span>HOSTNAME<span class="o">}</span><span class="w"> </span><span class="o">{</span>DATA_DIR<span class="o">}</span><span class="w"> </span><span class="m">3100</span>
-</code></pre></div>
-본 가이드는 재설치가 불가능한 상황에서 기존 운영 환경의 설정을 직접 변경하는 방법을 다룹니다.<p></p>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>./install.sh<span class="w"> </span><span class="k">$(</span>hostname<span class="k">)</span><span class="w"> </span>/mdrm/data<span class="w"> </span><span class="m">3100</span>
+</code></pre></div><p></p>
 </div>
-<hr>
-<h2 id="1"><strong>1. 개요 및 사전 준비</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<p>MDRM은 기본적으로 <strong>TCP 443</strong> 포트를 사용합니다. 보안 정책이나 포트 충돌 등의 사유로 이를 변경해야 할 경우(예: <strong>3100번</strong>), 여러 설정 파일과 UI 컨테이너 내부의 설정을 모두 변경해야 합니다.</p>
-<h3 id="_2"><strong>변경 대상 파일</strong><a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<ol>
-<li><code>bin/docker-compose.yml</code></li>
-<li><code>config/nginx/conf.d/nginx.conf</code></li>
-<li><code>config/wind-config.properties</code></li>
-<li>UI 컨테이너 내부 패치 (<code>dashboard-ui</code>, <code>mdrm-ui</code>)</li>
-</ol>
-<hr>
-<h2 id="2"><strong>2. 설정 파일 수정</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
-<p>볼륨 마운트 된 경로에 있는 설정 파일들을 수정합니다.</p>
-<h3 id="21-docker-composeyml"><strong>2.1 docker-compose.yml 수정</strong><a class="headerlink" href="#21-docker-composeyml" title="Permanent link">¶</a></h3>
-<p><code>nginx-gateway</code> 서비스의 포트 매핑과 <code>gam</code> 서비스의 환경 변수를 수정합니다.</p>
+<h3 id="11"><strong>1.1 설정 파일 수정</strong><a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<p>재설치가 불가능한 경우 아래 파일들을 수동으로 수정합니다.</p>
+<p><strong>① docker-compose.yml 수정</strong></p>
 <ul>
-<li><strong>파일 위치</strong>: <code>{MDRM_HOME}/bin/docker-compose.yml</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
+<li><strong>파일 위치</strong>: <code>/mdrm/data/bin/docker-compose.yml</code></li>
+<li><code>nginx-gateway</code> 서비스의 포트 매핑을 수정합니다.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">nginx-gateway</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1"># ...</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="c1"># [변경 전]</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="c1"># - "443:443"</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="c1"># [변경 후] 호스트의 3100 포트를 컨테이너의 443(또는 내부 변경 포트)으로 매핑</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="c1"># 주의: nginx.conf 내부 listen 포트도 변경했다면 그에 맞춰야 함.</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="c1"># 보통은 호스트 포트만 변경합니다.</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"3100:443"</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">gam</span><span class="p">:</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="c1"># [변경 후] GAM_PORT 환경변수 추가 또는 수정 (필요 시)</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GAM_PORT=3100</span>
-</code></pre></div>
-<h3 id="22-nginxconf"><strong>2.2 nginx.conf 수정</strong><a class="headerlink" href="#22-nginxconf" title="Permanent link">¶</a></h3>
-<p>NGINX Gateway의 설정을 변경합니다. 버전 업그레이드 시 이 파일이 초기화될 수 있으므로 재적용이 필요할 수 있습니다.</p>
-<ul>
-<li><strong>파일 위치</strong>: <code>{MDRM_HOME}/config/nginx/conf.d/nginx.conf</code></li>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"3100:443"</span><span class="w"> </span><span class="c1"># 호스트의 3100 포트를 컨테이너의 443으로 매핑</span>
+</code></pre></div></li>
 </ul>
-<p><strong>수정 내용</strong>:
-<code>server</code> 블록 내의 <code>listen</code> 포트나 리다이렉트 설정을 확인합니다. (외부 포트 변경 시 <code>Host</code> 헤더 관련 설정 확인 필요)</p>
-<h3 id="23-wind-configproperties"><strong>2.3 wind-config.properties 수정</strong><a class="headerlink" href="#23-wind-configproperties" title="Permanent link">¶</a></h3>
-<p>GAM 컨테이너가 참조하는 환경 설정을 변경합니다.</p>
+<p><strong>② wind-config.properties 수정</strong></p>
 <ul>
-<li><strong>파일 위치</strong>: <code>{MDRM_HOME}/config/wind-config.properties</code></li>
+<li><strong>파일 위치</strong>: <code>/mdrm/data/config/wind-config.properties</code>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># [변경 전] server.port=443</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">server.port</span><span class="o">=</span><span class="s">3100</span>
+</code></pre></div></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># [변경 전]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># server.port=443</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># [변경 후]</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="na">server.port</span><span class="o">=</span><span class="s">3100</span>
-</code></pre></div>
+<h3 id="12-ui"><strong>1.2 UI 컨테이너 내부 패치 (필수)</strong><a class="headerlink" href="#12-ui" title="Permanent link">¶</a></h3>
+<p>웹 콘솔에서 API를 호출할 때 변경된 포트를 바라보도록 소스를 수정해야 합니다. 제조사로부터 제공받은 패치 스크립트를 사용합니다.</p>
+<ol>
+<li>
+<p><strong>대시보드 UI 패치</strong>:
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>dashboard_patch.sh<span class="w"> </span>dashboard-ui:/usr/share/nginx/html
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dashboard-ui<span class="w"> </span>sh
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>./dashboard_patch.sh<span class="w"> </span><span class="m">3100</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">exit</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p><strong>MDRM UI 패치</strong>:
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>mdrmui_patch.sh<span class="w"> </span>mdrm-ui:/usr/share/nginx/html
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mdrm-ui<span class="w"> </span>sh
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>./mdrmui_patch.sh<span class="w"> </span><span class="m">3100</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">exit</span>
+</code></pre></div><p></p>
+</li>
+<li>
+<p><strong>Docker 커밋 (변경사항 영구 저장)</strong>:
+    컨테이너가 재생성되어도 패치 내용이 유지되도록 현재 상태를 이미지로 커밋합니다.
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>commit<span class="w"> </span>dashboard-ui<span class="w"> </span><span class="o">{</span>dashboard-ui_IMAGE_NAME<span class="o">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>commit<span class="w"> </span>mdrm-ui<span class="w"> </span><span class="o">{</span>mdrm-ui_IMAGE_NAME<span class="o">}</span>
+</code></pre></div><p></p>
+</li>
+</ol>
 <hr>
-<h2 id="3"><strong>3. 적용 및 재가동</strong><a class="headerlink" href="#3" title="Permanent link">¶</a></h2>
-<p>수정한 설정 파일을 적용하기 위해 컨테이너를 재시작합니다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span><span class="o">{</span>MDRM_HOME<span class="o">}</span>/bin
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 컨테이너 종료 및 삭제</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>docker-compose<span class="w"> </span>down
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># 컨테이너 생성 및 실행</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
-</code></pre></div>
-<hr>
-<h2 id="4-ui"><strong>4. UI 컨테이너 내부 패치 (필수)</strong><a class="headerlink" href="#4-ui" title="Permanent link">¶</a></h2>
-<p>웹 콘솔(UI)에서 API를 호출할 때 변경된 포트를 바라보도록, 컴파일된 소스(Javascript 등)를 수정해야 합니다. 이를 위해 제공되는 패치 스크립트를 사용합니다.</p>
-<div class="admonition warning">
-<p class="admonition-title">스크립트 파일 필요</p>
-<p>본 작업을 수행하려면 제조사(맨텍솔루션)로부터 제공받은 <code>dashboard_patch.sh</code> 및 <code>mdrmui_patch.sh</code> 파일이 필요합니다.</p>
+<h2 id="2-mdrm"><strong>2. 에이전트 통신 포트 변경 (MDRM 서버 작업)</strong><a class="headerlink" href="#2-mdrm" title="Permanent link">¶</a></h2>
+<p>GAM 에이전트의 기본 포트(20080)를 변경하여 사용할 경우, MDRM 서버에서 수행해야 하는 작업 가이드입니다.</p>
+<div class="admonition info">
+<p class="admonition-title">통신 포트 개요</p>
+<p>GAM 에이전트의 기본 포트 정보는 <strong>20080</strong>을 사용하고 있습니다. 고객사에서 20080 포트 사용 불가 시 에이전트의 포트 번호를 변경하여 사용하는 방법을 공유합니다. 
+*   <strong>지원 버전</strong>: MDRM 4.6.1, 4.6.2 이상부터 가능
+*   <strong>제약 사항</strong>: 현재 포트를 노드별로 개별 지정할 수 없습니다.</p>
 </div>
-<h3 id="41-ui"><strong>4.1 대시보드 UI 패치</strong><a class="headerlink" href="#41-ui" title="Permanent link">¶</a></h3>
+<h3 id="21-v461"><strong>2.1 [v4.6.1 이전] 환경설정 파일 변경</strong><a class="headerlink" href="#21-v461" title="Permanent link">¶</a></h3>
+<p>GAM 컨테이너 내부의 환경설정 파일을 직접 수정합니다.</p>
 <ol>
-<li>
-<p><strong>파일 복사</strong>: 스크립트를 컨테이너로 복사합니다.
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>dashboard_patch.sh<span class="w"> </span>dashboard-ui:/usr/share/nginx/html
-</code></pre></div><p></p>
-</li>
-<li>
-<p><strong>스크립트 실행</strong>:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 컨테이너 접속</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dashboard-ui<span class="w"> </span>sh
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 패치 실행 (인자로 변경할 포트 번호 입력)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>./dashboard_patch.sh<span class="w"> </span><span class="m">3100</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">exit</span>
-</code></pre></div><p></p>
-</li>
+<li><strong>설정 파일 편집</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>gam<span class="w"> </span>bash
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>vi<span class="w"> </span>/gampkgs/data/config/wind-config.properties
+</code></pre></div></li>
+<li><strong>포트 정보 수정</strong> (<code>20080</code> → <code>20081</code> 예시):
+    <code>wind.dr.agent.port</code> 항목의 포트 정보를 수정합니다.</li>
+<li><strong>재시작</strong>: 수정 사항 적용을 위해 톰캣 또는 컨테이너를 재시작합니다.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># gam 컨테이너 내 tomcat 재시작</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>service<span class="w"> </span>tomcat8<span class="w"> </span>restart<span class="w"> </span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># gam 컨테이너 재시작</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker<span class="w"> </span>restart<span class="w"> </span>gam<span class="w"> </span>
+</code></pre></div></li>
 </ol>
-<h3 id="42-mdrm-ui"><strong>4.2 MDRM UI 패치</strong><a class="headerlink" href="#42-mdrm-ui" title="Permanent link">¶</a></h3>
+<p><strong>적용 범위</strong>: 시스템 에이전트 연결 테스트, 시스템 요약, 점검 작업, 워크플로우 (4.6.1 이하)</p>
+<h3 id="22-v462-db"><strong>2.2 [v4.6.2 이상] DB 변경</strong><a class="headerlink" href="#22-v462-db" title="Permanent link">¶</a></h3>
+<p>4.6.2 이상 버전에서는 DB 값을 수정해야만 워크플로우에서 변경된 포트 번호로 실행이 가능합니다. <strong>반드시 2.1 항의 환경설정을 같이 진행해야 합니다.</strong></p>
 <ol>
-<li>
-<p><strong>파일 복사</strong>:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>cp<span class="w"> </span>mdrmui_patch.sh<span class="w"> </span>mdrm-ui:/usr/share/nginx/html
-</code></pre></div><p></p>
-</li>
-<li>
-<p><strong>스크립트 실행</strong>:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 컨테이너 접속</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mdrm-ui<span class="w"> </span>sh
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># 패치 실행</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>./mdrmui_patch.sh<span class="w"> </span><span class="m">3100</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">exit</span>
-</code></pre></div><p></p>
-</li>
+<li><strong>DB 접속 및 포트 변경</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>mdrm-postgres<span class="w"> </span>bash<span class="w"> </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>psql<span class="w"> </span>-p<span class="w"> </span><span class="m">5433</span><span class="w"> </span>-U<span class="w"> </span>mccs
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>update<span class="w"> </span>accounts<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">conn_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'20081'</span><span class="w"> </span>where<span class="w"> </span><span class="nv">acc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div></li>
+<li><strong>결과 확인</strong>: DB 데이터 변경 후 별도의 컨테이너 재시작 없이 바로 적용됩니다.</li>
 </ol>
-<h3 id="43-docker"><strong>4.3 Docker 커밋 (변경사항 영구 저장)</strong><a class="headerlink" href="#43-docker" title="Permanent link">¶</a></h3>
-<p>컨테이너 내부를 직접 수정했으므로, 컨테이너가 재생성되더라도 패치 내용이 유지되도록 현재 상태를 이미지로 <code>commit</code> 해야 합니다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 1. 컨테이너 ID 및 이미지 이름 확인</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ui
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># 2. 대시보드 UI 커밋</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>docker<span class="w"> </span>commit<span class="w"> </span><span class="o">{</span>dashboard-ui_CONTAINER_ID<span class="o">}</span><span class="w"> </span><span class="o">{</span>dashboard-ui_IMAGE_NAME<span class="o">}</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># 예: docker commit a1b2c3d4e5 mantech/mdrm-dashboard-ui:4.6.3</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># 3. MDRM UI 커밋</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>docker<span class="w"> </span>commit<span class="w"> </span><span class="o">{</span>mdrm-ui_CONTAINER_ID<span class="o">}</span><span class="w"> </span><span class="o">{</span>mdrm-ui_IMAGE_NAME<span class="o">}</span>
-</code></pre></div>
+<p><strong>적용 범위</strong>: 워크플로우 (4.6.2 이상)</p>
 <hr>
-<h2 id="5"><strong>5. 최종 확인</strong><a class="headerlink" href="#5" title="Permanent link">¶</a></h2>
-<p>브라우저를 열고 변경된 포트(<code>https://{MDRM_IP}:3100</code>)로 접속하여 다음 기능이 정상 동작하는지 확인합니다.</p>
-<ol>
-<li><strong>로그인 화면</strong>: 정상 출력 및 로그인 가능 여부</li>
-<li><strong>대시보드</strong>: 위젯 데이터 로딩 확인</li>
-<li><strong>시스템</strong>: 서버 목록 조회 확인</li>
-<li><strong>워크플로우</strong>: 워크플로우 편집 및 조회 확인</li>
-</ol>
+<div class="admonition success">
+<p class="admonition-title">최종 확인</p>
+<p>모든 포트 변경 작업이 완료된 후에는 반드시 웹 콘솔의 <strong>[시스템 관리]</strong> 메뉴에서 <strong>'에이전트 연결 테스트'</strong>를 수행하여 통신 상태가 정상(OK)인지 확인하시기 바랍니다.</p>
+</div>
 
 
 

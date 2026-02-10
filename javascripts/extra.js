@@ -73,6 +73,36 @@
   if (typeof document.addEventListener === "function") {
     document.addEventListener("DOMContentChanged", handleLandingPage);
   }
+
+  // 외부 링크 자동 새창 열기 설정 (글로벌 클릭 이벤트 위임)
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('a');
+    if (!target || !target.href || !target.href.startsWith('http')) return;
+
+    try {
+      const url = new URL(target.href);
+      if (url.host !== window.location.host) {
+        target.setAttribute('target', '_blank');
+        target.setAttribute('rel', 'noopener noreferrer');
+      }
+    } catch (err) {
+      // invalid URL
+    }
+  }, true);
+
+  // 초기 로드 시에도 속성 부여 (필요 시)
+  function setupExternalLinks() {
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      try {
+        if (new URL(link.href).host !== window.location.host) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      } catch (e) { }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", setupExternalLinks);
+  document.addEventListener("DOMContentChanged", setupExternalLinks);
 })();
 
 // Mermaid support for Material for MkDocs (Instant Navigation compatible)

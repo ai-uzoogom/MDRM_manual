@@ -8,6 +8,11 @@
     // 메인 홈 화면 진입 시 표준 UI 요소들이 숨겨져 있다면 강제로 복구
     document.body.classList.remove('landing-active');
     document.documentElement.classList.add('manual-home-mode');
+    
+    // FOUC 방지용 초기 설정 초기화
+    document.documentElement.style.backgroundColor = '';
+    const earlyHide = document.getElementById('early-hide');
+    if (earlyHide) earlyHide.remove();
   }
 
   window.enterManual = function () {

@@ -1,3 +1,10 @@
+<script>
+  if (!sessionStorage.getItem('mdrm_intro_session') || new URLSearchParams(window.location.search).has('reset_intro')) {
+    document.documentElement.style.backgroundColor = '#020617';
+    document.write('<style id="early-hide">[data-md-component="header"], [data-md-component="tabs"], .md-sidebar, .md-sidebar--secondary, .md-footer { display: none !important; } .md-main, .md-content, .md-content__inner, .md-typeset { background: transparent !important; box-shadow: none !important; margin: 0 !important; padding: 0 !important; animation: none !important; transform: none !important; max-width: none !important; }</style>');
+  }
+</script>
+
 <div class="landing-page-container">
     <h1 class="landing-title">MDRM</h1>
     

@@ -12,7 +12,7 @@
 
 
 
-<iframe src="../../../assets/diagrams/project_schedule.html" width="100%" height="600px" style="border:none;"></iframe>
+<iframe src="../../assets/diagrams/project_schedule.html" width="100%" height="600px" style="border:none;"></iframe>
 
 ---
 

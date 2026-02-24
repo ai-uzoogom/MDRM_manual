@@ -55,7 +55,7 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../MDRM_TS_Agent_포트변경/" class="next-step-card">
+<a href="../../advanced/MDRM_포트_변경_가이드/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting 04</span>
         <span class="next-step-title">Agent 포트(20080) 변경</span>

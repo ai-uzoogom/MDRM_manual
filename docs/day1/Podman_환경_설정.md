@@ -25,7 +25,7 @@ vi /etc/containers/storage.conf
 ```toml
 [storage]
 driver = "overlay"
-graphroot = "{{ extra.mdrm.path_data }}"
+graphroot = "{{ extra.mdrm.path_engine }}"
 ```
 
 ### **1.2 컨테이너 및 로그 설정**

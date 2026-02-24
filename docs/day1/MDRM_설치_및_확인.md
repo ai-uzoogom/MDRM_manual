@@ -24,7 +24,7 @@ cd {{ extra.mdrm.setup_dir }}
 ## **2. 설치 완료 확인**
 
 !!! success "설치 완료 후 웹 브라우저로 접속 가능"
-    - MDRM URL : `https://{{ extra.mdrm.server_ip }}`
+    - MDRM URL : `https://10.20.xxx.100`
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     

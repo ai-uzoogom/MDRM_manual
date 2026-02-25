@@ -896,3 +896,95 @@ html.manual-home-mode .manual-overview-container {
     background-color: transparent !important;
     box-shadow: none !important;
 } */
+
+/* --- Custom Image Carousel --- */
+.custom-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 1.5rem auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--custom-shadow);
+    background: var(--custom-bg-light);
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center;
+}
+
+.carousel-slide.active {
+    display: block;
+    animation: fade 0.6s;
+}
+
+.carousel-slide img,
+.carousel-slide figure img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-caption {
+    padding: 12px;
+    background-color: var(--text-dark);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.85;
+    z-index: 10;
+}
+
+.carousel-prev,
+.carousel-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 8px 12px;
+    margin-top: -14px;
+    color: white !important;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    text-decoration: none !important;
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* 다크모드 대응 */
+[data-md-color-scheme="slate"] .carousel-caption {
+    background-color: #0f172a;
+}

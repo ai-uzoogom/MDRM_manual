@@ -1194,7 +1194,18 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 라이선스 키 정보
+        1. 라이선스 등록 절차
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 라이선스 파일 직접 수정 (대체 방법)
       
     </span>
   </a>
@@ -4260,7 +4271,18 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. 라이선스 키 정보
+        1. 라이선스 등록 절차
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 라이선스 파일 직접 수정 (대체 방법)
       
     </span>
   </a>
@@ -4289,8 +4311,30 @@
 <p class="admonition-title">학습 안내</p>
 <p>MDRM 설치 직후, 원활한 실습 진행을 위해 시스템에 부여된 실습용 임시 라이선스를 등록하는 과정입니다.</p>
 </div>
-<h2 id="1"><strong>1. 라이선스 키 정보</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<p>아래의 임시 라이선스 키 블록 전체를 복사(<code>Ctrl + C</code> 또는 우측 상단의 📋 버튼 클릭)하여, MDRM 관리 콘솔의 [시스템] &gt; [라이선스 등록] 메뉴에 붙여넣고 저장해주십시오.</p>
+<h2 id="1"><strong>1. 라이선스 등록 절차</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
+<p>교육생은 발급된 임시 라이선스 코드를 통해 메인 메뉴 권한을 활성화해야 합니다. 아래 등록 절차(1~3단계)를 참고하여 코드를 붙여넣어 주십시오.</p>
+<div class="custom-carousel">
+  <div class="carousel-slide active">
+    <div class="carousel-caption">1단계: 우측 상단의 ⚙️ [설정] &gt; [라이선스] 메뉴로 이동합니다.</div>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/part1/license_step1.png" data-desc-position="bottom"><img src="../../assets/images/part1/license_step1.png" alt="Step 1: 시스템 메뉴"></a>
+  </div>
+  <div class="carousel-slide">
+    <div class="carousel-caption">2단계: 우측 화면에서 '등록' 버튼을 눌러 입력 창을 활성화합니다.</div>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/part1/license_step2.png" data-desc-position="bottom"><img src="../../assets/images/part1/license_step2.png" alt="Step 2: 라이선스 등록 클릭"></a>
+  </div>
+  <div class="carousel-slide">
+    <div class="carousel-caption">3단계: 아래의 발급받은 교육용 라이선스 코드를 붙여넣고 저장합니다.</div>
+    <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/part1/license_step3.png" data-desc-position="bottom"><img src="../../assets/images/part1/license_step3.png" alt="Step 3: 코드 붙여넣기"></a>
+  </div>
+
+  <a class="carousel-prev" onclick="window.moveSlide(-1, this)">❮</a>
+  <a class="carousel-next" onclick="window.moveSlide(1, this)">❯</a>
+</div>
+
+<div class="admonition info">
+<p class="admonition-title">교육용 임시 라이선스 키 복사</p>
+<p>아래의 코드 블록 전체를 복사(<code>Ctrl + C</code> 또는 우측 상단의 📋 버튼 클릭)하여 붙여넣고 저장해주십시오.</p>
+</div>
 <div class="highlight"><span class="filename">MDRM 교육용 임시 라이선스</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HOST localhost ANY 5053
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ISV mantech port=5055
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>LICENSE mantech mdrm 4 11-may-2026 30 min_timeout=60 _ck=91083287a6
@@ -4301,6 +4345,21 @@
 <p class="admonition-title">주의사항</p>
 <p><code>sig=</code> 항목 마지막의 들여쓰기된 큰따옴표(<code>"</code>) 기호까지 전부 누락 없이 복사되어야 라이선스가 정상적으로 인식됩니다. 등록을 마치면 메인 메뉴가 정상적으로 활성화됩니다!</p>
 </div>
+<hr>
+<h2 id="2"><strong>2. 라이선스 파일 직접 수정 (대체 방법)</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h2>
+<p>웹 콘솔(GUI) 상에서 등록 버튼이 활성화되지 않거나 콘솔에 접속할 수 없는 경우, 서버 내부에 위치한 라이선스 파일을 직접 편집하여 적용할 수 있습니다.</p>
+<p><strong>1.</strong> MDRM 관리 서버에 접속한 후, 라이선스 파일(<code>ent.lic</code>)을 문서 편집기(<code>vi</code> 등)로 엽니다.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>vi<span class="w"> </span>/mdrm/data/license/ent.lic
+</code></pre></div><p></p>
+<p><strong>2.</strong> 파일 내 기존 내용을 전부 지운 뒤, 발급받은 <strong>임시 라이선스 키</strong>를 붙여넣고 저장(<code>:wq</code>)합니다.</p>
+<p><strong>3.</strong> 변경된 라이선스 파일을 시스템에 인식시키기 위해 전체 컴포넌트를 재기동합니다.
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Docker Compose 디렉토리로 이동</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>/mdrm/data/bin
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 전체 시스템(MDRM) 재기동</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div><p></p>
 <hr>
 <center>
     <p style="opacity: 0.5; font-size: 0.8rem;">

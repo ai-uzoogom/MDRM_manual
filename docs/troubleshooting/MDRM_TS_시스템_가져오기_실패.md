@@ -40,14 +40,15 @@ wind.ansible.ping.precheck = false
 
 ## **3. 적용 시스템 재시작**
 
-설정값을 저장한 후에는 해당 옵션을 관장하는 백엔드 코어 컨테이너(`mdrm-controller`)를 재시작하여 설정을 시스템에 반영해야 합니다.
+설정값을 저장한 후에는 전체 MDRM 시스템을 재기동하여 설정을 반영해야 합니다.
 
 ```bash
 # Docker Compose 디렉토리로 이동
 cd /mdrm/data/bin
 
-# mdrm-controller 컨테이너 재시작
-docker compose restart mdrm-controller
+# 전체 시스템(MDRM) 재기동
+docker compose down
+docker compose up -d
 ```
 
 재시작이 완료되면 웹 콘솔에서 가져오기 작업을 다시 시도하시기 바랍니다.

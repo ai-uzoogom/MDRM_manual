@@ -53,19 +53,13 @@ docker exec -it gam bash
 !!! tip "접속 종료 방법"
     컨테이너 내부 작업을 마친 후 원래의 호스트 터미널로 돌아오려면 `exit`를 입력해 주십시오.
 
-<center>
-    <p style="opacity: 0.5; font-size: 0.8rem;">
-        이것으로 <strong>MDRM 설치 및 운영</strong> 파트의 교육 단계를 마칩니다. 수고하셨습니다!
-    </p>
-</center>
-
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../part2/MDRM_PART2_학습_안내/" class="next-step-card">
+<a href="../MDRM_임시라이선스_입력/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 PART 2: 운영 환경 구성 및 자원 관리</span>
+        <span class="next-step-title">🔑 임시 라이선스 등록</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

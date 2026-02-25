@@ -97,7 +97,7 @@ systemctl disable docker
 ```
 
 !!! tip "Podman 설치"
-    Podman이 설치되어 있지 않다면 [Podman 설치 가이드](../day1/Podman_설치_가이드.md)를 먼저 수행하십시오.
+    Podman이 설치되어 있지 않다면 [Podman 설치 가이드](../part1/Podman_설치_가이드.md)를 먼저 수행하십시오.
 
 ### **3.3 신규 버전 설치 준비**
 

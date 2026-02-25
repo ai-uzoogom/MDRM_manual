@@ -19,7 +19,7 @@ MDRM 서버에 접속하여 관리 대상 서버(Agent)의 서비스 상태를 �
 Agent 서비스가 정상적으로 떠 있고 통신이 가능한지 가장 빠르게 확인하는 방법입니다.
 ```bash
 # Agent 버전 정보 출력
-curl -sk https://{에이전트 IP}:20080/version
+curl -sk https://{에이전트 IP}:{{ extra.agent.port }}/version
 1.3.0
 ```
 
@@ -27,7 +27,7 @@ curl -sk https://{에이전트 IP}:20080/version
 Agent의 노드 ID, IP 목록, OS 버전 등 상세 정보를 JSON 형식으로 확인합니다.
 ```bash
 # 상세 정보 및 노드 식별 정보 출력 (| jq 사용 권장)
-curl -sk https://{에이전트 IP}:20080/about/get_about_info | jq
+curl -sk https://{에이전트 IP}:{{ extra.agent.port }}/about/get_about_info | jq
 ```
 
 **출력 예시 (JSON)**

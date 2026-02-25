@@ -128,10 +128,10 @@ if ($foundVulnerable) {
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../day4/MDRM_DAY4_학습_안내/" class="next-step-card">
+<a href="../../part4/MDRM_PART4_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 DAY 4: 실전 시나리오 및 운영 관리</span>
+        <span class="next-step-title">📋 PART 4: 실전 시나리오 및 운영 관리</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

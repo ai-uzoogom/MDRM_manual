@@ -864,7 +864,7 @@ html.manual-home-mode .manual-overview-container {
         background: transparent !important;
     }
 
-    /* 3. 최상위 섹션 제목 (DAY 1 등) 스타일 */
+    /* 3. 최상위 섹션 제목 (PART 1 등) 스타일 */
     .md-nav--primary .md-nav__title {
         color: var(--custom-primary) !important;
         background-color: transparent !important;

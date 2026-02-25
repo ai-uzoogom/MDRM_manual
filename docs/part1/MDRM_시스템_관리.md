@@ -62,10 +62,10 @@ docker exec -it gam bash
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../day2/MDRM_DAY2_학습_안내/" class="next-step-card">
+<a href="../../part2/MDRM_PART2_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 DAY 2: 운영 환경 구성 및 자원 관리</span>
+        <span class="next-step-title">📋 PART 2: 운영 환경 구성 및 자원 관리</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

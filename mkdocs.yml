@@ -31,84 +31,84 @@ theme:
 nav:
   - 🏠: index.md
   - 🧪 LAB 환경: lab/MDRM_LAB_환경_안내.md
-  - DAY 1:
-    - 학습 안내: day1/MDRM_DAY1_학습_안내.md
-    - 솔루션 개요: day1/MDRM_솔루션_개요.md
+  - PART 1:
+    - 학습 안내: part1/MDRM_PART1_학습_안내.md
+    - 솔루션 개요: part1/MDRM_솔루션_개요.md
     - 인프라:
-      - ▸ 디스크 구성: day1/인프라_디스크_구성.md
-      - ▸ OS 튜닝: day1/인프라_OS_튜닝.md
-      - ▸ 포트 정보: day1/인프라_포트_정보.md
+      - ▸ 디스크 구성: part1/인프라_디스크_구성.md
+      - ▸ OS 튜닝: part1/인프라_OS_튜닝.md
+      - ▸ 포트 정보: part1/인프라_포트_정보.md
     - Docker:
-      - ▸ Docker 설치: day1/Docker_설치_가이드.md
-      - ▸ Docker 환경 설정: day1/Docker_환경_설정.md
+      - ▸ Docker 설치: part1/Docker_설치_가이드.md
+      - ▸ Docker 환경 설정: part1/Docker_환경_설정.md
     - Podman:
-      - ▸ Podman 설치: day1/Podman_설치_가이드.md
-      - ▸ Podman 환경 설정: day1/Podman_환경_설정.md
+      - ▸ Podman 설치: part1/Podman_설치_가이드.md
+      - ▸ Podman 환경 설정: part1/Podman_환경_설정.md
     - MDRM:
-      - ▸ 설치 및 확인: day1/MDRM_설치_및_확인.md
-      - ▸ 컨테이너 구성 정보: day1/MDRM_컨테이너_구성.md
-      - ▸ 정지 및 종료: day1/MDRM_정지_및_종료.md
-      - ▸ 시스템 관리: day1/MDRM_시스템_관리.md
-  - DAY 2:
-    - 학습 안내: day2/MDRM_DAY2_학습_안내.md
+      - ▸ 설치 및 확인: part1/MDRM_설치_및_확인.md
+      - ▸ 컨테이너 구성 정보: part1/MDRM_컨테이너_구성.md
+      - ▸ 정지 및 종료: part1/MDRM_정지_및_종료.md
+      - ▸ 시스템 관리: part1/MDRM_시스템_관리.md
+  - PART 2:
+    - 학습 안내: part2/MDRM_PART2_학습_안내.md
     - Agent:
-        - ▸ 설치 및 등록: day2/MDRM_Agent_설치_및_등록.md
-        - ▸ 자동설치: day2/MDRM_Agent_자동설치.md
+        - ▸ 설치 및 등록: part2/MDRM_Agent_설치_및_등록.md
+        - ▸ 자동설치: part2/MDRM_Agent_자동설치.md
         - ▸ 수동설치:
-            - › 유닉스(AIX): day2/MDRM_Agent_수동설치_AIX.md
-            - › 리눅스(Linux): day2/MDRM_Agent_수동설치_리눅스.md
-            - › 윈도우(Windows): day2/MDRM_Agent_수동설치_윈도우.md
-            - › 가져오기(Import): day2/MDRM_Agent_수동설치_가져오기.md
-        - ▸ 시스템 수동등록: day2/MDRM_Agent_시스템수동등록.md
-        - ▸ Agentless: day2/MDRM_Agent_Agentless.md
-        - ▸ 환경 설정: day2/MDRM_Agent_환경_설정.md
+            - › 유닉스(AIX): part2/MDRM_Agent_수동설치_AIX.md
+            - › 리눅스(Linux): part2/MDRM_Agent_수동설치_리눅스.md
+            - › 윈도우(Windows): part2/MDRM_Agent_수동설치_윈도우.md
+            - › 가져오기(Import): part2/MDRM_Agent_수동설치_가져오기.md
+        - ▸ 시스템 수동등록: part2/MDRM_Agent_시스템수동등록.md
+        - ▸ Agentless: part2/MDRM_Agent_Agentless.md
+        - ▸ 환경 설정: part2/MDRM_Agent_환경_설정.md
     - 대시보드:
-        - ▸ 개요: day2/MDRM_메뉴_대시보드.md
-        - ▸ 대시보드 관리: day2/MDRM_대시보드_관리.md
-        - ▸ 위젯 활용 가이드: day2/MDRM_대시보드_위젯.md
+        - ▸ 개요: part2/MDRM_메뉴_대시보드.md
+        - ▸ 대시보드 관리: part2/MDRM_대시보드_관리.md
+        - ▸ 위젯 활용 가이드: part2/MDRM_대시보드_위젯.md
     - 시스템:
-        - ▸ 개요: day2/MDRM_메뉴_시스템.md
-        - ▸ 구성 및 그룹 관리: day2/MDRM_시스템_구성_관리.md
-        - ▸ 시스템 등록 및 추가: day2/MDRM_시스템_등록_추가.md
-        - ▸ 모니터링 및 알림: day2/MDRM_시스템_모니터링_알림.md
-        - ▸ 프로그램 배포 및 작업: day2/MDRM_시스템_배포_작업.md
-        - ▸ 계정 관리: day2/MDRM_시스템_계정_관리.md
+        - ▸ 개요: part2/MDRM_메뉴_시스템.md
+        - ▸ 구성 및 그룹 관리: part2/MDRM_시스템_구성_관리.md
+        - ▸ 시스템 등록 및 추가: part2/MDRM_시스템_등록_추가.md
+        - ▸ 모니터링 및 알림: part2/MDRM_시스템_모니터링_알림.md
+        - ▸ 프로그램 배포 및 작업: part2/MDRM_시스템_배포_작업.md
+        - ▸ 계정 관리: part2/MDRM_시스템_계정_관리.md
     - 워크플로우:
-        - ▸ 개요: day2/MDRM_메뉴_워크플로우.md
-        - ▸ 데이터센터 및 그룹 관리: day2/MDRM_워크플로우_구성_관리.md
-        - ▸ 프로세스 설계 및 컴포넌트: day2/MDRM_워크플로우_설계_컴포넌트.md
-        - ▸ 변수 활용 및 조건 분기: day2/MDRM_워크플로우_변수_분기.md
-        - ▸ 워크플로우 실행 및 모니터링: day2/MDRM_워크플로우_실행_모니터링.md
-        - ▸ 관리 및 실행 리포트: day2/MDRM_워크플로우_관리_리포트.md
+        - ▸ 개요: part2/MDRM_메뉴_워크플로우.md
+        - ▸ 데이터센터 및 그룹 관리: part2/MDRM_워크플로우_구성_관리.md
+        - ▸ 프로세스 설계 및 컴포넌트: part2/MDRM_워크플로우_설계_컴포넌트.md
+        - ▸ 변수 활용 및 조건 분기: part2/MDRM_워크플로우_변수_분기.md
+        - ▸ 워크플로우 실행 및 모니터링: part2/MDRM_워크플로우_실행_모니터링.md
+        - ▸ 관리 및 실행 리포트: part2/MDRM_워크플로우_관리_리포트.md
     - 점검작업:
-        - ▸ 개요: day2/MDRM_점검작업_개요.md
-        - ▸ 데이터센터 및 그룹 관리: day2/MDRM_점검작업_구성_관리.md
-        - ▸ 점검 및 작업 관리: day2/MDRM_점검_작업_관리.md
-        - ▸ 실행 결과 및 이력 확인: day2/MDRM_점검_실행_결과.md
-        - ▸ 스케줄 및 알림: day2/MDRM_점검_스케줄_알림.md
-  - DAY 3:
-    - 학습 안내: day3/MDRM_DAY3_학습_안내.md
-    - 자동화 제어 범위: day3/MDRM_자동화_영역.md
+        - ▸ 개요: part2/MDRM_점검작업_개요.md
+        - ▸ 데이터센터 및 그룹 관리: part2/MDRM_점검작업_구성_관리.md
+        - ▸ 점검 및 작업 관리: part2/MDRM_점검_작업_관리.md
+        - ▸ 실행 결과 및 이력 확인: part2/MDRM_점검_실행_결과.md
+        - ▸ 스케줄 및 알림: part2/MDRM_점검_스케줄_알림.md
+  - PART 3:
+    - 학습 안내: part3/MDRM_PART3_학습_안내.md
+    - 자동화 제어 범위: part3/MDRM_자동화_영역.md
     - 워크플로우:
-        - ▸ 유형 및 구조: day3/MDRM_워크플로우_유형.md
-        - ▸ 시스템 워크플로우: day3/MDRM_워크플로우_시스템.md
-        - ▸ 그룹 워크플로우: day3/MDRM_워크플로우_그룹.md
-        - ▸ 시나리오 워크플로우: day3/MDRM_워크플로우_시나리오.md
+        - ▸ 유형 및 구조: part3/MDRM_워크플로우_유형.md
+        - ▸ 시스템 워크플로우: part3/MDRM_워크플로우_시스템.md
+        - ▸ 그룹 워크플로우: part3/MDRM_워크플로우_그룹.md
+        - ▸ 시나리오 워크플로우: part3/MDRM_워크플로우_시나리오.md
     - 컴포넌트:
-        - ▸ 설계 및 로직: day3/MDRM_컴포넌트_설계_로직.md
-        - ▸ 실행 프로세스: day3/MDRM_컴포넌트_실행_프로세스.md
-        - ▸ 주요 사용 컴포넌트: day3/MDRM_주요_컴포넌트.md
-        - ▸ 템플릿 제작 가이드: day3/MDRM_컴포넌트_템플릿_제작.md
+        - ▸ 설계 및 로직: part3/MDRM_컴포넌트_설계_로직.md
+        - ▸ 실행 프로세스: part3/MDRM_컴포넌트_실행_프로세스.md
+        - ▸ 주요 사용 컴포넌트: part3/MDRM_주요_컴포넌트.md
+        - ▸ 템플릿 제작 가이드: part3/MDRM_컴포넌트_템플릿_제작.md
     - 점검 작업:
-        - ▸ 점검작업 스크립트: day3/MDRM_점검작업_스크립트.md
-        - ▸ 점검작업 리스트: day3/MDRM_점검작업_리스트.md
-  - DAY 4:
-    - 학습 안내: day4/MDRM_DAY4_학습_안내.md
+        - ▸ 점검작업 스크립트: part3/MDRM_점검작업_스크립트.md
+        - ▸ 점검작업 리스트: part3/MDRM_점검작업_리스트.md
+  - PART 4:
+    - 학습 안내: part4/MDRM_PART4_학습_안내.md
     - 실습 & 장애조치:
-        - ▸ 자동화 구현 체크포인트: day4/MDRM_자동화_구현_체크포인트.md
-        - ▸ 실전 시나리오 실습: day4/MDRM_실전_시나리오_실습.md
-        - ▸ 트러블슈팅 가이드: day4/MDRM_트러블슈팅_가이드.md
-        - ▸ 교육 마무리: day4/MDRM_교육_마무리.md
+        - ▸ 자동화 구현 체크포인트: part4/MDRM_자동화_구현_체크포인트.md
+        - ▸ 실전 시나리오 실습: part4/MDRM_실전_시나리오_실습.md
+        - ▸ 트러블슈팅 가이드: part4/MDRM_트러블슈팅_가이드.md
+        - ▸ 교육 마무리: part4/MDRM_교육_마무리.md
   - 심화 학습:
       - MDRM:
         - ▸ 시스템 포트 변경 가이드: advanced/MDRM_포트_변경_가이드.md

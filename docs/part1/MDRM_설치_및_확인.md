@@ -24,11 +24,11 @@ cd {{ extra.mdrm.setup_dir }}
 ## **2. 설치 완료 확인**
 
 !!! success "설치 완료 후 웹 브라우저로 접속 가능"
-    - MDRM URL : `https://10.20.xxx.100`
+    - MDRM URL : `https://10.20.xxx.100` (**각 교육생별 할당된 고유 대역의 IP 주소로 접속**)
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     
-    ![Login Screen](../assets/images/day1/login.png){: width="100%" }
+    ![Login Screen](../assets/images/part1/login.png){: width="100%" }
 
 ---
 

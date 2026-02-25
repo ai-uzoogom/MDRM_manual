@@ -58,7 +58,7 @@
 <a href="../../advanced/MDRM_포트_변경_가이드/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Troubleshooting 04</span>
-        <span class="next-step-title">Agent 포트(20080) 변경</span>
+        <span class="next-step-title">Agent 포트({{ extra.agent.port }}) 변경</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

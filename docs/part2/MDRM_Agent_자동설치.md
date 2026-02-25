@@ -9,7 +9,7 @@
 
 MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서버의 운영체제(OS)별 사전 준비가 필요합니다.
 
-![MDRM 통신 포트 구성도](../assets/images/day1/port.png){: width="100%" }
+![MDRM 통신 포트 구성도](../assets/images/part1/port.png){: width="100%" }
 
 ### **1.1 Linux & Unix 계열**
 
@@ -69,7 +69,7 @@ Agent는 관제 서버의 **FQDN(Fully Qualified Domain Name)** 정보를 통해
 | 항목 | 설명 | 예시 |
 |:---|:---|:---|
 | 호스트명 | 대상 서버의 호스트명 | `web-server#01` |
-| IP 주소 | 대상 서버의 IP | `10.20.33.101` |
+| IP 주소 | 대상 서버의 IP | `10.20.xxx.101` |
 | SSH 포트 | SSH 접속 포트 | `22` (기본값) |
 | 사용자명 | SSH 접속 계정 | `root` |
 | 비밀번호 | SSH 접속 비밀번호 | `********` |

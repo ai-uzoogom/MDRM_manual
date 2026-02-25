@@ -31,10 +31,10 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../day3/MDRM_DAY3_학습_안내/" class="next-step-card">
+<a href="../../part3/MDRM_PART3_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 DAY 3: 업무 분석 및 컴포넌트 설계</span>
+        <span class="next-step-title">📋 PART 3: 업무 분석 및 컴포넌트 설계</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

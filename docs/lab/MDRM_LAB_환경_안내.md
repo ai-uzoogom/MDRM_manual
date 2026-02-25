@@ -35,13 +35,13 @@
 ---
 
 !!! success "준비 완료"
-    자신의 IP 대역에 정상적으로 접속되는 것을 확인했다면, **DAY 1** 학습으로 이동하여 인프라 구성을 시작하세요!
+    자신의 IP 대역에 정상적으로 접속되는 것을 확인했다면, **PART 1** 학습으로 이동하여 인프라 구성을 시작하세요!
 
 <div class="next-step-card-container" markdown>
-<a href="../../day1/MDRM_DAY1_학습_안내/" class="next-step-card">
+<a href="../../part1/MDRM_PART1_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🚀 DAY 1: 인프라 및 설치 학습 시작</span>
+        <span class="next-step-title">🚀 PART 1: 인프라 및 설치 학습 시작</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

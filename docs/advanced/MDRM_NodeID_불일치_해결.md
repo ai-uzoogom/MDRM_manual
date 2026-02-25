@@ -72,7 +72,7 @@ Agent가 기동될 때마다 자신의 IP에 맞는 올바른 Node ID를 조회�
 **2. 설정 파일 수정 (`application.properties`)**
 ```properties
 # 스크립트 경로와 자신의 IP를 인자로 전달
-agent.init.command=/opt/gam_agent/storage/scripts/Update-NodeId.sh 10.20.33.103
+agent.init.command=/opt/gam_agent/storage/scripts/Update-NodeId.sh 10.20.xxx.103
 ```
 
 ### **3.3 윈도우 (Windows) 설정**
@@ -83,7 +83,7 @@ agent.init.command=/opt/gam_agent/storage/scripts/Update-NodeId.sh 10.20.33.103
 **2. 설정 파일 수정 (`application.properties`)**
 ```properties
 # PowerShell 실행 권한 우회 옵션 포함
-agent.init.command=powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\\Program Files\\gam_agent\\storage\\scripts\\Update-NodeId.ps1" 10.20.33.101
+agent.init.command=powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\\Program Files\\gam_agent\\storage\\scripts\\Update-NodeId.ps1" 10.20.xxx.101
 ```
 
 ---

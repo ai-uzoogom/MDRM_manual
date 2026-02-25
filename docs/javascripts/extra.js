@@ -8,7 +8,7 @@
     // 메인 홈 화면 진입 시 표준 UI 요소들이 숨겨져 있다면 강제로 복구
     document.body.classList.remove('landing-active');
     document.documentElement.classList.add('manual-home-mode');
-    
+
     // FOUC 방지용 초기 설정 초기화
     document.documentElement.style.backgroundColor = '';
     const earlyHide = document.getElementById('early-hide');
@@ -286,3 +286,21 @@ function initTypingEffect() {
 
   type();
 }
+
+// Custom Image Carousel Logic
+window.moveSlide = function (n, prevBtn) {
+  const container = prevBtn.closest('.custom-carousel');
+  const slides = container.querySelectorAll('.carousel-slide');
+  if (slides.length === 0) return;
+
+  let currentIndex = 0;
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains('active')) {
+      currentIndex = index;
+    }
+  });
+
+  slides[currentIndex].classList.remove('active');
+  let nextIndex = (currentIndex + n + slides.length) % slides.length;
+  slides[nextIndex].classList.add('active');
+};

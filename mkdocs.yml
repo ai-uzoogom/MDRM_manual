@@ -130,6 +130,8 @@ nav:
     - Agent:
         - ▸ 통신 상태 점검: troubleshooting/MDRM_TS_Agent_통신점검.md
         - ▸ 417 오류 및 Token 불일치: troubleshooting/MDRM_TS_Agent_417오류.md
+    - 시스템:
+        - ▸ 가져오기 사전점검 실패: troubleshooting/MDRM_TS_시스템_가져오기_실패.md
 
 
 extra:

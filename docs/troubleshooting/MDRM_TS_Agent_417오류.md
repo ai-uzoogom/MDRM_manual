@@ -55,10 +55,10 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../advanced/MDRM_포트_변경_가이드/" class="next-step-card">
+<a href="../MDRM_TS_시스템_가져오기_실패/" class="next-step-card">
     <span class="next-content">
-        <span class="next-step-label">Troubleshooting 04</span>
-        <span class="next-step-title">Agent 포트({{ extra.agent.port }}) 변경</span>
+        <span class="next-step-label">Troubleshooting 05</span>
+        <span class="next-step-title">시스템 가져오기 사전점검 실패</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

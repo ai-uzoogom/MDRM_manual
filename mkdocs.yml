@@ -158,6 +158,7 @@ extra:
 plugins:
   - search:
       lang: ko
+      separator: '[\s\-\.]+'
   - glightbox
   - macros
 

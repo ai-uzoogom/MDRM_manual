@@ -29,7 +29,7 @@ vi /mdrm/data/config/wind-config.properties
 
 파일 내부에 아래의 코드를 추가하거나, 기존 항목이 있다면 `false`로 값을 변경합니다.
 
-```properties title="wind-config.properties"
+```
 wind.ansible.ping.precheck = false
 ```
 

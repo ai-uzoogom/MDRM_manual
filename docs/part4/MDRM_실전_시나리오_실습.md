@@ -24,7 +24,7 @@
 *(실습 파일: LINUX 서버 `/app/expect/interactive_service.sh`)*
 
 !!! abstract "시나리오 목표"
-    1.  **수수행 작업**:
+    1.  **수행 작업**:
         *   스크립트 실행 시 요구되는 패스워드(`admin123`) 및 포트(`2240`) 자동 입력 처리
         *   정상 기동 후 프로세스 리스트(`ps -ef`)를 통해 서비스 생존 확인
 
@@ -64,6 +64,17 @@
         *   `Process Control` 컴포넌트를 사용하여 서비스를 백그라운드로 기동
         *   기동 후 `uzoo-watcher.log` 생성을 확인하고 프로세스의 정상 동작 검증
         *   워크플로우를 통한 프로세스 중단 및 재기동 및 제어 확인
+
+---
+
+## **6. 데이터베이스 기동/종료 제어 (Oracle / MariaDB)**
+
+서비스를 구동하는 중요 백엔드인 데이터베이스의 실행, 종료, 상태 확인 명령어를 컴포넌트를 통해 제어하는 시나리오입니다. 각 데이터베이스 프로세스의 소유자(User) 권한에 맞게 명령어를 구성하십시오.
+
+| 유저 | 실행 명령어 | 종료 명령어 | 확인 명령어 |
+| :--- | :--- | :--- | :--- |
+| **oracle** | `sqlplus / as sysdba`<br>`startup` | `sqlplus / as sysdba`<br>`shutdown immediate` | **# 프로세스 상태확인**<br>`ps -ef \| grep ${ORACLE_SID}`<br><br>**# DB OPEN 상태확인**<br>`sqlplus / as sysdba`<br>`select status from v$instance;` |
+| **root** | `systemctl start mariadb.service` | `systemctl stop mariadb.service` | `ps -ef \| grep mysql`<br>`systemctl status mariadb.service` |
 
 ---
 

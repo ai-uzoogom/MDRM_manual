@@ -5,7 +5,21 @@
 
 ---
 
-## **1. 실습 환경 구성**
+## **1. 교육장 Wi-Fi 접속 안내**
+
+선행 실습을 위해 교육장에 마련된 전용 무선 네트워크(Wi-Fi)에 먼저 접속해주시기 바랍니다. 스마트폰 또는 노트북 웹캠 등을 통해 아래 QR 코드를 스캔하시면 간편하게 연결할 수 있습니다.
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
+  <img src="../../assets/images/lab/MantechSolutionAP.png" alt="Wi-Fi AP QR Code" style="max-height: 220px; border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--custom-shadow);" />
+  <div style="font-size: 1rem; text-align: left; padding: 20px; background: var(--custom-bg-light, #f8f9fa); border: 1px solid var(--border, #e5e7eb); border-radius: 8px;">
+    <div style="margin-bottom: 12px;"><strong>📡 SSID</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">MantechSolutionAP</code></div>
+    <div><strong>🔑 Password</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">M@ntech!@#$</code></div>
+  </div>
+</div>
+
+---
+
+## **2. 실습 환경 구성**
 
 교육을 위해 각 교육생에게는 총 3대의 전용 VM이 제공됩니다. 각 서버의 역할과 접속 정보는 다음과 같습니다.
 
@@ -20,7 +34,7 @@
 
 ---
 
-## **2. 교육생별 IP 대역 안내**
+## **3. 교육생별 IP 대역 안내**
 
 자신의 번호에 해당하는 `xx` 대역을 확인하여 실습을 진행해 주세요.
 

@@ -39,10 +39,10 @@
 
 | 아이콘 | 상태 | 설명 |
 |:---:|:---:|:---|
-| ![:material-check-circle:](../assets/images/part2/status_normal.png){: width="30"} | **파란색** | **정상(온라인)**: 관제 서버와 통신이 원활한 상태 |
-| ![:material-alert:](../assets/images/part2/status_warning.png){: width="30"} | **노란색** | **경고**: 사전에 설정된 경고(Warning) 트리거가 동작함 |
-| ![:material-alert-circle:](../assets/images/part2/status_critical.png){: width="30"} | **빨간색** | **심각**: 사전에 설정된 심각(Critical) 트리거가 동작함 |
-| ![:material-help-circle:](../assets/images/part2/status_offline.png){: width="30"} | **회색** | **오프라인**: 통신 상태를 알 수 없거나 연결이 끊어진 상태 |
+| ![:material-check-circle:](../assets/images/operation/status_normal.png){: width="30"} | **파란색** | **정상(온라인)**: 관제 서버와 통신이 원활한 상태 |
+| ![:material-alert:](../assets/images/operation/status_warning.png){: width="30"} | **노란색** | **경고**: 사전에 설정된 경고(Warning) 트리거가 동작함 |
+| ![:material-alert-circle:](../assets/images/operation/status_critical.png){: width="30"} | **빨간색** | **심각**: 사전에 설정된 심각(Critical) 트리거가 동작함 |
+| ![:material-help-circle:](../assets/images/operation/status_offline.png){: width="30"} | **회색** | **오프라인**: 통신 상태를 알 수 없거나 연결이 끊어진 상태 |
 
 ---
 

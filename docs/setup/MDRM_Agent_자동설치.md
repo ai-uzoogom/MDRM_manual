@@ -9,7 +9,7 @@
 
 MDRM 서버를 통해 Agent를 자동으로 설치하기 위해서는 대상 서버의 운영체제(OS)별 사전 준비가 필요합니다.
 
-![MDRM 통신 포트 구성도](../assets/images/part1/port.png){: width="100%" }
+![MDRM 통신 포트 구성도](../assets/images/setup/port.png){: width="100%" }
 
 ### **1.1 Linux & Unix 계열**
 

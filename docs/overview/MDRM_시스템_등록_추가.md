@@ -11,7 +11,7 @@
 새로운 자원을 MDRM 관제 대상으로 등록하는 과정입니다.
 
 ### 사전 준비
-* [시스템 요구사항](MDRM_Agent_자동설치.md#requirements)에 따른 OS별 환경(SSH, Python, WinRM 등)이 갖춰졌는지 확인하십시오.
+* [시스템 요구사항](../setup/MDRM_Agent_자동설치.md#requirements)에 따른 OS별 환경(SSH, Python, WinRM 등)이 갖춰졌는지 확인하십시오.
 
 ### 등록 절차
 1. 트리에서 대상 그룹 선택 후 **[시스템 추가]** 클릭

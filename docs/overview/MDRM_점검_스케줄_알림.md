@@ -31,7 +31,7 @@
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../part3/MDRM_PART3_학습_안내/" class="next-step-card">
+<a href="../../operation/MDRM_운영_학습_안내_심화/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📋 PART 3: 업무 분석 및 컴포넌트 설계</span>

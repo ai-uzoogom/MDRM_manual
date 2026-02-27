@@ -12,39 +12,20 @@
 <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap;">
   <img src="../../assets/images/lab/MantechSolutionAP.png" alt="Wi-Fi AP QR Code" style="max-height: 220px; border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--custom-shadow);" />
   <div style="font-size: 1rem; text-align: left; padding: 20px; background: var(--custom-bg-light, #f8f9fa); border: 1px solid var(--border, #e5e7eb); border-radius: 8px;">
-    <div style="margin-bottom: 12px;"><strong>📡 SSID</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">MantechSolutionAP</code></div>
-    <div><strong>🔑 Password</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">M@ntech!@#$</code></div>
+    <div style="margin-bottom: 12px;"><strong>📡 SSID</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">Guest-5G-MantechSolution</code></div>
+    <div><strong>🔑 Password</strong><br><code style="font-size: 1.1em; color: var(--md-code-fg-color);">M@ntechGuest</code></div>
   </div>
 </div>
 
 ---
 
-## **2. 실습 환경 구성**
+## **2. 실습 환경 구성 및 IP 할당 현황**
 
-교육을 위해 각 교육생에게는 총 3대의 전용 VM이 제공됩니다. 각 서버의 역할과 접속 정보는 다음과 같습니다.
+교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. 아래 목록에서 자신의 번호에 할당된 3번째 IP 대역(`xx`)과 세부 접속 정보를 확인해 주세요.
 
-| 서버 구분 | 역할 | IP 주소 규칙 | 기본 접속 계정 | 비밀번호 |
-| :--- | :--- | :--- | :--- | :--- |
-| **MDRM** | 메인 통합 관리 서버 | `10.20.xx.100` | `root` | `password` |
-| **WINDOWS** | 윈도우 에이전트 대상 | `10.20.xx.101` | `administrator` | `password` |
-| **LINUX** | 리눅스 에이전트 대상 | `10.20.xx.102` | `root` | `password` |
-
-
-
-
----
-
-## **3. 교육생별 IP 대역 안내**
-
-자신의 번호에 해당하는 `xx` 대역을 확인하여 실습을 진행해 주세요.
-
-| 교육생 번호 | IP 대역 (**xx**) | MDRM 서버 | Windows 서버 | Linux 서버 |
-| :--- | :---: | :--- | :--- | :--- |
-| **교육생 1** | <span class="custom-badge-blue">**111**</span> | `10.20.111.100` | `10.20.111.101` | `10.20.111.102` |
-| **교육생 2** | <span class="custom-badge-blue">**112**</span> | `10.20.112.100` | `10.20.112.101` | `10.20.112.102` |
-| **교육생 3** | <span class="custom-badge-blue">**113**</span> | `10.20.113.100` | `10.20.113.101` | `10.20.113.102` |
-| **교육생 4** | <span class="custom-badge-blue">**114**</span> | `10.20.114.100` | `10.20.114.101` | `10.20.114.102` |
-
+| 교육생 번호 | IP 대역 | 서버 구분 | IP 주소 | 접속 계정 | 비밀번호 |
+| :--- | :---: | :--- | :--- | :--- | :--- |{% for i in range(1, extra.lab.student_count + 1) %}
+| **교육생 {{ i }}** | <span class="custom-badge-blue">**{{ 110 + i }}**</span> | **MDRM** (통합 관리 서버)<br>**WINDOWS** (Agent 대상)<br>**LINUX** (Agent 대상) | `10.20.{{ 110 + i }}.100`<br>`10.20.{{ 110 + i }}.101`<br>`10.20.{{ 110 + i }}.102` | `root`<br>`administrator`<br>`root` | `password` (공통) |{% endfor %}
 
 ---
 
@@ -52,7 +33,7 @@
     자신의 IP 대역에 정상적으로 접속되는 것을 확인했다면, **PART 1** 학습으로 이동하여 인프라 구성을 시작하세요!
 
 <div class="next-step-card-container" markdown>
-<a href="../../part1/MDRM_PART1_학습_안내/" class="next-step-card">
+<a href="../../setup/MDRM_설치_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">🚀 PART 1: 인프라 및 설치 학습 시작</span>

@@ -28,7 +28,7 @@ cd {{ extra.mdrm.setup_dir }}
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     
-    ![Login Screen](../assets/images/part1/login.png){: width="100%" }
+    ![Login Screen](../assets/images/setup/login.png){: width="100%" }
 
 ---
 

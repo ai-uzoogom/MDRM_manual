@@ -128,7 +128,7 @@ if ($foundVulnerable) {
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../part4/MDRM_PART4_학습_안내/" class="next-step-card">
+<a href="../../practice/MDRM_운영_학습_안내_실전/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📋 PART 4: 실전 시나리오 및 운영 관리</span>

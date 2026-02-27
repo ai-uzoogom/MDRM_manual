@@ -10,15 +10,15 @@
 <div class="custom-carousel">
   <div class="carousel-slide active">
     <div class="carousel-caption">1단계: 우측 상단의 ⚙️ [설정] &gt; [라이선스] 메뉴로 이동합니다.</div>
-    <img src="../../assets/images/part1/license_step1.png" alt="Step 1: 시스템 메뉴" />
+    <img src="../../assets/images/setup/license_step1.png" alt="Step 1: 시스템 메뉴" />
   </div>
   <div class="carousel-slide">
     <div class="carousel-caption">2단계: 우측 화면에서 '등록' 버튼을 눌러 입력 창을 활성화합니다.</div>
-    <img src="../../assets/images/part1/license_step2.png" alt="Step 2: 라이선스 등록 클릭" />
+    <img src="../../assets/images/setup/license_step2.png" alt="Step 2: 라이선스 등록 클릭" />
   </div>
   <div class="carousel-slide">
     <div class="carousel-caption">3단계: 아래의 발급받은 교육용 라이선스 코드를 붙여넣고 저장합니다.</div>
-    <img src="../../assets/images/part1/license_step3.png" alt="Step 3: 코드 붙여넣기" />
+    <img src="../../assets/images/setup/license_step3.png" alt="Step 3: 코드 붙여넣기" />
   </div>
   
   <a class="carousel-prev" onclick="window.moveSlide(-1, this)">&#10094;</a>
@@ -73,7 +73,7 @@ docker compose up -d
 ---
 
 <div class="next-step-card-container" markdown>
-<a href="../../part2/MDRM_PART2_학습_안내/" class="next-step-card">
+<a href="../../overview/MDRM_운영_학습_안내_기본/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
         <span class="next-step-title">📋 PART 2: 운영 환경 구성 및 자원 관리</span>

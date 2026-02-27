@@ -9,10 +9,10 @@
 
 | 방식 | 특징 및 적합한 환경 |
 | :--- | :--- |
-| **① 자동설치 (권장)** | MDRM 서버를 통해 일괄 배포. SSH root 접속 허용 및 빠른 구축이 필요한 환경 |
-| **② 수동설치** | 서버 직접 설치. 보안 강화(443, {{ extra.agent.port }} 포트만 허용) 및 망 분리 환경 |
-| **③ 시스템 수동등록** | **스토리지 복제/DR 환경 전용**. OS 이미지가 그대로 전송되는 특수 환경 (NodeID 매핑) |
-| **④ Agentless** | Agent 설치 불가 장비(스토리지, 네트워크 등) 관리용. SSH/WinRM 연동 |
+| **자동설치** | MDRM 서버를 통한 일괄 배포. **테스트 및 교육/PoC 환경에서 활용을 권장합니다.** (SSH root 접속 허용 필수) |
+| **수동설치** | 서버에 직접 설치. 망 분리 및 엄격한 보안 정책(포트 제한 등)으로 인해 **대부분의 실제 프로젝트 구축 환경에서는 수동설치가 표준으로 사용됩니다.** |
+| <span style="white-space: nowrap;">**시스템 수동등록**</span> | **스토리지 복제/DR 환경 전용**. OS 이미지가 그대로 전송되는 특수 환경 (NodeID 매핑) |
+| **Agentless** | Agent 설치 불가 장비(스토리지, 네트워크 등) 관리용. SSH/WinRM 연동 |
 
 !!! danger "Agent 실행 환경 관련 중요 고지"
     Agent의 안정적인 기동과 정상 작동을 위해 아래의 Java 환경 요구사항을 반드시 확인하시기 바랍니다.
@@ -50,7 +50,45 @@
 | **권장도** | ⭐⭐ |
 | **요구사항** | 서버 직접 접근 가능 / 수동 설치 파일 전송 가능 |
 | **적합한 환경** | SSH root 접속 제한 환경 / 네트워크 분리 환경 / DMZ 구간 서버 |
-| **상세 가이드** | [수동설치 (Linux/Windows) →](MDRM_Agent_수동설치_리눅스.md) |
+
+#### **수동설치 진행 절차**
+
+수동설치는 자동설치와 달리 3단계의 흐름으로 진행됩니다. 다음 순서대로 작업을 수행하시기 바랍니다.
+
+```mermaid
+graph TD
+    Step1["1단계: 사전 설정 (선택)<br/>가져오기 실패 대비 Ping 점검 해제"]
+    Step2{2단계: OS별 Agent 설치}
+    Step2_1[Unix AIX]
+    Step2_2[Linux]
+    Step2_3[Windows]
+    Step3["3단계: 시스템 가져오기<br/>MDRM 웹 통합 등록"]
+
+    Step1 -.->|"필요시 선행"| Step2
+    Step2 --> Step2_1
+    Step2 --> Step2_2
+    Step2 --> Step2_3
+    Step2_1 --> Step3
+    Step2_2 --> Step3
+    Step2_3 --> Step3
+
+    click Step1 "../troubleshooting/MDRM_TS_시스템_가져오기_실패.md"
+    click Step2_1 "MDRM_Agent_수동설치_AIX.md"
+    click Step2_2 "MDRM_Agent_수동설치_리눅스.md"
+    click Step2_3 "MDRM_Agent_수동설치_윈도우.md"
+    click Step3 "MDRM_Agent_수동설치_가져오기.md"
+    
+    classDef default fill:#f8f9fa,stroke:#e5e7eb,stroke-width:2px,color:#333;
+    classDef step fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,color:#01579b,font-weight:bold;
+    class Step1,Step3 step;
+```
+
+*   **[1단계: 가져오기 사전점검 (Ping) 해제](../troubleshooting/MDRM_TS_시스템_가져오기_실패.md)** *(방화벽 등으로 인해 통신 점검 실패 시)*
+*   **2단계: OS 플랫폼별 패키지 수동 설치**
+    *   [수동설치 - 유닉스(AIX) 매뉴얼](MDRM_Agent_수동설치_AIX.md)
+    *   [수동설치 - 리눅스(Linux) 매뉴얼](MDRM_Agent_수동설치_리눅스.md)
+    *   [수동설치 - 윈도우(Windows) 매뉴얼](MDRM_Agent_수동설치_윈도우.md)
+*   **[3단계: MDRM으로 에이전트 가져오기(Import)](MDRM_Agent_수동설치_가져오기.md)**
 
 ---
 
@@ -84,10 +122,10 @@
 
 ## **3. 설치 방법 비교표**
 
-| 구분 | 자동설치 | 수동설치 | 시스템 수동등록 | Agentless |
+| 구분 | 자동설치 | 수동설치 | <span style="white-space: nowrap;">시스템 수동등록</span> | Agentless |
 |:---:|:---:|:---:|:---:|:---:|
 | **난이도** | ⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
-| **권장도** | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐ |
+| **권장도** | ⭐⭐⭐ | ⭐⭐⭐ | ⭐ | ⭐ |
 | **설치 시간** | 5분 | 15분 | 30분+ | 10분 |
 | **SSH root 필요** | ✅ | ❌ | ❌ | ❌ |
 | **Agent 설치** | ✅ | ✅ | ✅ | ❌ |

@@ -88,7 +88,7 @@ graph TD
     *   [수동설치 - 유닉스(AIX) 매뉴얼](MDRM_Agent_수동설치_AIX.md)
     *   [수동설치 - 리눅스(Linux) 매뉴얼](MDRM_Agent_수동설치_리눅스.md)
     *   [수동설치 - 윈도우(Windows) 매뉴얼](MDRM_Agent_수동설치_윈도우.md)
-*   **[3단계: MDRM으로 에이전트 가져오기(Import)](MDRM_Agent_수동설치_가져오기.md)**
+*   **[3단계: MDRM으로 Agent 가져오기(Import)](MDRM_Agent_수동설치_가져오기.md)**
 
 ---
 

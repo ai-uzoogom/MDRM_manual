@@ -362,7 +362,7 @@ networks:
 *   **볼륨 마운트 (Persistence)**:
     *   `/gampkgs/data`: 공용 데이터 저장소
     *   `/var/lib/postgresql/data`: 데이터베이스 영구 저장 영역
-    *   `/gampkgs/scripts`: 엔진 및 에이전트 스크립트 공유 볼륨
+    *   `/gampkgs/scripts`: 엔진 및 Agent 스크립트 공유 볼륨
 
 <div class="next-step-card-container" markdown>
 <a href="../MDRM_정지_및_종료/" class="next-step-card">

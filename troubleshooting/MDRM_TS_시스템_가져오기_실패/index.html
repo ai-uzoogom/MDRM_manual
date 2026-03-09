@@ -4388,8 +4388,8 @@
 </div>
 <hr>
 <h2 id="1"><strong>1. 장애 원인</strong><a class="headerlink" href="#1" title="Permanent link">¶</a></h2>
-<p>MDRM 서버는 [가져오기] 기능을 수행할 때 에이전트 통신 전에 대상 서버에 대한 기본적인 네트워크 연결을 확인하기 위해 <strong>Ping (ICMP) 테스트</strong>를 먼저 수행합니다. 
-사내 방화벽이나 대상 서버의 인바운드 규칙에서 Ping을 차단하고 있다면, 실제 통신(에이전트 포트 등)이 가능하더라도 <strong>"사전 점검 실패"</strong>로 간주하여 등록 절차를 중단하게 됩니다.</p>
+<p>MDRM 서버는 [가져오기] 기능을 수행할 때 Agent 통신 전에 대상 서버에 대한 기본적인 네트워크 연결을 확인하기 위해 <strong>Ping (ICMP) 테스트</strong>를 먼저 수행합니다. 
+사내 방화벽이나 대상 서버의 인바운드 규칙에서 Ping을 차단하고 있다면, 실제 통신(Agent 포트 등)이 가능하더라도 <strong>"사전 점검 실패"</strong>로 간주하여 등록 절차를 중단하게 됩니다.</p>
 <hr>
 <h2 id="2-ping"><strong>2. 해결 방법: 사전 점검(Ping) 옵션 비활성화</strong><a class="headerlink" href="#2-ping" title="Permanent link">¶</a></h2>
 <p>이 경우, MDRM 서버의 설정 파일에서 Ping 테스트 수행 로직 자체를 건너뛰도록(Skip) 설정해야 합니다.</p>

@@ -5118,25 +5118,37 @@
 <p>Agentless 방식은 Agent 방식에 비해 다음과 같은 제약이 있습니다:</p>
 </div>
 <h3 id="_1">기능 제약<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>❌ <strong>실시간 모니터링 제한</strong>
-- 실시간 성능 모니터링 불가
-- 주기적인 폴링 방식으로 동작</p>
-<p>❌ <strong>네트워크 부하</strong>
-- 매번 SSH/WinRM 연결 생성
-- Agent 방식보다 네트워크 사용량 높음</p>
-<p>❌ <strong>응답 속도</strong>
-- 연결 설정 시간 필요
-- Agent 방식보다 느린 응답</p>
-<p>❌ <strong>기능 제한</strong>
-- 일부 고급 기능 사용 불가
-- 복잡한 작업 수행 어려움</p>
+<p>❌ <strong>실시간 모니터링 제한</strong></p>
+<ul>
+<li>실시간 성능 모니터링이 불가능합니다.</li>
+<li>주기적인 폴링 방식으로 동작합니다.</li>
+</ul>
+<p>❌ <strong>네트워크 부하</strong></p>
+<ul>
+<li>매번 SSH/WinRM 연결을 생성합니다.</li>
+<li>Agent 방식보다 네트워크 사용량이 높습니다.</li>
+</ul>
+<p>❌ <strong>응답 속도</strong></p>
+<ul>
+<li>연결 설정 시간이 필요합니다.</li>
+<li>Agent 방식보다 느린 응답이 발생할 수 있습니다.</li>
+</ul>
+<p>❌ <strong>기능 제한</strong></p>
+<ul>
+<li>일부 고급 기능을 사용할 수 없습니다.</li>
+<li>복잡한 작업 수행이 어렵습니다.</li>
+</ul>
 <h3 id="_2">보안 제약<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<p>🔒 <strong>계정 관리</strong>
-- 계정 정보를 MDRM에 저장
-- 계정 변경 시 일일이 업데이트 필요</p>
-<p>🔒 <strong>네트워크 노출</strong>
-- SSH/WinRM 포트 오픈 필요
-- 방화벽 설정 필요</p>
+<p>🔒 <strong>계정 관리</strong></p>
+<ul>
+<li>계정 정보를 MDRM에 저장해야 합니다.</li>
+<li>계정 변경 시 일일이 업데이트해야 합니다.</li>
+</ul>
+<p>🔒 <strong>네트워크 노출</strong></p>
+<ul>
+<li>SSH/WinRM 포트를 오픈해야 합니다.</li>
+<li>방화벽 설정이 필요합니다.</li>
+</ul>
 <hr>
 <h2 id="6"><strong>6. 보안 권장사항</strong><a class="headerlink" href="#6" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
@@ -5157,22 +5169,32 @@
 <hr>
 <h2 id="7"><strong>7. 장점 및 단점</strong><a class="headerlink" href="#7" title="Permanent link">¶</a></h2>
 <h3 id="_3">장점<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<p>✅ <strong>간편성</strong>
-- Agent 설치 불필요
-- 빠른 설정 가능</p>
-<p>✅ <strong>호환성</strong>
-- 표준 프로토콜 사용
-- 대부분의 시스템 지원</p>
+<p>✅ <strong>간편성</strong></p>
+<ul>
+<li>Agent 설치가 필요하지 않습니다.</li>
+<li>빠르게 설정할 수 있습니다.</li>
+</ul>
+<p>✅ <strong>호환성</strong></p>
+<ul>
+<li>표준 프로토콜을 사용합니다.</li>
+<li>대부분의 시스템을 지원합니다.</li>
+</ul>
 <h3 id="_4">단점<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p>❌ <strong>성능</strong>
-- Agent 방식보다 느림
-- 네트워크 부하 높음</p>
-<p>❌ <strong>기능 제한</strong>
-- 실시간 모니터링 불가
-- 일부 기능 사용 제한</p>
-<p>❌ <strong>관리 부담</strong>
-- 계정 정보 관리 필요
-- 계정 변경 시 업데이트 필요</p>
+<p>❌ <strong>성능</strong></p>
+<ul>
+<li>Agent 방식보다 느릴 수 있습니다.</li>
+<li>네트워크 부하가 높습니다.</li>
+</ul>
+<p>❌ <strong>기능 제한</strong></p>
+<ul>
+<li>실시간 모니터링이 불가능합니다.</li>
+<li>일부 기능 사용이 제한됩니다.</li>
+</ul>
+<p>❌ <strong>관리 부담</strong></p>
+<ul>
+<li>계정 정보를 직접 관리해야 합니다.</li>
+<li>계정 변경 시 업데이트가 필요합니다.</li>
+</ul>
 <hr>
 <div class="next-step-card-container">
 <p><a href="../MDRM_Agent_환경_설정/" class="next-step-card">

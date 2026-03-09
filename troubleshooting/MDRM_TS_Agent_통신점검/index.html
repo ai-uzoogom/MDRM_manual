@@ -4431,13 +4431,13 @@
 <h3 id="1_1"><strong>① 기본 버전 확인</strong><a class="headerlink" href="#1_1" title="Permanent link">¶</a></h3>
 <p>Agent 서비스가 정상적으로 떠 있고 통신이 가능한지 가장 빠르게 확인하는 방법입니다.
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Agent 버전 정보 출력</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-sk<span class="w"> </span>https://<span class="o">{</span>에이전트<span class="w"> </span>IP<span class="o">}</span>:20080/version
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-sk<span class="w"> </span>https://<span class="o">{</span>Agent<span class="w"> </span>IP<span class="o">}</span>:20080/version
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="m">1</span>.3.0
 </code></pre></div><p></p>
 <h3 id="2"><strong>② 상세 노드 정보 확인</strong><a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <p>Agent의 노드 ID, IP 목록, OS 버전 등 상세 정보를 JSON 형식으로 확인합니다.
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 상세 정보 및 노드 식별 정보 출력 (| jq 사용 권장)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-sk<span class="w"> </span>https://<span class="o">{</span>에이전트<span class="w"> </span>IP<span class="o">}</span>:20080/about/get_about_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-sk<span class="w"> </span>https://<span class="o">{</span>Agent<span class="w"> </span>IP<span class="o">}</span>:20080/about/get_about_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
 </code></pre></div><p></p>
 <p><strong>출력 예시 (JSON)</strong>
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
@@ -4479,7 +4479,7 @@
 <hr>
 <center>
     <p style="opacity: 0.5; font-size: 0.8rem;">
-        ※ {MDRM 서버 IP}와 {에이전트 IP}를 실제 환경의 주소로 치환하여 사용하십시오.
+        ※ {MDRM 서버 IP}와 {Agent IP}를 실제 환경의 주소로 치환하여 사용하십시오.
     </p>
 </center>
 

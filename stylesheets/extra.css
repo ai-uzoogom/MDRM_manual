@@ -49,6 +49,8 @@ html {
     --custom-bg-light: #1e293b;
     --custom-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
     --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --text-dark: #e2e8f0;
+    --border: #334155;
 }
 
 /* 헤더 그라디언트 */
@@ -145,6 +147,12 @@ html {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     margin: 1rem;
     padding: 1rem;
+}
+
+/* 본문 영역 다크모드 */
+[data-md-color-scheme="slate"] .md-content {
+    background: #1e293b;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* 탭 영역 - 아래 공백만 제거 및 높이 고정 */
@@ -353,6 +361,13 @@ html {
     background-color: transparent !important;
     border: none !important;
     padding: 0 !important;
+}
+
+/* 인라인 코드 다크모드 */
+[data-md-color-scheme="slate"] .md-typeset code {
+    background: #334155 !important;
+    color: #93c5fd !important;
+    border: 1px solid #475569 !important;
 }
 
 /* 테이블 스타일 - 그라디언트 제거 및 너비 고정 */

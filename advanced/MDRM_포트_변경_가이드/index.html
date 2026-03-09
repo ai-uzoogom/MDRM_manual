@@ -3493,15 +3493,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-mdrm" class="md-nav__link">
+  <a href="#2-agent-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 에이전트 통신 포트 변경 (MDRM 서버 작업)
+        2. Agent 통신 포트 변경 (MDRM 서버 작업)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 에이전트 통신 포트 변경 (MDRM 서버 작업)">
+    <nav class="md-nav" aria-label="2. Agent 통신 포트 변경 (MDRM 서버 작업)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4362,15 +4362,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-mdrm" class="md-nav__link">
+  <a href="#2-agent-mdrm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. 에이전트 통신 포트 변경 (MDRM 서버 작업)
+        2. Agent 통신 포트 변경 (MDRM 서버 작업)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 에이전트 통신 포트 변경 (MDRM 서버 작업)">
+    <nav class="md-nav" aria-label="2. Agent 통신 포트 변경 (MDRM 서버 작업)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4420,7 +4420,7 @@
 <h1 id="_1">🔌 시스템 포트 변경 가이드<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <div class="admonition info">
 <p class="admonition-title">학습 안내</p>
-<p>MDRM 솔루션 운영 중 보안 정책이나 포트 충돌로 인해 포트 번호를 변경해야 하는 경우의 조치 방법입니다. <strong>MDRM 서버 자체의 접속 포트</strong>를 변경하는 방법과, <strong>에이전트 통신 포트 변경 시 MDRM 서버에서 수행해야 할 작업</strong>을 상세히 안내합니다.</p>
+<p>MDRM 솔루션 운영 중 보안 정책이나 포트 충돌로 인해 포트 번호를 변경해야 하는 경우의 조치 방법입니다. <strong>MDRM 서버 자체의 접속 포트</strong>를 변경하는 방법과, <strong>Agent 통신 포트 변경 시 MDRM 서버에서 수행해야 할 작업</strong>을 상세히 안내합니다.</p>
 <ul>
 <li><strong>원본 문서 (MDRM WEB)</strong>: <a href="https://mantech.jira.com/wiki/x/DwCAFgE">포트번호 변경 가이드 (v4.6.3~)</a></li>
 <li><strong>원본 문서 (Agent)</strong>: <a href="https://mantech.jira.com/wiki/x/aQKs4g">gam agent - 20080 포트 변경</a></li>
@@ -4487,11 +4487,11 @@
 </li>
 </ol>
 <hr>
-<h2 id="2-mdrm"><strong>2. 에이전트 통신 포트 변경 (MDRM 서버 작업)</strong><a class="headerlink" href="#2-mdrm" title="Permanent link">¶</a></h2>
-<p>GAM 에이전트의 기본 포트(20080)를 변경하여 사용할 경우, MDRM 서버에서 수행해야 하는 작업 가이드입니다.</p>
+<h2 id="2-agent-mdrm"><strong>2. Agent 통신 포트 변경 (MDRM 서버 작업)</strong><a class="headerlink" href="#2-agent-mdrm" title="Permanent link">¶</a></h2>
+<p>Agent의 기본 포트(20080)를 변경하여 사용할 경우, MDRM 서버에서 수행해야 하는 작업 가이드입니다.</p>
 <div class="admonition info">
 <p class="admonition-title">통신 포트 개요</p>
-<p>GAM 에이전트의 기본 포트 정보는 <strong>20080</strong>을 사용하고 있습니다. 고객사에서 20080 포트 사용 불가 시 에이전트의 포트 번호를 변경하여 사용하는 방법을 공유합니다. 
+<p>Agent의 기본 포트 정보는 <strong>20080</strong>을 사용하고 있습니다. 고객사에서 20080 포트 사용 불가 시 Agent의 포트 번호를 변경하여 사용하는 방법을 공유합니다. 
 *   <strong>지원 버전</strong>: MDRM 4.6.1, 4.6.2 이상부터 가능
 *   <strong>제약 사항</strong>: 현재 포트를 노드별로 개별 지정할 수 없습니다.</p>
 </div>
@@ -4511,7 +4511,7 @@
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker<span class="w"> </span>restart<span class="w"> </span>gam<span class="w"> </span>
 </code></pre></div></li>
 </ol>
-<p><strong>적용 범위</strong>: 시스템 에이전트 연결 테스트, 시스템 요약, 점검 작업, 워크플로우 (4.6.1 이하)</p>
+<p><strong>적용 범위</strong>: 시스템 Agent 연결 테스트, 시스템 요약, 점검 작업, 워크플로우 (4.6.1 이하)</p>
 <h3 id="22-v462-db"><strong>2.2 [v4.6.2 이상] DB 변경</strong><a class="headerlink" href="#22-v462-db" title="Permanent link">¶</a></h3>
 <p>4.6.2 이상 버전에서는 DB 값을 수정해야만 워크플로우에서 변경된 포트 번호로 실행이 가능합니다. <strong>반드시 2.1 항의 환경설정을 같이 진행해야 합니다.</strong></p>
 <ol>
@@ -4526,7 +4526,7 @@
 <hr>
 <div class="admonition success">
 <p class="admonition-title">최종 확인</p>
-<p>모든 포트 변경 작업이 완료된 후에는 반드시 웹 콘솔의 <strong>[시스템 관리]</strong> 메뉴에서 <strong>'에이전트 연결 테스트'</strong>를 수행하여 통신 상태가 정상(OK)인지 확인하시기 바랍니다.</p>
+<p>모든 포트 변경 작업이 완료된 후에는 반드시 웹 콘솔의 <strong>[시스템 관리]</strong> 메뉴에서 <strong>'Agent 연결 테스트'</strong>를 수행하여 통신 상태가 정상(OK)인지 확인하시기 바랍니다.</p>
 </div>
 
 

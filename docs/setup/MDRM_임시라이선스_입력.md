@@ -76,7 +76,7 @@ docker compose up -d
 <a href="../../overview/MDRM_운영_학습_안내_기본/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 PART 2: 운영 환경 구성 및 자원 관리</span>
+        <span class="next-step-title">📋 개요설명: 운영 환경 구성 및 자원 관리</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

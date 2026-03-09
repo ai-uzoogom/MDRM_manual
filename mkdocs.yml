@@ -154,7 +154,8 @@ extra:
     pkg_windows: "gam_agent.zip"
     pkg_aix: "gam_agent.tar"
   lab:
-    student_count: 3
+    student_count: 9
+    base_ip: 64
   generator: false
 
 plugins:

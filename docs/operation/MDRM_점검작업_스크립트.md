@@ -131,7 +131,7 @@ if ($foundVulnerable) {
 <a href="../../practice/MDRM_운영_학습_안내_실전/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">📋 PART 4: 실전 시나리오 및 운영 관리</span>
+        <span class="next-step-title">📋 실전 실습 및 조치: 실전 시나리오 및 운영 관리</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

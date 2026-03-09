@@ -23,20 +23,20 @@
 
 교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. 아래 목록에서 자신의 번호에 할당된 3번째 IP 대역(`xx`)과 세부 접속 정보를 확인해 주세요.
 
-| 교육생 번호 | IP 대역 | 서버 구분 | IP 주소 | 접속 계정 | 비밀번호 |
-| :--- | :---: | :--- | :--- | :--- | :--- |{% for i in range(1, extra.lab.student_count + 1) %}
-| **교육생 {{ i }}** | <span class="custom-badge-blue">**{{ 110 + i }}**</span> | **MDRM** (통합 관리 서버)<br>**WINDOWS** (Agent 대상)<br>**LINUX** (Agent 대상) | `10.20.{{ 110 + i }}.100`<br>`10.20.{{ 110 + i }}.101`<br>`10.20.{{ 110 + i }}.102` | `root`<br>`administrator`<br>`root` | `password` (공통) |{% endfor %}
+| 교육생 번호 | 서버 구분 | IP 주소 | 접속 계정 | 비밀번호 |
+| :--- | :--- | :--- | :--- | :--- |{% for i in range(1, extra.lab.student_count + 1) %}
+| **교육생 {{ i }}**<br>({{ extra.lab.base_ip + i }}) | **MDRM** (통합 관리 서버)<br>**WINDOWS** (Agent 대상)<br>**LINUX** (Agent 대상) | `10.20.{{ extra.lab.base_ip + i }}.100`<br>`10.20.{{ extra.lab.base_ip + i }}.101`<br>`10.20.{{ extra.lab.base_ip + i }}.102` | `root`<br>`administrator`<br>`root` | `password` |{% endfor %}
 
 ---
 
 !!! success "준비 완료"
-    자신의 IP 대역에 정상적으로 접속되는 것을 확인했다면, **PART 1** 학습으로 이동하여 인프라 구성을 시작하세요!
+    자신의 IP 대역에 정상적으로 접속되는 것을 확인했다면, **설치** 학습으로 이동하여 인프라 구성을 시작하세요!
 
 <div class="next-step-card-container" markdown>
 <a href="../../setup/MDRM_설치_학습_안내/" class="next-step-card">
     <span class="next-content">
         <span class="next-step-label">Next Step</span>
-        <span class="next-step-title">🚀 PART 1: 인프라 및 설치 학습 시작</span>
+        <span class="next-step-title">🚀 설치: 인프라 구성 시작</span>
     </span>
     <span class="next-step-icon">→</span>
 </a>

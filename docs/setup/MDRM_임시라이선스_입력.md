@@ -28,7 +28,7 @@
 !!! info "교육용 임시 라이선스 키 복사"
     아래의 코드 블록 전체를 복사(`Ctrl + C` 또는 우측 상단의 📋 버튼 클릭)하여 붙여넣고 저장해주십시오.
 
-```text title="MDRM 교육용 임시 라이선스"
+```text title="MDRM 임시 라이선스"
 HOST localhost ANY 5053
 ISV mantech port=5055
 LICENSE mantech mdrm 4 11-may-2026 30 min_timeout=60 _ck=91083287a6

@@ -123,6 +123,9 @@ nav:
         - ▸ 운영↔DR Node ID 불일치 해결: advanced/MDRM_NodeID_불일치_해결.md
       - 프로젝트:
         - ▸ 일정 관리: advanced/MDRM_구축_일정관리.md
+      - 🧪 AI 프롬프트 (Beta):
+        - ▸ 점검작업 스크립트: advanced/MDRM_AI_프롬프트_점검작업.md
+        - ▸ 워크플로우 컴포넌트: advanced/MDRM_AI_프롬프트_워크플로우.md
   - 트러블슈팅:
     - 컴포넌트:
         - ▸ Grep 자기 자신 탐지: troubleshooting/MDRM_TS_컴포넌트_Grep.md

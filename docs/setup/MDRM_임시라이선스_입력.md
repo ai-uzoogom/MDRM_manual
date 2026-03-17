@@ -29,7 +29,10 @@
     아래의 코드 블록 전체를 복사(`Ctrl + C` 또는 우측 상단의 📋 버튼 클릭)하여 붙여넣고 저장해주십시오.
 
 ```text title="MDRM 교육용 임시 라이선스"
---8<-- "assets/license/ent.lic"
+HOST localhost ANY 5053
+ISV mantech port=5055
+LICENSE mantech mdrm 4 11-may-2026 30 min_timeout=60 _ck=91083287a6
+sig="c2N252zwy6w4ZPHI9iLtaUuUuFg3aByQ0igy=Fp4MrJjVp7i0QZfcTRF5ykoBN"
 ```
 
 !!! tip "주의사항"

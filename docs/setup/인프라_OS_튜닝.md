@@ -1,0 +1,84 @@
+# 🛠️ OS 튜닝
+
+!!! info "학습 안내"
+    MDRM의 안정적인 운영을 위해 필요한 커널 파라미터 최적화와 사용자 리소스 제한 설정 방법을 학습합니다.
+
+MDRM의 안정적인 운영을 위해서는 대량의 데이터 처리와 컨테이너 환경을 뒷받침할 수 있는 OS 차원의 튜닝이 필수적입니다. 커널 파라미터(System-wide)와 사용자 리소스 제한(Per-user) 설정을 진행합니다.
+
+---
+
+## **1. 엔진 최적화 설정**
+
+커널 관련 파라미터(System-wide) 및 사용자 리소스 제한(Per-user) 설정 수치를 지정합니다.
+
+### **1.1 커널 파라미터 최적화 (`sysctl.conf`)**
+
+```bash
+# 커널 설정 파일 편집
+vi /etc/sysctl.conf
+```
+
+**수정 내용 (파일 하단 추가):**
+```bash
+vm.max_map_count = 262144
+fs.file-max = 65536
+```
+
+### **1.2 사용자 리소스 제한 설정 (`limits.conf`)**
+
+```bash
+# 리소스 제한 설정 파일 편집
+vi /etc/security/limits.conf
+```
+
+**수정 내용 (파일 하단 추가):**
+```bash
+# 파일 오픈(nofile) 및 프로세스(nproc) 제한 확장
+* soft nofile 65536
+* hard nofile 65536
+* soft nproc 65536
+* hard nproc 65536
+```
+
+---
+
+## **2. 주요 설정 항목 요약**
+
+| 항목 | 설정값 | 설명 |
+| :--- | :--- | :--- |
+| <span style="white-space: nowrap;">**vm.max_map_count**</span> | `262144` | 프로세스 가상 메모리 맵 최대 개수 (Elasticsearch 필수) |
+| <span style="white-space: nowrap;">**fs.file-max**</span> | `65536` | 시스템 전체에서 동시에 열 수 있는 파일 핸들 통합 한도 |
+| <span style="white-space: nowrap;">**nofile (ulimit)**</span> | `65536` | 개별 사용자가 동시에 열 수 있는 파일 개수 제한 |
+| <span style="white-space: nowrap;">**nproc (ulimit)**</span> | `65536` | 개별 사용자가 생성할 수 있는 프로세스/스레드 최대 개수 |
+
+---
+
+## **3. 설정 적용 및 확인**
+
+### **3.1 커널 파라미터 적용**
+```bash
+# 변경 사항 즉시 반영
+sysctl -p
+```
+
+### **3.2 리소스 제한 확인**
+`limits.conf`는 새로운 세션부터 적용되므로 **재로그인** 후 확인합니다.
+```bash
+# 현재 세션의 리소스 제한값 확인
+ulimit -a | grep -E "open files|max user processes"
+```
+
+!!! info "주의사항"
+    `limits.conf` 설정 후에는 반드시 로그아웃 후 다시 로그인해야 실제 값이 반영됩니다.
+
+---
+
+<div class="next-step-card-container" markdown>
+<a href="../인프라_포트_정보/" class="next-step-card">
+    <span class="next-content">
+        <span class="next-step-label">Next Step</span>
+        <span class="next-step-title">🛡️ 포트 정보</span>
+    </span>
+    <span class="next-step-icon">→</span>
+</a>
+</div>

@@ -58,6 +58,44 @@
 
     
     
+  
+  
+  <script>
+    window.MDRM_LAB = {
+      base_ip: 110,
+      students: [
+        
+        { name: "홍길동", ipPrefix: 111 },
+
+        
+        { name: "김재철", ipPrefix: 112 },
+
+        
+        { name: "이영희", ipPrefix: 113 },
+
+        
+        { name: "박지성", ipPrefix: 114 },
+
+        
+        { name: "김연아", ipPrefix: 115 },
+
+        
+        { name: "손흥민", ipPrefix: 116 },
+
+        
+        { name: "유재석", ipPrefix: 117 },
+
+        
+        { name: "강호동", ipPrefix: 118 },
+
+        
+        { name: "신동엽", ipPrefix: 119 }
+
+        
+      ]
+    };
+  </script>
+
   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -3864,7 +3902,7 @@
   <span class="md-ellipsis">
     
   
-    🧪 AI 프롬프트 (Beta)
+    AI 프롬프트
   
 
     
@@ -3880,7 +3918,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    🧪 AI 프롬프트 (Beta)
+    AI 프롬프트
   
 
           </label>
@@ -3893,14 +3931,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/MDRM_AI_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EC%A0%90%EA%B2%80%EC%9E%91%EC%97%85/" class="md-nav__link">
+      <a href="../../advanced/MDRM_AI_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ▸ 점검작업 스크립트
+    ▸ 워크플로우 컴포넌트
   
 
     
@@ -3921,14 +3959,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/MDRM_AI_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EC%9B%8C%ED%81%AC%ED%94%8C%EB%A1%9C%EC%9A%B0/" class="md-nav__link">
+      <a href="../../advanced/MDRM_AI_%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8_%EC%A0%90%EA%B2%80%EC%9E%91%EC%97%85/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ▸ 워크플로우 컴포넌트
+    ▸ 점검작업 스크립트
   
 
     
@@ -4427,11 +4465,16 @@
 
 <hr>
 <h2 id="2-ip"><strong>2. 실습 환경 구성 및 IP 할당 현황</strong><a class="headerlink" href="#2-ip" title="Permanent link">¶</a></h2>
-<p>교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. 아래 목록에서 자신의 번호에 할당된 3번째 IP 대역(<code>xx</code>)과 세부 접속 정보를 확인해 주세요.</p>
+<p>교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. <strong>화면 최상단 우측의 교육생 선택 메뉴</strong>에서 본인의 이름을 선택하면, 이 후 진행되는 모든 매뉴얼에 기재된 기본 IP(<code>10.20.33.x</code>)가 <strong>본인의 실제 실습 IP로 자동 변환</strong>되어 나타납니다.</p>
+<div id="student-table-placeholder" style="padding: 20px; text-align: center; background: var(--custom-bg-light, #f8f9fa); border: 1px dashed var(--md-primary-fg-color, #ccc); border-radius: 8px; margin-bottom: 20px; color: var(--md-default-fg-color--light);">
+    👉 <strong>화면 최상단 우측에서 본인의 이름을 먼저 선택해 주세요.</strong><br>선택 시 할당된 인프라 호스트 접속 정보가 이곳에 나타납니다.
+</div>
+
+<div class="student-table-container" style="display: none;">
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">교육생 번호</th>
+<th style="text-align: left;">교육생 이름</th>
 <th style="text-align: left;">서버 구분</th>
 <th style="text-align: left;">IP 주소</th>
 <th style="text-align: left;">접속 계정</th>
@@ -4440,70 +4483,71 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>교육생 1</strong><br>(56)</td>
+<td style="text-align: left;"><strong>홍길동</strong><br>(IP 대역: 111)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.56.100</code><br><code>10.20.56.101</code><br><code>10.20.56.102</code></td>
+<td style="text-align: left;"><code>10.20.111.100</code><br><code>10.20.111.101</code><br><code>10.20.111.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 2</strong><br>(57)</td>
+<td style="text-align: left;"><strong>김재철</strong><br>(IP 대역: 112)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.57.100</code><br><code>10.20.57.101</code><br><code>10.20.57.102</code></td>
+<td style="text-align: left;"><code>10.20.112.100</code><br><code>10.20.112.101</code><br><code>10.20.112.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 3</strong><br>(58)</td>
+<td style="text-align: left;"><strong>이영희</strong><br>(IP 대역: 113)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.58.100</code><br><code>10.20.58.101</code><br><code>10.20.58.102</code></td>
+<td style="text-align: left;"><code>10.20.113.100</code><br><code>10.20.113.101</code><br><code>10.20.113.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 4</strong><br>(59)</td>
+<td style="text-align: left;"><strong>박지성</strong><br>(IP 대역: 114)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.59.100</code><br><code>10.20.59.101</code><br><code>10.20.59.102</code></td>
+<td style="text-align: left;"><code>10.20.114.100</code><br><code>10.20.114.101</code><br><code>10.20.114.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 5</strong><br>(60)</td>
+<td style="text-align: left;"><strong>김연아</strong><br>(IP 대역: 115)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.60.100</code><br><code>10.20.60.101</code><br><code>10.20.60.102</code></td>
+<td style="text-align: left;"><code>10.20.115.100</code><br><code>10.20.115.101</code><br><code>10.20.115.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 6</strong><br>(61)</td>
+<td style="text-align: left;"><strong>손흥민</strong><br>(IP 대역: 116)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.61.100</code><br><code>10.20.61.101</code><br><code>10.20.61.102</code></td>
+<td style="text-align: left;"><code>10.20.116.100</code><br><code>10.20.116.101</code><br><code>10.20.116.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 7</strong><br>(62)</td>
+<td style="text-align: left;"><strong>유재석</strong><br>(IP 대역: 117)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.62.100</code><br><code>10.20.62.101</code><br><code>10.20.62.102</code></td>
+<td style="text-align: left;"><code>10.20.117.100</code><br><code>10.20.117.101</code><br><code>10.20.117.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 8</strong><br>(63)</td>
+<td style="text-align: left;"><strong>강호동</strong><br>(IP 대역: 118)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.63.100</code><br><code>10.20.63.101</code><br><code>10.20.63.102</code></td>
+<td style="text-align: left;"><code>10.20.118.100</code><br><code>10.20.118.101</code><br><code>10.20.118.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>교육생 9</strong><br>(64)</td>
+<td style="text-align: left;"><strong>신동엽</strong><br>(IP 대역: 119)</td>
 <td style="text-align: left;"><strong>MDRM</strong> (통합 관리 서버)<br><strong>WINDOWS</strong> (Agent 대상)<br><strong>LINUX</strong> (Agent 대상)</td>
-<td style="text-align: left;"><code>10.20.64.100</code><br><code>10.20.64.101</code><br><code>10.20.64.102</code></td>
+<td style="text-align: left;"><code>10.20.119.100</code><br><code>10.20.119.101</code><br><code>10.20.119.102</code></td>
 <td style="text-align: left;"><code>root</code><br><code>administrator</code><br><code>root</code></td>
 <td style="text-align: left;"><code>password</code></td>
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <div class="admonition success">
 <p class="admonition-title">준비 완료</p>

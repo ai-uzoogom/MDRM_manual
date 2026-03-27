@@ -304,3 +304,203 @@ window.moveSlide = function (n, prevBtn) {
   let nextIndex = (currentIndex + n + slides.length) % slides.length;
   slides[nextIndex].classList.add('active');
 };
+
+// ==========================================
+// 학생 맞춤형 IP 주소 동적 치환 로직
+// ==========================================
+document.addEventListener("DOMContentLoaded", function() {
+    initDynamicIPReplacer();
+    initSpotlightBackdrop();
+});
+
+// MkDocs Material Instant Navigation 지원
+if (typeof document$ !== "undefined") {
+    document$.subscribe(function() {
+        initDynamicIPReplacer();
+        initSpotlightBackdrop(); // 페이지 이동 시에도 backdrop 재등록
+    });
+}
+
+// ==========================================
+// 맥 스포트라이트 뒷배경(backdrop) 제어
+// ==========================================
+function initSpotlightBackdrop() {
+    // 이미 있으면 재사용
+    let backdrop = document.getElementById('spotlight-backdrop');
+    if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.id = 'spotlight-backdrop';
+        document.body.appendChild(backdrop);
+    }
+
+    const searchInput = document.getElementById('__search');
+    if (!searchInput) return;
+
+    // 이미 이벤트 등록된 경우 중복 방지
+    if (searchInput._backdropBound) return;
+    searchInput._backdropBound = true;
+
+    searchInput.addEventListener('focus', () => {
+        backdrop.classList.add('active');
+    });
+
+    searchInput.addEventListener('blur', () => {
+        // blur는 약간 지연 후 처리 (결과 클릭 허용)
+        setTimeout(() => {
+            backdrop.classList.remove('active');
+        }, 200);
+    });
+
+    // backdrop 클릭 시 검색창 포커스 해제
+    backdrop.addEventListener('mousedown', () => {
+        searchInput.blur();
+    });
+}
+
+function initDynamicIPReplacer() {
+    const STORAGE_KEY = 'mdrm_student_ip_prefix';
+    const storedPrefix = localStorage.getItem(STORAGE_KEY);
+
+    // 1. 텍스트 노드 순회 및 IP 치환 함수 (10.20.33.x 또는 10.20.xxx.x -> 10.20.{선택IP}.x)
+    function replaceIPs(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.nodeValue;
+            if (storedPrefix) { // 33번이어도 xxx를 치환해야 함
+                const replacedText = text.replace(/10\.20\.(33|xxx)\./g, `10.20.${storedPrefix}.`);
+                if (replacedText !== text) {
+                    node.nodeValue = replacedText;
+                }
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // 스크립트, 스타일 태그, 치환 UI 등은 예외 처리
+            if (node.tagName !== "SCRIPT" && node.tagName !== "STYLE" && (!node.classList || !node.classList.contains('student-selector'))) {
+                node.childNodes.forEach(replaceIPs);
+            }
+        }
+    }
+
+    // 초기 치환 실행
+    if (storedPrefix) {
+        replaceIPs(document.body);
+    }
+
+    // 전역 헤더에 선택창 인젝션
+    injectGlobalUserSelector(storedPrefix);
+
+    // 2. 학생 선택 표 필터링 (환경 안내 안내 페이지에서 본인 행만 표출)
+    filterStudentTable(storedPrefix);
+}
+
+function injectGlobalUserSelector(storedPrefix) {
+    const headerInner = document.querySelector('.md-header__inner');
+    if (!headerInner || document.getElementById('global-user-selector')) return;
+    
+    // mkdocs.yml에서 자동 주입된 데이터를 사용 (overrides/main.html 참고)
+    // window.MDRM_LAB이 없으면 빈 배열로 폴백
+    const STUDENTS = (window.MDRM_LAB && window.MDRM_LAB.students) ? window.MDRM_LAB.students : [];
+
+    const wrapper = document.createElement('div');
+    wrapper.id = 'global-user-selector';
+    wrapper.style.marginRight = '0.5rem';
+    wrapper.style.marginLeft = 'auto'; // 검색창 왼쪽에 붙도록 밀어줌
+    wrapper.style.display = 'flex';
+    wrapper.style.alignItems = 'center';
+    
+    const select = document.createElement('select');
+    // 모던하고 예쁜 둥근 뱃지 디자인 (글래스모피즘 컨셉)
+    select.style.padding = "0.3rem 2rem 0.3rem 1rem";
+    select.style.borderRadius = "20px";
+    select.style.border = "1px solid rgba(255, 255, 255, 0.2)";
+    select.style.background = "rgba(255, 255, 255, 0.1)";
+    select.style.backdropFilter = "blur(10px)";
+    select.style.color = "white";
+    select.style.cursor = "pointer";
+    select.style.outline = "none";
+    select.style.fontSize = "0.75rem";
+    select.style.fontWeight = "600";
+    select.style.fontFamily = "var(--md-text-font-family, inherit)";
+    select.style.appearance = "none"; // 기본 화살표 숨김
+    select.style.transition = "all 0.2s ease";
+    
+    // 우측에 깔끔한 화살표 삽입
+    select.style.backgroundImage = `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`;
+    select.style.backgroundRepeat = "no-repeat";
+    select.style.backgroundPosition = "right 0.6rem center";
+    select.style.backgroundSize = "0.9em";
+
+    // 마우스 호버 이펙트 (배경 살짝 밝게)
+    select.addEventListener('mouseover', () => { select.style.background = "rgba(255, 255, 255, 0.2)"; });
+    select.addEventListener('mouseout', () => { select.style.background = "rgba(255, 255, 255, 0.1)"; });
+    
+    const defOpt = document.createElement('option');
+    defOpt.value = "";
+    defOpt.textContent = "👤 최상단 교육생 선택";
+    defOpt.style.color = "#333";
+    defOpt.style.background = "white";
+    select.appendChild(defOpt);
+    
+    STUDENTS.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.ipPrefix;
+        opt.textContent = `👤 ${s.name} (10.20.${s.ipPrefix}.x)`;
+        opt.style.color = "#333";
+        opt.style.background = "white";
+        if (storedPrefix == s.ipPrefix) opt.selected = true;
+        select.appendChild(opt);
+    });
+    
+    select.addEventListener('change', function() {
+        if (this.value) {
+            localStorage.setItem('mdrm_student_ip_prefix', this.value);
+        } else {
+            localStorage.removeItem('mdrm_student_ip_prefix');
+        }
+        window.location.reload();
+    });
+    
+    wrapper.appendChild(select);
+
+    const searchDiv = document.querySelector('.md-search') || document.querySelector('.md-header__source');
+    if (searchDiv) {
+        headerInner.insertBefore(wrapper, searchDiv);
+    } else {
+        headerInner.appendChild(wrapper);
+    }
+}
+
+function filterStudentTable(storedPrefix) {
+    const container = document.querySelector('.student-table-container');
+    const placeholder = document.getElementById('student-table-placeholder');
+    if (!container) return; // Not the lab page
+
+    const table = container.querySelector('table');
+
+    if (!storedPrefix) {
+        container.style.display = 'none';
+        if (placeholder) placeholder.style.display = 'block';
+        return;
+    }
+
+    container.style.display = 'block';
+    if (placeholder) placeholder.style.display = 'none';
+
+    if (!table) return;
+
+    const rows = table.querySelectorAll('tbody tr');
+    let isFiltered = false;
+
+    rows.forEach(row => {
+        if (row.textContent.includes(`10.20.${storedPrefix}.`)) {
+            row.style.display = '';
+            isFiltered = true;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    if (isFiltered) {
+        table.style.border = '2px solid var(--md-primary-fg-color)';
+        table.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        table.style.borderRadius = '4px';
+    }
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {# mkdocs.yml의 extra.lab 데이터를 전역 JS 변수로 자동 주입 #}
+  <script>
+    window.MDRM_LAB = {
+      base_ip: {{ config.extra.lab.base_ip }},
+      students: [
+        {% for student in config.extra.lab.students %}
+        { name: "{{ student }}", ipPrefix: {{ config.extra.lab.base_ip + loop.index }} }{% if not loop.last %},{% endif %}
+
+        {% endfor %}
+      ]
+    };
+  </script>
+{% endblock %}

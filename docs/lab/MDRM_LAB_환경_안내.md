@@ -21,11 +21,19 @@
 
 ## **2. 실습 환경 구성 및 IP 할당 현황**
 
-교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. 아래 목록에서 자신의 번호에 할당된 3번째 IP 대역(`xx`)과 세부 접속 정보를 확인해 주세요.
+교육을 위해 각 교육생에게는 총 3대의 전용 가상 머신(VM)이 제공됩니다. **화면 최상단 우측의 교육생 선택 메뉴**에서 본인의 이름을 선택하면, 이 후 진행되는 모든 매뉴얼에 기재된 기본 IP(`10.20.33.x`)가 **본인의 실제 실습 IP로 자동 변환**되어 나타납니다.
 
-| 교육생 번호 | 서버 구분 | IP 주소 | 접속 계정 | 비밀번호 |
-| :--- | :--- | :--- | :--- | :--- |{% for i in range(1, extra.lab.student_count + 1) %}
-| **교육생 {{ i }}**<br>({{ extra.lab.base_ip + i }}) | **MDRM** (통합 관리 서버)<br>**WINDOWS** (Agent 대상)<br>**LINUX** (Agent 대상) | `10.20.{{ extra.lab.base_ip + i }}.100`<br>`10.20.{{ extra.lab.base_ip + i }}.101`<br>`10.20.{{ extra.lab.base_ip + i }}.102` | `root`<br>`administrator`<br>`root` | `password` |{% endfor %}
+<div id="student-table-placeholder" style="padding: 20px; text-align: center; background: var(--custom-bg-light, #f8f9fa); border: 1px dashed var(--md-primary-fg-color, #ccc); border-radius: 8px; margin-bottom: 20px; color: var(--md-default-fg-color--light);">
+    👉 <strong>화면 최상단 우측에서 본인의 이름을 먼저 선택해 주세요.</strong><br>선택 시 할당된 인프라 호스트 접속 정보가 이곳에 나타납니다.
+</div>
+
+<div class="student-table-container" style="display: none;" markdown="1">
+
+| 교육생 이름 | 서버 구분 | IP 주소 | 접속 계정 | 비밀번호 |
+| :--- | :--- | :--- | :--- | :--- |{% for student in extra.lab.students %}
+| **{{ student }}**<br>(IP 대역: {{ extra.lab.base_ip + loop.index }}) | **MDRM** (통합 관리 서버)<br>**WINDOWS** (Agent 대상)<br>**LINUX** (Agent 대상) | `10.20.{{ extra.lab.base_ip + loop.index }}.100`<br>`10.20.{{ extra.lab.base_ip + loop.index }}.101`<br>`10.20.{{ extra.lab.base_ip + loop.index }}.102` | `root`<br>`administrator`<br>`root` | `password` |{% endfor %}
+
+</div>
 
 ---
 

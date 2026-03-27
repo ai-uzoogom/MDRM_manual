@@ -7,6 +7,7 @@ site_url: https://man.uzoogom.com/
 
 theme:
   name: material
+  custom_dir: overrides
   language: ko
   palette:
     scheme: default
@@ -123,9 +124,9 @@ nav:
         - ▸ 운영↔DR Node ID 불일치 해결: advanced/MDRM_NodeID_불일치_해결.md
       - 프로젝트:
         - ▸ 일정 관리: advanced/MDRM_구축_일정관리.md
-      - 🧪 AI 프롬프트 (Beta):
-        - ▸ 점검작업 스크립트: advanced/MDRM_AI_프롬프트_점검작업.md
+      - AI 프롬프트:
         - ▸ 워크플로우 컴포넌트: advanced/MDRM_AI_프롬프트_워크플로우.md
+        - ▸ 점검작업 스크립트: advanced/MDRM_AI_프롬프트_점검작업.md
   - 트러블슈팅:
     - 컴포넌트:
         - ▸ Grep 자기 자신 탐지: troubleshooting/MDRM_TS_컴포넌트_Grep.md
@@ -157,8 +158,17 @@ extra:
     pkg_windows: "gam_agent.zip"
     pkg_aix: "gam_agent.tar"
   lab:
-    student_count: 9
-    base_ip: 55
+    base_ip: 110
+    students:
+      - "홍길동"
+      - "김재철"
+      - "이영희"
+      - "박지성"
+      - "김연아"
+      - "손흥민"
+      - "유재석"
+      - "강호동"
+      - "신동엽"
   generator: false
 
 plugins:

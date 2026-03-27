@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-base_dir = r"d:/Dropbox/00.우주곰프로젝트/00.MDRM/MDRM 교육매뉴얼/mkdocs"
+base_dir = r"c:/Dropbox/00.우주곰프로젝트/00.MDRM/MDRM 교육매뉴얼/mkdocs"
 docs_dir = os.path.join(base_dir, 'docs')
 
 overview_files = [

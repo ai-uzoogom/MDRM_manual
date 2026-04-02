@@ -90,6 +90,55 @@ ps -ef | grep gam_agent | grep -v grep | awk '{print $2}' | xargs kill -9
 
 ---
 
+## **6. 설정 파일 비교: 수동 설치 vs 가져오기 후**
+
+수동 설치 직후의 기본 설정과 MDRM 웹 콘솔에서 '가져오기' 연동이 완료된 후의 `application.properties` 파일을 비교합니다.
+
+수동 설치 시에는 대기 상태이므로 `mdrm.debug.mode=true`를 유지하지만, 가져오기가 완료된 이후에는 `mdrm.debug.mode=false`로 변경되며 보안 연결(HTTPS)을 위한 설정들이 자동으로 추가됩니다.
+
+<div class="grid cards" markdown>
+
+-   __수동설치 기본 (가져오기 전)__
+
+    ```properties hl_lines="6"
+    agent.agentId=N0000
+    agent.heartbeat=10000
+    mdrm.server.ip=127.0.0.1
+    mdrm.server.port=80
+    mdrm.server.https=false
+    mdrm.debug.mode=true
+    logging.config=logback.xml
+    ```
+
+-   __가져오기 실행 후__
+
+    ```properties hl_lines="2 3 5 6 10 11"
+    server.port=20080
+    agent.agentId=N0001
+    mdrm.server.ip=MDRM_IP
+    mdrm.server.port=443
+    mdrm.server.https=true
+    mdrm.debug.mode=false
+    agent.heartbeat=10000
+    agent.temp.path=/opt/gam_agent/storage
+    agent.service.script=/opt/gam_agent/bin/unix_service.sh
+    server.ssl.key-store=keystore.pfx
+    server.ssl.key-store-password=password
+    server.ssl.keyAlias=gam_agent
+    agent.https.enabled=true
+    logging.config=logback.xml
+    agent.server.runas_command=su - {user} -c {command}
+    mdrm.logstash.port=5001
+    spring.profiles.active=prod
+    ```
+
+    !!! tip "중요 확인 사항"
+        가져오기 이후에는 `mdrm.debug.mode=false`로 정상 변경되었는지와 함께, 설정된 `keystore.pfx` 인증서 파일이 에이전트 설치 경로에 실제로 생성되었는지 반드시 확인이 필요합니다.
+
+</div>
+
+---
+
 <div class="next-step-card-container" markdown>
 <a href="../MDRM_Agent_수동설치_리눅스/" class="next-step-card">
     <span class="next-content">

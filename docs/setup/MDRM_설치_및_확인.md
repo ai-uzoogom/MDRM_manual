@@ -15,16 +15,19 @@ tar zxvf {{ extra.mdrm.package_name }}
 # 2. 설치 디렉토리 이동
 cd {{ extra.mdrm.setup_dir }}
 
-# 3. 설치 스크립트 실행 (인자: 호스트명, 데이터경로)
-./install.sh $(hostname) {{ extra.mdrm.path_data }}
+# 3. 설치 스크립트 실행 (인자: 서버 IP, 데이터경로)
+./install.sh MDRM_IP {{ extra.mdrm.path_data }}
 ```
+
+!!! note "호스트명 사용 시 주의사항"
+    `./install.sh $(hostname) {{ extra.mdrm.path_data }}` 으로도 설치가 가능합니다. 단, `$(hostname)`으로 설치를 진행할 경우에는 제어대상 서버의 `/etc/hosts` 파일 등에 해당 호스트명과 실제 IP에 대한 매핑 설정이 반드시 사전에 되어 있어야 정상 동작합니다.
 
 ---
 
 ## **2. 설치 완료 확인**
 
 !!! success "설치 완료 후 웹 브라우저로 접속 가능"
-    - MDRM URL : `https://10.20.xxx.100` (**각 교육생별 할당된 고유 대역의 IP 주소로 접속**)
+    - MDRM URL : `https://10.20.xxx.100`
     - 사용자 ID : `mcuser`
     - 비밀번호 : `mdrm`
     

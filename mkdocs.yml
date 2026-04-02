@@ -103,7 +103,6 @@ nav:
         - ▸ 템플릿 제작 가이드: operation/MDRM_컴포넌트_템플릿_제작.md
     - 점검작업:
         - ▸ 점검작업 스크립트: operation/MDRM_점검작업_스크립트.md
-        - ▸ 점검작업 리스트: operation/MDRM_점검작업_리스트.md
   - 실전 실습 및 조치:
     - 학습 안내: practice/MDRM_운영_학습_안내_실전.md
     - 실습 및 장애조치:

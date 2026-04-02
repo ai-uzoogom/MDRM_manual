@@ -361,33 +361,60 @@ function initDynamicIPReplacer() {
     const STORAGE_KEY = 'mdrm_student_ip_prefix';
     const storedPrefix = localStorage.getItem(STORAGE_KEY);
 
-    // 1. 텍스트 노드 순회 및 IP 치환 함수 (10.20.33.x 또는 10.20.xxx.x -> 10.20.{선택IP}.x)
+    // 선택된 학생이 있으면 실제 IP, 없으면 기본 표시용 IP
+    const displayIP = storedPrefix
+        ? `10.20.${storedPrefix}.100`
+        : `10.20.xxx.100`;
+
+    // ──────────────────────────────────────────────────
+    // replaceIPs: 두 가지 패턴을 처리
+    //  1) MDRM_IP 플레이스홀더 → displayIP (코드블록용)
+    //     Pygments가 단일 식별자 토큰으로 처리하므로 span 분리 안 됨
+    //  2) 10.20.xxx. → 10.20.{storedPrefix}. (인라인 텍스트/코드용)
+    //     학생 선택 시에만 동작
+    // ──────────────────────────────────────────────────
     function replaceIPs(node) {
         if (node.nodeType === Node.TEXT_NODE) {
-            const text = node.nodeValue;
-            if (storedPrefix) { // 33번이어도 xxx를 치환해야 함
-                const replacedText = text.replace(/10\.20\.(33|xxx)\./g, `10.20.${storedPrefix}.`);
-                if (replacedText !== text) {
-                    node.nodeValue = replacedText;
-                }
+            let text = node.nodeValue;
+
+            // 1) MDRM_IP 플레이스홀더 치환 (항상 실행)
+            text = text.replace(/MDRM_IP/g, displayIP);
+
+            // 2) 기존 10.20.xxx. 패턴 (학생 선택 시에만)
+            if (storedPrefix) {
+                text = text.replace(/10\.20\.(33|xxx)\./g, `10.20.${storedPrefix}.`);
             }
+
+            node.nodeValue = text;
+
         } else if (node.nodeType === Node.ELEMENT_NODE) {
-            // 스크립트, 스타일 태그, 치환 UI 등은 예외 처리
-            if (node.tagName !== "SCRIPT" && node.tagName !== "STYLE" && (!node.classList || !node.classList.contains('student-selector'))) {
+            if (node.classList && node.classList.contains('highlight')) {
+                // Pygments 코드블록:
+                // MDRM_IP는 단일 토큰이라 innerHTML 단순 replace로 처리 가능
+                let html = node.innerHTML;
+                html = html.replace(/MDRM_IP/g, displayIP);
+                if (storedPrefix) {
+                    // 혹시 xxx 패턴이 남아있을 경우 대비 (기존 문서 호환)
+                    html = html.replace(/10\.20\.(33|xxx)\./g, `10.20.${storedPrefix}.`);
+                }
+                node.innerHTML = html;
+                return;
+            }
+
+            if (node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE' &&
+                (!node.classList || !node.classList.contains('student-selector'))) {
                 node.childNodes.forEach(replaceIPs);
             }
         }
     }
 
-    // 초기 치환 실행
-    if (storedPrefix) {
-        replaceIPs(document.body);
-    }
+    // 항상 실행 (MDRM_IP 기본값 표시를 위해 storedPrefix 없어도 실행)
+    replaceIPs(document.body);
 
     // 전역 헤더에 선택창 인젝션
     injectGlobalUserSelector(storedPrefix);
 
-    // 2. 학생 선택 표 필터링 (환경 안내 안내 페이지에서 본인 행만 표출)
+    // 학생 선택 표 필터링 (LAB 환경 안내 페이지)
     filterStudentTable(storedPrefix);
 }
 
@@ -442,7 +469,7 @@ function injectGlobalUserSelector(storedPrefix) {
     STUDENTS.forEach(s => {
         const opt = document.createElement('option');
         opt.value = s.ipPrefix;
-        opt.textContent = `👤 ${s.name} (10.20.${s.ipPrefix}.x)`;
+        opt.textContent = `👤 ${s.name} (10.20.${s.ipPrefix}.100)`;
         opt.style.color = "#333";
         opt.style.background = "white";
         if (storedPrefix == s.ipPrefix) opt.selected = true;

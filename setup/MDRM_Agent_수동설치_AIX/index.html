@@ -1486,6 +1486,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 설정 파일 비교: 수동 설치 vs 가져오기 후
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3123,34 +3134,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operation/MDRM_%EC%A0%90%EA%B2%80%EC%9E%91%EC%97%85_%EB%A6%AC%EC%8A%A4%ED%8A%B8/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ▸ 점검작업 리스트
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -4514,6 +4497,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 설정 파일 비교: 수동 설치 vs 가져오기 후
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4598,6 +4592,50 @@
 </code></pre></div></li>
 <li><strong>권한 확인</strong>: 설치 경로의 파일들이 실행 권한(<code>chmod +x</code>)을 가지고 있는지 확인하십시오.</li>
 </ul>
+<hr>
+<h2 id="6-vs"><strong>6. 설정 파일 비교: 수동 설치 vs 가져오기 후</strong><a class="headerlink" href="#6-vs" title="Permanent link">¶</a></h2>
+<p>수동 설치 직후의 기본 설정과 MDRM 웹 콘솔에서 '가져오기' 연동이 완료된 후의 <code>application.properties</code> 파일을 비교합니다.</p>
+<p>수동 설치 시에는 대기 상태이므로 <code>mdrm.debug.mode=true</code>를 유지하지만, 가져오기가 완료된 이후에는 <code>mdrm.debug.mode=false</code>로 변경되며 보안 연결(HTTPS)을 위한 설정들이 자동으로 추가됩니다.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><strong>수동설치 기본 (가져오기 전)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="na">agent.agentId</span><span class="o">=</span><span class="s">N0000</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">agent.heartbeat</span><span class="o">=</span><span class="s">10000</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="na">mdrm.server.ip</span><span class="o">=</span><span class="s">127.0.0.1</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="na">mdrm.server.port</span><span class="o">=</span><span class="s">80</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="na">mdrm.server.https</span><span class="o">=</span><span class="s">false</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="hll"><span class="na">mdrm.debug.mode</span><span class="o">=</span><span class="s">true</span>
+</span><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="na">logging.config</span><span class="o">=</span><span class="s">logback.xml</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>가져오기 실행 후</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">server.port</span><span class="o">=</span><span class="s">20080</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="hll"><span class="na">agent.agentId</span><span class="o">=</span><span class="s">N0001</span>
+</span><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="hll"><span class="na">mdrm.server.ip</span><span class="o">=</span><span class="s">MDRM_IP</span>
+</span><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="na">mdrm.server.port</span><span class="o">=</span><span class="s">443</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="hll"><span class="na">mdrm.server.https</span><span class="o">=</span><span class="s">true</span>
+</span><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="hll"><span class="na">mdrm.debug.mode</span><span class="o">=</span><span class="s">false</span>
+</span><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="na">agent.heartbeat</span><span class="o">=</span><span class="s">10000</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="na">agent.temp.path</span><span class="o">=</span><span class="s">/opt/gam_agent/storage</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="na">agent.service.script</span><span class="o">=</span><span class="s">/opt/gam_agent/bin/unix_service.sh</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="hll"><span class="na">server.ssl.key-store</span><span class="o">=</span><span class="s">keystore.pfx</span>
+</span><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="hll"><span class="na">server.ssl.key-store-password</span><span class="o">=</span><span class="s">password</span>
+</span><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="na">server.ssl.keyAlias</span><span class="o">=</span><span class="s">gam_agent</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="na">agent.https.enabled</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="na">logging.config</span><span class="o">=</span><span class="s">logback.xml</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="na">agent.server.runas_command</span><span class="o">=</span><span class="s">su - {user} -c {command}</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="na">mdrm.logstash.port</span><span class="o">=</span><span class="s">5001</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="na">spring.profiles.active</span><span class="o">=</span><span class="s">prod</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">중요 확인 사항</p>
+<p>가져오기 이후에는 <code>mdrm.debug.mode=false</code>로 정상 변경되었는지와 함께, 설정된 <code>keystore.pfx</code> 인증서 파일이 에이전트 설치 경로에 실제로 생성되었는지 반드시 확인이 필요합니다.</p>
+</div>
+</li>
+</ul>
+</div>
 <hr>
 <div class="next-step-card-container">
 <p><a href="../MDRM_Agent_수동설치_리눅스/" class="next-step-card">
